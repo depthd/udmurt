@@ -1,0 +1,5 @@
+sources:
+  - id: tatoeba
+    title: Tatoeba — корпус предложений с переводами
+    url: https://tatoeba.org/
+    license: CC BY 2.0 FR

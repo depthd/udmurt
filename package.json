@@ -1,0 +1,33 @@
+{
+  "name": "udmurt-kyl",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Удмурт кыл — тренажёр удмуртского языка в стиле Duolingo (статический сайт для GitHub Pages)",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "validate": "vitest run tests/content.test.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@tsconfig/svelte": "5.0.8",
+    "@types/canvas-confetti": "1.9.0",
+    "svelte": "5.57.2",
+    "svelte-check": "4.7.7",
+    "typescript": "~6.0.3",
+    "vite": "8.3.4",
+    "vitest": "5.0.3",
+    "yaml": "2.9.1",
+    "zod": "4.6.5"
+  },
+  "dependencies": {
+    "canvas-confetti": "1.9.4"
+  }
+}

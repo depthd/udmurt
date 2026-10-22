@@ -1,0 +1,7 @@
+items:
+  - id: mon
+    udm: мон
+    ru: я
+    pos: местоимение
+    status: sourced
+    sources: [{ id: tatoeba }]

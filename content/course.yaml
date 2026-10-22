@@ -1,0 +1,5 @@
+# Порядок юнитов курса. Каждый юнит — папка в content/units/
+id: udm-ru
+title: Удмурт кыл
+units:
+  - u1-znakomstvo
