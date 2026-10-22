@@ -24,7 +24,10 @@ export function normalize(s: string, { fixLatin = true } = {}): string {
   t = t.replace(/ӧ/g, 'ӧ').replace(/ӥ/g, 'ӥ').replace(/ӝ/g, 'ӝ').replace(/ӟ/g, 'ӟ').replace(/ӵ/g, 'ӵ');
   if (fixLatin && /[а-яӧӥӝӟӵ]/.test(t)) t = [...t].map((ch) => LATIN_TO_UDM[ch] ?? ch).join('');
   t = t.replace(/ё/g, 'е');
-  t = t.replace(/[«»"“”„]/g, '').replace(/[‐‑‒–—]/g, '-');
+  t = t.replace(/[«»"“”„]/g, '');
+  // тире между словами («Мынам кышное — дышетӥсь») — это пауза, а не дефис
+  t = t.replace(/(^|\s)[-‐‑‒–—]+(?=\s|$)/g, ' ');
+  t = t.replace(/[‐‑‒–—]/g, '-');
   t = t.replace(/[.,!?;:…]+/g, ' ');
   t = t.replace(/\s*-\s*/g, '-');
   return t.replace(/\s+/g, ' ').trim();
@@ -87,5 +90,5 @@ export function tokenize(s: string): string[] {
   return s
     .replace(/[.,!?;:…«»"]+/g, ' ')
     .split(/\s+/)
-    .filter(Boolean);
+    .filter((w) => w && !/^[-‐‑‒–—]+$/.test(w));
 }

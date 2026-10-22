@@ -1,0 +1,39 @@
+id: u3-l1
+title: Анай, атай
+goal: 'Мама, папа, бабушка и дедушка'
+icon: 👨‍👩‍👧
+exercises:
+  - type: teach
+    item: anai
+  - type: teach
+    item: atai
+  - type: choice
+    item: atai
+    distractors: [anai]
+    pictures: true
+  - type: teach
+    item: anai-atai
+  - type: choice
+    dir: ru-udm
+    item: anai-atai
+    distractors: [anai, atai]
+    explain: 'Анай-атай — «мама-папа», то есть родители.'
+  - type: teach
+    item: pesyanai
+  - type: teach
+    item: pesyatai
+  - type: match
+    items: [anai, atai, pesyanai, pesyatai, anai-atai]
+  - type: teach
+    item: mon-anaime-yaratisko
+  - type: tiles
+    item: mon-anaime-yaratisko
+    extra: [атай, тон]
+  - type: teach
+    item: kytyn-mynam-anai-atae
+  - type: choice
+    item: kytyn-mynam-anai-atae
+    distractors: [mon-anaime-yaratisko, kytyn-ton-uliskod]
+  - type: type
+    dir: ru-udm
+    item: anai

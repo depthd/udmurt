@@ -1,0 +1,36 @@
+id: u3-story
+title: 'История: Мынам семьяе'
+goal: 'Понять рассказ о семье'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: tilad-nylpiosty-van-a }
+      - { who: Преподаватель, item: mynam-nyly-van }
+      - { who: Преподаватель, item: mynam-pie-student }
+    question: Кто есть у преподавателя?
+    options: [Дочь и сын, Только дочь, Нет детей]
+    answer: Дочь и сын
+  - type: dialogue
+    lines:
+      - { who: '{name}', item: mynam-badzym-semyae }
+      - { who: '{name}', item: mynam-odig-agae }
+      - { who: Даша, item: tuzh-umoj }
+    question: Сколько младших сестёр у собеседника Даши?
+    options: ['Две', 'Одна', 'Три']
+    answer: 'Две'
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mynam-dyry-ovol }
+      - { who: Даша, item: zech-lu }
+      - { who: '{name}', item: zech-lu }
+    question: Почему Даша уходит?
+    options: [У неё нет времени, Она устала, Её ждёт мама]
+    answer: У неё нет времени
+  - type: tiles
+    item: mynam-badzym-semyae
+    extra: [ӧвӧл, вань]
+  - type: type
+    dir: ru-udm
+    item: mon-anaime-yaratisko

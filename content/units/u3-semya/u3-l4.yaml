@@ -1,0 +1,37 @@
+id: u3-l4
+title: … ӧвӧл
+goal: Сказать «у меня нет»
+icon: 🚫
+exercises:
+  - type: teach
+    item: mynam-dyry-ovol
+  - type: choice
+    item: mynam-dyry-ovol
+    distractors: [mynam-dyry-van]
+  - type: fill
+    text: Мынам дыры ___.
+    ru: У меня нет времени.
+    options: [ӧвӧл, вань]
+    answer: ӧвӧл
+    item: mynam-dyry-ovol
+  - type: teach
+    item: milyam-nylpiosmy-ovol
+  - type: tiles
+    item: milyam-nylpiosmy-ovol
+    extra: [вань, мынам]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: tilad-nylpiosty-van-a }
+      - { who: Преподаватель, item: milyam-nylpiosmy-ovol }
+    question: Есть ли у преподавателя дети?
+    options: [Нет, Да, Двое]
+    answer: Нет
+  - type: match
+    items: [van, ovol, ben, mon]
+  - type: tiles
+    dir: udm-ru
+    item: mynam-dyry-ovol
+    extra: [есть, тебя]
+  - type: type
+    dir: ru-udm
+    item: mynam-dyry-ovol

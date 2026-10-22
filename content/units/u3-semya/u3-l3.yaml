@@ -1,0 +1,39 @@
+id: u3-l3
+title: Мынам … вань
+goal: Сказать «у меня есть»
+icon: ✅
+exercises:
+  - type: teach
+    item: semya
+  - type: teach
+    item: mynam-badzym-semyae
+  - type: build
+    item: mynam-badzym-semyae
+    extra: [ы, ысь]
+  - type: teach
+    item: van
+  - type: teach
+    item: mynam-nyly-van
+  - type: tiles
+    item: mynam-nyly-van
+    extra: [ӧвӧл, тынад]
+  - type: teach
+    item: mynam-dyry-van
+  - type: choice
+    item: mynam-dyry-van
+    distractors: [mynam-nyly-van, mynam-badzym-semyae]
+  - type: teach
+    item: tilad-nylpiosty-van-a
+  - type: choice
+    dir: ru-udm
+    item: tilad-nylpiosty-van-a
+    distractors: [mynam-nyly-van, kyzy-tilad-nimdy]
+  - type: fill
+    text: Мынам нылы ___.
+    ru: У меня есть дочь.
+    options: [вань, ӧвӧл, бен]
+    answer: вань
+    item: mynam-nyly-van
+  - type: type
+    dir: ru-udm
+    item: mynam-dyry-van

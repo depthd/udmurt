@@ -1,0 +1,35 @@
+id: u3-l5
+title: Пие, нылы
+goal: 'Сын, дочь и кто кем работает'
+icon: 🧒
+exercises:
+  - type: teach
+    item: pi
+  - type: teach
+    item: nyl-daughter
+  - type: teach
+    item: nylpi
+  - type: build
+    item: nylpi
+    extra: [ы, ай]
+  - type: match
+    items: [pi, nyl-daughter, nylpi, anai, atai]
+  - type: teach
+    item: mynam-pie-student
+  - type: tiles
+    item: mynam-pie-student
+    extra: [нылы, дышетӥсь]
+  - type: teach
+    item: mynam-kyshnoe-dyshetis
+  - type: choice
+    item: mynam-kyshnoe-dyshetis
+    distractors: [mynam-pie-student, ta-kyshnomurt-emchi]
+  - type: teach
+    item: ta-kyshnomurt-emchi
+  - type: tiles
+    dir: udm-ru
+    item: ta-kyshnomurt-emchi
+    extra: [учительница, мама]
+  - type: type
+    dir: ru-udm
+    item: mynam-pie-student

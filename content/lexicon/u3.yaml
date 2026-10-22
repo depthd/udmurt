@@ -1,0 +1,263 @@
+# Юнит 3 «Семья» — словник. Слова — по словарю uniparser и Викисловарю, фразы — из Tatoeba (номер в ref),
+# грамматика притяжательности — по Алатыреву (1983).
+items:
+  # ── Родители ─────────────────────────────────────────
+  - id: anai
+    udm: анай
+    ru: мама
+    ru_alt: [мать]
+    pos: существительное
+    emoji: 👩
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11685314' }]
+  - id: atai
+    udm: атай
+    ru: папа
+    ru_alt: [отец]
+    pos: существительное
+    emoji: 👨
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12175744' }]
+  - id: anai-atai
+    udm: анай-атай
+    ru: родители
+    pos: существительное
+    emoji: 👨‍👩‍👧
+    morphemes:
+      - { form: анай, meaning: 'мама', kind: word }
+      - { form: атай, meaning: 'папа', kind: word }
+    note: 'Парное слово: «мама-папа» = родители. В удмуртском таких пар много.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11704978' }, { id: tatoeba, ref: '11955864' }]
+  - id: pesyanai
+    udm: песянай
+    ru: бабушка
+    pos: существительное
+    emoji: 👵
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: pesyatai
+    udm: песятай
+    ru: дедушка
+    ru_alt: [дед]
+    pos: существительное
+    emoji: 👴
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: mon-anaime-yaratisko
+    udm: Мон анайме яратӥсько.
+    ru: Я люблю свою маму.
+    ru_alt: [Я люблю маму., Я люблю свою мать.]
+    kind: phrase
+    emoji: ❤️
+    morphemes:
+      - { form: анай, meaning: 'мама', kind: root }
+      - { form: ме, meaning: 'мою (кого? + «мой»)', kind: suffix }
+      - { form: ярат, meaning: 'любить', kind: root }
+      - { form: ӥсько, meaning: '(я) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11685314' }]
+  - id: kytyn-mynam-anai-atae
+    udm: Кытын мынам анай-атае?
+    ru: Где мои родители?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11704978' }]
+
+  # ── Братья и сёстры ──────────────────────────────────
+  - id: agai
+    udm: агай
+    ru: старший брат
+    ru_alt: [брат, дядя]
+    pos: существительное
+    emoji: 🧑
+    note: 'Агай — и «старший брат», и «дядя». Младший брат — вын.'
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: apai
+    udm: апай
+    ru: старшая сестра
+    ru_alt: [сестра, тётя]
+    pos: существительное
+    emoji: 👩‍🦰
+    note: 'Апай — и «старшая сестра», и «тётя». Младшая сестра — сузэр.'
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: vyn
+    udm: вын
+    ru: младший брат
+    ru_alt: [брат]
+    pos: существительное
+    emoji: 👦
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12189568' }]
+  - id: suzer
+    udm: сузэр
+    ru: младшая сестра
+    ru_alt: [сестра]
+    pos: существительное
+    emoji: 👧
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12143763' }]
+  - id: mynam-odig-agae
+    udm: Мынам одӥг агае но кык сузэръёсы.
+    ru: У меня один старший брат и две младшие сестры.
+    kind: phrase
+    morphemes:
+      - { form: агай, meaning: 'старший брат', kind: root }
+      - { form: е, meaning: 'мой', kind: suffix }
+      - { form: но, meaning: 'и', kind: particle }
+      - { form: сузэр, meaning: 'младшая сестра', kind: root }
+      - { form: ъёс, meaning: 'множественное число', kind: suffix }
+      - { form: ы, meaning: 'мои', kind: suffix }
+    note: 'Обычно после числа — единственное число, но иногда, как здесь, и множественное (Алатырев, § 37).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12174399' }, { id: alatyrev1983 }]
+  - id: tom-tynad-vynyd
+    udm: Том тынад выныд.
+    ru: Том твой брат.
+    ru_alt: [Том — твой брат., Том твой младший брат.]
+    kind: phrase
+    morphemes:
+      - { form: тынад, meaning: 'твой', kind: word }
+      - { form: вын, meaning: 'младший брат', kind: root }
+      - { form: ыд, meaning: 'твой', kind: suffix }
+    note: '«Твой» говорится дважды: тынад … вын-ыд — как «у тебя брат-твой».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12189568' }]
+  - id: soos-suzeryos
+    udm: Соос сузэръёс.
+    ru: Они сёстры.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12143763' }]
+
+  # ── У меня есть / нет ────────────────────────────────
+  - id: semya
+    udm: семья
+    ru: семья
+    pos: существительное
+    emoji: 🏡
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11525062' }]
+  - id: mynam-badzym-semyae
+    udm: Мынам бадӟым семьяе.
+    ru: У меня большая семья.
+    kind: phrase
+    emoji: 🏡
+    morphemes:
+      - { form: мынам, meaning: 'у меня, мой', kind: word }
+      - { form: бадӟым, meaning: 'большой', kind: word }
+      - { form: семья, meaning: 'семья', kind: root }
+      - { form: е, meaning: 'моя', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525062' }]
+  - id: van
+    udm: вань
+    ru: есть, имеется
+    pos: глагол
+    note: '«У меня есть» — Мынам … вань, как русское «у меня есть». Нет — ӧвӧл.'
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11575990' }]
+  - id: mynam-nyly-van
+    udm: Мынам нылы вань.
+    ru: У меня есть дочь.
+    kind: phrase
+    emoji: 👧
+    morphemes:
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: ныл, meaning: 'дочь', kind: root }
+      - { form: ы, meaning: 'моя', kind: suffix }
+      - { form: вань, meaning: 'есть', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11575990' }]
+  - id: mynam-dyry-van
+    udm: Мынам дыры вань.
+    ru: У меня есть время.
+    kind: phrase
+    emoji: ⏳
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11670085' }]
+  - id: mynam-dyry-ovol
+    udm: Мынам дыры ӧвӧл.
+    ru: У меня нет времени.
+    kind: phrase
+    emoji: ⌛
+    note: 'Нет — ӧвӧл на месте вань.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522840' }]
+  - id: tilad-nylpiosty-van-a
+    udm: Тӥляд нылпиосты вань-а?
+    ru: Есть ли у вас дети?
+    ru_alt: [У вас есть дети?]
+    kind: phrase
+    morphemes:
+      - { form: тӥляд, meaning: 'у вас', kind: word }
+      - { form: нылпи, meaning: 'ребёнок', kind: root }
+      - { form: ос, meaning: 'множественное число', kind: suffix }
+      - { form: ты, meaning: 'ваши', kind: suffix }
+      - { form: вань, meaning: 'есть', kind: word }
+      - { form: а, meaning: 'вопрос', kind: particle }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522638' }]
+  - id: milyam-nylpiosmy-ovol
+    udm: Милям нылпиосмы ӧвӧл.
+    ru: У нас нет детей.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525881' }]
+
+  # ── Сын, дочь, кто кем работает ──────────────────────
+  - id: pi
+    udm: пи
+    ru: сын
+    ru_alt: [мальчик]
+    pos: существительное
+    emoji: 👦
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: nyl-daughter
+    udm: ныл
+    ru: дочь
+    ru_alt: [девушка, девочка]
+    pos: существительное
+    emoji: 👧
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: nylpi
+    udm: нылпи
+    ru: ребёнок
+    ru_alt: [дети]
+    pos: существительное
+    emoji: 🧒
+    morphemes:
+      - { form: ныл, meaning: 'дочь', kind: root }
+      - { form: пи, meaning: 'сын', kind: root }
+    note: 'Нылпи — буквально «дочь-сын».'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: mynam-pie-student
+    udm: Мынам пие студент.
+    ru: У меня сын студент.
+    ru_alt: [Мой сын студент., Мой сын — студент.]
+    kind: phrase
+    morphemes:
+      - { form: пи, meaning: 'сын', kind: root }
+      - { form: е, meaning: 'мой (после гласной)', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12144335' }]
+  - id: mynam-kyshnoe-dyshetis
+    udm: Мынам кышное — дышетӥсь.
+    ru: Моя жена — учительница.
+    ru_alt: [Моя жена учительница.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11955871' }]
+  - id: ta-kyshnomurt-emchi
+    udm: Та кышномурт — эмчи.
+    ru: Эта женщина — врач.
+    ru_alt: [Эта женщина врач.]
+    kind: phrase
+    emoji: 🩺
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12158966' }]

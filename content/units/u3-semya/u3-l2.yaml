@@ -1,0 +1,42 @@
+id: u3-l2
+title: Агай но сузэр
+goal: Братья и сёстры — старшие и младшие
+icon: 👫
+exercises:
+  - type: teach
+    item: agai
+  - type: teach
+    item: vyn
+  - type: choice
+    item: vyn
+    distractors: [agai, atai]
+  - type: teach
+    item: apai
+  - type: teach
+    item: suzer
+  - type: choice
+    dir: ru-udm
+    item: suzer
+    distractors: [apai, anai]
+  - type: match
+    items: [agai, vyn, apai, suzer]
+  - type: teach
+    item: soos-suzeryos
+  - type: teach
+    item: tom-tynad-vynyd
+  - type: fill
+    text: Том тынад вын___.
+    ru: Том твой брат.
+    options: [ыд, ы, ысь]
+    answer: ыд
+    item: tom-tynad-vynyd
+    explain: '-ыд — «твой», -ы — «мой».'
+  - type: teach
+    item: mynam-odig-agae
+  - type: tiles
+    dir: udm-ru
+    item: mynam-odig-agae
+    extra: [три, мама]
+  - type: type
+    dir: ru-udm
+    item: soos-suzeryos
