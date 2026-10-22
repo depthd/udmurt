@@ -24,7 +24,13 @@
   );
 
   const freezes = $derived(progress.data.streak.freezes);
+  const repair = $derived(progress.repair);
   const message = $derived.by(() => {
+    if (repair && repair.left > 0)
+      return {
+        tone: 'freeze',
+        text: `Серию в ${repair.value} ${plural(repair.value, ['день', 'дня', 'дней'])} можно вернуть: ещё ${repair.left} ${plural(repair.left, ['урок', 'урока', 'уроков'])} до конца завтрашнего дня.`,
+      };
     if (s.doneToday) return { tone: 'ok', text: 'Сегодня занятие есть — серия продлена. До завтра!' };
     if (s.canFreeze) return { tone: 'freeze', text: 'Пропуск закроет заморозка ❄. Пройдите урок сегодня, чтобы серия продолжилась.' };
     if (s.atRisk) return { tone: 'risk', text: 'Пройдите урок, чтобы не потерять серию' };

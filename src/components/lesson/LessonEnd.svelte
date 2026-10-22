@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { progress } from '$lib/progress.svelte';
   /**
    * Экран итогов урока (отчёт 04 §3.5): конфетти-толэзе и звук → «+N XP» (счётчик) →
    * точность и время «лесенкой» → серия дней → новые достижения → «Продолжить».
@@ -151,6 +152,11 @@
               ? 'Заморозка сохранила вашу серию за пропущенный день'
               : `Заморозки сохранили серию: пропущено ${reward.usedFreeze} ${plural(reward.usedFreeze, ['день', 'дня', 'дней'])}`}
           </p>
+        {/if}
+        {#if reward.repaired > 0}
+          <p class="freeze"><span aria-hidden="true">🧵</span> Серия восстановлена: вернули {reward.repaired} {plural(reward.repaired, ['день', 'дня', 'дней'])}!</p>
+        {:else if progress.repair && progress.repair.left > 0}
+          <p class="freeze"><span aria-hidden="true">🧵</span> Ещё {progress.repair.left} {plural(progress.repair.left, ['урок', 'урока', 'уроков'])} — и прерванная серия ({progress.repair.value}) вернётся.</p>
         {/if}
         {#if reward.goalReached}
           <p class="goal"><span aria-hidden="true">✅</span> Дневная цель выполнена</p>

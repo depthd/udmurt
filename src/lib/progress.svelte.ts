@@ -19,7 +19,15 @@ export type ProgressData = {
   xp: number;
   /** XP по дням: 'YYYY-MM-DD' → xp. */
   days: Record<string, number>;
-  streak: { current: number; best: number; last: string | null; freezes: number; frozen: string[] };
+  streak: {
+    current: number;
+    best: number;
+    last: string | null;
+    freezes: number;
+    frozen: string[];
+    /** Прерванная серия, которую можно вернуть: пройти REPAIR_LESSONS уроков за 2 дня. */
+    lost?: { value: number; since: string; lessons: number } | null;
+  };
   lessons: Record<string, LessonState>;
   cards: Record<string, Card>;
   /** Сколько раз ошибались в слове (для «Работы над ошибками»). */
@@ -33,6 +41,8 @@ export type ProgressData = {
 
 const KEY = 'udm.progress.v1';
 const MAX_FREEZES = 2;
+/** Сколько уроков нужно пройти (включая первый после перерыва), чтобы вернуть серию. */
+export const REPAIR_LESSONS = 3;
 
 function fresh(): ProgressData {
   return {
@@ -75,6 +85,8 @@ export type Reward = {
   streakExtended: boolean;
   usedFreeze: number;
   goalReached: boolean;
+  /** Сколько дней серии вернули починкой (0 — нет). */
+  repaired: number;
   newAchievements: string[];
   firstTime: boolean;
 };
@@ -104,6 +116,13 @@ class Progress {
     const missed = gap - 1;
     if (missed <= s.freezes) return { value: s.current, doneToday: false, atRisk: true, broken: false, canFreeze: true };
     return { value: 0, doneToday: false, atRisk: false, broken: s.current > 0, canFreeze: false };
+  }
+
+  /** Можно ли вернуть прерванную серию и сколько уроков осталось. */
+  get repair(): { value: number; left: number } | null {
+    const l = this.data.streak.lost;
+    if (!l || diffDays(l.since, this.today) > 1) return null;
+    return { value: l.value, left: Math.max(0, REPAIR_LESSONS - l.lessons) };
   }
 
   lesson(id: string): LessonState | undefined {
@@ -142,8 +161,24 @@ class Progress {
           s.freezes -= missed;
           for (let i = 1; i <= missed; i++) s.frozen.push(addDays(s.last, i));
           s.current += 1;
-        } else s.current = 1;
+        } else {
+          // Серия прервалась — не наказываем: её можно вернуть, пройдя ещё уроки за 2 дня
+          if (s.current >= 2) s.lost = { value: s.current, since: today, lessons: 0 };
+          s.current = 1;
+        }
         extended = true;
+      }
+    }
+    let repaired = 0;
+    if (s.lost) {
+      if (diffDays(s.lost.since, today) > 1) s.lost = null;
+      else {
+        s.lost.lessons += 1;
+        if (s.lost.lessons >= REPAIR_LESSONS) {
+          repaired = s.lost.value;
+          s.current = s.lost.value + s.current;
+          s.lost = null;
+        }
       }
     }
     if (extended) {
@@ -152,7 +187,7 @@ class Progress {
       if (s.current > 0 && s.current % 7 === 0) s.freezes = Math.min(MAX_FREEZES, s.freezes + 1);
     }
     s.best = Math.max(s.best, s.current);
-    return { streakBefore, streakAfter: s.current, streakExtended: extended, usedFreeze, goalReached };
+    return { streakBefore, streakAfter: s.current, streakExtended: extended, usedFreeze, goalReached, repaired };
   }
 
   #applyGrades(grades: Record<string, Grade>) {

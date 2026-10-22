@@ -5,6 +5,9 @@
   import { allLessons } from '$lib/course';
   import { dayKey, addDays } from '$lib/dates';
   import Octagram from '../components/Octagram.svelte';
+  import { downloadIcs } from '$lib/reminder';
+
+  let remindAt = $state('19:00');
 
   const d = $derived(progress.data);
   const streak = $derived(progress.streakState);
@@ -145,6 +148,13 @@
         {/each}
       </div>
     </div>
+  </div>
+
+  <h2>Напоминание</h2>
+  <div class="card remind">
+    <p class="muted">Добавьте в календарь ежедневное событие — телефон сам напомнит про урок. Уведомления сайта не нужны.</p>
+    <label class="time">Каждый день в <input type="time" bind:value={remindAt} aria-label="Время напоминания" /></label>
+    <button class="btn btn--ghost" onclick={() => downloadIcs(remindAt)} data-testid="reminder">Добавить в календарь</button>
   </div>
 
   <h2>Перенос прогресса</h2>
@@ -399,6 +409,28 @@
     padding: 8px 10px;
     font-size: 0.85rem;
     font-weight: 600;
+  }
+  .remind {
+    display: grid;
+    gap: 10px;
+    justify-items: start;
+  }
+  .remind p {
+    margin: 0;
+  }
+  .time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+  }
+  .time input {
+    height: 44px;
+    padding: 0 12px;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    font: inherit;
   }
   .transfer {
     display: grid;

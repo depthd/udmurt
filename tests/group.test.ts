@@ -25,3 +25,13 @@ describe('группа', () => {
     expect(weekXp(days, new Date(2026, 9, 22))).toBe(15);
   });
 });
+
+import { makeIcs } from '../src/lib/reminder.ts';
+describe('напоминание', () => {
+  it('ics с ежедневным повтором и сигналом', () => {
+    const ics = makeIcs('19:30', 'https://depthd.github.io/udmurt/', new Date(2026, 9, 22, 12, 0));
+    expect(ics).toContain('RRULE:FREQ=DAILY');
+    expect(ics).toContain('DTSTART:20261022T193000');
+    expect(ics).toContain('BEGIN:VALARM');
+  });
+});
