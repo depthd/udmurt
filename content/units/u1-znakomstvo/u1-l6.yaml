@@ -52,3 +52,6 @@ exercises:
   - type: tiles
     item: kytyn-ton-uliskod
     extra: [кытысь, мон]
+  - type: listen
+    item: mon-glazkaryn-ulisko
+    distractors: [mon-univ-dyshetskisko, kytyn-ton-uliskod]

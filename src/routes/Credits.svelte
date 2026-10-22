@@ -29,6 +29,13 @@
     },
   ];
 
+  const audio = {
+    title: 'Озвучка фраз (синтез речи)',
+    who: 'Meta MMS-TTS, модель facebook/mms-tts-udm. Каждая запись проверена обратным распознаванием (MMS ASR); записи с ошибками не используются',
+    url: 'https://huggingface.co/facebook/mms-tts-udm',
+    license: 'CC BY-NC 4.0 — только некоммерческое использование',
+  };
+
   const tech = [
     { title: 'Шрифты Rubik и Nunito', who: 'Google Fonts', license: 'SIL Open Font License 1.1', url: 'https://fonts.google.com/' },
     { title: 'Svelte', who: 'Svelte contributors', license: 'MIT', url: 'https://svelte.dev/' },
@@ -74,6 +81,16 @@
         <p class="meta"><span class="chip">{s.license}</span></p>
       </li>
     {/each}
+  </ul>
+
+  <h2>Озвучка</h2>
+  <ul class="list">
+    <li class="card">
+      <p class="t"><a href={audio.url} target="_blank" rel="noopener">{audio.title}</a></p>
+      <p class="muted">{audio.who}</p>
+      <p class="meta"><span class="chip">{audio.license}</span></p>
+      <p class="muted small">Синтезированные записи помечены словом «синтез». Голос носителя лучше — если хотите записать фразы, напишите нам.</p>
+    </li>
   </ul>
 
   <h2>Технологии</h2>

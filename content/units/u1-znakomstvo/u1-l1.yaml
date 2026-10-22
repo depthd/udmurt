@@ -36,3 +36,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: zechbur
+  - type: listen
+    item: zechbures
+    distractors: [zechbur, badzym-tau]

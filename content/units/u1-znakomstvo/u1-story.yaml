@@ -52,3 +52,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mon-glazkarys
+  - type: listen
+    item: oydo-todmatskom
+    distractors: [mon-glazkarys]

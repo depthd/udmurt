@@ -39,3 +39,6 @@ exercises:
     item: sizym
   - type: match
     items: [odig, kuin, vit, sizym, ukmys]
+  - type: listen
+    item: arnyayn-sizym-nunal
+    distractors: [kuat, das]

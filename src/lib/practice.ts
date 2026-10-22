@@ -46,9 +46,7 @@ export function pickItems(opts: {
 function distractorsFor(it: LexItem, pool: LexItem[], seed: string, n = 2): string[] {
   const same = pool.filter((p) => p.id !== it.id && p.kind === it.kind && p.ru !== it.ru && p.udm !== it.udm);
   const other = pool.filter((p) => p.id !== it.id && p.kind !== it.kind && p.ru !== it.ru);
-  return seededShuffle([...seededShuffle(same, seed), ...seededShuffle(other, seed + 'o')], seed)
-    .slice(0, n)
-    .map((p) => p.id);
+  return [...seededShuffle(same, seed), ...seededShuffle(other, seed + 'o')].slice(0, n).map((p) => p.id);
 }
 
 /** Построить задания: по 1 на слово, форматы чередуются; короткие сессии дополняются вторым проходом. */

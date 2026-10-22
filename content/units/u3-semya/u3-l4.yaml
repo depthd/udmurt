@@ -35,3 +35,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mynam-dyry-ovol
+  - type: listen
+    item: milyam-nylpiosmy-ovol
+    distractors: [mynam-dyry-ovol]

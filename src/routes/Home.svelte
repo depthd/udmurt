@@ -176,6 +176,14 @@
       </span>
       <span class="chev" aria-hidden="true">→</span>
     </a>
+    <a class="card about" href={href('/group')} data-testid="group-tile">
+      <span class="about-icon" aria-hidden="true">👥</span>
+      <span class="about-text">
+        <b>Группа</b>
+        <span class="muted">Лига недели, общая цель и режим проектора для пары</span>
+      </span>
+      <span class="chev" aria-hidden="true">→</span>
+    </a>
   </section>
 {/if}
 

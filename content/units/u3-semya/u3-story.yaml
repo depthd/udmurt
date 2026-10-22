@@ -34,3 +34,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mon-anaime-yaratisko
+  - type: listen
+    item: mynam-badzym-semyae
+    distractors: [mon-anaime-yaratisko]

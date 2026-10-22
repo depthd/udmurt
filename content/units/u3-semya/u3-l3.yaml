@@ -37,3 +37,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mynam-dyry-van
+  - type: listen
+    item: tilad-nylpiosty-van-a
+    distractors: [mynam-nyly-van, mynam-dyry-van]

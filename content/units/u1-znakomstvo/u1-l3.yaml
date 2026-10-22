@@ -48,3 +48,6 @@ exercises:
     dir: udm-ru
     item: mon-student-ovol
     extra: [тоже, да]
+  - type: listen
+    item: mon-student-ovol
+    distractors: [mon-student, mon-no-student]

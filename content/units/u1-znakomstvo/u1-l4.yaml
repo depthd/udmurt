@@ -52,3 +52,6 @@ exercises:
   - type: tiles
     item: ton-kytys-luiskod
     extra: [кытын, мон]
+  - type: listen
+    item: mon-izhkarys
+    distractors: [mon-glazkarys, mon-vengriys]

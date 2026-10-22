@@ -37,3 +37,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mynam-kyk-korkae
+  - type: listen
+    item: mon-nyl-kyl-todisko
+    distractors: [mynam-kyk-korkae, mon-kuin-gozhtet-gozhti]

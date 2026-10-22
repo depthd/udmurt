@@ -1,0 +1,821 @@
+{
+ "items": {
+  "agai": {
+   "asr": "аре",
+   "cer": 0.75,
+   "seconds": 0.86,
+   "sha": "499b9ba8a9",
+   "text": "агай"
+  },
+  "ali": {
+   "asr": "ае",
+   "cer": 0.667,
+   "seconds": 1.1,
+   "sha": "a6b8b6e99a",
+   "text": "али"
+  },
+  "ali-kuin-chas": {
+   "asr": "каликуинчаз",
+   "cer": 0.385,
+   "seconds": 1.62,
+   "sha": "6adf4864b4",
+   "text": "Али куинь час."
+  },
+  "ali-nyl-chas-das-minut": {
+   "asr": "аринир час дас минуд",
+   "cer": 0.304,
+   "seconds": 2.3,
+   "sha": "1572475db4",
+   "text": "Али ньыль час дас минут."
+  },
+  "ali-sizym-chas": {
+   "asr": "ари сизьым чаз",
+   "cer": 0.143,
+   "seconds": 1.94,
+   "sha": "51a1db95dd",
+   "text": "Али сизьым час."
+  },
+  "ali-vit-chas": {
+   "asr": "тари ричаз",
+   "cer": 0.583,
+   "seconds": 1.2,
+   "sha": "815ad2166c",
+   "text": "Али вить час."
+  },
+  "anai": {
+   "asr": "танари",
+   "cer": 0.75,
+   "seconds": 0.74,
+   "sha": "4e75709157",
+   "text": "анай"
+  },
+  "anai-atai": {
+   "asr": "паноякай",
+   "cer": 0.667,
+   "seconds": 0.94,
+   "sha": "5f1d944eda",
+   "text": "анай-атай"
+  },
+  "annaly-kuamyn-ares": {
+   "asr": "анналы куамын арез",
+   "cer": 0.056,
+   "seconds": 2.0,
+   "sha": "02ba7cad85",
+   "text": "Анналы куамын арес."
+  },
+  "apai": {
+   "asr": "тапаре",
+   "cer": 0.75,
+   "seconds": 0.82,
+   "sha": "b53a5403df",
+   "text": "апай"
+  },
+  "arnyayn-sizym-nunal": {
+   "asr": "арняем сизьым нунал",
+   "cer": 0.105,
+   "seconds": 2.05,
+   "sha": "252a3a1445",
+   "text": "Арняын сизьым нунал."
+  },
+  "atai": {
+   "asr": "датай",
+   "cer": 0.25,
+   "seconds": 0.83,
+   "sha": "99c4d9af8a",
+   "text": "атай"
+  },
+  "badzym-tau": {
+   "asr": "бадӟым со",
+   "cer": 0.3,
+   "seconds": 1.25,
+   "sha": "aef80235df",
+   "text": "Бадӟым тау!"
+  },
+  "ben": {
+   "asr": "вел",
+   "cer": 0.667,
+   "seconds": 0.67,
+   "sha": "988b8248d4",
+   "text": "Бен."
+  },
+  "ben-mon-student": {
+   "asr": "бен мон сулы",
+   "cer": 0.333,
+   "seconds": 1.92,
+   "sha": "8ebcf55e58",
+   "text": "Бен, мон студент."
+  },
+  "chas": {
+   "asr": "фас",
+   "cer": 0.333,
+   "seconds": 1.09,
+   "sha": "1e0e6a4d86",
+   "text": "час"
+  },
+  "das": {
+   "asr": "вас",
+   "cer": 0.333,
+   "seconds": 1.14,
+   "sha": "da2fbee158",
+   "text": "дас"
+  },
+  "das-kuin": {
+   "asr": "наскуин",
+   "cer": 0.333,
+   "seconds": 1.42,
+   "sha": "66d0f45389",
+   "text": "дас куинь"
+  },
+  "das-odig": {
+   "asr": "дас одӥ",
+   "cer": 0.125,
+   "seconds": 1.34,
+   "sha": "ea1150bcfb",
+   "text": "дас одӥг"
+  },
+  "das-sizym": {
+   "asr": "на сизьын",
+   "cer": 0.3,
+   "seconds": 1.46,
+   "sha": "8006abd418",
+   "text": "дас сизьым"
+  },
+  "glazkar": {
+   "asr": "ӝуасха",
+   "cer": 0.714,
+   "seconds": 1.23,
+   "sha": "40b238855c",
+   "text": "Глазкар"
+  },
+  "glazkarys": {
+   "asr": "вылаз карысь",
+   "cer": 0.3,
+   "seconds": 1.52,
+   "sha": "0ff2465d7d",
+   "text": "Глазкарысь"
+  },
+  "izhkar": {
+   "asr": "вира",
+   "cer": 0.8,
+   "seconds": 0.75,
+   "sha": "73db90330e",
+   "text": "Ижкар"
+  },
+  "koenya": {
+   "asr": "кале",
+   "cer": 0.75,
+   "seconds": 0.74,
+   "sha": "81b24104bc",
+   "text": "кӧня"
+  },
+  "koenya-chas": {
+   "asr": "кӧня чаз",
+   "cer": 0.125,
+   "seconds": 1.12,
+   "sha": "0b4ada79d0",
+   "text": "Кӧня час?"
+  },
+  "koenya-tynyd-ares": {
+   "asr": "кӧня тыныд арез",
+   "cer": 0.067,
+   "seconds": 1.5,
+   "sha": "0510476134",
+   "text": "Кӧня тыныд арес?"
+  },
+  "kuamyn": {
+   "asr": "куамын",
+   "cer": 0.0,
+   "seconds": 0.96,
+   "sha": "b31fa204fd",
+   "text": "куамын"
+  },
+  "kuat": {
+   "asr": "куазь",
+   "cer": 0.2,
+   "seconds": 0.96,
+   "sha": "f85e011d55",
+   "text": "куать"
+  },
+  "kuatton": {
+   "asr": "куать тоам",
+   "cer": 0.375,
+   "seconds": 1.12,
+   "sha": "d367434682",
+   "text": "куатьтон"
+  },
+  "kuin": {
+   "asr": "куи",
+   "cer": 0.4,
+   "seconds": 0.8,
+   "sha": "41645d4b6e",
+   "text": "куинь"
+  },
+  "kyk": {
+   "asr": "кы",
+   "cer": 0.333,
+   "seconds": 0.45,
+   "sha": "f49f48044c",
+   "text": "кык"
+  },
+  "kyk-chasyn-lykty": {
+   "asr": "кыкычасэл лыкты",
+   "cer": 0.2,
+   "seconds": 1.78,
+   "sha": "895f27ea5f",
+   "text": "Кык часын лыкты."
+  },
+  "kytyn-mynam-anai-atae": {
+   "asr": "кытын мынам анаата",
+   "cer": 0.143,
+   "seconds": 2.05,
+   "sha": "966fadb5f4",
+   "text": "Кытын мынам анай-атае?"
+  },
+  "kytyn-ton-uliskod": {
+   "asr": "кытын тон улӥськод",
+   "cer": 0.0,
+   "seconds": 1.92,
+   "sha": "edd4bf51b0",
+   "text": "Кытын тон улӥськод?"
+  },
+  "kyz": {
+   "asr": "кызь",
+   "cer": 0.0,
+   "seconds": 1.04,
+   "sha": "6eb39e3065",
+   "text": "кызь"
+  },
+  "kyzy-tilad-nimdy": {
+   "asr": "кызьы тӥляд нинды",
+   "cer": 0.059,
+   "seconds": 1.7,
+   "sha": "1657a274f8",
+   "text": "Кызьы тӥляд нимды?"
+  },
+  "kyzy-uliskody": {
+   "asr": "кызьы улӥськоды",
+   "cer": 0.0,
+   "seconds": 1.58,
+   "sha": "a00aaaee8c",
+   "text": "Кызьы улӥськоды?"
+  },
+  "milyam-nylpiosmy-ovol": {
+   "asr": "милян нылпиосмы ӧвӧл",
+   "cer": 0.05,
+   "seconds": 2.27,
+   "sha": "356156e739",
+   "text": "Милям нылпиосмы ӧвӧл."
+  },
+  "mon": {
+   "asr": "воа",
+   "cer": 0.667,
+   "seconds": 1.1,
+   "sha": "b22a944390",
+   "text": "мон"
+  },
+  "mon-anaime-yaratisko": {
+   "asr": "мон анайме яратӥсько",
+   "cer": 0.0,
+   "seconds": 2.13,
+   "sha": "167ab732c4",
+   "text": "Мон анайме яратӥсько."
+  },
+  "mon-dyshetis": {
+   "asr": "мон дышетӥсь",
+   "cer": 0.0,
+   "seconds": 1.47,
+   "sha": "c045348378",
+   "text": "Мон дышетӥсь."
+  },
+  "mon-dyshetskis": {
+   "asr": "мон дышетскись",
+   "cer": 0.0,
+   "seconds": 1.76,
+   "sha": "fe9bdfd661",
+   "text": "Мон дышетскись."
+  },
+  "mon-dzuch": {
+   "asr": "мон зузь",
+   "cer": 0.429,
+   "seconds": 1.33,
+   "sha": "101cbe46d9",
+   "text": "Мон ӟуч."
+  },
+  "mon-dzuch-samen-veraskisko": {
+   "asr": "мон ӟыт сямен вераськисько",
+   "cer": 0.077,
+   "seconds": 2.35,
+   "sha": "3c89b1da6d",
+   "text": "Мон ӟуч сямен вераськисько."
+  },
+  "mon-emchi-ovol": {
+   "asr": "мон эмзы ӧвӧл",
+   "cer": 0.154,
+   "seconds": 1.79,
+   "sha": "8240a3c714",
+   "text": "Мон эмчи ӧвӧл."
+  },
+  "mon-glazkaryn-ulisko": {
+   "asr": "мон глаз карын улӥсько",
+   "cer": 0.048,
+   "seconds": 2.05,
+   "sha": "9eff4eec12",
+   "text": "Мон Глазкарын улӥсько."
+  },
+  "mon-glazkarys": {
+   "asr": "мон вылаз карысь",
+   "cer": 0.214,
+   "seconds": 1.82,
+   "sha": "675b0e4c97",
+   "text": "Мон Глазкарысь."
+  },
+  "mon-izhkarys": {
+   "asr": "мон ишь карысь",
+   "cer": 0.25,
+   "seconds": 1.42,
+   "sha": "70dad3a107",
+   "text": "Мон Ижкарысь."
+  },
+  "mon-kuin-gozhtet-gozhti": {
+   "asr": "мон куинь гожтэт гожтӥ",
+   "cer": 0.0,
+   "seconds": 2.05,
+   "sha": "27c814e260",
+   "text": "Мон куинь гожтэт гожтӥ."
+  },
+  "mon-no-student": {
+   "asr": "мон но студет",
+   "cer": 0.071,
+   "seconds": 1.57,
+   "sha": "c53f5ab52d",
+   "text": "Мон но студент."
+  },
+  "mon-nyl-kyl-todisko": {
+   "asr": "мон ньырь кыл тодӥсько",
+   "cer": 0.045,
+   "seconds": 2.13,
+   "sha": "49cb07ac75",
+   "text": "Мон ньыль кыл тодӥсько."
+  },
+  "mon-oj-vala": {
+   "asr": "мон ӧй вала",
+   "cer": 0.0,
+   "seconds": 1.2,
+   "sha": "f9ff7ce61f",
+   "text": "Мон ӧй вала."
+  },
+  "mon-student": {
+   "asr": "мон студе",
+   "cer": 0.182,
+   "seconds": 1.5,
+   "sha": "e19609c5e5",
+   "text": "Мон студент."
+  },
+  "mon-student-ovol": {
+   "asr": "мон студент ӧвӧл",
+   "cer": 0.0,
+   "seconds": 1.78,
+   "sha": "2adb795768",
+   "text": "Мон студент ӧвӧл."
+  },
+  "mon-udmurt": {
+   "asr": "мон уд мурп",
+   "cer": 0.2,
+   "seconds": 1.38,
+   "sha": "187fceeeee",
+   "text": "Мон удмурт."
+  },
+  "mon-udmurt-kylez-dyshetisko": {
+   "asr": "мон удмурт кылэз дышетӥсько",
+   "cer": 0.0,
+   "seconds": 2.5,
+   "sha": "e55025d541",
+   "text": "Мон удмурт кылэз дышетӥсько."
+  },
+  "mon-ug-todisky": {
+   "asr": "мон уг тодӥськы",
+   "cer": 0.0,
+   "seconds": 1.57,
+   "sha": "db22229744",
+   "text": "Мон уг тодӥськы."
+  },
+  "mon-univ-dyshetskisko": {
+   "asr": "мон униле сите тын дышетскисько",
+   "cer": 0.1,
+   "seconds": 2.66,
+   "sha": "4e9addaf24",
+   "text": "Мон университетын дышетскисько."
+  },
+  "mon-vengriys": {
+   "asr": "мон вен гиысь",
+   "cer": 0.154,
+   "seconds": 1.54,
+   "sha": "82f303eb27",
+   "text": "Мон Венгриысь."
+  },
+  "mynam-badzym-semyae": {
+   "asr": "мынам бадӟым сенъле",
+   "cer": 0.158,
+   "seconds": 1.95,
+   "sha": "5e9422c7aa",
+   "text": "Мынам бадӟым семьяе."
+  },
+  "mynam-dyry-ovol": {
+   "asr": "мынам дырыр ӧвӧл",
+   "cer": 0.067,
+   "seconds": 1.78,
+   "sha": "e3a69b6ff5",
+   "text": "Мынам дыры ӧвӧл."
+  },
+  "mynam-dyry-van": {
+   "asr": "мынам дыры вань",
+   "cer": 0.0,
+   "seconds": 1.63,
+   "sha": "a36814a27f",
+   "text": "Мынам дыры вань."
+  },
+  "mynam-kyk-korkae": {
+   "asr": "мынам кыд корка",
+   "cer": 0.125,
+   "seconds": 1.68,
+   "sha": "1f92ea71da",
+   "text": "Мынам кык коркае."
+  },
+  "mynam-kyshnoe-dyshetis": {
+   "asr": "мынам кышноед дышетӥсь",
+   "cer": 0.048,
+   "seconds": 2.21,
+   "sha": "c5491d941c",
+   "text": "Мынам кышное — дышетӥсь."
+  },
+  "mynam-nyly-van": {
+   "asr": "мынам нылы вани",
+   "cer": 0.067,
+   "seconds": 1.66,
+   "sha": "c9297a7cd0",
+   "text": "Мынам нылы вань."
+  },
+  "mynam-odig-agae": {
+   "asr": "мынам одӥг агае но кык сузэръёсы",
+   "cer": 0.0,
+   "seconds": 2.66,
+   "sha": "5c2c073f5e",
+   "text": "Мынам одӥг агае но кык сузэръёсы."
+  },
+  "mynam-pie-student": {
+   "asr": "мынам пиез тудент",
+   "cer": 0.118,
+   "seconds": 1.78,
+   "sha": "394eb96fdb",
+   "text": "Мынам пие студент."
+  },
+  "mynym-das-tyamys-ares": {
+   "asr": "мынын дастямы сарез",
+   "cer": 0.25,
+   "seconds": 2.0,
+   "sha": "ee6e16b6a6",
+   "text": "Мыным дас тямыс арес."
+  },
+  "mynym-das-ukmys-ares": {
+   "asr": "мыным дас укмы сарез",
+   "cer": 0.15,
+   "seconds": 2.16,
+   "sha": "d3a5730f03",
+   "text": "Мыным дас укмыс арес."
+  },
+  "mynym-kuatton-kyk-ares": {
+   "asr": "мыным куатьтон кык арез",
+   "cer": 0.043,
+   "seconds": 2.59,
+   "sha": "706eaa0777",
+   "text": "Мыным куатьтон кык арес."
+  },
+  "mynym-kyz-ares": {
+   "asr": "мыным кызярез",
+   "cer": 0.267,
+   "seconds": 1.78,
+   "sha": "33f7590edd",
+   "text": "Мыным кызь арес."
+  },
+  "mynym-kyz-nyl-ares": {
+   "asr": "мынэм кызь ны лярез",
+   "cer": 0.333,
+   "seconds": 1.97,
+   "sha": "429bf9d115",
+   "text": "Мыным кызь ньыль арес."
+  },
+  "nim": {
+   "asr": "выы",
+   "cer": 1.0,
+   "seconds": 0.56,
+   "sha": "79597a11e8",
+   "text": "ним"
+  },
+  "nimy": {
+   "asr": "нинэ",
+   "cer": 0.5,
+   "seconds": 0.7,
+   "sha": "a4637f016e",
+   "text": "нимы"
+  },
+  "nosh-ton": {
+   "asr": "нош тон",
+   "cer": 0.0,
+   "seconds": 1.22,
+   "sha": "93c952bcd9",
+   "text": "Нош тон?"
+  },
+  "nosh-tynad": {
+   "asr": "нош тына",
+   "cer": 0.111,
+   "seconds": 0.98,
+   "sha": "6fcd0c5566",
+   "text": "Нош тынад?"
+  },
+  "nyl": {
+   "asr": "лы",
+   "cer": 0.8,
+   "seconds": 0.66,
+   "sha": "7a550ba16c",
+   "text": "ньыль"
+  },
+  "nyl-daughter": {
+   "asr": "ныд",
+   "cer": 0.333,
+   "seconds": 0.62,
+   "sha": "0b436a7a18",
+   "text": "ныл"
+  },
+  "nyldon": {
+   "asr": "ни дон",
+   "cer": 0.5,
+   "seconds": 0.62,
+   "sha": "13564696c9",
+   "text": "ньыльдон"
+  },
+  "nylpi": {
+   "asr": "но ве",
+   "cer": 0.8,
+   "seconds": 0.82,
+   "sha": "e50f5bbb55",
+   "text": "нылпи"
+  },
+  "odig": {
+   "asr": "воник",
+   "cer": 1.0,
+   "seconds": 0.7,
+   "sha": "9a16c50449",
+   "text": "одӥг"
+  },
+  "odig-kyk-kuin": {
+   "asr": "одӥг кык куиньстарыт",
+   "cer": 0.1,
+   "seconds": 2.1,
+   "sha": "b46414cc4e",
+   "text": "Одӥг, кык, куинь, старт!"
+  },
+  "ovol": {
+   "asr": "евы",
+   "cer": 0.75,
+   "seconds": 0.69,
+   "sha": "c4ac356e42",
+   "text": "Ӧвӧл."
+  },
+  "oydo-todmatskom": {
+   "asr": "ульдо тодматском",
+   "cer": 0.2,
+   "seconds": 1.94,
+   "sha": "e5eddaf09a",
+   "text": "Ойдо тодматском!"
+  },
+  "ozhytak-gine": {
+   "asr": "озьы так гинэ",
+   "cer": 0.364,
+   "seconds": 1.33,
+   "sha": "93fd1b016c",
+   "text": "Ӧжытак гинэ."
+  },
+  "pesyanai": {
+   "asr": "тэ санай",
+   "cer": 0.571,
+   "seconds": 0.99,
+   "sha": "b910b0ea40",
+   "text": "песянай"
+  },
+  "pesyatai": {
+   "asr": "тӥза та",
+   "cer": 0.857,
+   "seconds": 1.01,
+   "sha": "d38153679a",
+   "text": "песятай"
+  },
+  "pi": {
+   "asr": "",
+   "cer": 1.0,
+   "seconds": 0.45,
+   "sha": "28bb85f778",
+   "text": "пи"
+  },
+  "semya": {
+   "asr": "сӧле",
+   "cer": 0.8,
+   "seconds": 0.91,
+   "sha": "51496baf88",
+   "text": "семья"
+  },
+  "sizym": {
+   "asr": "сижын",
+   "cer": 0.5,
+   "seconds": 1.33,
+   "sha": "b3d1606a3d",
+   "text": "сизьым"
+  },
+  "soly-das-sizym-ares": {
+   "asr": "солы дас сизьы марез",
+   "cer": 0.15,
+   "seconds": 2.3,
+   "sha": "5fceab1fa2",
+   "text": "Солы дас сизьым арес."
+  },
+  "soos-suzeryos": {
+   "asr": "соос сузэръёс",
+   "cer": 0.0,
+   "seconds": 1.68,
+   "sha": "04a130148b",
+   "text": "Соос сузэръёс."
+  },
+  "student": {
+   "asr": "студе",
+   "cer": 0.286,
+   "seconds": 1.09,
+   "sha": "38107313dd",
+   "text": "студент"
+  },
+  "suzer": {
+   "asr": "руэ",
+   "cer": 0.6,
+   "seconds": 0.8,
+   "sha": "25907ead51",
+   "text": "сузэр"
+  },
+  "syu": {
+   "asr": "жек",
+   "cer": 1.5,
+   "seconds": 0.77,
+   "sha": "e886b057b1",
+   "text": "сю"
+  },
+  "syurs": {
+   "asr": "иус",
+   "cer": 0.75,
+   "seconds": 1.01,
+   "sha": "e35b9fb1ce",
+   "text": "сюрс"
+  },
+  "ta-kyshnomurt-emchi": {
+   "asr": "та кышномурт левзи",
+   "cer": 0.235,
+   "seconds": 2.11,
+   "sha": "b67f7dc892",
+   "text": "Та кышномурт — эмчи."
+  },
+  "tau": {
+   "asr": "ван",
+   "cer": 0.667,
+   "seconds": 0.67,
+   "sha": "ac48d29540",
+   "text": "Тау!"
+  },
+  "tau-umoj": {
+   "asr": "та уг моы",
+   "cer": 0.5,
+   "seconds": 1.26,
+   "sha": "5e5686ea6e",
+   "text": "Тау, умой!"
+  },
+  "tilad-nylpiosty-van-a": {
+   "asr": "тӥляд нылпиосты ван-а",
+   "cer": 0.045,
+   "seconds": 2.1,
+   "sha": "9705604933",
+   "text": "Тӥляд нылпиосты вань-а?"
+  },
+  "tom-tynad-vynyd": {
+   "asr": "зон тынад выны",
+   "cer": 0.2,
+   "seconds": 1.9,
+   "sha": "e6c12914f3",
+   "text": "Том тынад выныд."
+  },
+  "ton": {
+   "asr": "ан",
+   "cer": 0.667,
+   "seconds": 0.66,
+   "sha": "cbca6528ca",
+   "text": "тон"
+  },
+  "ton-kytys-luiskod": {
+   "asr": "тон кытысь луиськод",
+   "cer": 0.0,
+   "seconds": 1.89,
+   "sha": "ef4379ca48",
+   "text": "Тон кытысь луиськод?"
+  },
+  "ton-student-a": {
+   "asr": "тон студента",
+   "cer": 0.077,
+   "seconds": 1.5,
+   "sha": "b123c8e97f",
+   "text": "Тон студент-а?"
+  },
+  "ton-udmurt-samen-veraskiskod-a": {
+   "asr": "тон уд мурт сянэн вераськиськод-а",
+   "cer": 0.094,
+   "seconds": 2.58,
+   "sha": "78e62e1683",
+   "text": "Тон удмурт сямен вераськиськод-а?"
+  },
+  "tuzh-umoj": {
+   "asr": "су жуумхы",
+   "cer": 0.625,
+   "seconds": 0.93,
+   "sha": "a03d1640c4",
+   "text": "Туж умой!"
+  },
+  "tyamys": {
+   "asr": "тямыз",
+   "cer": 0.2,
+   "seconds": 1.06,
+   "sha": "148f6c4c43",
+   "text": "тямыс"
+  },
+  "ukmys": {
+   "asr": "укумыз",
+   "cer": 0.4,
+   "seconds": 1.02,
+   "sha": "d609065a26",
+   "text": "укмыс"
+  },
+  "van": {
+   "asr": "пӧн",
+   "cer": 0.75,
+   "seconds": 0.74,
+   "sha": "cf96ab2788",
+   "text": "вань"
+  },
+  "vit": {
+   "asr": "ви",
+   "cer": 0.5,
+   "seconds": 0.51,
+   "sha": "a232472a0e",
+   "text": "вить"
+  },
+  "vitton": {
+   "asr": "висон",
+   "cer": 0.429,
+   "seconds": 0.9,
+   "sha": "2548d5e2c0",
+   "text": "витьтон"
+  },
+  "vyn": {
+   "asr": "плы",
+   "cer": 1.0,
+   "seconds": 0.5,
+   "sha": "46084eaade",
+   "text": "вын"
+  },
+  "zech-lu": {
+   "asr": "пиеч вор",
+   "cer": 0.833,
+   "seconds": 1.14,
+   "sha": "45de81227e",
+   "text": "Ӟеч лу!"
+  },
+  "zech-lue": {
+   "asr": "есь вуэ",
+   "cer": 0.571,
+   "seconds": 1.17,
+   "sha": "a1aaf0c915",
+   "text": "Ӟеч луэ!"
+  },
+  "zechbur": {
+   "asr": "ӟеч вур",
+   "cer": 0.333,
+   "seconds": 0.93,
+   "sha": "96d2d9f197",
+   "text": "Ӟечбур!"
+  },
+  "zechbures": {
+   "asr": "ӟеч луресь",
+   "cer": 0.222,
+   "seconds": 1.31,
+   "sha": "ac6487b7a9",
+   "text": "Ӟечбуресь!"
+  }
+ },
+ "meta": {
+  "license": "CC BY-NC 4.0",
+  "model": "facebook/mms-tts-udm",
+  "note": "Синтез речи (Meta MMS-TTS). Может ошибаться в произношении; при появлении записей носителей — заменить."
+ }
+}

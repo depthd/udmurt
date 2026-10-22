@@ -46,3 +46,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mynam-nimy
+  - type: listen
+    item: kyzy-tilad-nimdy
+    distractors: [nosh-tynad]

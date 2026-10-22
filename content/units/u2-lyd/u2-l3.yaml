@@ -40,3 +40,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: das-odig
+  - type: listen
+    item: soly-das-sizym-ares
+    distractors: [mynym-das-ukmys-ares, das-sizym]

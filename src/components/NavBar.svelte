@@ -11,7 +11,7 @@
     { name: 'practice', path: '/practice', label: 'Повторять', icon: 'M12 4a8 8 0 1 0 8 8h-2a6 6 0 1 1-1.76-4.24L14 10h6V4l-2.35 2.35A7.97 7.97 0 0 0 12 4z', match: ['practice'] },
     { name: 'about', path: '/about', label: 'О языке', icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z', match: ['about'] },
     { name: 'dict', path: '/dict', label: 'Словарь', icon: 'M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1 3v2h9V6zm0 4v2h9v-2zm0 4v2h6v-2z', match: ['dict'] },
-    { name: 'library', path: '/library', label: 'Материалы', icon: 'M4 4h4v16H4zm6 0h4v16h-4zm6.2.6 3.8-1 4.1 15.4-3.8 1z', match: ['library', 'credits'] },
+    { name: 'library', path: '/library', label: 'Ресурсы', icon: 'M4 4h4v16H4zm6 0h4v16h-4zm6.2.6 3.8-1 4.1 15.4-3.8 1z', match: ['library', 'credits'] },
     { name: 'me', path: '/me', label: 'Профиль', icon: 'M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z', match: ['me'] },
   ];
 </script>
@@ -73,10 +73,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  @media (max-width: 360px) {
+  @media (max-width: 430px) {
     a {
-      font-size: 0.6rem;
-      letter-spacing: -0.01em;
+      font-size: 0.62rem;
+      letter-spacing: -0.02em;
+    }
+  }
+  @media (max-width: 370px) {
+    a {
+      font-size: 0.55rem;
+      padding-inline: 0;
     }
   }
   a.active {

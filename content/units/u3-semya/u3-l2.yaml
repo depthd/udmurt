@@ -40,3 +40,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: soos-suzeryos
+  - type: listen
+    item: mynam-odig-agae
+    distractors: [soos-suzeryos, tom-tynad-vynyd]

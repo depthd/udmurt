@@ -158,6 +158,7 @@
   </div>
 
   <div class="links">
+    <a href={href('/group')}>Группа и лига недели</a>
     <a href={href('/credits')}>Источники и благодарности</a>
     <a href="https://github.com/depthd/udmurt" target="_blank" rel="noopener">Проект на GitHub</a>
     <button class="btn btn--flat danger" onclick={doReset} data-testid="reset">Сбросить прогресс</button>

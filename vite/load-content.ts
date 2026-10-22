@@ -15,8 +15,13 @@ import { parse } from 'yaml';
 import { z } from 'zod';
 import { Course, LexiconFile, Lesson, SourcesFile, Unit, type Exercise } from '../src/lib/content/schema.ts';
 import { LibraryFile, type LibraryItem } from '../src/lib/content/library-schema.ts';
+import { exerciseRefs } from '../src/lib/content/refs.ts';
+export { exerciseRefs };
 
 export class ContentError extends Error {}
+
+/** Порог качества синтеза (доля ошибок обратного распознавания). */
+export const AUDIO_MAX_CER = 0.35;
 
 function readYaml(file: string): unknown {
   const text = fs.readFileSync(file, 'utf8');
@@ -42,27 +47,6 @@ function check<T extends z.ZodType>(schema: T, data: unknown, file: string): z.i
 const CourseHead = z.object({ id: z.string(), title: z.string(), units: z.array(z.string()).min(1) });
 const UnitHead = Unit.omit({ lessons: true }).extend({ lessons: z.array(z.string()).min(1) });
 
-/** Все id словника, на которые ссылается упражнение. */
-export function exerciseRefs(ex: Exercise): string[] {
-  switch (ex.type) {
-    case 'teach':
-    case 'tiles':
-    case 'type':
-    case 'build':
-      return [ex.item];
-    case 'choice':
-      return [ex.item, ...ex.distractors];
-    case 'listen':
-      return [ex.item, ...ex.distractors];
-    case 'match':
-      return ex.items;
-    case 'fill':
-      return ex.item ? [ex.item] : [];
-    case 'dialogue':
-      return ex.lines.flatMap((l) => (l.item ? [l.item] : []));
-  }
-}
-
 export function loadCourse(contentDir: string): Course {
   ROOT = path.dirname(contentDir);
   const head = check(CourseHead, readYaml(path.join(contentDir, 'course.yaml')), path.join(contentDir, 'course.yaml'));
@@ -74,6 +58,20 @@ export function loadCourse(contentDir: string): Course {
     .filter((f) => f.endsWith('.yaml'))
     .sort()
     .flatMap((f) => check(LexiconFile, readYaml(path.join(lexDir, f)), path.join(lexDir, f)).items);
+
+  // Озвучка: если в public/audio/manifest.json есть синтез этой фразы, прошедший обратную проверку
+  // распознаванием (CER ≤ 0,35, см. docs/audio-qa.md), подключаем его с пометкой «синтез».
+  const manPath = path.join(ROOT, 'public', 'audio', 'manifest.json');
+  if (fs.existsSync(manPath)) {
+    const man = JSON.parse(fs.readFileSync(manPath, 'utf8')) as { items: Record<string, { text: string; cer?: number }> };
+    for (const it of lexicon) {
+      const a = man.items[it.id];
+      if (!it.audio && a && a.text === it.udm && (a.cer ?? 1) <= AUDIO_MAX_CER) {
+        it.audio = it.id;
+        it.audio_synth = true;
+      }
+    }
+  }
 
   const errors: string[] = [];
   const lexIds = new Map<string, (typeof lexicon)[number]>();

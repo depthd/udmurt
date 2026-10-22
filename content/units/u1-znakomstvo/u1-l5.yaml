@@ -51,3 +51,6 @@ exercises:
     dir: udm-ru
     item: mynym-das-ukmys-ares
     extra: [двадцать, тебе]
+  - type: listen
+    item: mynym-das-ukmys-ares
+    distractors: [mynym-kyz-ares, mynym-das-tyamys-ares]

@@ -7,6 +7,7 @@
 |---|---|---|---|
 | `public/data/dict.json` | 38 842 удмуртские леммы с русским переводом, частью речи и частотным рангом | [uniparser-grammar-udm](https://github.com/timarkh/uniparser-grammar-udm): © 2014–2026 Т. Архангельский, М. Медведева, УдмФИЦ УрО РАН, Е. Кашкин | MIT (`licenses/uniparser-grammar-udm.MIT.txt`) |
 | `public/data/phrases.json` | 4 896 удмуртских предложений с русскими переводами | [Tatoeba](https://tatoeba.org/) — авторы указаны в каждой записи (основные: Kartinapai, kalmez) | [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/) |
+| `public/audio/*.mp3` | Синтезированная озвучка фраз словника (`manifest.json` — текст, длительность, результат обратного распознавания) | [Meta MMS-TTS](https://huggingface.co/facebook/mms-tts-udm), проверка — [MMS ASR](https://huggingface.co/facebook/mms-1b-all) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
 | `public/data/wikt.json` | 1 433 статьи: значения, примеры, МФА | [Русский Викисловарь](https://ru.wiktionary.org/wiki/Категория:Удмуртский_язык) через [kaikki.org](https://kaikki.org/) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — производные от этого файла распространяются на тех же условиях |
 
 Частотный ранг посчитан по частотному списку словоформ из того же репозитория uniparser-grammar-udm
@@ -17,3 +18,10 @@
 
 Как обновить: скачайте исходники (пути — в шапке скрипта) и выполните
 `python3 -I scripts/import_open_data.py <папка-с-исходниками>`.
+
+## Озвучка
+
+`scripts/tts/list-items.mjs` → `scripts/tts/mms_generate.py` → `scripts/tts/asr_check.py`.
+На сайте используются только записи с CER ≤ 0,35 (отчёт — `docs/audio-qa.md`); у таких слов в уроках
+появляется кнопка «динамик» с пометкой «синтез». Короткие одиночные слова синтез озвучивает плохо — для них нужны
+записи носителей (см. CONTRIBUTING.md).

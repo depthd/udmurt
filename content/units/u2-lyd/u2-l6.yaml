@@ -45,3 +45,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: ali-kuin-chas
+  - type: listen
+    item: ali-sizym-chas
+    distractors: [koenya-chas, kyk-chasyn-lykty]

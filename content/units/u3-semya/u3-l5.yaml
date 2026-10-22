@@ -33,3 +33,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: mynam-pie-student
+  - type: listen
+    item: ta-kyshnomurt-emchi
+    distractors: [mynam-pie-student, mynam-kyshnoe-dyshetis]

@@ -12,12 +12,14 @@
   import Library from './routes/Library.svelte';
   import Me from './routes/Me.svelte';
   import Credits from './routes/Credits.svelte';
+  import Group from './routes/Group.svelte';
+  import Projector from './routes/Projector.svelte';
   import NotFound from './routes/NotFound.svelte';
   import TopBar from './components/TopBar.svelte';
   import NavBar from './components/NavBar.svelte';
 
   const r = $derived(router.current);
-  const inLesson = $derived(r.name === 'lesson' || (r.name === 'practice' && ui.immersive));
+  const inLesson = $derived(r.name === 'lesson' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
 
   $effect(() => {
     if (progress.data.xp > 0) void requestPersist();
@@ -51,6 +53,10 @@
     <Me />
   {:else if r.name === 'credits'}
     <Credits />
+  {:else if r.name === 'group'}
+    <Group code={r.params.code} />
+  {:else if r.name === 'projector'}
+    <Projector />
   {:else}
     <NotFound />
   {/if}

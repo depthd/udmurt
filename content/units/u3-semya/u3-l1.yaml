@@ -37,3 +37,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: anai
+  - type: listen
+    item: mon-anaime-yaratisko
+    distractors: [kytyn-mynam-anai-atae]

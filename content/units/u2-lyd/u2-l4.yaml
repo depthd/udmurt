@@ -41,3 +41,6 @@ exercises:
     dir: udm-ru
     item: mynym-kuatton-kyk-ares
     extra: [двадцать, тридцать]
+  - type: listen
+    item: annaly-kuamyn-ares
+    distractors: [mynym-kyz-nyl-ares, mynym-kuatton-kyk-ares]

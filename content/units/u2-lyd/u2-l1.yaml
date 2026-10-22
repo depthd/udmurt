@@ -36,3 +36,6 @@ exercises:
   - type: type
     dir: ru-udm
     item: kyk
+  - type: listen
+    item: odig-kyk-kuin
+    distractors: [kyk]
