@@ -1,6 +1,40 @@
 id: u1-l1
-title: Мон
-goal: Сказать «я»
+title: Ӟечбуресь!
+goal: Здороваться, прощаться и благодарить
+icon: 👋
 exercises:
   - type: teach
-    item: mon
+    item: zechbures
+  - type: teach
+    item: zechbur
+  - type: choice
+    item: zechbures
+    distractors: [tau, zech-lu]
+  - type: teach
+    item: tau
+  - type: choice
+    dir: ru-udm
+    item: tau
+    distractors: [zechbur, ovol]
+  - type: teach
+    item: zech-lu
+  - type: match
+    items: [zechbures, zechbur, tau, zech-lu]
+  - type: teach
+    item: ben
+  - type: teach
+    item: ovol
+  - type: choice
+    item: ovol
+    distractors: [ben, tau]
+    pictures: true
+  - type: tiles
+    item: tau-umoj
+    extra: [Ӟеч, Бен]
+  - type: type
+    dir: ru-udm
+    item: tau
+  - type: tiles
+    dir: udm-ru
+    item: tuzh-umoj
+    extra: [Спасибо, плохо]

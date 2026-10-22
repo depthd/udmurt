@@ -1,0 +1,48 @@
+id: u1-l2
+title: Мон — {name}
+goal: Назвать себя и спросить имя
+icon: 🏷️
+exercises:
+  - type: teach
+    item: mon
+  - type: teach
+    item: mon-name
+  - type: choice
+    dir: ru-udm
+    item: mon
+    distractors: [ton]
+  - type: teach
+    item: nimy
+  - type: build
+    item: nimy
+    extra: [ыд, ысь]
+  - type: teach
+    item: mynam-nimy
+  - type: tiles
+    item: mynam-nimy
+    extra: [тон, ысь]
+  - type: teach
+    item: kyzy-tilad-nimdy
+  - type: fill
+    text: Мон Глаз___.
+    ru: Я из Глазова.
+    options: [ысь, ын, э]
+    answer: ысь
+    item: mon-glazys
+    explain: -ысь — «из» (исходный падеж). -ын — «в» (местный), -э — «в, куда» (входный).
+  - type: dialogue
+    lines:
+      - { who: Преподаватель, item: zechbures }
+      - { who: '{name}', item: zechbures }
+      - { who: Преподаватель, item: kyzy-tilad-nimdy }
+      - { who: '{name}', item: mynam-nimy }
+    question: Что спросил преподаватель?
+    options: [Как вас зовут?, Откуда вы?, Как поживаете?]
+    answer: Как вас зовут?
+  - type: type
+    dir: ru-udm
+    item: mon-name
+  - type: tiles
+    dir: udm-ru
+    item: mon-glazys
+    extra: [в, Ижевска]

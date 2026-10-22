@@ -1,7 +1,215 @@
+# Юнит 1 «Знакомство». Каждая запись — с источником и статусом проверки.
+# status: verified — проверено носителем/преподавателем; sourced — из источника, ждёт проверки; draft — черновик (в уроки нельзя).
+# {name} подставляется именем ученика (по умолчанию «Алексей»).
 items:
+  - id: zechbures
+    udm: Ӟечбуресь!
+    ru: Здравствуйте!
+    ru_alt: [Здравствуй!]
+    kind: phrase
+    emoji: 👋
+    morphemes:
+      - { form: ӟеч, meaning: 'хороший', kind: root }
+      - { form: бур, meaning: '«здоровый, благополучный» (как в ӟечбур)', kind: root }
+      - { form: есь, meaning: 'вежливая/множественная форма', kind: suffix }
+    note: Вежливое приветствие — так здороваются с преподавателем, со старшими или с несколькими людьми.
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842206' }]
+  - id: zechbur
+    udm: Ӟечбур!
+    ru: Здравствуй!
+    ru_alt: [Привет!]
+    kind: phrase
+    emoji: 🙂
+    note: Приветствие на «ты» — для друзей и одногруппников.
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842203' }, { id: tatoeba, ref: '11539124' }]
+  - id: tau
+    udm: Тау!
+    ru: Спасибо!
+    ru_alt: [Благодарю!]
+    kind: phrase
+    emoji: 🙏
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842240' }, { id: uniparser }]
+  - id: zech-lu
+    udm: Ӟеч лу!
+    ru: Пока!
+    ru_alt: [До свидания!, Прощай!]
+    kind: phrase
+    emoji: 👋
+    note: Прощание. Буквально — «будь хорошим, будь благополучен».
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12159539' }]
+  - id: ben
+    udm: Бен.
+    ru: Да.
+    kind: word
+    emoji: ✅
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12139184' }, { id: uniparser }]
+  - id: ovol
+    udm: Ӧвӧл.
+    ru: Нет.
+    kind: word
+    emoji: ❌
+    note: Ӧвӧл — ещё и «нет, не имеется». Буква ӧ звучит как средний звук между о и э.
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12139185' }, { id: uniparser }]
+  - id: tau-umoj
+    udm: Тау, умой!
+    ru: Спасибо, хорошо!
+    ru_alt: [Благодарю, хорошо!]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842240' }]
+  - id: tuzh-umoj
+    udm: Туж умой!
+    ru: Очень хорошо!
+    ru_alt: [Отлично!]
+    kind: phrase
+    emoji: 👍
+    morphemes:
+      - { form: туж, meaning: 'очень', kind: word }
+      - { form: умой, meaning: 'хорошо', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11750171' }, { id: tatoeba, ref: '12259123' }]
+  - id: kyzy-uliskody
+    udm: Кызьы улӥськоды?
+    ru: Как поживаете?
+    ru_alt: [Как дела?, Как вы поживаете?]
+    kind: phrase
+    morphemes:
+      - { form: кызьы, meaning: 'как', kind: word }
+      - { form: улӥськоды, meaning: '«(вы) живёте, поживаете»', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842223' }]
   - id: mon
     udm: мон
     ru: я
     pos: местоимение
+    emoji: 🙋
     status: sourced
-    sources: [{ id: tatoeba }]
+    sources: [{ id: uniparser }, { id: alatyrev1983 }]
+  - id: ton
+    udm: тон
+    ru: ты
+    pos: местоимение
+    emoji: 👉
+    status: sourced
+    sources: [{ id: uniparser }, { id: alatyrev1983 }]
+  - id: nim
+    udm: ним
+    ru: имя
+    pos: существительное
+    emoji: 🏷️
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: nimy
+    udm: нимы
+    ru: моё имя
+    pos: существительное
+    morphemes:
+      - { form: ним, meaning: 'имя', kind: root }
+      - { form: ы, meaning: '«мой» (притяжательный суффикс 1 лица)', kind: suffix }
+    note: Притяжательный суффикс прирастает к слову, как в финском nimi → nimeni.
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525033' }, { id: alatyrev1983 }]
+  - id: mon-name
+    udm: Мон {name}.
+    ru: Я {name}.
+    kind: phrase
+    note: Глагола «быть» в настоящем времени нет — как в русском «Я Алексей».
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11672703' }]
+  - id: mynam-nimy
+    udm: Мынам нимы {name}.
+    ru: Меня зовут {name}.
+    ru_alt: ['Моё имя {name}.', 'Моё имя — {name}.']
+    kind: phrase
+    morphemes:
+      - { form: мынам, meaning: '«мой, у меня» (форма от мон)', kind: word }
+      - { form: ним, meaning: 'имя', kind: root }
+      - { form: ы, meaning: '«моё»', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525033' }]
+  - id: kyzy-tilad-nimdy
+    udm: Кызьы тӥляд нимды?
+    ru: Как вас зовут?
+    ru_alt: [Как Вас зовут?, Вас как зовут?]
+    kind: phrase
+    morphemes:
+      - { form: кызьы, meaning: 'как', kind: word }
+      - { form: тӥляд, meaning: '«ваш, у вас»', kind: word }
+      - { form: ним, meaning: 'имя', kind: root }
+      - { form: ды, meaning: '«ваше»', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522722' }]
+  - id: mon-dyshetskis
+    udm: Мон дышетскись.
+    ru: Я учащийся.
+    ru_alt: [Я ученик., Я ученица., Я учусь.]
+    kind: phrase
+    note: 'Дышетскись — «тот, кто учится»: ученик, учащийся, студент.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12285180' }]
+  - id: mon-zhurnalist
+    udm: Мон журналист.
+    ru: Я журналист.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11726191' }]
+  - id: mon-emchi-ovol
+    udm: Мон эмчи ӧвӧл.
+    ru: Я не врач.
+    ru_alt: [Я не доктор.]
+    kind: phrase
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: эмчи, meaning: 'врач', kind: word }
+      - { form: ӧвӧл, meaning: 'не (есть)', kind: word }
+    note: Отрицание «я не …» — ӧвӧл после слова.
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11672707' }]
+  - id: mon-zambiys
+    udm: Мон Замбиысь.
+    ru: Я из Замбии.
+    kind: phrase
+    morphemes:
+      - { form: Замби, meaning: 'Замбия', kind: root }
+      - { form: ысь, meaning: '«из» (исходный падеж)', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933284' }, { id: alatyrev1983 }]
+  - id: glazys
+    udm: Глазысь
+    ru: из Глазова
+    morphemes:
+      - { form: Глаз, meaning: 'Глазов', kind: root }
+      - { form: ысь, meaning: '«из» (исходный падеж)', kind: suffix }
+    note: Глазов по-удмуртски — Глаз (полностью — Глаз кар, «город Глаз»).
+    status: sourced
+    sources: [{ id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }, { id: uniparser }, { id: alatyrev1983 }]
+  - id: mon-glazys
+    udm: Мон Глазысь.
+    ru: Я из Глазова.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933284' }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }]
+  - id: mon-ug-todisky
+    udm: Мон уг тодӥськы.
+    ru: Я не знаю.
+    kind: phrase
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: уг, meaning: '«не» (отрицательный глагол, наст. время)', kind: word }
+      - { form: тодӥськы, meaning: '«знаю» (форма после отрицания)', kind: word }
+    note: Отрицание в удмуртском — особый глагол «не», как в финском (en tiedä).
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525052' }]
+  - id: mon-oj-vala
+    udm: Мон ӧй вала.
+    ru: Я не понял.
+    ru_alt: [Я не поняла.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522737' }]
