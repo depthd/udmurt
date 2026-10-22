@@ -6,3 +6,9 @@ declare module 'virtual:course' {
   const course: Course;
   export default course;
 }
+
+declare module 'virtual:library' {
+  import type { LibraryItem } from '$lib/content/library-schema';
+  const items: LibraryItem[];
+  export default items;
+}

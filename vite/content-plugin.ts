@@ -5,18 +5,25 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Plugin } from 'vite';
-import { loadCourse } from './load-content.ts';
+import { loadCourse, loadLibrary } from './load-content.ts';
 
 const ID = 'virtual:course';
 const RESOLVED = '\0' + ID;
+const LIB = 'virtual:library';
+const LIB_RESOLVED = '\0' + LIB;
 
 export function contentPlugin(contentDir = path.resolve('content')): Plugin {
   return {
     name: 'udmurt-content',
     resolveId(id) {
       if (id === ID) return RESOLVED;
+      if (id === LIB) return LIB_RESOLVED;
     },
     load(id) {
+      if (id === LIB_RESOLVED) {
+        this.addWatchFile(path.join(contentDir, 'library.yaml'));
+        return `export default ${JSON.stringify(loadLibrary(contentDir))};`;
+      }
       if (id !== RESOLVED) return;
       const course = loadCourse(contentDir);
       // Следим за каждым YAML-файлом (каталог целиком Vite 8 пытается импортировать как модуль).
@@ -28,8 +35,10 @@ export function contentPlugin(contentDir = path.resolve('content')): Plugin {
       server.watcher.add(contentDir);
       server.watcher.on('all', (_e, file) => {
         if (!file.startsWith(contentDir)) return;
-        const mod = server.moduleGraph.getModuleById(RESOLVED);
-        if (mod) server.moduleGraph.invalidateModule(mod);
+        for (const rid of [RESOLVED, LIB_RESOLVED]) {
+          const mod = server.moduleGraph.getModuleById(rid);
+          if (mod) server.moduleGraph.invalidateModule(mod);
+        }
         server.ws.send({ type: 'full-reload' });
       });
     },

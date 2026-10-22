@@ -1,0 +1,664 @@
+# Каталог материалов по удмуртскому языку (страница «Материалы»).
+# Источник: docs/research/06-udmurt-learning-materials.md §19, отчёты 02 и 05, книги от группы.
+# rights:
+#   open  — общественное достояние или открытая лицензия (можно переносить с указанием авторов)
+#   free  — © но бесплатно онлайн (только ссылка)
+#   print — © печатное или платное издание (только описание)
+# unreachable: true — ссылка не открылась из нашей сети при проверке (может работать из России).
+# Тексты со «: » внутри — в кавычках '…'.
+items:
+  # ── Начать с нуля ──────────────────────────────────────
+  - id: kuara-video-ru
+    title: Видеокурс удмуртского языка (10 уроков)
+    author: НКО «Куара», ведущий А. Малинин
+    year: '≤2022'
+    kind: video
+    level: A0–A1
+    lang: ru
+    rights: free
+    url: https://www.youtube.com/playlist?list=PLrHDtZVU4rPQZUG8LtdYe7bQEQixWmTe5
+    urls: [https://udmkyl.ru/video-courses/1]
+    note: 'Лучший старт для взрослых: короткие уроки, к каждому — словарик. Урок 1 — знакомство, как у нас в юните 1.'
+    top: true
+    checked: '2026-10-22'
+  - id: udmkyl
+    title: Портал «Удмурт кылдунне» — всё для самостоятельного изучения
+    author: НИИ национального образования УР
+    year: 2022–
+    kind: course
+    level: A0–B1
+    lang: ru
+    rights: free
+    url: https://udmkyl.ru/
+    note: 'Главный хаб: приложения, видеокурсы, самоучители в PDF, 74 словаря, песни, мультфильмы, подкасты.'
+    top: true
+    checked: '2026-10-22'
+  - id: napolskikh-lectures
+    title: 'Удмуртский язык: ознакомительный курс (20 лекций)'
+    author: В. В. Напольских
+    year: 2000-е
+    kind: grammar
+    level: A0–A2
+    lang: ru
+    rights: free
+    url: http://udmurt.info/udmurt/lekcii/
+    note: Понятная грамматика по-русски, с примерами и упражнениями. По ней сверены модели наших фраз.
+    top: true
+  - id: uki050
+    title: '«Ӟеч-а, бур-а, удмурт кыл!» — электронный учебник, 5 класс'
+    author: Н. П. Боталова и др.
+    year: '2021'
+    kind: textbook
+    level: A1
+    lang: ru
+    rights: free
+    url: https://uki050.udmkyl.ru/
+    note: Школьный курс для тех, кто не владеет удмуртским. Есть учебники для 1–11 классов.
+    top: true
+  - id: samarova2011
+    title: '«Лабыр-лабыр лабыртом! Поговорим от души»'
+    author: М. А. Самарова, О. Б. Стрелкова
+    year: '2011'
+    kind: textbook
+    level: A0–B1
+    lang: ru
+    rights: free
+    url: http://elibrary.udsu.ru/xmlui/bitstream/handle/123456789/8178/2011340.pdf?sequence=1
+    note: '18 уроков для студентов (PDF, 244 с.). Урок 1 «Ойдолэ тодматском!» — знакомство.'
+    top: true
+  - id: timerkhanova2012
+    title: '«Удмурт кыл: Нырысь кутскисьёслы» — тетрадь-книга №1'
+    author: Н. Н. Тимерханова
+    year: '2012'
+    kind: textbook
+    level: A0–A1
+    lang: ru
+    rights: free
+    url: http://elibrary.udsu.ru/xmlui/bitstream/handle/123456789/7811/2011335.pdf?sequence=1
+    note: Диалоги и словник для начинающих (PDF, 155 с.). Отсюда модели «Мон студент», «Улӥсько Глазкарын».
+    top: true
+  - id: tg-udmurtkyl
+    title: Telegram «Удмурт кыл | Удмуртский язык»
+    author: О. Урасинова
+    kind: community
+    level: A1–B1
+    lang: udm
+    rights: free
+    url: https://t.me/udmurtkyl
+    note: Короткие посты на каждый день — удобно читать по дороге на пару.
+    top: true
+    checked: '2026-10-22'
+  - id: courses-glazov
+    title: Бесплатные курсы удмуртского для взрослых (в том числе в Глазове, ГИПУ)
+    author: Миннац УР, «Выжы»
+    kind: course
+    level: A0–
+    lang: ru
+    rights: free
+    url: https://vk.com/udmkyl
+    note: 'Живой преподаватель и разговорная практика. Набор — ежегодно, уточняйте даты.'
+    top: true
+    unreachable: true
+
+  # ── Учебники и самоучители ─────────────────────────────
+  - id: marym-lesya
+    title: '«Марым, лэся…: Удмурт кыл нырысь кутскисьёслы» (с аудио)'
+    author: И. В. Ганеев, Ю. А. Перевозчиков
+    year: 2005, 2015
+    kind: textbook
+    level: A0–A2
+    lang: ru
+    rights: print
+    url: https://vk.com/club95792851
+    note: Популярный самоучитель для взрослых, с аудиозаписями диалогов.
+    unreachable: true
+  - id: marym-lesya-en
+    title: '«Марым, лэся… — Udmurt for Beginners» (английская версия)'
+    author: Ganeyev, Perevozchikov; Pischlöger, Bradley
+    year: '2018'
+    kind: textbook
+    level: A0–A2
+    lang: en
+    rights: free
+    url: https://www.infuse.finnougristik.uni-muenchen.de/e-learning/udmurt/o5_udmurt.pdf
+    note: Тот же курс в PDF на английском — бесплатно.
+  - id: duno-eshe
+    title: '«Дуно эше»: интенсивный курс для старших классов и взрослых'
+    author: Б. Ш. Загуляева, А. Е. Решетникова
+    year: 2003, УдГУ
+    kind: textbook
+    level: A0–A2
+    lang: ru
+    rights: free
+    url: https://eanbur.unatlib.ru/handle/123456789/1267
+    unreachable: true
+  - id: kondratieva2004
+    title: '«Удмуртский язык: Начальный курс»'
+    author: Н. В. Кондратьева, Л. П. Фёдорова
+    year: 2004, УдГУ
+    kind: textbook
+    level: A0–A1
+    lang: ru
+    rights: print
+  - id: nazarova2014
+    title: '«Удмурт кыл: дышетскон книга» (496 с.)'
+    author: Е. В. Назарова
+    year: 2014, РХД
+    kind: textbook
+    level: A0–B1
+    lang: ru
+    rights: print
+  - id: mon-achim
+    title: '«Мон ачим»: самоучитель удмуртского языка'
+    author: А. А. Арзамазов
+    year: 2022, Казань
+    kind: textbook
+    level: A0–A1
+    lang: ru
+    rights: print
+    url: https://evening-kazan.ru/obrazovanie/news/kazanskiy-filolog-rasskazal-o-novom-samouchitele-yazykov-narodov-tatarstana
+  - id: te-te
+    title: «Тэ-тэ»
+    author: А. А. Арзамазов
+    year: 2005, УдГУ
+    kind: textbook
+    level: A1
+    lang: ru
+    rights: print
+  - id: kylshykys
+    title: '«Кылшыкысэз усьтыса» = «Открывая языковой сундучок»'
+    author: О. Б. Стрелкова
+    year: 2014, УдГУ
+    kind: textbook
+    level: A1–A2
+    lang: ru
+    rights: free
+    url: http://elibrary.udsu.ru/xmlui/handle/123456789/11741
+  - id: zagulyaeva-phrasebook
+    title: Русско-удмуртский разговорник
+    author: Б. Ш. Загуляева
+    year: 1991, 2009
+    kind: textbook
+    level: A0
+    lang: ru
+    rights: free
+    url: https://elibrary.unatlib.ru/handle/123456789/3389
+    unreachable: true
+  - id: uki-all
+    title: 'Электронные учебники «Удмурт кыл» для не владеющих языком, 1–11 классы'
+    author: Н. П. Боталова и др., НИИНО
+    year: 2021–2024
+    kind: textbook
+    level: A0–B1
+    lang: ru
+    rights: free
+    url: https://uki010.udmkyl.ru/
+    urls: [http://udmniino.ru/index.php/pedagogam-i-roditelyam/nachalnoe-obshchee-obrazovanie/ech-a-bur-a-udmurt-kyl]
+
+  # ── Грамматика и справочники ───────────────────────────
+  - id: alatyrev1983
+    title: Краткий грамматический очерк удмуртского языка
+    author: В. И. Алатырев
+    year: '1983'
+    kind: grammar
+    level: все
+    lang: ru
+    rights: free
+    url: http://www.udmurt.info/library/alatyrev/grammatika
+    note: 'Компактная грамматика: падежи, спряжение, отрицание. Главная опора при проверке наших уроков. Есть у группы.'
+    group: true
+  - id: karakulova2001
+    title: Сопоставительная грамматика русского и удмуртского языков
+    author: М. К. Каракулова, Б. И. Каракулов
+    year: 2001, Ижевск
+    kind: grammar
+    level: A2+
+    lang: ru
+    rights: print
+    note: 'Глазовские авторы сравнивают русский и удмуртский — ровно то, что нужно русскоязычным. Есть у группы.'
+    group: true
+  - id: tuala-udmurt-kyl
+    title: '«Туала удмурт кыл» (фонетика, морфология, синтаксис)'
+    author: А. Ф. Шутов, И. В. Тараканов, А. А. Алашеева
+    year: '2003'
+    kind: grammar
+    level: A2+
+    lang: udm
+    rights: print
+  - id: winkler2001
+    title: Udmurt (Languages of the World/Materials 212)
+    author: E. Winkler
+    year: '2001'
+    kind: grammar
+    level: A2+
+    lang: en
+    rights: print
+    url: https://uralic.clld.org/sources/winkler_udmurt_2001
+  - id: winkler2011
+    title: Udmurtische Grammatik
+    author: E. Winkler
+    year: '2011'
+    kind: grammar
+    level: A2+
+    lang: de
+    rights: print
+  - id: winkler-wotjakisch
+    title: Wotjakisch (обзор языка)
+    author: E. Winkler
+    year: '2002'
+    kind: grammar
+    level: все
+    lang: de
+    rights: free
+    url: https://eeo.aau.at/wwwg.uni-klu.ac.at/eeo/Wotjakisch.pdf
+  - id: dushenkova2020
+    title: Эмоциосфера удмуртской языковой картины мира
+    author: Т. Р. Душенкова
+    year: 2020, УдмФИЦ УрО РАН
+    kind: grammar
+    level: B1+
+    lang: ru
+    rights: print
+    note: 'Монография о словах эмоций: как по-удмуртски радуются, грустят, любят. Пригодится для будущих уроков. Есть у группы.'
+    group: true
+
+  # ── Словари ────────────────────────────────────────────
+  - id: vakhrushev1983
+    title: Удмуртско-русский словарь (около 35 000 слов)
+    author: под ред. В. М. Вахрушева
+    year: 1983, М. — Русский язык
+    kind: dictionary
+    level: все
+    lang: ru
+    rights: print
+    note: Классический большой словарь, к нему приложен очерк Алатырева. Есть у группы — по нему сверяем слова.
+    group: true
+  - id: kyllyukam2012
+    title: '«Удмурт-зуч, зуч-удмурт кыллюкам» — удмуртско-русский и русско-удмуртский словарь (около 6 500 слов)'
+    year: 2012, Ижевск — Удмуртия
+    kind: dictionary
+    level: A0–A2
+    lang: ru
+    rights: print
+    note: Удобный учебный словарь для школьников и всех, кто учит язык через русский. Есть у группы.
+    group: true
+  - id: kirillova2008
+    title: Удмуртско-русский словарь (около 50 000 слов)
+    author: отв. ред. Л. Е. Кириллова
+    year: '2008'
+    kind: dictionary
+    level: все
+    lang: ru
+    rights: free
+    url: http://elibrary.unatlib.ru/handle/123456789/27151
+    note: Самый полный современный словарь.
+    unreachable: true
+  - id: voronova-poyarkova
+    title: 'Удмуртско-русский и русско-удмуртский словарь (≈3000 + 3500 слов)'
+    author: Воронова, Пояркова
+    year: 2012, 2017
+    kind: dictionary
+    level: A0–A2
+    lang: ru
+    rights: print
+  - id: picture-dict
+    title: Картинный удмуртско-русско-английский словарь (600 слов)
+    author: А. Н. Журавлева
+    year: 2001, 2006, 2011
+    kind: dictionary
+    level: A0
+    lang: ru
+    rights: free
+    url: https://elibrary.unatlib.ru/handle/123456789/40603
+    unreachable: true
+  - id: orfo2002
+    title: Орфографический словарь удмуртского языка (30 000 слов)
+    author: отв. ред. И. В. Тараканов
+    year: '2002'
+    kind: dictionary
+    level: все
+    lang: udm
+    rights: free
+    url: https://eanbur.unatlib.ru/handle/123456789/2025
+    unreachable: true
+  - id: eki-eud
+    title: Эстонско-удмуртский словарь (EKI)
+    kind: dictionary
+    level: все
+    lang: et
+    rights: free
+    url: https://www.eki.ee/dict/eud/
+  - id: udmkyl-dicts
+    title: 74 словаря удмуртского языка с выходными данными
+    author: портал «Удмурт кылдунне»
+    kind: dictionary
+    level: все
+    lang: ru
+    rights: free
+    url: https://udmkyl.ru/
+
+  # ── Видео и онлайн-курсы ───────────────────────────────
+  - id: kuara-video-en
+    title: Udmurt for Beginners (15 уроков, на английском)
+    author: НКО «Куара»
+    kind: video
+    level: A0–A2
+    lang: en
+    rights: free
+    url: https://www.youtube.com/playlist?list=PLrHDtZVU4rPRyFO-SrPrP-kdA1GdevjQa
+  - id: kuara-tubat
+    title: «Тубат» — 15 научно-популярных лекций об удмуртах и языке
+    author: НКО «Куара»
+    kind: video
+    level: все
+    lang: ru
+    rights: free
+    url: https://www.youtube.com/playlist?list=PLrHDtZVU4rPSAHjqYa22gix3_7Vo5r1aF
+  - id: niino-kids-course
+    title: Интерактивный курс «Удмуртский язык для младшего школьного возраста» (20 уроков)
+    author: НИИНО (Боталова, Байтерякова, Коткова)
+    kind: course
+    level: A0
+    lang: ru
+    rights: free
+    url: https://udmkyl.ru/
+  - id: urasinova-yt
+    title: YouTube-канал Ольги Урасиновой
+    author: О. Урасинова
+    kind: video
+    level: A1+
+    lang: udm
+    rights: free
+    url: https://www.youtube.com/user/urasinova
+  - id: udsu-learningapps
+    title: Интерактивные упражнения УдГУ (LearningApps)
+    author: УдГУ
+    kind: course
+    level: A0–A1
+    lang: ru
+    rights: free
+    url: https://udmobr.udsu.ru/
+
+  # ── Приложения ─────────────────────────────────────────
+  - id: kyldysin-app
+    title: «Кылдысин» — приложение для изучения удмуртского (Android)
+    author: Г. Л. Григорьев
+    year: 2024
+    kind: app
+    level: A0–A1
+    lang: ru
+    rights: free
+    url: https://www.rustore.ru/catalog/app/com.vorgoron.learning.udmurt
+    note: 'Самое близкое к Duolingo из существующего. Есть только в RuStore.'
+  - id: udmspell
+    title: Удмуртская проверка орфографии (Hunspell)
+    author: vorgoron
+    kind: tool
+    level: все
+    lang: udm
+    rights: open
+    license: CC0
+    url: https://github.com/vorgoron/udmspell
+
+  # ── Слушать ────────────────────────────────────────────
+  - id: udmkyl-songs
+    title: 54 детские песни с текстами и минусовками и 31 аудиосказка
+    author: портал «Удмурт кылдунне»
+    kind: audio
+    level: A0–A2
+    lang: udm
+    rights: free
+    url: https://udmkyl.ru/
+  - id: udmkyl-podcasts
+    title: 52 радиопередачи на удмуртском
+    author: портал «Удмурт кылдунне»
+    kind: audio
+    level: A2+
+    lang: udm
+    rights: free
+    url: https://udmkyl.ru/
+  - id: tg-slow
+    title: Telegram «Удмуртский медленно» — аудио на уровни A1–B1
+    kind: audio
+    level: A1–B1
+    lang: udm
+    rights: free
+    url: https://t.me/udmurtslow
+    checked: '2026-10-22'
+  - id: myudm
+    title: ТРК «Моя Удмуртия» — удмуртская версия, архив передач
+    kind: audio
+    level: B1+
+    lang: udm
+    rights: free
+    url: http://www.myudm.ru/udm
+    unreachable: true
+  - id: spotify-udm
+    title: Плейлист современной удмуртской музыки
+    kind: audio
+    level: все
+    lang: udm
+    rights: free
+    url: https://open.spotify.com/playlist/2aaLDYA56xySwVcKEhT1HI
+
+  # ── Дети и мультфильмы ─────────────────────────────────
+  - id: udmkyl-cartoons
+    title: 32 мультфильма на удмуртском (сказки, легенды, «Цифры», «Части лица»)
+    author: портал «Удмурт кылдунне»
+    kind: media
+    level: A0–A1
+    lang: udm
+    rights: free
+    url: https://udmkyl.ru/
+  - id: minnac-tales
+    title: Сказки народов мира на удмуртском (6 сборников)
+    author: Миннац УР
+    kind: literature
+    level: A1+
+    lang: udm
+    rights: free
+    url: https://minnac.ru/speczproekty/skazki-narodov-mira-na-udmurtskom-yazyke/
+
+  # ── Сообщества ─────────────────────────────────────────
+  - id: tg-udmkyl-word
+    title: «Удмурт кылъёс» — слово дня
+    kind: community
+    level: A0+
+    lang: udm
+    rights: free
+    url: https://t.me/udmkyl
+  - id: tg-kylmy
+    title: Разговорный клуб удмуртского (Telegram)
+    kind: community
+    level: A1+
+    lang: udm
+    rights: free
+    url: https://t.me/udmurtkylmy
+  - id: kuara
+    title: «Куара» — ресурсный центр удмуртского языка
+    kind: community
+    level: все
+    lang: ru
+    rights: free
+    url: https://t.me/sharakuara
+    urls: [https://vk.com/sharakuara]
+  - id: diktant
+    title: «Бадӟым Удмурт Диктант» (апрель; для русскоязычных — тест)
+    kind: community
+    level: все
+    lang: udm
+    rights: free
+    url: https://www.udmdiktant.ru/
+  - id: udmkyl-day
+    title: День удмуртского языка — 27 ноября
+    kind: community
+    level: все
+    lang: udm
+    rights: free
+    url: https://t.me/udmurtkylnunal
+
+  # ── Читать ─────────────────────────────────────────────
+  - id: udmdunne
+    title: «Удмурт дунне» — газета
+    kind: media
+    level: B1+
+    lang: udm
+    rights: free
+    url: https://t.me/udmdunne
+    urls: [https://udmdunne.ru/]
+  - id: invozho
+    title: «Инвожо» — молодёжный журнал (на удмуртском и русском)
+    kind: media
+    level: A2+
+    lang: udm
+    rights: free
+    url: https://invozho.su/
+    unreachable: true
+  - id: oshmes
+    title: «Ошмес» — газета удмуртов Башкортостана
+    kind: media
+    level: B1+
+    lang: udm
+    rights: free
+    url: https://oshmes.info/
+  - id: udmwiki
+    title: Удмуртская Википедия (около 6 000 статей)
+    kind: media
+    level: A2+
+    lang: udm
+    rights: open
+    license: CC BY-SA 4.0
+    url: https://udm.wikipedia.org/
+
+  # ── Открытые данные (используются в этом тренажёре) ────
+  - id: uniparser
+    title: uniparser-grammar-udm — морфологический анализатор и словарь (≈56 000 лексем)
+    author: Т. Архангельский, М. Медведева, УдмФИЦ УрО РАН, Е. Кашкин
+    kind: data
+    level: все
+    lang: ru
+    rights: open
+    license: MIT
+    url: https://github.com/timarkh/uniparser-grammar-udm
+    note: 'Отсюда наш словарь на 38 842 слова.'
+  - id: tatoeba
+    title: Tatoeba — 4 896 удмуртских фраз с русским переводом
+    kind: data
+    level: A0–B1
+    lang: ru
+    rights: open
+    license: CC BY 2.0 FR
+    url: https://tatoeba.org/ru/sentences/show_all_in/udm/rus
+    note: Основа наших фраз в уроках и вкладка «Фразы» в словаре.
+  - id: wiktionary
+    title: Викисловарь — удмуртские статьи (≈1 400)
+    kind: data
+    level: все
+    lang: ru
+    rights: open
+    license: CC BY-SA 4.0
+    url: https://ru.wiktionary.org/wiki/Категория:Удмуртский_язык
+  - id: corpus
+    title: Корпус удмуртского языка (≈9,5 млн слов)
+    author: Т. Архангельский и др.
+    kind: data
+    level: B1+
+    lang: udm
+    rights: free
+    url: http://udmurt.web-corpora.net/
+    note: 'Поиск по реальным текстам: как на самом деле употребляют слово.'
+
+  # ── История языка (общественное достояние) ─────────────
+  - id: grammar1775
+    title: «Сочинения, принадлежащие к грамматике вотского языка» — первая грамматика
+    year: '1775'
+    kind: history
+    level: все
+    lang: ru
+    rights: open
+    license: общественное достояние
+    url: http://elibrary.unatlib.ru/handle/123456789/25424
+    unreachable: true
+  - id: wiedemann1851
+    title: Grammatik der wotjakischen Sprache
+    author: F. J. Wiedemann
+    year: '1851'
+    kind: history
+    level: все
+    lang: de
+    rights: open
+    license: общественное достояние
+    url: https://archive.org/details/grammatikderwotj00wied
+  - id: munkacsi1884
+    title: Votják nyelvmutatványok
+    author: B. Munkácsi
+    year: '1884'
+    kind: history
+    level: все
+    lang: hu
+    rights: open
+    license: общественное достояние
+    url: https://real-eod.mtak.hu/id/eprint/8140
+  - id: munkacsi1896
+    title: A votják nyelv szótára
+    author: B. Munkácsi
+    year: '1896'
+    kind: history
+    level: все
+    lang: hu
+    rights: open
+    license: общественное достояние
+    url: https://real-eod.mtak.hu/4189/
+  - id: wichmann1901
+    title: Wotjakische Chrestomathie
+    author: Y. Wichmann
+    year: '1901'
+    kind: history
+    level: все
+    lang: de
+    rights: open
+    license: общественное достояние
+    url: https://archive.org/details/wotjakischechre00wichgoog
+  - id: bukvar1882
+    title: «Букварь для крещёных вотяков»
+    year: '1882'
+    kind: history
+    level: все
+    lang: udm
+    rights: open
+    license: общественное достояние
+    url: https://vivaldi.nlr.ru/bx000000815/view
+  - id: fennougrica
+    title: 'Fenno-Ugrica: удмуртские газеты и книги 1910–1930-х'
+    author: Национальная библиотека Финляндии
+    kind: history
+    level: все
+    lang: udm
+    rights: open
+    license: свободный доступ (по заявлению библиотеки)
+    url: https://fennougrica.kansalliskirjasto.fi/
+
+  # ── На других языках ───────────────────────────────────
+  - id: kelmakov-hannikainen
+    title: Udmurtin kielioppia ja harjoituksia
+    author: V. Kel'makov, S. Hännikäinen
+    year: 1999, 2008
+    kind: textbook
+    level: A0–B1
+    lang: fi
+    rights: print
+  - id: kozmacs2002
+    title: Udmurt nyelvkönyv
+    author: I. Kozmács
+    year: '2002'
+    kind: textbook
+    level: A0–B1
+    lang: hu
+    rights: print
+  - id: inalco
+    title: 'INALCO: введение в удмуртский язык'
+    kind: course
+    level: A0
+    lang: fr
+    rights: free
+    url: https://www.inalco.fr/en/languages/oudmourte

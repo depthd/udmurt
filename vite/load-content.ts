@@ -14,6 +14,7 @@ import path from 'node:path';
 import { parse } from 'yaml';
 import { z } from 'zod';
 import { Course, LexiconFile, Lesson, SourcesFile, Unit, type Exercise } from '../src/lib/content/schema.ts';
+import { LibraryFile, type LibraryItem } from '../src/lib/content/library-schema.ts';
 
 export class ContentError extends Error {}
 
@@ -125,4 +126,17 @@ export function loadCourse(contentDir: string): Course {
 
   if (errors.length) throw new ContentError(`Ошибки в контенте:\n${errors.map((e) => '  • ' + e).join('\n')}`);
   return Course.parse({ id: head.id, title: head.title, units, lexicon, sources });
+}
+
+/** Каталог материалов: content/library.yaml. */
+export function loadLibrary(contentDir: string): LibraryItem[] {
+  ROOT = path.dirname(contentDir);
+  const file = path.join(contentDir, 'library.yaml');
+  const items = check(LibraryFile, readYaml(file), file).items;
+  const seen = new Set<string>();
+  for (const it of items) {
+    if (seen.has(it.id)) throw new ContentError(`${rel(file)}: повторяется id «${it.id}»`);
+    seen.add(it.id);
+  }
+  return items;
 }

@@ -200,6 +200,7 @@
     position: absolute;
     top: 6px;
     left: calc(100% - 22px);
+    max-width: calc(50vw - 24px);
     margin: 0;
     padding: 8px 12px;
     border-radius: 16px 16px 16px 4px;
@@ -209,6 +210,13 @@
     font-size: 1rem;
     color: var(--red);
     white-space: nowrap;
+  }
+  @media (max-width: 380px) {
+    .bubble {
+      left: auto;
+      right: -12px;
+      top: -18px;
+    }
   }
   .brand {
     margin: 0 0 6px;

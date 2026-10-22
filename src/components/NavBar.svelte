@@ -50,7 +50,7 @@
     padding: 0 4px;
     max-width: 720px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   a {
     position: relative;
@@ -65,6 +65,19 @@
     font: 600 0.68rem/1.1 var(--font-head);
     border-radius: 12px;
     -webkit-tap-highlight-color: transparent;
+    min-width: 0;
+  }
+  a span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @media (max-width: 360px) {
+    a {
+      font-size: 0.6rem;
+      letter-spacing: -0.01em;
+    }
   }
   a.active {
     color: var(--red);
