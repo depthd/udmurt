@@ -14,7 +14,7 @@
 
   let {
     ref,
-    state,
+    state: nodeState,
     id,
     top,
     x,
@@ -38,8 +38,8 @@
 
   const title = $derived(splitTitle(ref.lesson.title));
   const st = $derived(progress.lesson(ref.lesson.id));
-  const locked = $derived(state === 'locked');
-  const done = $derived(state === 'done' || state === 'perfect');
+  const locked = $derived(nodeState === 'locked');
+  const done = $derived(nodeState === 'done' || nodeState === 'perfect');
   const eyebrow = $derived(
     ref.lesson.kind === 'story'
       ? 'История'

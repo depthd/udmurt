@@ -73,7 +73,7 @@ export function renderMarkdown(src: string, opts: MarkdownOptions = {}): string 
     if (ul || ol) {
       const t = ul ? 'ul' : 'ol';
       const text = (ul ?? ol)![1];
-      if (cur?.t !== t) {
+      if ((cur as Block | null)?.t !== t) {
         flush();
         cur = { t, items: [] };
       }
@@ -81,12 +81,12 @@ export function renderMarkdown(src: string, opts: MarkdownOptions = {}): string 
       continue;
     }
     // Продолжение пункта списка (строка с отступом) — приклеиваем к последнему пункту.
-    if ((cur?.t === 'ul' || cur?.t === 'ol') && /^\s{2,}\S/.test(line)) {
+    if (((cur as Block | null)?.t === 'ul' || (cur as Block | null)?.t === 'ol') && /^\s{2,}\S/.test(line)) {
       const items = (cur as { items: string[] }).items;
       items[items.length - 1] += ' ' + line.trim();
       continue;
     }
-    if (cur?.t !== 'p') {
+    if ((cur as Block | null)?.t !== 'p') {
       flush();
       cur = { t: 'p', lines: [] };
     }

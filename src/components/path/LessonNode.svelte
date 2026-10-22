@@ -10,7 +10,7 @@
 
   let {
     ref,
-    state,
+    state: nodeState,
     expanded = false,
     popId,
     justUnlocked = false,
@@ -32,22 +32,22 @@
     ({ story: 'История', review: 'Повторение', checkpoint: 'Контрольная' } as Record<string, string>)[ref.lesson.kind] ?? 'Урок',
   );
   const stateLabel = $derived(
-    { done: 'пройден', perfect: 'пройден без ошибок', current: 'текущий, можно начать', locked: 'закрыт' }[state],
+    { done: 'пройден', perfect: 'пройден без ошибок', current: 'текущий, можно начать', locked: 'закрыт' }[nodeState],
   );
 </script>
 
-<div class="slot" class:is-current={state === 'current'}>
-  {#if state === 'current'}
+<div class="slot" class:is-current={nodeState === 'current'}>
+  {#if nodeState === 'current'}
     <span class="start-tag" aria-hidden="true">Начать</span>
   {/if}
   <button
     bind:this={el}
     type="button"
-    class="node node--{state}"
+    class="node node--{nodeState}"
     class:just-unlocked={justUnlocked}
     data-testid="node-{ref.lesson.id}"
-    data-state={state}
-    data-current={state === 'current' ? 'true' : undefined}
+    data-state={nodeState}
+    data-current={nodeState === 'current' ? 'true' : undefined}
     aria-expanded={expanded}
     aria-controls={expanded ? popId : undefined}
     onclick={() => el && onselect(ref, el)}
@@ -56,11 +56,11 @@
       {kindLabel}{ref.lesson.kind === 'lesson' ? ` ${ref.lessonIndex + 1}` : ''}: {title.prefix}<span lang="udm">{title.udm}</span> — {stateLabel}
     </span>
     <span class="icon" aria-hidden="true">{icon}</span>
-    {#if state === 'done' || state === 'perfect'}
+    {#if nodeState === 'done' || nodeState === 'perfect'}
       <span class="badge badge--done" aria-hidden="true">
         <svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 8.5l3 3 6-7" /></svg>
       </span>
-    {:else if state === 'locked'}
+    {:else if nodeState === 'locked'}
       <span class="badge badge--lock" aria-hidden="true">
         <svg viewBox="0 0 16 16" width="12" height="12">
           <rect x="3.5" y="7" width="9" height="6.5" rx="1.5" />
