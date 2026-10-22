@@ -1,0 +1,45 @@
+id: u6-l4
+title: Автобусэн
+goal: 'Транспорт: на автобусе, такси'
+icon: 🚌
+exercises:
+  - type: teach
+    item: avtobus
+  - type: teach
+    item: mon-avtobusen-mynisko
+  - type: build
+    item: mon-avtobusen-mynisko
+    extra: [ын, ӥськод]
+  - type: teach
+    item: mon-avtobusyn-ini
+  - type: choice
+    item: mon-avtobusyn-ini
+    distractors: [mon-avtobusen-mynisko, mon-kafeyn]
+  - type: fill
+    text: Мон автобус___ мынӥсько.
+    ru: Я еду на автобусе.
+    options: [эн, ын, э]
+    answer: эн
+    item: mon-avtobusen-mynisko
+    explain: '«На чём?» — -эн. Автобусын — «в автобусе» (где?).'
+  - type: teach
+    item: tatyn-taksi-van-a
+  - type: tiles
+    item: tatyn-taksi-van-a
+    extra: [отын, ӧвӧл]
+  - type: teach
+    item: uram
+  - type: teach
+    item: kyche-uram-ta
+  - type: match
+    items: [avtobus, uram, vokzal, dugdylonni]
+  - type: tiles
+    dir: udm-ru
+    item: mon-avtobusen-mynisko
+    extra: [в автобусе, иду]
+  - type: type
+    dir: ru-udm
+    item: mon-avtobusen-mynisko
+  - type: listen
+    item: mon-avtobusyn-ini
+    distractors: [mon-avtobusen-mynisko]

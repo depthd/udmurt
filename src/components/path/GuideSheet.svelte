@@ -14,7 +14,7 @@
   let dlg: HTMLDialogElement | undefined = $state();
   let closing = $state(false);
   let drag = $state(0);
-  let startY: number | null = null;
+  let startY = $state<number | null>(null);
 
   const html = $derived(
     unit?.guide ? renderMarkdown(personalize(unit.guide), { headingShift: 1, strongLang: 'udm', strongClass: 'udm' }) : '',

@@ -4,6 +4,9 @@ import { loadCourse } from '../../vite/load-content.ts';
 
 // Все уроки курса по порядку — список берётся из content/, чтобы новые юниты проверялись сами.
 const ALL = loadCourse('content').units.flatMap((u) => u.lessons.map((l) => l.id));
+// E2E_FROM=u7-l1 — начать с этого урока (предыдущие считаются пройденными); удобно для новых юнитов.
+const FROM = Math.max(0, ALL.indexOf(process.env.E2E_FROM ?? ''));
+const SEED = Object.fromEntries(ALL.slice(0, FROM).map((id) => [id, { done: 1, best: 1 }]));
 
 test('новичок проходит первый урок с главной, получает XP и открывает второй урок', async ({ page }) => {
   const errors: string[] = [];
@@ -32,8 +35,9 @@ test('новичок проходит первый урок с главной, �
 test('все уроки курса проходятся до конца, ошибка возвращается в очередь', async ({ page }) => {
   test.setTimeout(1_800_000);
   await page.goto('#/');
-  await page.evaluate(() => localStorage.setItem('udm.progress.v1', JSON.stringify({ v: 1, name: 'Алексей', xp: 1, onboarded: true })));
-  for (const id of ALL) {
+  await page.evaluate((seed) => localStorage.setItem('udm.progress.v1', JSON.stringify({ v: 1, name: 'Алексей', xp: 1, onboarded: true, lessons: seed })), SEED);
+  await page.reload();
+  for (const id of ALL.slice(FROM)) {
     await page.goto(`#/lesson/${id}`);
     await expect(page.getByTestId('lesson')).toBeVisible();
     const steps = await solveLesson(page, { wrongAt: id === 'u1-l3' ? 2 : undefined });

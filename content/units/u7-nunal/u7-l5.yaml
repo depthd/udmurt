@@ -1,0 +1,43 @@
+id: u7-l5
+title: Туннэ ӝыт
+goal: 'Планы на день'
+icon: 🌆
+exercises:
+  - type: teach
+    item: ton-tunne-uzhaskod-a
+  - type: choice
+    item: ton-tunne-uzhaskod-a
+    distractors: [kytyn-ton-uzhaskod, mar-kariskod]
+  - type: tiles
+    item: ton-tunne-uzhaskod-a
+    extra: [ӵуказе, ужасько]
+  - type: teach
+    item: mar-karod-tunne-zhyt
+  - type: tiles
+    dir: udm-ru
+    item: mar-karod-tunne-zhyt
+    extra: [завтра, утром]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-tunne-uzhaskod-a }
+      - { who: '{name}', item: ovol }
+      - { who: '{name}', item: tunne-kosnunal }
+    question: Почему собеседник Даши не работает?
+    options: [Сегодня суббота, Плохая погода, Болеет]
+    answer: Сегодня суббота
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mar-karod-tunne-zhyt }
+      - { who: '{name}', item: mon-kinoe-vetlyny-yaratisko }
+      - { who: Даша, item: chukaze-pumiskom }
+    question: Когда они увидятся?
+    options: [Завтра, Сегодня вечером, В воскресенье]
+    answer: Завтра
+  - type: match
+    items: [ton-tunne-uzhaskod-a, mar-karod-tunne-zhyt, chukaze-pumiskom]
+  - type: type
+    dir: ru-udm
+    item: ton-tunne-uzhaskod-a
+  - type: listen
+    item: mar-karod-tunne-zhyt
+    distractors: [ton-tunne-uzhaskod-a]

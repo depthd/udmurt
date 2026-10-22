@@ -1,0 +1,295 @@
+# Юнит 6 «Город» — словник. Слова — uniparser, фразы — Tatoeba (номер в ref).
+items:
+  - id: lydziskonni
+    udm: лыдӟиськонни
+    ru: библиотека
+    pos: существительное
+    emoji: 📚
+    morphemes:
+      - { form: лыдӟиськ, meaning: 'читать', kind: root }
+      - { form: онни, meaning: 'место, где…', kind: suffix }
+    note: '-онни — «место, где делают»: сиськонни «столовая» (где едят), дугдылонни «остановка», вузаськонни «рынок».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11732798' }, { id: uniparser }]
+  - id: uram
+    udm: урам
+    ru: улица
+    pos: существительное
+    emoji: 🛣️
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11955838' }]
+  - id: vokzal
+    udm: вокзал
+    ru: вокзал
+    pos: существительное
+    emoji: 🚉
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12278865' }]
+  - id: avtobus
+    udm: автобус
+    ru: автобус
+    pos: существительное
+    emoji: 🚌
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12143772' }]
+  - id: tatyn
+    udm: татын
+    ru: здесь
+    ru_alt: [тут]
+    pos: наречие
+    emoji: 📍
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: otyn
+    udm: отын
+    ru: там
+    pos: наречие
+    emoji: 👉
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11528482' }]
+
+  - id: kar
+    udm: кар
+    ru: город
+    pos: существительное
+    emoji: 🏙️
+    note: 'Отсюда Ижкар — Ижевск, Глазкар — Глазов.'
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12301550' }]
+  - id: pochta
+    udm: почта
+    ru: почта
+    pos: существительное
+    emoji: 📮
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12189956' }]
+  - id: siskonni
+    udm: сиськонни
+    ru: столовая
+    pos: существительное
+    emoji: 🍽️
+    morphemes:
+      - { form: сиськ, meaning: 'есть, кушать', kind: root }
+      - { form: онни, meaning: 'место, где…', kind: suffix }
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11730308' }]
+  - id: dugdylonni
+    udm: дугдылонни
+    ru: остановка
+    pos: существительное
+    emoji: 🚏
+    morphemes:
+      - { form: дугдыл, meaning: 'останавливаться', kind: root }
+      - { form: онни, meaning: 'место, где…', kind: suffix }
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '12524167' }]
+  - id: vuzaskonni
+    udm: вузаськонни
+    ru: рынок
+    ru_alt: [базар]
+    pos: существительное
+    emoji: 🧺
+    morphemes:
+      - { form: вузаськ, meaning: 'торговать', kind: root }
+      - { form: онни, meaning: 'место, где…', kind: suffix }
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11726224' }]
+
+  - id: kytyn-lydziskonni
+    udm: Кытын лыдӟиськонни?
+    ru: Где библиотека?
+    kind: phrase
+    emoji: 📚
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11732798' }]
+  - id: mon-kafeyn
+    udm: Мон кафеын.
+    ru: Я в кафе.
+    kind: phrase
+    emoji: ☕
+    note: 'Глагола «быть» нет: «я в-кафе».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12161683' }]
+  - id: so-vokzalyn
+    udm: Со вокзалын.
+    ru: Он на вокзале.
+    ru_alt: [Она на вокзале.]
+    kind: phrase
+    emoji: 🚉
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12278865' }]
+  - id: kyche-uram-ta
+    udm: Кыӵе урам та?
+    ru: Какая это улица?
+    kind: phrase
+    emoji: 🛣️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11955838' }]
+  - id: kin-otyn
+    udm: Кин отын?
+    ru: Кто там?
+    kind: phrase
+    emoji: 🚪
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11528482' }]
+
+  # ── Где? ─────────────────────────────────────────────
+  - id: kytyn-pochta
+    udm: Кытын почта?
+    ru: Где почта?
+    kind: phrase
+    emoji: 📮
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12189956' }]
+  - id: kytyn-siskonni
+    udm: Кытын сиськонни?
+    ru: Где столовая?
+    kind: phrase
+    emoji: 🍽️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730308' }]
+  - id: kytyn-dugdylonni
+    udm: Кытын дугдылонни?
+    ru: Где остановка?
+    kind: phrase
+    emoji: 🚏
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12524167' }]
+  - id: so-vuzaskonniyn
+    udm: Со вузаськонниын.
+    ru: Она на рынке.
+    ru_alt: [Он на рынке.]
+    kind: phrase
+    emoji: 🧺
+    morphemes:
+      - { form: со, meaning: 'он, она', kind: word }
+      - { form: вузаськонни, meaning: 'рынок', kind: root }
+      - { form: ын, meaning: 'где? (местный падеж)', kind: suffix }
+    note: '«Где?» — окончание -ын: кар → карын, кафе → кафеын.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11726224' }, { id: alatyrev1983 }]
+  - id: tom-karyn
+    udm: Том карын.
+    ru: Том в городе.
+    kind: phrase
+    emoji: 🏙️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12301550' }]
+  - id: mi-aeroporte-myniskom
+    udm: Ми аэропортэ мынӥськом.
+    ru: Мы едем в аэропорт.
+    kind: phrase
+    emoji: ✈️
+    morphemes:
+      - { form: ми, meaning: 'мы', kind: word }
+      - { form: аэропорт, meaning: 'аэропорт', kind: root }
+      - { form: э, meaning: 'куда? (входный падеж)', kind: suffix }
+      - { form: мын, meaning: 'идти, ехать', kind: root }
+      - { form: ӥськом, meaning: '(мы)', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12306134' }, { id: alatyrev1983 }]
+  - id: tatyn-taksi-van-a
+    udm: Татын такси вань-а?
+    ru: Здесь есть такси?
+    ru_alt: [Тут есть такси?]
+    kind: phrase
+    emoji: 🚕
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12418705' }]
+
+  # ── Далеко или близко ────────────────────────────────
+  - id: pochta-kydyokyn-a
+    udm: Почта кыдёкын-а?
+    ru: Почта далеко?
+    kind: phrase
+    emoji: 📮
+    note: 'Кыдёкын — «далеко», матын — «близко».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12170918' }]
+  - id: so-kydyokyn-ule
+    udm: Со кыдёкын улэ.
+    ru: Он живёт далеко.
+    ru_alt: [Она живёт далеко.]
+    kind: phrase
+    emoji: 🗺️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11576836' }]
+  - id: mon-ukyr-kydyokyn-ulisko
+    udm: Мон укыр кыдёкын улӥсько.
+    ru: Я слишком далеко живу.
+    ru_alt: [Я живу слишком далеко.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11732793' }]
+  - id: malpasko-mi-matyn-ini
+    udm: Малпасько, ми матын ини.
+    ru: Думаю, мы уже близко.
+    kind: phrase
+    emoji: 📍
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11836221' }]
+
+  # ── Транспорт и рядом ────────────────────────────────
+  - id: mon-avtobusen-mynisko
+    udm: Мон автобусэн мынӥсько.
+    ru: Я еду на автобусе.
+    kind: phrase
+    emoji: 🚌
+    morphemes:
+      - { form: автобус, meaning: 'автобус', kind: root }
+      - { form: эн, meaning: 'на чём, чем (творительный падеж)', kind: suffix }
+      - { form: мын, meaning: 'идти, ехать', kind: root }
+      - { form: ӥсько, meaning: '(я)', kind: suffix }
+    note: '«На чём?» — творительный падеж -эн/-ен: автобусэн «на автобусе».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12143772' }, { id: alatyrev1983 }]
+  - id: mon-avtobusyn-ini
+    udm: Мон автобусын ини.
+    ru: Я уже в автобусе.
+    kind: phrase
+    note: 'Ини — «уже». Автобусын — «в автобусе» (где?), автобусэн — «на автобусе» (на чём?).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12236512' }]
+  - id: mon-vokzal-vozyn-ulisko
+    udm: Мон вокзал вӧзын улӥсько.
+    ru: Я живу рядом с вокзалом.
+    ru_alt: [Я живу возле вокзала., Я живу около вокзала.]
+    kind: phrase
+    emoji: 🏠
+    morphemes:
+      - { form: вокзал, meaning: 'вокзал', kind: word }
+      - { form: вӧзын, meaning: 'рядом с (послелог)', kind: word }
+      - { form: улӥсько, meaning: 'живу', kind: word }
+    note: 'Вместо предлогов — послелоги: они стоят после слова. Вокзал вӧзын — «вокзал рядом».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12324370' }, { id: alatyrev1983 }]
+  - id: apteka-bolnica-doryn
+    udm: Аптека больница дорын.
+    ru: Аптека рядом с больницей.
+    ru_alt: [Аптека возле больницы., Аптека около больницы.]
+    kind: phrase
+    emoji: 💊
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527824' }]
+  - id: mon-bolnicae-myno
+    udm: Мон больницае мыно.
+    ru: Я пойду в больницу.
+    kind: phrase
+    emoji: 🏥
+    note: 'Мыно — будущее время («пойду»): мынӥсько «иду» → мыно «пойду».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12436675' }, { id: alatyrev1983 }]
+  - id: mynym-gurte-bertyny-kule
+    udm: Мыным гуртэ бертыны кулэ.
+    ru: Мне нужно идти домой.
+    ru_alt: [Мне нужно вернуться домой., Я должен идти домой., Я должна идти домой., Я должен вернуться домой., Я должна вернуться домой., Мне надо домой.]
+    kind: phrase
+    emoji: 🏡
+    morphemes:
+      - { form: мыным, meaning: 'мне', kind: word }
+      - { form: гурт, meaning: 'дом (родной), деревня', kind: root }
+      - { form: э, meaning: 'куда', kind: suffix }
+      - { form: бертыны, meaning: 'возвращаться', kind: word }
+      - { form: кулэ, meaning: 'нужно', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12143030' }]

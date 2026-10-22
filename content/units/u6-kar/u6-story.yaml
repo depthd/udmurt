@@ -1,0 +1,30 @@
+id: u6-story
+title: 'История: Мон автобусын ини'
+goal: 'Понять разговор по телефону'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: zechbures }
+      - { who: Даша, item: mar-kariskod }
+      - { who: '{name}', item: mon-avtobusen-mynisko }
+      - { who: '{name}', item: malpasko-mi-matyn-ini }
+      - { who: Даша, item: mon-kafeyn }
+    question: Где Даша?
+    options: [В кафе, На вокзале, В автобусе]
+    answer: В кафе
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kytchy-ton-myniskod }
+      - { who: '{name}', item: mon-bolnicae-myno }
+      - { who: '{name}', item: apteka-bolnica-doryn }
+    question: Что рядом с больницей?
+    options: [Аптека, Почта, Вокзал]
+    answer: Аптека
+  - type: tiles
+    item: kytyn-dugdylonni
+    extra: [кытчы, почта]
+  - type: listen
+    item: mon-avtobusyn-ini
+    distractors: [mon-kafeyn]

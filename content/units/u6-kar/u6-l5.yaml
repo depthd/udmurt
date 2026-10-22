@@ -1,0 +1,40 @@
+id: u6-l5
+title: Кыдёкын-а?
+goal: 'Рядом, далеко, близко'
+icon: 🗺️
+exercises:
+  - type: teach
+    item: tatyn
+  - type: teach
+    item: otyn
+  - type: teach
+    item: pochta-kydyokyn-a
+  - type: choice
+    item: pochta-kydyokyn-a
+    distractors: [kytyn-pochta, so-kydyokyn-ule]
+  - type: teach
+    item: so-kydyokyn-ule
+  - type: tiles
+    item: so-kydyokyn-ule
+    extra: [татын, улӥсько]
+  - type: teach
+    item: mon-vokzal-vozyn-ulisko
+  - type: build
+    item: mon-vokzal-vozyn-ulisko
+    extra: [дорын, ысь]
+  - type: teach
+    item: apteka-bolnica-doryn
+  - type: tiles
+    dir: udm-ru
+    item: apteka-bolnica-doryn
+    extra: [далеко, почта]
+  - type: teach
+    item: malpasko-mi-matyn-ini
+  - type: match
+    items: [tatyn, otyn, so-kydyokyn-ule, mon-vokzal-vozyn-ulisko]
+  - type: type
+    dir: ru-udm
+    item: pochta-kydyokyn-a
+  - type: listen
+    item: mon-vokzal-vozyn-ulisko
+    distractors: [so-kydyokyn-ule]

@@ -1,0 +1,46 @@
+id: u8-l3
+title: Кытчы ветлӥд?
+goal: '«Ты сделал?» — окончание -ид/-ӥд'
+icon: ❓
+exercises:
+  - type: teach
+    item: kytchy-vetlid
+  - type: build
+    item: kytchy-vetlid
+    extra: [ӥ, ӥз]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kytchy-vetlid }
+      - { who: '{name}', item: mon-banke-vetli }
+    question: Куда ходил собеседник Даши?
+    options: [В банк, В школу, К врачу]
+    answer: В банк
+  - type: teach
+    item: mar-basytid
+  - type: choice
+    item: mar-basytid
+    distractors: [kytchy-vetlid, mar-kariskod]
+  - type: teach
+    item: ton-zhadid-a
+  - type: tiles
+    item: ton-zhadid-a
+    extra: [мон, ӧвӧл]
+  - type: teach
+    item: ton-ta-knigaez-lydzid-a
+  - type: fill
+    text: Тон та книгаез лыдӟ___-а?
+    ru: Ты читал эту книгу?
+    options: [ид, и, из]
+    answer: ид
+    item: ton-ta-knigaez-lydzid-a
+    explain: 'Мон лыдӟи, тон лыдӟид, со лыдӟиз.'
+  - type: teach
+    item: ton-tolon-kytchy-ke-vetlid-a
+  - type: match
+    items: [kytchy-vetlid, mar-basytid, ton-zhadid-a, ton-ta-knigaez-lydzid-a]
+  - type: type
+    dir: ru-udm
+    item: mar-basytid
+  - type: listen
+    item: ton-ta-knigaez-lydzid-a
+    distractors: [ton-tolon-kytchy-ke-vetlid-a]

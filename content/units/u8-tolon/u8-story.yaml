@@ -1,0 +1,34 @@
+id: u8-story
+title: 'История: Мар тӥ толон кариды?'
+goal: 'Понять рассказ о вчерашнем дне'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: mar-ti-tolon-karidy }
+      - { who: Даша, item: tolon-mon-kinoyn-val }
+      - { who: '{name}', item: mon-lumbyt-uzhai }
+    question: Что делала Даша вчера?
+    options: [Была в кино, Работала весь день, Читала книгу]
+    answer: Была в кино
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: ton-tolon-kytchy-ke-vetlid-a }
+      - { who: Даша, item: ben }
+      - { who: Даша, item: mon-tolon-emchi-dory-vetli }
+      - { who: Дышетӥсь, item: ton-zhadid-a }
+    question: Куда ещё ходила Даша?
+    options: [К врачу, В банк, В школу]
+    answer: К врачу
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: kytyn-ton-tolon-val }
+      - { who: '{name}', item: mon-tolon-nokytchy-no-oi-vetly }
+      - { who: '{name}', item: mon-gozhtet-gozhyai }
+    question: Что вы делали вчера?
+    options: [Писал(а) письмо, Был(а) в кино, Ходил(а) в банк]
+    answer: Писал(а) письмо
+  - type: listen
+    item: kytyn-ton-tolon-val
+    distractors: [mar-ti-tolon-karidy]

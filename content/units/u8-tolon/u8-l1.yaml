@@ -1,0 +1,43 @@
+id: u8-l1
+title: Мон лыдӟи
+goal: '«Я сделал» — окончание -и/-ӥ'
+icon: ⏮️
+exercises:
+  - type: teach
+    item: mon-lydzi
+  - type: build
+    item: mon-lydzi
+    extra: [исько, ид]
+  - type: teach
+    item: mon-siski
+  - type: choice
+    item: mon-siski
+    distractors: [mon-lydzi, siskisko]
+  - type: teach
+    item: mon-shkolae-myni
+  - type: fill
+    text: Мон школае мын___.
+    ru: Я пошёл в школу.
+    options: [ӥ, ӥсько, ӥз]
+    answer: ӥ
+    item: mon-shkolae-myni
+    explain: '-ӥсько — «иду» (сейчас), -ӥ — «пошёл» (раньше), -ӥз — «он пошёл».'
+  - type: teach
+    item: mon-banke-vetli
+  - type: tiles
+    item: mon-banke-vetli
+    extra: [ветлӥсько, школае]
+  - type: teach
+    item: mon-tolon-emchi-dory-vetli
+  - type: match
+    items: [mon-lydzi, mon-siski, mon-shkolae-myni, mon-banke-vetli]
+  - type: tiles
+    dir: udm-ru
+    item: mon-tolon-emchi-dory-vetli
+    extra: [сегодня, иду]
+  - type: type
+    dir: ru-udm
+    item: mon-lydzi
+  - type: listen
+    item: mon-shkolae-myni
+    distractors: [mon-banke-vetli]

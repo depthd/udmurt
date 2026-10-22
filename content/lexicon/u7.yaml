@@ -1,0 +1,272 @@
+# Юнит 7 «Туннэ кыӵе нунал?» — дни недели, «сегодня / завтра / вчера», погода.
+# Слова — uniparser и Викисловарь, фразы — Tatoeba (номер в ref).
+items:
+  # ── Сегодня, завтра, вчера ───────────────────────────
+  - id: tunne
+    udm: туннэ
+    ru: сегодня
+    pos: наречие
+    emoji: 📅
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11730342' }]
+  - id: chukaze
+    udm: ӵуказе
+    ru: завтра
+    pos: наречие
+    emoji: ⏭️
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11730360' }]
+  - id: tolon
+    udm: толон
+    ru: вчера
+    pos: наречие
+    emoji: ⏮️
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11730444' }]
+  - id: nunal
+    udm: нунал
+    ru: день
+    pos: существительное
+    emoji: ☀️
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: arnya
+    udm: арня
+    ru: неделя
+    pos: существительное
+    emoji: 🗓️
+    note: 'Старое значение слова — «воскресенье». От него — названия дней: покчиарня, удмуртарня, арнянунал.'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: tunne-kyche-nunal
+    udm: Туннэ кыӵе нунал?
+    ru: Какой сегодня день?
+    ru_alt: [Сегодня какой день?]
+    udm_alt: [Кыӵе туннэ нунал?]
+    kind: phrase
+    emoji: 📅
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11732778' }, { id: tatoeba, ref: '11777064' }]
+
+  # ── Дни недели ───────────────────────────────────────
+  - id: vordiskon
+    udm: вордӥськон
+    ru: понедельник
+    pos: существительное
+    note: 'Второе значение слова — «рождение».'
+    status: sourced
+    sources: [{ id: ruwikt }, { id: tatoeba, ref: '11730357' }]
+  - id: pukson
+    udm: пуксён
+    ru: вторник
+    pos: существительное
+    status: sourced
+    sources: [{ id: ruwikt }, { id: tatoeba, ref: '11730342' }]
+  - id: virnunal
+    udm: вирнунал
+    ru: среда
+    pos: существительное
+    morphemes:
+      - { form: вир, meaning: 'кровь', kind: root }
+      - { form: нунал, meaning: 'день', kind: root }
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730361' }]
+  - id: pokchiarnya
+    udm: покчиарня
+    ru: четверг
+    pos: существительное
+    morphemes:
+      - { form: покчи, meaning: 'младший, малый', kind: root }
+      - { form: арня, meaning: 'неделя', kind: root }
+    note: 'Буквально «малая неделя».'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730363' }]
+  - id: udmurtarnya
+    udm: удмуртарня
+    ru: пятница
+    pos: существительное
+    morphemes:
+      - { form: удмурт, meaning: 'удмурт, удмуртский', kind: root }
+      - { form: арня, meaning: 'неделя', kind: root }
+    note: 'Буквально «удмуртская неделя».'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730365' }]
+  - id: kosnunal
+    udm: кӧснунал
+    ru: суббота
+    pos: существительное
+    morphemes:
+      - { form: кӧс, meaning: 'сухой', kind: root }
+      - { form: нунал, meaning: 'день', kind: root }
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730366' }]
+  - id: arnyanunal
+    udm: арнянунал
+    ru: воскресенье
+    pos: существительное
+    morphemes:
+      - { form: арня, meaning: 'неделя', kind: root }
+      - { form: нунал, meaning: 'день', kind: root }
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730371' }]
+
+  - id: tunne-vordiskon
+    udm: Туннэ вордӥськон.
+    ru: Сегодня понедельник.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730357' }]
+  - id: tunne-pukson
+    udm: Туннэ пуксён.
+    ru: Сегодня вторник.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730342' }]
+  - id: chukaze-pukson
+    udm: Ӵуказе пуксён.
+    ru: Завтра вторник.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730360' }]
+  - id: tunne-virnunal
+    udm: Туннэ вирнунал.
+    ru: Сегодня среда.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730361' }]
+  - id: tunne-pokchiarnya
+    udm: Туннэ покчиарня.
+    ru: Сегодня четверг.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730363' }]
+  - id: tunne-udmurtarnya
+    udm: Туннэ удмуртарня.
+    ru: Сегодня пятница.
+    kind: phrase
+    emoji: 🎉
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730365' }]
+  - id: tunne-kosnunal
+    udm: Туннэ кӧснунал.
+    ru: Сегодня суббота.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730368' }]
+  - id: chukaze-arnyanunal
+    udm: Ӵуказе арнянунал.
+    ru: Завтра воскресенье.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730370' }]
+  - id: chukaze-bere-arnyanunal-luoz
+    udm: Ӵуказе бере арнянунал луоз.
+    ru: Послезавтра будет воскресенье.
+    kind: phrase
+    morphemes:
+      - { form: ӵуказе бере, meaning: 'после завтра = послезавтра', kind: word }
+      - { form: арнянунал, meaning: 'воскресенье', kind: word }
+      - { form: луоз, meaning: 'будет', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730383' }]
+
+  # ── До завтра! ───────────────────────────────────────
+  - id: chukazeoz
+    udm: Ӵуказеозь!
+    ru: До завтра!
+    kind: phrase
+    emoji: 👋
+    morphemes:
+      - { form: ӵуказе, meaning: 'завтра', kind: root }
+      - { form: озь, meaning: 'до (предельный падеж)', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522791' }, { id: alatyrev1983 }]
+  - id: chukaze-pumiskom
+    udm: Ӵуказе пумиськом.
+    ru: Увидимся завтра.
+    ru_alt: [Завтра увидимся.]
+    kind: phrase
+    emoji: 🤝
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11526038' }]
+  - id: ton-tunne-uzhaskod-a
+    udm: Тон туннэ ужаськод-а?
+    ru: Ты сегодня работаешь?
+    kind: phrase
+    emoji: 💼
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11777033' }]
+  - id: mar-karod-tunne-zhyt
+    udm: Мар карод туннэ ӝыт?
+    ru: Что будешь делать сегодня вечером?
+    ru_alt: [Что ты будешь делать сегодня вечером?]
+    kind: phrase
+    emoji: 🌆
+    note: 'Карод — будущее время: кариськод «делаешь» → карод «будешь делать».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11685362' }]
+
+  # ── Погода ───────────────────────────────────────────
+  - id: kuaz
+    udm: куазь
+    ru: погода
+    pos: существительное
+    emoji: 🌦️
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: kyche-kuaz-tunne
+    udm: Кыӵе куазь туннэ?
+    ru: Какая сегодня погода?
+    kind: phrase
+    emoji: 🌦️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527758' }]
+  - id: tunne-shundyyo-nunal
+    udm: Туннэ шундыё нунал.
+    ru: Сегодня солнечный день.
+    kind: phrase
+    emoji: ☀️
+    morphemes:
+      - { form: туннэ, meaning: 'сегодня', kind: word }
+      - { form: шунды, meaning: 'солнце', kind: root }
+      - { form: ё, meaning: '-ный (с чем-то)', kind: suffix }
+      - { form: нунал, meaning: 'день', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11539078' }, { id: alatyrev1983 }]
+  - id: tunne-pilmo
+    udm: Туннэ пильмо.
+    ru: Сегодня облачно.
+    ru_alt: [Сегодня пасмурно.]
+    kind: phrase
+    emoji: ☁️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11818573' }]
+  - id: tunne-urod-kuaz
+    udm: Туннэ урод куазь.
+    ru: Сегодня плохая погода.
+    kind: phrase
+    emoji: 🌧️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11950477' }]
+  - id: chukaze-pos-luoz
+    udm: Ӵуказе пӧсь луоз.
+    ru: Завтра будет жарко.
+    kind: phrase
+    emoji: 🔥
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527767' }]
+  - id: chukaze-kezyt-luoz
+    udm: Ӵуказе кезьыт луоз.
+    ru: Завтра будет холодно.
+    kind: phrase
+    emoji: 🥶
+    note: 'Луоз — «будет». Прошлое — вал: Толон кезьыт вал «Вчера было холодно».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527775' }]
+  - id: tolon-kezyt-val
+    udm: Толон кезьыт вал.
+    ru: Вчера было холодно.
+    kind: phrase
+    emoji: ❄️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527763' }]

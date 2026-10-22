@@ -1,0 +1,30 @@
+id: u7-story
+title: 'История: Ӵуказеозь!'
+goal: 'Понять разговор о планах'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: zechbures }
+      - { who: Даша, item: tunne-kyche-nunal }
+      - { who: '{name}', item: tunne-udmurtarnya }
+      - { who: '{name}', item: chukaze-bere-arnyanunal-luoz }
+    question: Какой сегодня день?
+    options: [Пятница, Суббота, Воскресенье]
+    answer: Пятница
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kyche-kuaz-tunne }
+      - { who: '{name}', item: tunne-shundyyo-nunal }
+      - { who: '{name}', item: chukaze-kezyt-luoz }
+      - { who: Даша, item: chukazeoz }
+    question: Какая погода будет завтра?
+    options: [Холодно, Жарко, Солнечно]
+    answer: Холодно
+  - type: tiles
+    item: tunne-kyche-nunal
+    extra: [ӵуказе, куазь]
+  - type: listen
+    item: tunne-shundyyo-nunal
+    distractors: [tunne-pilmo]

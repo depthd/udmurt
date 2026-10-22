@@ -1,0 +1,52 @@
+id: u6-l3
+title: Кытчы?
+goal: '«Куда?» — окончание -э/-е'
+icon: 🧭
+exercises:
+  - type: teach
+    item: mi-aeroporte-myniskom
+  - type: build
+    item: mi-aeroporte-myniskom
+    extra: [ын, ӥсько]
+  - type: choice
+    item: mi-aeroporte-myniskom
+    distractors: [mon-shkolae-vetlisko, kytchy-ton-myniskod]
+  - type: teach
+    item: mon-bolnicae-myno
+  - type: fill
+    text: Мон больница___ мыно.
+    ru: Я пойду в больницу.
+    options: [е, ын, ысь]
+    answer: е
+    item: mon-bolnicae-myno
+    explain: 'Куда? — -е/-э: больница → больницае.'
+  - type: teach
+    item: mynym-gurte-bertyny-kule
+  - type: tiles
+    item: mynym-gurte-bertyny-kule
+    extra: [гуртын, мон]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kytchy-ton-myniskod }
+      - { who: '{name}', item: mynym-gurte-bertyny-kule }
+    question: Куда идёт собеседник Даши?
+    options: [Домой, В больницу, В аэропорт]
+    answer: Домой
+  - type: match
+    items: [mi-aeroporte-myniskom, mon-bolnicae-myno, mynym-gurte-bertyny-kule]
+  - type: fill
+    text: Ми аэропорт___ мынӥськом.
+    ru: Мы едем в аэропорт.
+    options: [э, ын, ысь]
+    answer: э
+    item: mi-aeroporte-myniskom
+  - type: tiles
+    dir: udm-ru
+    item: mon-bolnicae-myno
+    extra: [иду, в аптеку]
+  - type: type
+    dir: ru-udm
+    item: mon-bolnicae-myno
+  - type: listen
+    item: mi-aeroporte-myniskom
+    distractors: [mon-bolnicae-myno]

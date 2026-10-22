@@ -1,0 +1,41 @@
+id: u7-l1
+title: Туннэ, ӵуказе
+goal: 'Сегодня, завтра, вчера'
+icon: 📅
+exercises:
+  - type: teach
+    item: tunne
+  - type: teach
+    item: chukaze
+  - type: teach
+    item: tolon
+  - type: match
+    items: [tunne, chukaze, tolon]
+  - type: teach
+    item: tunne-kyche-nunal
+  - type: tiles
+    item: tunne-kyche-nunal
+    extra: [кытын, ӵуказе]
+  - type: teach
+    item: tunne-vordiskon
+  - type: choice
+    item: tunne-vordiskon
+    distractors: [chukaze-pukson, tunne-pukson]
+  - type: teach
+    item: chukaze-pukson
+  - type: fill
+    text: ___ пуксён.
+    ru: Завтра вторник.
+    options: [Ӵуказе, Туннэ, Толон]
+    answer: Ӵуказе
+    item: chukaze-pukson
+  - type: tiles
+    dir: udm-ru
+    item: tunne-vordiskon
+    extra: [завтра, вторник]
+  - type: type
+    dir: ru-udm
+    item: tunne-pukson
+  - type: listen
+    item: tunne-kyche-nunal
+    distractors: [tunne-vordiskon]

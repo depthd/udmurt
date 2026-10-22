@@ -1,0 +1,51 @@
+id: u7-l4
+title: Кыӵе куазь?
+goal: 'Погода: сегодня, завтра, вчера'
+icon: 🌦️
+exercises:
+  - type: teach
+    item: kuaz
+  - type: teach
+    item: kyche-kuaz-tunne
+  - type: tiles
+    item: kyche-kuaz-tunne
+    extra: [нунал, кытын]
+  - type: teach
+    item: tunne-shundyyo-nunal
+  - type: build
+    item: tunne-shundyyo-nunal
+    extra: [ын, озь]
+  - type: teach
+    item: tunne-pilmo
+  - type: choice
+    item: tunne-pilmo
+    distractors: [tunne-shundyyo-nunal, tunne-urod-kuaz]
+  - type: teach
+    item: tunne-urod-kuaz
+  - type: teach
+    item: chukaze-pos-luoz
+  - type: teach
+    item: chukaze-kezyt-luoz
+  - type: fill
+    text: Ӵуказе кезьыт ___.
+    ru: Завтра будет холодно.
+    options: [луоз, вал, вань]
+    answer: луоз
+    item: chukaze-kezyt-luoz
+    explain: 'Луоз — «будет», вал — «было».'
+  - type: teach
+    item: tolon-kezyt-val
+  - type: fill
+    text: Толон кезьыт ___.
+    ru: Вчера было холодно.
+    options: [вал, луоз, ӧвӧл]
+    answer: вал
+    item: tolon-kezyt-val
+  - type: match
+    items: [tunne-pilmo, tunne-urod-kuaz, chukaze-pos-luoz, tolon-kezyt-val]
+  - type: type
+    dir: ru-udm
+    item: tunne-pilmo
+  - type: listen
+    item: chukaze-pos-luoz
+    distractors: [chukaze-kezyt-luoz]

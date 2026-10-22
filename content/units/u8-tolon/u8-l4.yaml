@@ -1,0 +1,42 @@
+id: u8-l4
+title: Со лыктӥз
+goal: '«Он сделал» — окончание -из/-ӥз'
+icon: 🧳
+exercises:
+  - type: teach
+    item: tom-tolon-lyktiz
+  - type: build
+    item: tom-tolon-lyktiz
+    extra: [ӥд, ӥсько]
+  - type: teach
+    item: so-iziz
+  - type: choice
+    item: so-iziz
+    distractors: [so-potiz, so-uzha]
+  - type: teach
+    item: so-potiz
+  - type: teach
+    item: so-nyan-basytiz
+  - type: tiles
+    item: so-nyan-basytiz
+    extra: [басьтӥ, мон]
+  - type: teach
+    item: kytchy-so-tolon-vetliz
+  - type: fill
+    text: Том толон лыкт___.
+    ru: Том вчера приехал.
+    options: [ӥз, ӥ, ӥд]
+    answer: ӥз
+    item: tom-tolon-lyktiz
+  - type: match
+    items: [tom-tolon-lyktiz, so-iziz, so-potiz, so-nyan-basytiz]
+  - type: tiles
+    dir: udm-ru
+    item: kytchy-so-tolon-vetliz
+    extra: [где, сегодня]
+  - type: type
+    dir: ru-udm
+    item: so-iziz
+  - type: listen
+    item: tom-tolon-lyktiz
+    distractors: [kytchy-so-tolon-vetliz]

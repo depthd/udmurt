@@ -1,0 +1,243 @@
+# Юнит 8 «Толон» — прошедшее время. Фразы — Tatoeba (номер в ref), окончания — по Алатыреву (1983).
+items:
+  # ── Я сделал: -и / -ӥ ─────────────────────────────────
+  - id: mon-lydzi
+    udm: Мон лыдӟи.
+    ru: Я прочитал.
+    ru_alt: [Я прочитала., Я читал., Я читала.]
+    kind: phrase
+    emoji: 📖
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: лыдӟ, meaning: 'читать', kind: root }
+      - { form: и, meaning: '(я) — прошедшее время', kind: suffix }
+    note: 'Сравните: лыдӟисько «читаю» — лыдӟи «прочитал(а)».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525039' }, { id: alatyrev1983 }]
+  - id: mon-siski
+    udm: Мон сиськи.
+    ru: Я поел.
+    ru_alt: [Я поела.]
+    kind: phrase
+    emoji: 🍲
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525073' }]
+  - id: mon-shkolae-myni
+    udm: Мон школае мынӥ.
+    ru: Я пошёл в школу.
+    ru_alt: [Я пошла в школу.]
+    kind: phrase
+    emoji: 🏫
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: школае, meaning: 'в школу', kind: word }
+      - { form: мын, meaning: 'идти', kind: root }
+      - { form: ӥ, meaning: '(я) — прошедшее время', kind: suffix }
+    note: 'Буква ӥ (а не и) показывает, что н перед ней твёрдый.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525074' }, { id: alatyrev1983 }]
+  - id: mon-banke-vetli
+    udm: Мон банке ветлӥ.
+    ru: Я ходил в банк.
+    ru_alt: [Я ходила в банк.]
+    kind: phrase
+    emoji: 🏦
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781568' }]
+  - id: mon-tolon-emchi-dory-vetli
+    udm: Мон толон эмчи доры ветлӥ.
+    ru: Я вчера ходил к врачу.
+    ru_alt: [Я вчера ходила к врачу., Вчера я ходил к врачу., Вчера я ходила к врачу.]
+    kind: phrase
+    emoji: 🩺
+    note: 'Доры — «к» (послелог): эмчи доры «к врачу».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12172764' }]
+  - id: tunne-mon-tros-uzh-lestiy
+    udm: Туннэ мон трос уж лэсьтӥ.
+    ru: Сегодня я сделал много дел.
+    ru_alt: [Сегодня я сделала много дел.]
+    kind: phrase
+    emoji: ✅
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525071' }]
+
+  # ── Я сделал: -й (глаголы на -аны) ───────────────────
+  - id: mon-lumbyt-uzhai
+    udm: Мон лумбыт ужай.
+    ru: Я работал весь день.
+    ru_alt: [Я работала весь день.]
+    kind: phrase
+    emoji: 💼
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: лумбыт, meaning: 'весь день', kind: word }
+      - { form: ужа, meaning: 'работать', kind: root }
+      - { form: й, meaning: '(я) — прошедшее время', kind: suffix }
+    note: 'У глаголов на -аны прошедшее «я» — на -й: ужаны → ужай, гожъяны → гожъяй.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527814' }, { id: alatyrev1983 }]
+  - id: mon-gozhtet-gozhyai
+    udm: Мон гожтэт гожъяй.
+    ru: Я писал письмо.
+    ru_alt: [Я писала письмо., Я написал письмо., Я написала письмо.]
+    kind: phrase
+    emoji: ✉️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11539031' }]
+  - id: mon-tone-valai
+    udm: Мон тонэ валай.
+    ru: Я тебя понял.
+    ru_alt: [Я тебя поняла., Я понял тебя., Я поняла тебя.]
+    kind: phrase
+    emoji: 👌
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781557' }]
+  - id: mon-tunne-vaz-saikai
+    udm: Мон туннэ вазь сайкай.
+    ru: Я сегодня рано встал.
+    ru_alt: [Я сегодня рано встала., Я сегодня рано проснулся., Я сегодня рано проснулась.]
+    kind: phrase
+    emoji: ⏰
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525072' }]
+
+  # ── Ты сделал? -ид / -ӥд ──────────────────────────────
+  - id: kytchy-vetlid
+    udm: Кытчы ветлӥд?
+    ru: Куда ходил?
+    ru_alt: [Куда ходила?, Куда ты ходил?, Куда ты ходила?]
+    kind: phrase
+    emoji: 🧭
+    morphemes:
+      - { form: кытчы, meaning: 'куда', kind: word }
+      - { form: ветл, meaning: 'ходить', kind: root }
+      - { form: ӥд, meaning: '(ты) — прошедшее время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12231915' }, { id: alatyrev1983 }]
+  - id: mar-basytid
+    udm: Мар басьтӥд?
+    ru: Что купил?
+    ru_alt: [Что купила?, Что ты купил?, Что ты купила?]
+    kind: phrase
+    emoji: 🛍️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11685333' }]
+  - id: ton-zhadid-a
+    udm: Тон жадид-а?
+    ru: Ты устал?
+    ru_alt: [Ты устала?]
+    kind: phrase
+    emoji: 😮‍💨
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522755' }]
+  - id: ton-ta-knigaez-lydzid-a
+    udm: Тон та книгаез лыдӟид-а?
+    ru: Ты читал эту книгу?
+    ru_alt: [Ты читала эту книгу?, Ты прочитал эту книгу?, Ты прочитала эту книгу?]
+    kind: phrase
+    emoji: 📚
+    note: 'Та книгаез — «эту книгу»: определённый предмет получает окончание -ез.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11838845' }]
+  - id: ton-tolon-kytchy-ke-vetlid-a
+    udm: Тон толон кытчы ке ветлӥд-а?
+    ru: Ты вчера куда-нибудь ходил?
+    ru_alt: [Ты вчера куда-нибудь ходила?]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12314909' }]
+
+  # ── Он сделал: -из / -ӥз ──────────────────────────────
+  - id: tom-tolon-lyktiz
+    udm: Том толон лыктӥз.
+    ru: Том вчера приехал.
+    ru_alt: [Том вчера пришёл., Вчера Том приехал.]
+    kind: phrase
+    emoji: 🧳
+    morphemes:
+      - { form: том, meaning: 'Том', kind: word }
+      - { form: толон, meaning: 'вчера', kind: word }
+      - { form: лыкт, meaning: 'прийти, приехать', kind: root }
+      - { form: ӥз, meaning: '(он, она) — прошедшее время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11576830' }, { id: alatyrev1983 }]
+  - id: so-iziz
+    udm: Со изиз.
+    ru: Она спала.
+    ru_alt: [Он спал.]
+    kind: phrase
+    emoji: 😴
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11528065' }]
+  - id: so-potiz
+    udm: Со потӥз.
+    ru: Она вышла.
+    ru_alt: [Он вышел.]
+    kind: phrase
+    emoji: 🚪
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11727502' }]
+  - id: kytchy-so-tolon-vetliz
+    udm: Кытчы со толон ветлӥз?
+    ru: Куда он ходил вчера?
+    ru_alt: [Куда она ходила вчера?, Куда он вчера ходил?, Куда она вчера ходила?]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12281821' }]
+
+  # ── Был, не был ──────────────────────────────────────
+  - id: kytyn-ton-tolon-val
+    udm: Кытын тон толон вал?
+    ru: Где ты вчера был?
+    ru_alt: [Где ты вчера была?, Где ты был вчера?, Где ты была вчера?]
+    kind: phrase
+    emoji: ❓
+    note: 'Вал — «был, была, было». В настоящем времени глагола «быть» нет, а в прошедшем — есть.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730439' }]
+  - id: tolon-mon-kinoyn-val
+    udm: Толон мон киноын вал.
+    ru: Вчера я была в кино.
+    ru_alt: [Вчера я был в кино., Я вчера был в кино., Я вчера была в кино.]
+    kind: phrase
+    emoji: 🎬
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730444' }]
+  - id: mon-tolon-shkolayn-oi-val
+    udm: Мон толон школаын ӧй вал.
+    ru: Я не был вчера в школе.
+    ru_alt: [Я не была вчера в школе., Я вчера не был в школе., Я вчера не была в школе.]
+    kind: phrase
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: толон, meaning: 'вчера', kind: word }
+      - { form: школаын, meaning: 'в школе', kind: word }
+      - { form: ӧй, meaning: 'не (я, прошедшее)', kind: word }
+      - { form: вал, meaning: 'был', kind: word }
+    note: 'В прошедшем времени «не» — другое: мон ӧй, тон ӧд, со ӧз (а в настоящем — уг, уд, уг).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781589' }, { id: alatyrev1983 }]
+  - id: mon-tolon-nokytchy-no-oi-vetly
+    udm: Мон толон нокытчы но ӧй ветлы.
+    ru: Я вчера никуда не ходил.
+    ru_alt: [Я вчера никуда не ходила.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11838838' }]
+  - id: tolon-oz-zory
+    udm: Толон ӧз зоры.
+    ru: Вчера не было дождя.
+    kind: phrase
+    emoji: 🌂
+    note: 'Зорыны — «идти (о дожде)». Ӧз зоры — «не шёл дождь».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781584' }, { id: uniparser }]
+  - id: mar-ti-tolon-karidy
+    udm: Мар тӥ толон кариды?
+    ru: Что вы вчера делали?
+    kind: phrase
+    emoji: 🤔
+    note: 'Тӥ — «вы». Окончание -иды — «вы» в прошедшем времени.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525056' }]

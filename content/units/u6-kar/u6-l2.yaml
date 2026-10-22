@@ -1,0 +1,45 @@
+id: u6-l2
+title: Карын
+goal: '«Где?» — окончание -ын'
+icon: 📍
+exercises:
+  - type: teach
+    item: tom-karyn
+  - type: teach
+    item: so-vuzaskonniyn
+  - type: build
+    item: so-vuzaskonniyn
+    extra: [э, ысь]
+  - type: choice
+    item: so-vuzaskonniyn
+    distractors: [tom-karyn, mon-kafeyn]
+  - type: teach
+    item: mon-kafeyn
+  - type: tiles
+    item: mon-kafeyn
+    extra: [со, карын]
+  - type: teach
+    item: so-vokzalyn
+  - type: fill
+    text: Со вокзал___.
+    ru: Он на вокзале.
+    options: [ын, э, ысь]
+    answer: ын
+    item: so-vokzalyn
+    explain: '«Где?» — -ын. «Куда?» было бы вокзалэ, «откуда?» — вокзалысь.'
+  - type: teach
+    item: dugdylonni
+  - type: teach
+    item: kytyn-dugdylonni
+  - type: match
+    items: [tom-karyn, mon-kafeyn, so-vokzalyn, so-vuzaskonniyn]
+  - type: tiles
+    dir: udm-ru
+    item: so-vuzaskonniyn
+    extra: [в, городе]
+  - type: type
+    dir: ru-udm
+    item: mon-kafeyn
+  - type: listen
+    item: so-vokzalyn
+    distractors: [tom-karyn]

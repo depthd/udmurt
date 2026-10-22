@@ -1,0 +1,43 @@
+id: u8-l2
+title: Мон ужай
+goal: '«Я сделал» у глаголов на -аны: -й'
+icon: 💼
+exercises:
+  - type: teach
+    item: mon-lumbyt-uzhai
+  - type: build
+    item: mon-lumbyt-uzhai
+    extra: [сько, и]
+  - type: teach
+    item: mon-gozhtet-gozhyai
+  - type: choice
+    item: mon-gozhtet-gozhyai
+    distractors: [mon-lumbyt-uzhai, mon-lydzi]
+  - type: teach
+    item: mon-tone-valai
+  - type: tiles
+    item: mon-tone-valai
+    extra: [тон, монэ]
+  - type: teach
+    item: mon-tunne-vaz-saikai
+  - type: tiles
+    dir: udm-ru
+    item: mon-tunne-vaz-saikai
+    extra: [вчера, поздно]
+  - type: teach
+    item: tunne-mon-tros-uzh-lestiy
+  - type: fill
+    text: Мон лумбыт ужа___.
+    ru: Я работал весь день.
+    options: [й, сько, з]
+    answer: й
+    item: mon-lumbyt-uzhai
+    explain: 'Ужа-сько «работаю», ужа-й «работал(а)», ужа-з «он работал».'
+  - type: match
+    items: [mon-lumbyt-uzhai, mon-gozhtet-gozhyai, mon-tone-valai, mon-tunne-vaz-saikai]
+  - type: type
+    dir: ru-udm
+    item: mon-tone-valai
+  - type: listen
+    item: mon-lumbyt-uzhai
+    distractors: [mon-gozhtet-gozhyai]

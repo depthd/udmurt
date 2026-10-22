@@ -1,0 +1,37 @@
+id: u7-l2
+title: Вирнунал
+goal: 'Середина недели'
+icon: 🗓️
+exercises:
+  - type: teach
+    item: arnya
+  - type: teach
+    item: tunne-virnunal
+  - type: choice
+    item: tunne-virnunal
+    distractors: [tunne-pukson, tunne-pokchiarnya]
+  - type: teach
+    item: pokchiarnya
+  - type: build
+    item: pokchiarnya
+    extra: [нунал, удмурт]
+  - type: teach
+    item: tunne-pokchiarnya
+  - type: teach
+    item: udmurtarnya
+  - type: build
+    item: udmurtarnya
+    extra: [покчи, нунал]
+  - type: teach
+    item: tunne-udmurtarnya
+  - type: match
+    items: [vordiskon, pukson, virnunal, pokchiarnya, udmurtarnya]
+  - type: tiles
+    item: tunne-udmurtarnya
+    extra: [ӵуказе, вирнунал]
+  - type: type
+    dir: ru-udm
+    item: tunne-virnunal
+  - type: listen
+    item: tunne-pokchiarnya
+    distractors: [tunne-udmurtarnya]

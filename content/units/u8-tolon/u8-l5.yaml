@@ -1,0 +1,43 @@
+id: u8-l5
+title: Ӧй вал
+goal: '«Был», «не был» и «не делал»'
+icon: 🚫
+exercises:
+  - type: teach
+    item: kytyn-ton-tolon-val
+  - type: tiles
+    item: kytyn-ton-tolon-val
+    extra: [кытчы, туннэ]
+  - type: teach
+    item: tolon-mon-kinoyn-val
+  - type: choice
+    item: tolon-mon-kinoyn-val
+    distractors: [mon-kinoe-vetlyny-yaratisko, kytyn-ton-tolon-val]
+  - type: teach
+    item: mon-tolon-shkolayn-oi-val
+  - type: build
+    item: mon-tolon-shkolayn-oi-val
+    extra: [уг, школае]
+  - type: teach
+    item: mon-tolon-nokytchy-no-oi-vetly
+  - type: fill
+    text: Мон толон нокытчы но ___ ветлы.
+    ru: Я вчера никуда не ходил.
+    options: [ӧй, уг, ӧз]
+    answer: ӧй
+    item: mon-tolon-nokytchy-no-oi-vetly
+    explain: 'Уг — «не» сейчас, ӧй — «не» в прошлом (я), ӧз — (он, она).'
+  - type: teach
+    item: tolon-oz-zory
+  - type: match
+    items: [kytyn-ton-tolon-val, tolon-mon-kinoyn-val, mon-tolon-shkolayn-oi-val, tolon-oz-zory]
+  - type: tiles
+    dir: udm-ru
+    item: mon-tolon-nokytchy-no-oi-vetly
+    extra: [сегодня, иду]
+  - type: type
+    dir: ru-udm
+    item: kytyn-ton-tolon-val
+  - type: listen
+    item: tolon-mon-kinoyn-val
+    distractors: [mon-tolon-shkolayn-oi-val]

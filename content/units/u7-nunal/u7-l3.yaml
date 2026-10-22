@@ -1,0 +1,42 @@
+id: u7-l3
+title: Кӧснунал
+goal: 'Выходные и «до завтра!»'
+icon: 🎉
+exercises:
+  - type: teach
+    item: tunne-kosnunal
+  - type: teach
+    item: arnyanunal
+  - type: build
+    item: arnyanunal
+    extra: [кӧс, вир]
+  - type: teach
+    item: chukaze-arnyanunal
+  - type: choice
+    item: chukaze-arnyanunal
+    distractors: [tunne-kosnunal, chukaze-pukson]
+  - type: teach
+    item: chukaze-bere-arnyanunal-luoz
+  - type: tiles
+    dir: udm-ru
+    item: chukaze-bere-arnyanunal-luoz
+    extra: [завтра, суббота]
+  - type: teach
+    item: chukazeoz
+  - type: teach
+    item: chukaze-pumiskom
+  - type: match
+    items: [kosnunal, arnyanunal, chukazeoz, chukaze-pumiskom]
+  - type: fill
+    text: Ӵуказе___!
+    ru: До завтра!
+    options: [озь, ын, ысь]
+    answer: озь
+    item: chukazeoz
+    explain: '-озь — «до»: ӵуказеозь «до завтра».'
+  - type: type
+    dir: ru-udm
+    item: chukaze-arnyanunal
+  - type: listen
+    item: chukaze-pumiskom
+    distractors: [chukaze-arnyanunal]

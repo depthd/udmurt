@@ -1,0 +1,43 @@
+id: u6-l1
+title: Кытын почта?
+goal: 'Спросить, где что находится'
+icon: 🏙️
+exercises:
+  - type: teach
+    item: kar
+  - type: teach
+    item: pochta
+  - type: teach
+    item: kytyn-pochta
+  - type: choice
+    item: kytyn-pochta
+    distractors: [kytyn-ton-uliskod, kytyn-lydziskonni]
+  - type: teach
+    item: lydziskonni
+  - type: build
+    item: lydziskonni
+    extra: [ын, сиськ]
+  - type: teach
+    item: kytyn-lydziskonni
+  - type: tiles
+    item: kytyn-lydziskonni
+    extra: [почта, кытчы]
+  - type: teach
+    item: siskonni
+  - type: teach
+    item: kytyn-siskonni
+  - type: match
+    items: [kar, pochta, lydziskonni, siskonni]
+  - type: fill
+    text: ___ почта?
+    ru: Где почта?
+    options: [Кытын, Кытчы, Кытысь]
+    answer: Кытын
+    item: kytyn-pochta
+    explain: 'Кытын — где, кытчы — куда, кытысь — откуда.'
+  - type: type
+    dir: ru-udm
+    item: kytyn-pochta
+  - type: listen
+    item: kytyn-lydziskonni
+    distractors: [kytyn-siskonni]

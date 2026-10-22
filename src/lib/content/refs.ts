@@ -1,4 +1,4 @@
-import type { Exercise } from './schema';
+import type { Exercise } from './schema.ts';
 
 /** Все id словника, на которые ссылается упражнение. */
 export function exerciseRefs(ex: Exercise): string[] {
