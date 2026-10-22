@@ -7,7 +7,7 @@
     "fin": "yksi",
     "est": "üks",
     "hun": null,
-    "note": "ПУ *ükte. Венг. egy — другого происхождения (Wiktionary: egy). Корень uk-/ӧк- сохраняется в удм. укмыс / коми ӧкмыс «девять».",
+    "note": "UEW: финно-угорское *ikte (*ükte) (FU). Венг. egy — другого происхождения (Wiktionary: egy). Корень uk-/ӧк- сохраняется в удм. укмыс / коми ӧкмыс «девять».",
     "source": "UEW/Uralonet №145: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=145; Wiktionary (udm): https://en.wiktionary.org/wiki/одӥг#Udmurt"
   },
   {
@@ -18,7 +18,7 @@
     "fin": "kaksi",
     "est": "kaks",
     "hun": "kettő / két",
-    "note": "ПУ *kakta.",
+    "note": "UEW: финно-угорское/уральское *kakta (FU/U). ",
     "source": "UEW/Uralonet №227: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=227; Wiktionary (udm): https://en.wiktionary.org/wiki/кык#Udmurt"
   },
   {
@@ -29,7 +29,7 @@
     "fin": "kolme",
     "est": "kolm",
     "hun": "három",
-    "note": "ПФУ *kolme.",
+    "note": "UEW: финно-угорское *kolme (FU). ",
     "source": "UEW/Uralonet №341: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=341; Wiktionary (udm): https://en.wiktionary.org/wiki/куинь#Udmurt"
   },
   {
@@ -40,7 +40,7 @@
     "fin": "neljä",
     "est": "neli",
     "hun": "négy",
-    "note": "ПФУ *neljä.",
+    "note": "UEW: финно-угорское *ńeljä (FU). ",
     "source": "UEW/Uralonet №620: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=620; Wiktionary (udm): https://en.wiktionary.org/wiki/ньыль#Udmurt"
   },
   {
@@ -51,7 +51,7 @@
     "fin": "viisi",
     "est": "viis",
     "hun": "öt",
-    "note": "ПФУ *witte.",
+    "note": "UEW: финно-угорское *witte (FU). ",
     "source": "UEW/Uralonet №1154: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1154; Wiktionary (udm): https://en.wiktionary.org/wiki/вить#Udmurt"
   },
   {
@@ -62,7 +62,7 @@
     "fin": "kuusi",
     "est": "kuus",
     "hun": "hat",
-    "note": "ПФУ *kutte. В удм. «у» в сочетании ку- перед гласным читается как [w]: куать ≈ [kwatʲ] (Напольских, лекция 2).",
+    "note": "UEW: финно-угорское *kutte (FU). В удм. «у» в сочетании ку- перед гласным читается как [w]: куать ≈ [kwatʲ] (Напольских, лекция 2).",
     "source": "UEW/Uralonet №433: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=433; Wiktionary (udm): https://en.wiktionary.org/wiki/куать#Udmurt"
   },
   {
@@ -73,7 +73,7 @@
     "fin": "seitsemän",
     "est": "seitse",
     "hun": null,
-    "note": "Финно-пермское слово (UEW: FP). Венг. hét — отдельное заимствование из индоевропейского через праугорский (Wiktionary: hét).",
+    "note": "UEW: финно-пермское *śeˊŋćemä (FP). Венг. hét — отдельное заимствование из индоевропейского через праугорский (Wiktionary: hét).",
     "source": "UEW/Uralonet №1588: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1588; Wiktionary (udm): https://en.wiktionary.org/wiki/сизьым#Udmurt"
   },
   {
@@ -96,7 +96,7 @@
     "est": null,
     "hun": null,
     "note": "Только пермское (*ɔ̇kmis). UEW (№145) возводит первую часть uk-/ӧк- к корню «один». Финское yhdeksän тоже, по-видимому, построено на «один» (yksi), но это параллельное, а не общее слово ⚠️. Мар. индеш, венг. kilenc — не родственны.",
-    "source": "UEW/Uralonet №145: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=145; Wiktionary (udm): https://en.wiktionary.org/wiki/укмыс#Udmurt"
+    "source": "Wiktionary (udm): https://en.wiktionary.org/wiki/укмыс#Udmurt; UEW/Uralonet №145 (*ikte/*ükte, где приведено удм. ukmɨs): https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=145"
   },
   {
     "meaning_ru": "десять",
@@ -117,7 +117,7 @@
     "fin": "sata",
     "est": "sada",
     "hun": "száz",
-    "note": "Очень древнее заимствование из индоиранского *śata- (ср. санскр. śatá-, лат. centum) — общее для финно-угорских языков.",
+    "note": "UEW: финно-угорское *śata (FU). Очень древнее заимствование из индоиранского *śata- (ср. санскр. śatá-, лат. centum) — общее для финно-угорских языков.",
     "source": "UEW/Uralonet №941: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=941; Wiktionary (udm): https://en.wiktionary.org/wiki/сю#Udmurt; ru.wiktionary (mhr шӱдӧ): https://ru.wiktionary.org/wiki/%D1%88%D3%B1%D0%B4%D3%A7"
   },
   {
@@ -128,7 +128,7 @@
     "fin": "vesi",
     "est": "vesi",
     "hun": "víz",
-    "note": "ПУ *wete.",
+    "note": "UEW: уральское *wete (U). ",
     "source": "UEW/Uralonet №1142: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1142; Wiktionary (udm): https://en.wiktionary.org/wiki/ву#Udmurt"
   },
   {
@@ -139,7 +139,7 @@
     "fin": "jää",
     "est": "jää",
     "hun": "jég",
-    "note": "ПФУ *jäŋe.",
+    "note": "UEW: финно-угорское *jäŋe (FU). ",
     "source": "UEW/Uralonet №171: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=171; Wiktionary (udm): https://en.wiktionary.org/wiki/йӧ#Udmurt"
   },
   {
@@ -150,7 +150,7 @@
     "fin": "lumi",
     "est": "lumi",
     "hun": null,
-    "note": "ФП *lume. Удм. лымы (с -ы) отличается от лым «бульон» (Wikipedia: Пермские языки). Венг. соответствие сомнительно (UEW ставит «?»).",
+    "note": "UEW: финно-пермское *lume (FP). Удм. лымы (с -ы) отличается от лым «бульон» (Wikipedia: Пермские языки). Венг. соответствие сомнительно (UEW ставит «?»).",
     "source": "UEW/Uralonet №496: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=496; Wiktionary (udm): https://en.wiktionary.org/wiki/лымы#Udmurt"
   },
   {
@@ -161,7 +161,7 @@
     "fin": "tuli",
     "est": "tuli",
     "hun": null,
-    "note": "ПУ *tule. В коми корень сохранился лишь в сложениях (UEW: tɨlkɘrt «огниво»), «огонь» = би. Венг. tűz — другой корень (Wiktionary: tűz).",
+    "note": "UEW: уральское *tule (U). В коми корень сохранился лишь в сложениях (UEW: tɨlkɘrt «огниво»), «огонь» по-коми — другое слово (би ⚠️, по словарю не сверено). Венг. tűz — другой корень (Wiktionary: tűz).",
     "source": "UEW/Uralonet №1073: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1073; Wiktionary (udm): https://en.wiktionary.org/wiki/тыл#Udmurt"
   },
   {
@@ -172,7 +172,7 @@
     "fin": "talvi",
     "est": "talv",
     "hun": "tél",
-    "note": "ПФУ *tälwä. В коми тӧв = и «зима», и «ветер» (два разных корня совпали).",
+    "note": "UEW: финно-угорское *tälwä (FU). В коми тӧв = и «зима», и «ветер» (два разных корня совпали).",
     "source": "UEW/Uralonet №1037: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1037; Wiktionary (udm): https://en.wiktionary.org/wiki/тол#Udmurt; ru.wiktionary (mhr теле): https://ru.wiktionary.org/wiki/%D1%82%D0%B5%D0%BB%D0%B5"
   },
   {
@@ -183,7 +183,7 @@
     "fin": "tuuli",
     "est": "tuul",
     "hun": null,
-    "note": "ПУ *towle (этимология А. Айкио 2012, в старом UEW отсутствует). В марийском соответствие есть только в горномарийском (tul «буря»).",
+    "note": "Уральское *towle по Wiktionary (этимология А. Айкио 2012; в UEW этой статьи нет). В марийском соответствие есть только в горномарийском (tul «буря»).",
     "source": "Wiktionary (udm): https://en.wiktionary.org/wiki/тӧл#Udmurt; Wiktionary: https://en.wiktionary.org/wiki/Reconstruction:Proto-Uralic/towle"
   },
   {
@@ -194,7 +194,7 @@
     "fin": "yö",
     "est": "öö",
     "hun": "éj",
-    "note": "ФУ *eje/*üje. Мар. йӱд «ночь» — другой корень (*jitɜ, Wiktionary).",
+    "note": "UEW: финно-угорское *eje (*üje) (FU). Мар. йӱд «ночь» — другой корень (*jitɜ, Wiktionary).",
     "source": "UEW/Uralonet №130: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=130; Wiktionary (udm): https://en.wiktionary.org/wiki/уй#Udmurt"
   },
   {
@@ -205,7 +205,7 @@
     "fin": "puu",
     "est": "puu",
     "hun": "fa",
-    "note": "ПУ *puwe.",
+    "note": "UEW: уральское *puwɜ (U). ",
     "source": "UEW/Uralonet №829: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=829; Wiktionary (udm): https://en.wiktionary.org/wiki/пу#Udmurt"
   },
   {
@@ -216,8 +216,8 @@
     "fin": "kota",
     "est": "koda",
     "hun": "ház",
-    "note": "ФУ *kota «шалаш, хижина, дом». В удм. и коми корень сохранился как самостоятельное куа и как часть сложений (корка, керка).",
-    "source": "UEW/Uralonet №370: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=370; Wiktionary (udm): https://en.wiktionary.org/wiki/куа#Udmurt"
+    "note": "UEW: финно-угорское *kota (FU). В удм. и коми корень сохранился как самостоятельное куа и как часть сложений (корка, керка).",
+    "source": "UEW/Uralonet №370: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=370; Wiktionary (udm): https://en.wiktionary.org/wiki/корка#Udmurt"
   },
   {
     "meaning_ru": "масло",
@@ -227,7 +227,7 @@
     "fin": "voi",
     "est": "või",
     "hun": "vaj",
-    "note": "ФУ *woje/*waje «жир, масло». Мар. форма ӱй взята из UEW (ü/üj), по словарю не сверена ⚠️.",
+    "note": "UEW: финно-угорское *woje (FU). Мар. форма ӱй взята из UEW (ü/üj), по словарю не сверена ⚠️.",
     "source": "UEW/Uralonet №1156: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1156; Wiktionary (udm): https://en.wiktionary.org/wiki/вӧй#Udmurt"
   },
   {
@@ -238,7 +238,7 @@
     "fin": "pesä",
     "est": "pesa",
     "hun": "fészek",
-    "note": "ПУ *pesä «гнездо». В удмуртском значение сдвинулось к «яйцо», а «гнездо» = пуз + кар. Мар. кириллическая форма не сверена по словарю ⚠️.",
+    "note": "UEW: уральское *pesä (U). В удмуртском значение сдвинулось к «яйцо», а «гнездо» = пуз + кар. Мар. кириллическая форма не сверена по словарю ⚠️.",
     "source": "UEW/Uralonet №753: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=753; Wiktionary (udm): https://en.wiktionary.org/wiki/пуз#Udmurt"
   },
   {
@@ -249,7 +249,7 @@
     "fin": "nuoli",
     "est": "nool",
     "hun": "nyíl",
-    "note": "ПУ *ńële.",
+    "note": "UEW: уральское *ńe̮le (U). ",
     "source": "UEW/Uralonet №622: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=622; Wiktionary (udm): https://en.wiktionary.org/wiki/ньӧл#Udmurt"
   },
   {
@@ -260,7 +260,7 @@
     "fin": "silmä",
     "est": "silm",
     "hun": "szem",
-    "note": "ПУ *śilmä. Удм. син сохраняет древнее -m- в косвенной основе: синмын «в глазу» (ср. фин. silmä).",
+    "note": "UEW: уральское *śilmä (U). Удм. син сохраняет древнее -m- в косвенной основе: синмын «в глазу» (ср. фин. silmä).",
     "source": "UEW/Uralonet №964: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=964; Wiktionary (udm): https://en.wiktionary.org/wiki/син#Udmurt"
   },
   {
@@ -271,7 +271,7 @@
     "fin": "käsi",
     "est": "käsi",
     "hun": "kéz",
-    "note": "ФУ *käte.",
+    "note": "UEW: финно-угорское *käte (FU). ",
     "source": "UEW/Uralonet №271: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=271; Wiktionary (udm): https://en.wiktionary.org/wiki/ки#Udmurt"
   },
   {
@@ -282,7 +282,7 @@
     "fin": "sydän",
     "est": "süda",
     "hun": "szív",
-    "note": "ПУ *śüdäme.",
+    "note": "UEW: уральское *śiδä(-mɜ) (U). ",
     "source": "UEW/Uralonet №960: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=960; Wiktionary (udm): https://en.wiktionary.org/wiki/сюлэм#Udmurt"
   },
   {
@@ -293,7 +293,7 @@
     "fin": "kieli",
     "est": "keel",
     "hun": null,
-    "note": "ПУ *kele/*käle. Мар. йылме и венг. nyelv — другой корень (*ńälmä), родственны между собой, но не удм. кыл (Wiktionary: nyelv, йылме).",
+    "note": "UEW: уральское *kele (U). Мар. йылме и венг. nyelv — другой корень (*ńälmä), родственны между собой, но не удм. кыл (Wiktionary: nyelv, йылме).",
     "source": "UEW/Uralonet №280: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=280; Wiktionary (udm): https://en.wiktionary.org/wiki/кыл#Udmurt"
   },
   {
@@ -304,7 +304,7 @@
     "fin": null,
     "est": null,
     "hun": "fül",
-    "note": "ФУ *peljä. Фин. korva и эст. kõrv — другое слово.",
+    "note": "UEW: финно-угорское *peljä (FU). Фин. korva и эст. kõrv — другое слово.",
     "source": "UEW/Uralonet №740: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=740; Wiktionary (udm): https://en.wiktionary.org/wiki/пель#Udmurt"
   },
   {
@@ -315,7 +315,7 @@
     "fin": "veri",
     "est": "veri",
     "hun": "vér",
-    "note": "ФУ *wire.",
+    "note": "UEW: финно-угорское *wire (FU). ",
     "source": "UEW/Uralonet №1152: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1152; Wiktionary (udm): https://en.wiktionary.org/wiki/вир#Udmurt"
   },
   {
@@ -326,7 +326,7 @@
     "fin": "luu",
     "est": "luu",
     "hun": null,
-    "note": "ПУ *luwe. Венгерское соответствие не установлено (UEW).",
+    "note": "UEW: уральское *luwe (U). Венгерское соответствие не установлено (UEW).",
     "source": "UEW/Uralonet №498: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=498; Wiktionary (udm): https://en.wiktionary.org/wiki/лы#Udmurt"
   },
   {
@@ -337,7 +337,7 @@
     "fin": "maksa",
     "est": "maks",
     "hun": "máj",
-    "note": "ПУ *maksa.",
+    "note": "UEW: уральское *maksa (U). ",
     "source": "UEW/Uralonet №519: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=519; Wiktionary (udm): https://en.wiktionary.org/wiki/мус#Udmurt"
   },
   {
@@ -348,7 +348,7 @@
     "fin": "pii (зубец)",
     "est": "pii (зубец)",
     "hun": "fog",
-    "note": "ФУ *piŋe. В финском и эстонском слово значит «зубец, зуб гребня», «зуб» = hammas.",
+    "note": "UEW: финно-угорское *piŋe (FU). В финском и эстонском слово значит «зубец, зуб гребня», «зуб» = hammas.",
     "source": "UEW/Uralonet №769: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=769; Wiktionary (udm): https://en.wiktionary.org/wiki/пинь#Udmurt"
   },
   {
@@ -370,7 +370,7 @@
     "fin": "hiiri",
     "est": "hiir",
     "hun": "egér",
-    "note": "ФУ *šiŋe-re.",
+    "note": "UEW: финно-угорское *šiŋe-re (FU). ",
     "source": "UEW/Uralonet №1006: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1006; Wiktionary (udm): https://en.wiktionary.org/wiki/шыр#Udmurt; ru.wiktionary (kom шыр): https://ru.wiktionary.org/wiki/%D1%88%D1%8B%D1%80"
   },
   {
@@ -381,7 +381,7 @@
     "fin": "elää",
     "est": "elama",
     "hun": "él",
-    "note": "ПУ *elä-.",
+    "note": "UEW: уральское *elä- (U). ",
     "source": "UEW/Uralonet №132: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=132; Wiktionary (udm): https://en.wiktionary.org/wiki/улыны#Udmurt"
   },
   {
@@ -392,7 +392,7 @@
     "fin": "kuolla",
     "est": "koolma (диал.)",
     "hun": "hal (meghal)",
-    "note": "ПУ *kola-/*kale-. Коми кувны подтверждено в Викисловаре для коми-пермяцкого; для зырянского — по UEW (kuv-) ⚠️. В литературном эстонском вместо koolma — surema.",
+    "note": "UEW: уральское *kola- (U). Коми кувны подтверждено в Викисловаре для коми-пермяцкого; для зырянского — по UEW (kuv-) ⚠️. В литературном эстонском вместо koolma — surema.",
     "source": "UEW/Uralonet №339: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=339; Wiktionary (udm): https://en.wiktionary.org/wiki/кулыны#Udmurt; ru.wiktionary (koi кувны): https://ru.wiktionary.org/wiki/%D0%BA%D1%83%D0%B2%D0%BD%D1%8B; Wiktionary (et koolma): https://en.wiktionary.org/wiki/koolma"
   },
   {
@@ -403,7 +403,7 @@
     "fin": "mennä",
     "est": "minema",
     "hun": "megy (inf. menni)",
-    "note": "ПУ *mene-. Инфинитив -ны в удм. и -ni в венг. — похожие показатели (Напольских, лекция 1).",
+    "note": "UEW: уральское *mene- (U). Инфинитив -ны в удм. и -ni в венг. — похожие показатели (Напольских, лекция 1).",
     "source": "UEW/Uralonet №536: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=536; Wiktionary (udm): https://en.wiktionary.org/wiki/мыныны#Udmurt"
   },
   {
@@ -414,7 +414,7 @@
     "fin": "syödä",
     "est": "sööma",
     "hun": "eszik (inf. enni)",
-    "note": "ФУ *sewe-. Мар. «есть» = кочкаш (другое слово).",
+    "note": "UEW: финно-угорское *sewe- (FU). Марийского соответствия в UEW нет.",
     "source": "UEW/Uralonet №893: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=893; Wiktionary (udm): https://en.wiktionary.org/wiki/сиыны#Udmurt"
   },
   {
@@ -425,7 +425,7 @@
     "fin": "juoda",
     "est": "jooma",
     "hun": "iszik (inf. inni)",
-    "note": "ФУ *juγe-.",
+    "note": "UEW: финно-угорское *juγe- (FU). ",
     "source": "UEW/Uralonet №195: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=195; Wiktionary (udm): https://en.wiktionary.org/wiki/юыны#Udmurt"
   },
   {
@@ -436,7 +436,7 @@
     "fin": "tuntea (чувствовать; знать кого-то)",
     "est": "tundma",
     "hun": "tud",
-    "note": "ПУ *tumte- «чувствовать, трогать».",
+    "note": "UEW: уральское *tumte- (U). ",
     "source": "UEW/Uralonet №1077: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1077; Wiktionary (udm): https://en.wiktionary.org/wiki/тодыны#Udmurt"
   },
   {
@@ -447,7 +447,7 @@
     "fin": "minä",
     "est": "mina",
     "hun": "én",
-    "note": "ПУ *mi-/*minä.",
+    "note": "UEW: уральское *mȣ̈ (U). ",
     "source": "UEW/Uralonet №576: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=576; Wiktionary (udm): https://en.wiktionary.org/wiki/мон#Udmurt"
   },
   {
@@ -458,7 +458,7 @@
     "fin": "sinä",
     "est": "sina",
     "hun": "te",
-    "note": "ПУ *ti-/*tinä.",
+    "note": "UEW: уральское *tȣ̈ (U). ",
     "source": "UEW/Uralonet №1083: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=1083; Wiktionary (udm): https://en.wiktionary.org/wiki/тон#Udmurt"
   },
   {
@@ -469,7 +469,7 @@
     "fin": "ken (разг. kuka)",
     "est": "kes",
     "hun": "ki",
-    "note": "ФУ *ke/*ki. UEW даёт коми kin; в литературном коми-зырянском «кто» обычно код/коді — другое слово ⚠️.",
+    "note": "UEW: финно-угорское/уральское *ke (*ki) (FU/U). UEW даёт коми kin; в литературном коми-зырянском «кто» обычно код/коді — другое слово ⚠️.",
     "source": "UEW/Uralonet №272: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=272; Wiktionary (udm): https://en.wiktionary.org/wiki/кин#Udmurt"
   },
   {
@@ -480,7 +480,7 @@
     "fin": "mikä",
     "est": "mis",
     "hun": "mi",
-    "note": "ПУ *mi/*mɜ.",
+    "note": "UEW: уральское *mɜ (U). ",
     "source": "UEW/Uralonet №581: https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=581; Wiktionary (udm): https://en.wiktionary.org/wiki/ма#Udmurt"
   }
 ]
