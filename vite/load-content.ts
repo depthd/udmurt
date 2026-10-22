@@ -63,10 +63,15 @@ export function loadCourse(contentDir: string, opts: { skipAudioCheck?: boolean 
   // распознаванием (CER ≤ 0,35, см. docs/audio-qa.md), подключаем его с пометкой «синтез».
   const manPath = path.join(ROOT, 'public', 'audio', 'manifest.json');
   if (fs.existsSync(manPath)) {
-    const man = JSON.parse(fs.readFileSync(manPath, 'utf8')) as { items: Record<string, { text: string; cer?: number }> };
+    const man = JSON.parse(fs.readFileSync(manPath, 'utf8')) as {
+      items: Record<string, { text: string; cer?: number; native?: boolean }>;
+    };
     for (const it of lexicon) {
       const a = man.items[it.id];
-      if (!it.audio && a && a.text === it.udm && (a.cer ?? 1) <= AUDIO_MAX_CER) {
+      if (it.audio || !a || a.text !== it.udm) continue;
+      // запись носителя (scripts/tts/import_native.py) используется всегда, синтез — только чистый
+      if (a.native) it.audio = it.id;
+      else if ((a.cer ?? 1) <= AUDIO_MAX_CER) {
         it.audio = it.id;
         it.audio_synth = true;
       }

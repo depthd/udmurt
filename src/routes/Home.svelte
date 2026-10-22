@@ -200,6 +200,14 @@
       </span>
       <span class="chev" aria-hidden="true">→</span>
     </a>
+    <a class="card about" href={href('/help')} data-testid="help-tile">
+      <span class="about-icon" aria-hidden="true">🎙️</span>
+      <span class="about-text">
+        <b>Говорите по-удмуртски?</b>
+        <span class="muted">Помогите проверить фразы и запишите их голосом</span>
+      </span>
+      <span class="chev" aria-hidden="true">→</span>
+    </a>
     <a class="card about" href={href('/group')} data-testid="group-tile">
       <span class="about-icon" aria-hidden="true">👥</span>
       <span class="about-text">

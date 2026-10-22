@@ -3,29 +3,15 @@
    * Разговорник: все фразы курса по юнитам (с озвучкой и разбором) и все шпаргалки юнитов на одной странице.
    * Удобно открыть перед парой. Поиск — по-удмуртски (можно без ӧ/ӥ) и по-русски.
    */
-  import { course, lexicon, personalize } from '$lib/course';
+  import { itemsByUnit, personalize } from '$lib/course';
   import type { LexItem } from '$lib/content/schema';
-  import { exerciseRefs } from '$lib/content/refs';
   import { renderMarkdown } from '$lib/markdown';
   import { searchKey } from '$lib/dict';
   import { href } from '$lib/router.svelte';
   import AudioButton from '../components/exercise/AudioButton.svelte';
   import MorphemeBreakdown from '../components/exercise/MorphemeBreakdown.svelte';
 
-  // Юнит слова — первый юнит, в уроках которого оно встречается.
-  const byUnit = course.units.map((u) => {
-    const ids: string[] = [];
-    const seen = new Set<string>();
-    for (const l of u.lessons) for (const ex of l.exercises) for (const r of exerciseRefs(ex)) if (!seen.has(r)) (seen.add(r), ids.push(r));
-    return { unit: u, ids };
-  });
-  const firstUnit = new Map<string, number>();
-  byUnit.forEach(({ ids }, i) => ids.forEach((id) => firstUnit.has(id) || firstUnit.set(id, i)));
-  const groups = byUnit.map(({ unit }, i) => ({
-    unit,
-    n: i + 1,
-    items: [...firstUnit].filter(([, u]) => u === i).map(([id]) => lexicon.get(id) as LexItem),
-  }));
+  const groups = itemsByUnit;
 
   let tab = $state<'phrases' | 'guides'>('phrases');
   let query = $state('');

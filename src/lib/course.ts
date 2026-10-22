@@ -2,6 +2,7 @@
 import course from 'virtual:course';
 import type { LexItem, Lesson, Unit, Source } from './content/schema';
 import { progress } from './progress.svelte';
+import { exerciseRefs } from './content/refs';
 
 export { course };
 
@@ -47,3 +48,21 @@ export function accepted(it: LexItem, lang: 'udm' | 'ru'): string[] {
   const list = lang === 'udm' ? [it.udm, ...it.udm_alt] : [it.ru, ...it.ru_alt];
   return list.map(personalize);
 }
+
+export type UnitGroup = { unit: Unit; n: number; items: LexItem[] };
+
+/** Слова и фразы по юнитам: каждое — в первом юните, где оно встречается в уроках (порядок — как в уроках). */
+export const itemsByUnit: UnitGroup[] = (() => {
+  const seen = new Set<string>();
+  return course.units.map((unit, i) => {
+    const items: LexItem[] = [];
+    for (const l of unit.lessons)
+      for (const ex of l.exercises)
+        for (const r of exerciseRefs(ex))
+          if (!seen.has(r) && lexicon.has(r)) {
+            seen.add(r);
+            items.push(lexicon.get(r)!);
+          }
+    return { unit, n: i + 1, items };
+  });
+})();

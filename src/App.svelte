@@ -22,6 +22,7 @@
     game: () => import('./routes/Game.svelte'),
     read: () => import('./routes/Read.svelte'),
     phrases: () => import('./routes/Phrases.svelte'),
+    help: () => import('./routes/Help.svelte'),
   };
   const loaded = $state<Record<string, Component<any>>>({});
   $effect(() => {

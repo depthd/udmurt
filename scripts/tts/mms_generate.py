@@ -34,6 +34,8 @@ def main():
         sha = hashlib.sha1(text.encode()).hexdigest()[:10]
         prev = manifest["items"].get(it["id"])
         mp3 = os.path.join(out_dir, f"{it['id']}.mp3")
+        if prev and prev.get("native"):
+            continue  # запись носителя синтезом не перезаписываем
         if prev and prev.get("sha") == sha and os.path.exists(mp3):
             continue
         inp = tok(text, return_tensors="pt")

@@ -41,6 +41,8 @@ def main():
     model.eval()
     rows = []
     for id_, it in sorted(man["items"].items()):
+        if it.get("native"):
+            continue  # записи носителей не проверяем распознаванием
         if it.get("asr_sha") == it.get("sha") and "cer" in it:
             rows.append((it["cer"], id_, it["text"], it.get("asr", "")))
             continue
