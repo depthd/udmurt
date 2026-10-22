@@ -16,6 +16,7 @@
     lang,
     morphemes = [],
     oncontinue,
+    reportUrl,
   }: {
     kind: Outcome;
     title: string;
@@ -27,6 +28,7 @@
     lang?: 'udm' | 'ru';
     morphemes?: Morpheme[];
     oncontinue: () => void;
+    reportUrl?: string;
   } = $props();
 
   let btn = $state<HTMLButtonElement>();
@@ -79,6 +81,7 @@
       {/if}
 
       {#if explain}<p class="explain">{explain}</p>{/if}
+      {#if reportUrl}<a class="report" href={reportUrl} target="_blank" rel="noopener">⚑ Сообщить об ошибке</a>{/if}
     </div>
 
     <button bind:this={btn} class="btn go" type="button" data-testid="continue" onclick={oncontinue}>Продолжить</button>
@@ -157,6 +160,12 @@
   .meaning,
   .note {
     color: var(--ink);
+  }
+  .report {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
   .explain {
     margin-top: 6px;

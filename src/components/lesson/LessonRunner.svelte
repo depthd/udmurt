@@ -64,7 +64,26 @@
     explain?: string;
     lang?: 'udm' | 'ru';
     morphemes: Morpheme[];
+    reportUrl?: string;
   };
+
+  /** Ссылка «Сообщить об ошибке»: готовая заявка на GitHub с данными задания. */
+  function reportUrl(ex: Exercise, expected: string, kind: Outcome): string {
+    const item = 'item' in ex && ex.item ? ex.item : '';
+    const title = `Ошибка в задании: ${runId} — ${ex.type}${item ? ' / ' + item : ''}`;
+    const body = [
+      `**Урок:** ${runId} (${title})`,
+      `**Задание:** ${ex.type}${item ? `, слово \`${item}\`` : ''}`,
+      `**Правильный ответ на сайте:** ${expected || '—'}`,
+      `**Мой результат:** ${kind}`,
+      '',
+      '**Что не так** (например: «мой ответ тоже верный», «опечатка», «носители так не говорят»):',
+      '',
+      '',
+      `_Отправлено со страницы ${location.href}_`,
+    ].join('\n');
+    return `https://github.com/depthd/udmurt/issues/new?labels=${encodeURIComponent('контент')}&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  }
 
   const E2E = import.meta.env.VITE_E2E === '1';
   /** Пауза после смены состояния, в которую повторные нажатия игнорируются (двойной клик/Enter). */
@@ -217,6 +236,7 @@
       explain: ex.explain,
       lang: answerLang(ex, expected),
       morphemes: morphemesOf(ex),
+      reportUrl: reportUrl(ex, expected, kind),
     };
     phase = 'feedback';
     lockUntil = now() + LOCK_MS;

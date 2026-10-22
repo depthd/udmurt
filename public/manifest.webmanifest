@@ -1,14 +1,19 @@
 {
   "name": "Удмурт кыл — учим удмуртский",
   "short_name": "Удмурт кыл",
-  "description": "Тренажёр удмуртского языка: уроки, повторение, словарь.",
+  "description": "Тренажёр удмуртского языка: короткие уроки, повторение, словарь и всё о языке.",
   "lang": "ru",
-  "start_url": "./",
+  "start_url": "./#/",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#fbf7f0",
   "theme_color": "#fbf7f0",
+  "categories": ["education"],
   "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }
