@@ -114,39 +114,15 @@ class Progress {
     return (this.data.lessons[id]?.done ?? 0) > 0;
   }
 
-  /** Записать результат урока и вернуть награды для экрана итогов. */
-  completeLesson(r: LessonResult): Reward {
+  /** Начислить XP за сегодня и продлить серию дней. */
+  #award(xp: number) {
     const d = this.data;
     const today = this.today;
-    const accuracy = r.total ? r.correct / r.total : 1;
-    const prev = d.lessons[r.lessonId];
-    const firstTime = !prev;
-
-    // XP: 10 за урок + бонус за точность; повторное прохождение — половина
-    let xp = 10 + Math.round(accuracy * 5);
-    if (accuracy === 1) xp += 5;
-    if (!firstTime) xp = Math.max(5, Math.round(xp / 2));
-
     d.xp += xp;
     const goalBefore = (d.days[today] ?? 0) >= d.dailyGoal;
     d.days[today] = (d.days[today] ?? 0) + xp;
     const goalReached = !goalBefore && d.days[today] >= d.dailyGoal;
 
-    d.lessons[r.lessonId] = {
-      done: (prev?.done ?? 0) + 1,
-      best: Math.max(prev?.best ?? 0, accuracy),
-      last: Date.now(),
-    };
-
-    // Карточки повторения
-    const now = Date.now();
-    for (const [id, g] of Object.entries(r.grades)) {
-      d.cards[id] = review(d.cards[id] ?? newCard(now), g, now);
-      if (g === 1) d.mistakes[id] = (d.mistakes[id] ?? 0) + 1;
-      else if (d.mistakes[id]) d.mistakes[id] = Math.max(0, d.mistakes[id] - 1);
-    }
-
-    // Стрик
     const s = d.streak;
     const streakBefore = this.streakState.value;
     let usedFreeze = 0;
@@ -176,19 +152,57 @@ class Progress {
       if (s.current > 0 && s.current % 7 === 0) s.freezes = Math.min(MAX_FREEZES, s.freezes + 1);
     }
     s.best = Math.max(s.best, s.current);
+    return { streakBefore, streakAfter: s.current, streakExtended: extended, usedFreeze, goalReached };
+  }
 
+  #applyGrades(grades: Record<string, Grade>) {
+    const d = this.data;
+    const now = Date.now();
+    for (const [id, g] of Object.entries(grades)) {
+      d.cards[id] = review(d.cards[id] ?? newCard(now), g, now);
+      if (g === 1) d.mistakes[id] = (d.mistakes[id] ?? 0) + 1;
+      else if (d.mistakes[id]) d.mistakes[id] = Math.max(0, d.mistakes[id] - 1);
+    }
+  }
+
+  /** Записать результат урока и вернуть награды для экрана итогов. */
+  completeLesson(r: LessonResult): Reward {
+    const d = this.data;
+    const accuracy = r.total ? r.correct / r.total : 1;
+    const prev = d.lessons[r.lessonId];
+    const firstTime = !prev;
+
+    // XP: 10 за урок + бонус за точность; повторное прохождение — половина
+    let xp = 10 + Math.round(accuracy * 5);
+    if (accuracy === 1) xp += 5;
+    if (!firstTime) xp = Math.max(5, Math.round(xp / 2));
+
+    d.lessons[r.lessonId] = {
+      done: (prev?.done ?? 0) + 1,
+      best: Math.max(prev?.best ?? 0, accuracy),
+      last: Date.now(),
+    };
+    this.#applyGrades(r.grades);
+    const a = this.#award(xp);
     const newAchievements = this.#checkAchievements(accuracy);
     this.save();
-    return {
-      xp,
-      streakBefore,
-      streakAfter: s.current,
-      streakExtended: extended,
-      usedFreeze,
-      goalReached,
-      newAchievements,
-      firstTime,
-    };
+    return { xp, ...a, newAchievements, firstTime };
+  }
+
+  /** Результат повторения: оценки слов + немного XP (повторение тоже продлевает серию). */
+  completePractice(r: LessonResult): Reward {
+    const accuracy = r.total ? r.correct / r.total : 1;
+    const xp = Math.min(15, 3 + r.correct);
+    this.#applyGrades(r.grades);
+    const a = this.#award(xp);
+    const newAchievements = this.#checkAchievements(accuracy);
+    this.save();
+    return { xp, ...a, newAchievements, firstTime: false };
+  }
+
+  setOnboarded() {
+    this.data.onboarded = true;
+    this.save();
   }
 
   #checkAchievements(accuracy: number): string[] {
@@ -217,7 +231,7 @@ class Progress {
       .map(([id]) => id);
   }
 
-  /** Записать отдельное повторение (практика вне урока). */
+  /** Записать отдельное повторение одного слова. */
   gradeItem(id: string, g: Grade) {
     const now = Date.now();
     this.data.cards[id] = review(this.data.cards[id] ?? newCard(now), g, now);

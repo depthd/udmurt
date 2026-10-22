@@ -2,6 +2,7 @@
   import { router, href } from '$lib/router.svelte';
   import { progress } from '$lib/progress.svelte';
   import { requestPersist } from '$lib/storage';
+  import { ui } from '$lib/ui.svelte';
   import Home from './routes/Home.svelte';
   import Learn from './routes/Learn.svelte';
   import LessonPage from './routes/Lesson.svelte';
@@ -16,7 +17,7 @@
   import NavBar from './components/NavBar.svelte';
 
   const r = $derived(router.current);
-  const inLesson = $derived(r.name === 'lesson' || r.name === 'practice');
+  const inLesson = $derived(r.name === 'lesson' || (r.name === 'practice' && ui.immersive));
 
   $effect(() => {
     if (progress.data.xp > 0) void requestPersist();
