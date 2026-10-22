@@ -1,0 +1,36 @@
+id: u5-l1
+title: Нянь, ву, йӧл
+goal: Еда и напитки
+icon: 🍞
+exercises:
+  - type: teach
+    item: nyan
+  - type: teach
+    item: vu
+  - type: choice
+    item: vu
+    distractors: [nyan]
+    pictures: true
+  - type: teach
+    item: jol
+  - type: teach
+    item: chai
+  - type: choice
+    dir: ru-udm
+    item: jol
+    distractors: [vu, chai]
+  - type: teach
+    item: ulmo
+  - type: teach
+    item: sil
+  - type: match
+    items: [nyan, vu, jol, ulmo, sil]
+  - type: teach
+    item: siyon
+  - type: choice
+    item: ulmo
+    distractors: [sil, nyan, jol]
+    pictures: true
+  - type: type
+    dir: ru-udm
+    item: nyan

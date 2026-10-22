@@ -1,0 +1,30 @@
+id: u5-story
+title: 'История: Кыӵе ческыт!'
+goal: 'Понять разговор за столом'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Песянай, item: zechbures }
+      - { who: Песянай, item: mar-kariskod }
+      - { who: '{name}', item: mynam-chai-yueme-pote }
+      - { who: Песянай, item: vai-mynym-nyan }
+    question: Что хочет внук или внучка?
+    options: [Чай, Кофе, Молоко]
+    answer: Чай
+  - type: dialogue
+    lines:
+      - { who: Песянай, item: tynyd-kelshe-a }
+      - { who: '{name}', item: sil-tuzh-cheskyt }
+      - { who: '{name}', item: ton-cheskyt-poraskiskod }
+      - { who: '{name}', item: badzym-tau }
+    question: Что говорят бабушке?
+    options: [Что она вкусно готовит, Что мясо холодное, Что хотят кофе]
+    answer: Что она вкусно готовит
+  - type: tiles
+    item: kyche-cheskyt
+    extra: [ӧвӧл, туж]
+  - type: listen
+    item: sil-tuzh-cheskyt
+    distractors: [kyche-cheskyt]

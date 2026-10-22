@@ -41,6 +41,9 @@ def main():
     model.eval()
     rows = []
     for id_, it in sorted(man["items"].items()):
+        if it.get("asr_sha") == it.get("sha") and "cer" in it:
+            rows.append((it["cer"], id_, it["text"], it.get("asr", "")))
+            continue
         x = load16k(os.path.join(audio_dir, f"{id_}.mp3"))
         inp = proc(x, sampling_rate=16000, return_tensors="pt")
         with torch.no_grad():
@@ -49,6 +52,7 @@ def main():
         c = cer(hyp, it["text"])
         it["asr"] = hyp
         it["cer"] = round(c, 3)
+        it["asr_sha"] = it.get("sha")
         rows.append((c, id_, it["text"], hyp))
         print(f"{c:.2f}  {it['text']}  →  {hyp}", flush=True)
     json.dump(man, open(os.path.join(audio_dir, "manifest.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)

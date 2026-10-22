@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { solveLesson } from './solve';
+import { loadCourse } from '../../vite/load-content.ts';
+
+// Все уроки курса по порядку — список берётся из content/, чтобы новые юниты проверялись сами.
+const ALL = loadCourse('content').units.flatMap((u) => u.lessons.map((l) => l.id));
 
 test('новичок проходит первый урок с главной, получает XP и открывает второй урок', async ({ page }) => {
   const errors: string[] = [];
@@ -25,11 +29,11 @@ test('новичок проходит первый урок с главной, �
   expect(errors).toEqual([]);
 });
 
-test('все уроки юнитов 1–3 проходятся до конца, ошибка возвращается в очередь', async ({ page }) => {
-  test.setTimeout(1_200_000);
+test('все уроки курса проходятся до конца, ошибка возвращается в очередь', async ({ page }) => {
+  test.setTimeout(1_800_000);
   await page.goto('#/');
   await page.evaluate(() => localStorage.setItem('udm.progress.v1', JSON.stringify({ v: 1, name: 'Алексей', xp: 1, onboarded: true })));
-  for (const id of ['u1-l1', 'u1-l2', 'u1-l3', 'u1-l4', 'u1-l5', 'u1-l6', 'u1-story', 'u2-l1', 'u2-l2', 'u2-l3', 'u2-l4', 'u2-l5', 'u2-l6', 'u2-story', 'u3-l1', 'u3-l2', 'u3-l3', 'u3-l4', 'u3-l5', 'u3-story']) {
+  for (const id of ALL) {
     await page.goto(`#/lesson/${id}`);
     await expect(page.getByTestId('lesson')).toBeVisible();
     const steps = await solveLesson(page, { wrongAt: id === 'u1-l3' ? 2 : undefined });
@@ -37,6 +41,6 @@ test('все уроки юнитов 1–3 проходятся до конца,
     await page.getByTestId('finish').click();
   }
   const p = await page.evaluate(() => JSON.parse(localStorage.getItem('udm.progress.v1') || '{}'));
-  expect(Object.keys(p.lessons)).toHaveLength(20);
+  expect(Object.keys(p.lessons)).toHaveLength(ALL.length);
   expect(p.streak.current).toBe(1);
 });

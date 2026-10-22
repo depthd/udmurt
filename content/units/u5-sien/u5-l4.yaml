@@ -1,0 +1,36 @@
+id: u5-l4
+title: Магазинын
+goal: 'В магазине: цена и покупки'
+icon: 🏪
+exercises:
+  - type: teach
+    item: kartofka
+  - type: teach
+    item: koenya-ta-kartofka-syle
+  - type: tiles
+    item: koenya-ta-kartofka-syle
+    extra: [кытын, улмо]
+  - type: teach
+    item: ta-magazinyn-nyan-vuzaske-a
+  - type: choice
+    item: ta-magazinyn-nyan-vuzaske-a
+    distractors: [koenya-ta-kartofka-syle, vai-mynym-nyan]
+  - type: teach
+    item: so-nyan-basytiz
+  - type: dialogue
+    lines:
+      - { who: '{name}', item: ta-magazinyn-nyan-vuzaske-a }
+      - { who: Продавец, item: ben }
+      - { who: '{name}', item: vai-mynym-nyan }
+      - { who: '{name}', item: tau }
+    question: Что купил покупатель?
+    options: [Хлеб, Молоко, Картошку]
+    answer: Хлеб
+  - type: match
+    items: [kartofka, nyan, ulmo, kofe]
+  - type: type
+    dir: ru-udm
+    item: vai-mynym-nyan
+  - type: listen
+    item: koenya-ta-kartofka-syle
+    distractors: [ta-magazinyn-nyan-vuzaske-a]

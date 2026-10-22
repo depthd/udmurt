@@ -2,6 +2,7 @@
  "items": {
   "agai": {
    "asr": "аре",
+   "asr_sha": "499b9ba8a9",
    "cer": 0.75,
    "seconds": 0.86,
    "sha": "499b9ba8a9",
@@ -9,6 +10,7 @@
   },
   "ali": {
    "asr": "ае",
+   "asr_sha": "a6b8b6e99a",
    "cer": 0.667,
    "seconds": 1.1,
    "sha": "a6b8b6e99a",
@@ -16,6 +18,7 @@
   },
   "ali-kuin-chas": {
    "asr": "каликуинчаз",
+   "asr_sha": "6adf4864b4",
    "cer": 0.385,
    "seconds": 1.62,
    "sha": "6adf4864b4",
@@ -23,6 +26,7 @@
   },
   "ali-nyl-chas-das-minut": {
    "asr": "аринир час дас минуд",
+   "asr_sha": "1572475db4",
    "cer": 0.304,
    "seconds": 2.3,
    "sha": "1572475db4",
@@ -30,6 +34,7 @@
   },
   "ali-sizym-chas": {
    "asr": "ари сизьым чаз",
+   "asr_sha": "51a1db95dd",
    "cer": 0.143,
    "seconds": 1.94,
    "sha": "51a1db95dd",
@@ -37,6 +42,7 @@
   },
   "ali-vit-chas": {
    "asr": "тари ричаз",
+   "asr_sha": "815ad2166c",
    "cer": 0.583,
    "seconds": 1.2,
    "sha": "815ad2166c",
@@ -44,6 +50,7 @@
   },
   "anai": {
    "asr": "танари",
+   "asr_sha": "4e75709157",
    "cer": 0.75,
    "seconds": 0.74,
    "sha": "4e75709157",
@@ -51,6 +58,7 @@
   },
   "anai-atai": {
    "asr": "паноякай",
+   "asr_sha": "5f1d944eda",
    "cer": 0.667,
    "seconds": 0.94,
    "sha": "5f1d944eda",
@@ -58,6 +66,7 @@
   },
   "annaly-kuamyn-ares": {
    "asr": "анналы куамын арез",
+   "asr_sha": "02ba7cad85",
    "cer": 0.056,
    "seconds": 2.0,
    "sha": "02ba7cad85",
@@ -65,6 +74,7 @@
   },
   "apai": {
    "asr": "тапаре",
+   "asr_sha": "b53a5403df",
    "cer": 0.75,
    "seconds": 0.82,
    "sha": "b53a5403df",
@@ -72,6 +82,7 @@
   },
   "arnyayn-sizym-nunal": {
    "asr": "арняем сизьым нунал",
+   "asr_sha": "252a3a1445",
    "cer": 0.105,
    "seconds": 2.05,
    "sha": "252a3a1445",
@@ -79,6 +90,7 @@
   },
   "atai": {
    "asr": "датай",
+   "asr_sha": "99c4d9af8a",
    "cer": 0.25,
    "seconds": 0.83,
    "sha": "99c4d9af8a",
@@ -86,6 +98,7 @@
   },
   "badzym-tau": {
    "asr": "бадӟым со",
+   "asr_sha": "aef80235df",
    "cer": 0.3,
    "seconds": 1.25,
    "sha": "aef80235df",
@@ -93,6 +106,7 @@
   },
   "ben": {
    "asr": "вел",
+   "asr_sha": "988b8248d4",
    "cer": 0.667,
    "seconds": 0.67,
    "sha": "988b8248d4",
@@ -100,13 +114,23 @@
   },
   "ben-mon-student": {
    "asr": "бен мон сулы",
+   "asr_sha": "8ebcf55e58",
    "cer": 0.333,
    "seconds": 1.92,
    "sha": "8ebcf55e58",
    "text": "Бен, мон студент."
   },
+  "chai": {
+   "asr": "ча",
+   "asr_sha": "c90efe38a1",
+   "cer": 0.333,
+   "seconds": 0.77,
+   "sha": "c90efe38a1",
+   "text": "чай"
+  },
   "chas": {
    "asr": "фас",
+   "asr_sha": "1e0e6a4d86",
    "cer": 0.333,
    "seconds": 1.09,
    "sha": "1e0e6a4d86",
@@ -114,6 +138,7 @@
   },
   "das": {
    "asr": "вас",
+   "asr_sha": "da2fbee158",
    "cer": 0.333,
    "seconds": 1.14,
    "sha": "da2fbee158",
@@ -121,6 +146,7 @@
   },
   "das-kuin": {
    "asr": "наскуин",
+   "asr_sha": "66d0f45389",
    "cer": 0.333,
    "seconds": 1.42,
    "sha": "66d0f45389",
@@ -128,6 +154,7 @@
   },
   "das-odig": {
    "asr": "дас одӥ",
+   "asr_sha": "ea1150bcfb",
    "cer": 0.125,
    "seconds": 1.34,
    "sha": "ea1150bcfb",
@@ -135,6 +162,7 @@
   },
   "das-sizym": {
    "asr": "на сизьын",
+   "asr_sha": "8006abd418",
    "cer": 0.3,
    "seconds": 1.46,
    "sha": "8006abd418",
@@ -142,6 +170,7 @@
   },
   "glazkar": {
    "asr": "ӝуасха",
+   "asr_sha": "40b238855c",
    "cer": 0.714,
    "seconds": 1.23,
    "sha": "40b238855c",
@@ -149,6 +178,7 @@
   },
   "glazkarys": {
    "asr": "вылаз карысь",
+   "asr_sha": "0ff2465d7d",
    "cer": 0.3,
    "seconds": 1.52,
    "sha": "0ff2465d7d",
@@ -156,13 +186,31 @@
   },
   "izhkar": {
    "asr": "вира",
+   "asr_sha": "73db90330e",
    "cer": 0.8,
    "seconds": 0.75,
    "sha": "73db90330e",
    "text": "Ижкар"
   },
+  "jol": {
+   "asr": "йыл",
+   "asr_sha": "5b185dee10",
+   "cer": 0.333,
+   "seconds": 1.09,
+   "sha": "5b185dee10",
+   "text": "йӧл"
+  },
+  "kartofka": {
+   "asr": "карто ка",
+   "asr_sha": "186c5a0e48",
+   "cer": 0.125,
+   "seconds": 0.98,
+   "sha": "186c5a0e48",
+   "text": "картофка"
+  },
   "koenya": {
    "asr": "кале",
+   "asr_sha": "81b24104bc",
    "cer": 0.75,
    "seconds": 0.74,
    "sha": "81b24104bc",
@@ -170,20 +218,39 @@
   },
   "koenya-chas": {
    "asr": "кӧня чаз",
+   "asr_sha": "0b4ada79d0",
    "cer": 0.125,
    "seconds": 1.12,
    "sha": "0b4ada79d0",
    "text": "Кӧня час?"
   },
+  "koenya-ta-kartofka-syle": {
+   "asr": "кӧнята картоска сылэ",
+   "asr_sha": "9ee5c1472a",
+   "cer": 0.095,
+   "seconds": 2.03,
+   "sha": "9ee5c1472a",
+   "text": "Кӧня та картофка сылэ?"
+  },
   "koenya-tynyd-ares": {
    "asr": "кӧня тыныд арез",
+   "asr_sha": "0510476134",
    "cer": 0.067,
    "seconds": 1.5,
    "sha": "0510476134",
    "text": "Кӧня тыныд арес?"
   },
+  "kofe": {
+   "asr": "колэ",
+   "asr_sha": "a847d5f94f",
+   "cer": 0.5,
+   "seconds": 0.82,
+   "sha": "a847d5f94f",
+   "text": "кофе"
+  },
   "kuamyn": {
    "asr": "куамын",
+   "asr_sha": "b31fa204fd",
    "cer": 0.0,
    "seconds": 0.96,
    "sha": "b31fa204fd",
@@ -191,6 +258,7 @@
   },
   "kuat": {
    "asr": "куазь",
+   "asr_sha": "f85e011d55",
    "cer": 0.2,
    "seconds": 0.96,
    "sha": "f85e011d55",
@@ -198,6 +266,7 @@
   },
   "kuatton": {
    "asr": "куать тоам",
+   "asr_sha": "d367434682",
    "cer": 0.375,
    "seconds": 1.12,
    "sha": "d367434682",
@@ -205,13 +274,23 @@
   },
   "kuin": {
    "asr": "куи",
+   "asr_sha": "41645d4b6e",
    "cer": 0.4,
    "seconds": 0.8,
    "sha": "41645d4b6e",
    "text": "куинь"
   },
+  "kyche-cheskyt": {
+   "asr": "кыӵе ческыд",
+   "asr_sha": "fbbc2cf2c8",
+   "cer": 0.091,
+   "seconds": 1.26,
+   "sha": "fbbc2cf2c8",
+   "text": "Кыӵе ческыт!"
+  },
   "kyk": {
    "asr": "кы",
+   "asr_sha": "f49f48044c",
    "cer": 0.333,
    "seconds": 0.45,
    "sha": "f49f48044c",
@@ -219,13 +298,31 @@
   },
   "kyk-chasyn-lykty": {
    "asr": "кыкычасэл лыкты",
+   "asr_sha": "895f27ea5f",
    "cer": 0.2,
    "seconds": 1.78,
    "sha": "895f27ea5f",
    "text": "Кык часын лыкты."
   },
+  "kytchy": {
+   "asr": "кытчыы",
+   "asr_sha": "0842972133",
+   "cer": 0.2,
+   "seconds": 0.94,
+   "sha": "0842972133",
+   "text": "кытчы"
+  },
+  "kytchy-ton-myniskod": {
+   "asr": "кытчы тон мынӥськод",
+   "asr_sha": "bcefb41470",
+   "cer": 0.0,
+   "seconds": 1.82,
+   "sha": "bcefb41470",
+   "text": "Кытчы тон мынӥськод?"
+  },
   "kytyn-mynam-anai-atae": {
    "asr": "кытын мынам анаата",
+   "asr_sha": "966fadb5f4",
    "cer": 0.143,
    "seconds": 2.05,
    "sha": "966fadb5f4",
@@ -233,13 +330,31 @@
   },
   "kytyn-ton-uliskod": {
    "asr": "кытын тон улӥськод",
+   "asr_sha": "edd4bf51b0",
    "cer": 0.0,
    "seconds": 1.92,
    "sha": "edd4bf51b0",
    "text": "Кытын тон улӥськод?"
   },
+  "kytyn-ton-uzhaskod": {
+   "asr": "кытын тон ушаськод",
+   "asr_sha": "4710a88353",
+   "cer": 0.056,
+   "seconds": 1.94,
+   "sha": "4710a88353",
+   "text": "Кытын тон ужаськод?"
+  },
+  "kytyn-uzha-ataed": {
+   "asr": "кытын ужа атае",
+   "asr_sha": "1002fa87c9",
+   "cer": 0.067,
+   "seconds": 1.74,
+   "sha": "1002fa87c9",
+   "text": "Кытын ужа атаед?"
+  },
   "kyz": {
    "asr": "кызь",
+   "asr_sha": "6eb39e3065",
    "cer": 0.0,
    "seconds": 1.04,
    "sha": "6eb39e3065",
@@ -247,6 +362,7 @@
   },
   "kyzy-tilad-nimdy": {
    "asr": "кызьы тӥляд нинды",
+   "asr_sha": "1657a274f8",
    "cer": 0.059,
    "seconds": 1.7,
    "sha": "1657a274f8",
@@ -254,13 +370,23 @@
   },
   "kyzy-uliskody": {
    "asr": "кызьы улӥськоды",
+   "asr_sha": "a00aaaee8c",
    "cer": 0.0,
    "seconds": 1.58,
    "sha": "a00aaaee8c",
    "text": "Кызьы улӥськоды?"
   },
+  "mar-kariskod": {
+   "asr": "мар кариськод",
+   "asr_sha": "95f5b91ebb",
+   "cer": 0.0,
+   "seconds": 1.49,
+   "sha": "95f5b91ebb",
+   "text": "Мар кариськод?"
+  },
   "milyam-nylpiosmy-ovol": {
    "asr": "милян нылпиосмы ӧвӧл",
+   "asr_sha": "356156e739",
    "cer": 0.05,
    "seconds": 2.27,
    "sha": "356156e739",
@@ -268,6 +394,7 @@
   },
   "mon": {
    "asr": "воа",
+   "asr_sha": "b22a944390",
    "cer": 0.667,
    "seconds": 1.1,
    "sha": "b22a944390",
@@ -275,6 +402,7 @@
   },
   "mon-anaime-yaratisko": {
    "asr": "мон анайме яратӥсько",
+   "asr_sha": "167ab732c4",
    "cer": 0.0,
    "seconds": 2.13,
    "sha": "167ab732c4",
@@ -282,6 +410,7 @@
   },
   "mon-dyshetis": {
    "asr": "мон дышетӥсь",
+   "asr_sha": "c045348378",
    "cer": 0.0,
    "seconds": 1.47,
    "sha": "c045348378",
@@ -289,13 +418,23 @@
   },
   "mon-dyshetskis": {
    "asr": "мон дышетскись",
+   "asr_sha": "fe9bdfd661",
    "cer": 0.0,
    "seconds": 1.76,
    "sha": "fe9bdfd661",
    "text": "Мон дышетскись."
   },
+  "mon-dyshetskisko-no-uzhasko": {
+   "asr": "мон дышетскисько но ужасько",
+   "asr_sha": "c103e57963",
+   "cer": 0.0,
+   "seconds": 2.5,
+   "sha": "c103e57963",
+   "text": "Мон дышетскисько но ужасько."
+  },
   "mon-dzuch": {
    "asr": "мон зузь",
+   "asr_sha": "101cbe46d9",
    "cer": 0.429,
    "seconds": 1.33,
    "sha": "101cbe46d9",
@@ -303,6 +442,7 @@
   },
   "mon-dzuch-samen-veraskisko": {
    "asr": "мон ӟыт сямен вераськисько",
+   "asr_sha": "3c89b1da6d",
    "cer": 0.077,
    "seconds": 2.35,
    "sha": "3c89b1da6d",
@@ -310,6 +450,7 @@
   },
   "mon-emchi-ovol": {
    "asr": "мон эмзы ӧвӧл",
+   "asr_sha": "8240a3c714",
    "cer": 0.154,
    "seconds": 1.79,
    "sha": "8240a3c714",
@@ -317,6 +458,7 @@
   },
   "mon-glazkaryn-ulisko": {
    "asr": "мон глаз карын улӥсько",
+   "asr_sha": "9eff4eec12",
    "cer": 0.048,
    "seconds": 2.05,
    "sha": "9eff4eec12",
@@ -324,6 +466,7 @@
   },
   "mon-glazkarys": {
    "asr": "мон вылаз карысь",
+   "asr_sha": "675b0e4c97",
    "cer": 0.214,
    "seconds": 1.82,
    "sha": "675b0e4c97",
@@ -331,27 +474,79 @@
   },
   "mon-izhkarys": {
    "asr": "мон ишь карысь",
+   "asr_sha": "70dad3a107",
    "cer": 0.25,
    "seconds": 1.42,
    "sha": "70dad3a107",
    "text": "Мон Ижкарысь."
   },
+  "mon-kezyt-kofe-ug-yaratisky": {
+   "asr": "мон кезьыт коше уг яратӥськы",
+   "asr_sha": "3521ba7096",
+   "cer": 0.036,
+   "seconds": 2.58,
+   "sha": "3521ba7096",
+   "text": "Мон кезьыт кофе уг яратӥськы."
+  },
+  "mon-kinoe-vetlyny-yaratisko": {
+   "asr": "мон киное ветлыны яратӥсько",
+   "asr_sha": "d04f2f8b3e",
+   "cer": 0.0,
+   "seconds": 2.38,
+   "sha": "d04f2f8b3e",
+   "text": "Мон киное ветлыны яратӥсько."
+  },
+  "mon-kniga-lydzisko": {
+   "asr": "мон книгазлы икӟисько",
+   "asr_sha": "792a5bae3c",
+   "cer": 0.211,
+   "seconds": 2.02,
+   "sha": "792a5bae3c",
+   "text": "Мон книга лыдӟисько."
+  },
+  "mon-koshkisko": {
+   "asr": "мон кошкисько",
+   "asr_sha": "624e8c0464",
+   "cer": 0.0,
+   "seconds": 1.42,
+   "sha": "624e8c0464",
+   "text": "Мон кошкисько."
+  },
   "mon-kuin-gozhtet-gozhti": {
    "asr": "мон куинь гожтэт гожтӥ",
+   "asr_sha": "27c814e260",
    "cer": 0.0,
    "seconds": 2.05,
    "sha": "27c814e260",
    "text": "Мон куинь гожтэт гожтӥ."
   },
+  "mon-lydzisko": {
+   "asr": "мон лыдӟисько",
+   "asr_sha": "e5157810c0",
+   "cer": 0.0,
+   "seconds": 1.68,
+   "sha": "e5157810c0",
+   "text": "Мон лыдӟисько."
+  },
   "mon-no-student": {
    "asr": "мон но студет",
+   "asr_sha": "c53f5ab52d",
    "cer": 0.071,
    "seconds": 1.57,
    "sha": "c53f5ab52d",
    "text": "Мон но студент."
   },
+  "mon-nokytchy-no-ug-myniskhy": {
+   "asr": "мон нокытчы но уг мынӥськы",
+   "asr_sha": "6600ce3f05",
+   "cer": 0.0,
+   "seconds": 2.48,
+   "sha": "6600ce3f05",
+   "text": "Мон нокытчы но уг мынӥськы."
+  },
   "mon-nyl-kyl-todisko": {
    "asr": "мон ньырь кыл тодӥсько",
+   "asr_sha": "49cb07ac75",
    "cer": 0.045,
    "seconds": 2.13,
    "sha": "49cb07ac75",
@@ -359,13 +554,31 @@
   },
   "mon-oj-vala": {
    "asr": "мон ӧй вала",
+   "asr_sha": "f9ff7ce61f",
    "cer": 0.0,
    "seconds": 1.2,
    "sha": "f9ff7ce61f",
    "text": "Мон ӧй вала."
   },
+  "mon-pos-kofe-yaratisko": {
+   "asr": "мон пӧськоше яратӥсько",
+   "asr_sha": "e09c3453d0",
+   "cer": 0.087,
+   "seconds": 2.32,
+   "sha": "e09c3453d0",
+   "text": "Мон пӧсь кофе яратӥсько."
+  },
+  "mon-shkolae-vetlisko": {
+   "asr": "мон школае ветлӥсько",
+   "asr_sha": "719af0b51e",
+   "cer": 0.0,
+   "seconds": 2.03,
+   "sha": "719af0b51e",
+   "text": "Мон школае ветлӥсько."
+  },
   "mon-student": {
    "asr": "мон студе",
+   "asr_sha": "e19609c5e5",
    "cer": 0.182,
    "seconds": 1.5,
    "sha": "e19609c5e5",
@@ -373,13 +586,31 @@
   },
   "mon-student-ovol": {
    "asr": "мон студент ӧвӧл",
+   "asr_sha": "2adb795768",
    "cer": 0.0,
    "seconds": 1.78,
    "sha": "2adb795768",
    "text": "Мон студент ӧвӧл."
   },
+  "mon-tunne-muzee-mynisko": {
+   "asr": "мон туннэ музёе мынӥсько",
+   "asr_sha": "1b32759dfc",
+   "cer": 0.0,
+   "seconds": 2.18,
+   "sha": "1b32759dfc",
+   "text": "Мон туннэ музее мынӥсько."
+  },
+  "mon-tyrshisko": {
+   "asr": "мон трышисько",
+   "asr_sha": "2df84f4cca",
+   "cer": 0.154,
+   "seconds": 1.33,
+   "sha": "2df84f4cca",
+   "text": "Мон тыршисько."
+  },
   "mon-udmurt": {
    "asr": "мон уд мурп",
+   "asr_sha": "187fceeeee",
    "cer": 0.2,
    "seconds": 1.38,
    "sha": "187fceeeee",
@@ -387,6 +618,7 @@
   },
   "mon-udmurt-kylez-dyshetisko": {
    "asr": "мон удмурт кылэз дышетӥсько",
+   "asr_sha": "e55025d541",
    "cer": 0.0,
    "seconds": 2.5,
    "sha": "e55025d541",
@@ -394,6 +626,7 @@
   },
   "mon-ug-todisky": {
    "asr": "мон уг тодӥськы",
+   "asr_sha": "db22229744",
    "cer": 0.0,
    "seconds": 1.57,
    "sha": "db22229744",
@@ -401,6 +634,7 @@
   },
   "mon-univ-dyshetskisko": {
    "asr": "мон униле сите тын дышетскисько",
+   "asr_sha": "4e9addaf24",
    "cer": 0.1,
    "seconds": 2.66,
    "sha": "4e9addaf24",
@@ -408,20 +642,39 @@
   },
   "mon-vengriys": {
    "asr": "мон вен гиысь",
+   "asr_sha": "82f303eb27",
    "cer": 0.154,
    "seconds": 1.54,
    "sha": "82f303eb27",
    "text": "Мон Венгриысь."
   },
+  "mon-yaratisko-lydziskyny": {
+   "asr": "мон яратӥсько лыдӟиськыны",
+   "asr_sha": "99f54ac86e",
+   "cer": 0.0,
+   "seconds": 2.72,
+   "sha": "99f54ac86e",
+   "text": "Мон яратӥсько лыдӟиськыны."
+  },
   "mynam-badzym-semyae": {
    "asr": "мынам бадӟым сенъле",
+   "asr_sha": "5e9422c7aa",
    "cer": 0.158,
    "seconds": 1.95,
    "sha": "5e9422c7aa",
    "text": "Мынам бадӟым семьяе."
   },
+  "mynam-chai-yueme-pote": {
+   "asr": "мынам чай ёеме потэ",
+   "asr_sha": "a996998aad",
+   "cer": 0.105,
+   "seconds": 2.45,
+   "sha": "a996998aad",
+   "text": "Мынам чай юэме потэ."
+  },
   "mynam-dyry-ovol": {
    "asr": "мынам дырыр ӧвӧл",
+   "asr_sha": "e3a69b6ff5",
    "cer": 0.067,
    "seconds": 1.78,
    "sha": "e3a69b6ff5",
@@ -429,6 +682,7 @@
   },
   "mynam-dyry-van": {
    "asr": "мынам дыры вань",
+   "asr_sha": "a36814a27f",
    "cer": 0.0,
    "seconds": 1.63,
    "sha": "a36814a27f",
@@ -436,6 +690,7 @@
   },
   "mynam-kyk-korkae": {
    "asr": "мынам кыд корка",
+   "asr_sha": "1f92ea71da",
    "cer": 0.125,
    "seconds": 1.68,
    "sha": "1f92ea71da",
@@ -443,6 +698,7 @@
   },
   "mynam-kyshnoe-dyshetis": {
    "asr": "мынам кышноед дышетӥсь",
+   "asr_sha": "c5491d941c",
    "cer": 0.048,
    "seconds": 2.21,
    "sha": "c5491d941c",
@@ -450,6 +706,7 @@
   },
   "mynam-nyly-van": {
    "asr": "мынам нылы вани",
+   "asr_sha": "c9297a7cd0",
    "cer": 0.067,
    "seconds": 1.66,
    "sha": "c9297a7cd0",
@@ -457,6 +714,7 @@
   },
   "mynam-odig-agae": {
    "asr": "мынам одӥг агае но кык сузэръёсы",
+   "asr_sha": "5c2c073f5e",
    "cer": 0.0,
    "seconds": 2.66,
    "sha": "5c2c073f5e",
@@ -464,6 +722,7 @@
   },
   "mynam-pie-student": {
    "asr": "мынам пиез тудент",
+   "asr_sha": "394eb96fdb",
    "cer": 0.118,
    "seconds": 1.78,
    "sha": "394eb96fdb",
@@ -471,6 +730,7 @@
   },
   "mynym-das-tyamys-ares": {
    "asr": "мынын дастямы сарез",
+   "asr_sha": "ee6e16b6a6",
    "cer": 0.25,
    "seconds": 2.0,
    "sha": "ee6e16b6a6",
@@ -478,6 +738,7 @@
   },
   "mynym-das-ukmys-ares": {
    "asr": "мыным дас укмы сарез",
+   "asr_sha": "d3a5730f03",
    "cer": 0.15,
    "seconds": 2.16,
    "sha": "d3a5730f03",
@@ -485,6 +746,7 @@
   },
   "mynym-kuatton-kyk-ares": {
    "asr": "мыным куатьтон кык арез",
+   "asr_sha": "706eaa0777",
    "cer": 0.043,
    "seconds": 2.59,
    "sha": "706eaa0777",
@@ -492,6 +754,7 @@
   },
   "mynym-kyz-ares": {
    "asr": "мыным кызярез",
+   "asr_sha": "33f7590edd",
    "cer": 0.267,
    "seconds": 1.78,
    "sha": "33f7590edd",
@@ -499,13 +762,31 @@
   },
   "mynym-kyz-nyl-ares": {
    "asr": "мынэм кызь ны лярез",
+   "asr_sha": "429bf9d115",
    "cer": 0.333,
    "seconds": 1.97,
    "sha": "429bf9d115",
    "text": "Мыным кызь ньыль арес."
   },
+  "mynym-so-tuzh-kelshe": {
+   "asr": "мыным со туж кесе",
+   "asr_sha": "40f1440893",
+   "cer": 0.158,
+   "seconds": 2.22,
+   "sha": "40f1440893",
+   "text": "Мыным со туж кельше."
+  },
+  "mynym-ulmo-kule": {
+   "asr": "мыным улмо кулэ",
+   "asr_sha": "273fd6790f",
+   "cer": 0.0,
+   "seconds": 1.68,
+   "sha": "273fd6790f",
+   "text": "Мыным улмо кулэ."
+  },
   "nim": {
    "asr": "выы",
+   "asr_sha": "79597a11e8",
    "cer": 1.0,
    "seconds": 0.56,
    "sha": "79597a11e8",
@@ -513,6 +794,7 @@
   },
   "nimy": {
    "asr": "нинэ",
+   "asr_sha": "a4637f016e",
    "cer": 0.5,
    "seconds": 0.7,
    "sha": "a4637f016e",
@@ -520,20 +802,39 @@
   },
   "nosh-ton": {
    "asr": "нош тон",
+   "asr_sha": "93c952bcd9",
    "cer": 0.0,
    "seconds": 1.22,
    "sha": "93c952bcd9",
    "text": "Нош тон?"
   },
+  "nosh-ton-mar-kariskod": {
+   "asr": "нош тон мар карисько",
+   "asr_sha": "2a0b2d098b",
+   "cer": 0.048,
+   "seconds": 2.1,
+   "sha": "2a0b2d098b",
+   "text": "Нош тон мар кариськод?"
+  },
   "nosh-tynad": {
    "asr": "нош тына",
+   "asr_sha": "6fcd0c5566",
    "cer": 0.111,
    "seconds": 0.98,
    "sha": "6fcd0c5566",
    "text": "Нош тынад?"
   },
+  "nyan": {
+   "asr": "зан",
+   "asr_sha": "3cc7b8d24d",
+   "cer": 0.75,
+   "seconds": 0.74,
+   "sha": "3cc7b8d24d",
+   "text": "нянь"
+  },
   "nyl": {
    "asr": "лы",
+   "asr_sha": "7a550ba16c",
    "cer": 0.8,
    "seconds": 0.66,
    "sha": "7a550ba16c",
@@ -541,6 +842,7 @@
   },
   "nyl-daughter": {
    "asr": "ныд",
+   "asr_sha": "0b436a7a18",
    "cer": 0.333,
    "seconds": 0.62,
    "sha": "0b436a7a18",
@@ -548,6 +850,7 @@
   },
   "nyldon": {
    "asr": "ни дон",
+   "asr_sha": "13564696c9",
    "cer": 0.5,
    "seconds": 0.62,
    "sha": "13564696c9",
@@ -555,6 +858,7 @@
   },
   "nylpi": {
    "asr": "но ве",
+   "asr_sha": "e50f5bbb55",
    "cer": 0.8,
    "seconds": 0.82,
    "sha": "e50f5bbb55",
@@ -562,6 +866,7 @@
   },
   "odig": {
    "asr": "воник",
+   "asr_sha": "9a16c50449",
    "cer": 1.0,
    "seconds": 0.7,
    "sha": "9a16c50449",
@@ -569,6 +874,7 @@
   },
   "odig-kyk-kuin": {
    "asr": "одӥг кык куиньстарыт",
+   "asr_sha": "b46414cc4e",
    "cer": 0.1,
    "seconds": 2.1,
    "sha": "b46414cc4e",
@@ -576,6 +882,7 @@
   },
   "ovol": {
    "asr": "евы",
+   "asr_sha": "c4ac356e42",
    "cer": 0.75,
    "seconds": 0.69,
    "sha": "c4ac356e42",
@@ -583,6 +890,7 @@
   },
   "oydo-todmatskom": {
    "asr": "ульдо тодматском",
+   "asr_sha": "e5eddaf09a",
    "cer": 0.2,
    "seconds": 1.94,
    "sha": "e5eddaf09a",
@@ -590,6 +898,7 @@
   },
   "ozhytak-gine": {
    "asr": "озьы так гинэ",
+   "asr_sha": "93fd1b016c",
    "cer": 0.364,
    "seconds": 1.33,
    "sha": "93fd1b016c",
@@ -597,6 +906,7 @@
   },
   "pesyanai": {
    "asr": "тэ санай",
+   "asr_sha": "b910b0ea40",
    "cer": 0.571,
    "seconds": 0.99,
    "sha": "b910b0ea40",
@@ -604,6 +914,7 @@
   },
   "pesyatai": {
    "asr": "тӥза та",
+   "asr_sha": "d38153679a",
    "cer": 0.857,
    "seconds": 1.01,
    "sha": "d38153679a",
@@ -611,6 +922,7 @@
   },
   "pi": {
    "asr": "",
+   "asr_sha": "28bb85f778",
    "cer": 1.0,
    "seconds": 0.45,
    "sha": "28bb85f778",
@@ -618,20 +930,79 @@
   },
   "semya": {
    "asr": "сӧле",
+   "asr_sha": "51496baf88",
    "cer": 0.8,
    "seconds": 0.91,
    "sha": "51496baf88",
    "text": "семья"
   },
+  "sil": {
+   "asr": "зиз",
+   "asr_sha": "07e441d429",
+   "cer": 1.0,
+   "seconds": 0.96,
+   "sha": "07e441d429",
+   "text": "сӥль"
+  },
+  "sil-tuzh-cheskyt": {
+   "asr": "сӥрь туж ческыт",
+   "asr_sha": "414f123096",
+   "cer": 0.067,
+   "seconds": 1.84,
+   "sha": "414f123096",
+   "text": "Сӥль туж ческыт."
+  },
+  "siskisko": {
+   "asr": "сиськисько",
+   "asr_sha": "f81c9da4f0",
+   "cer": 0.0,
+   "seconds": 1.28,
+   "sha": "f81c9da4f0",
+   "text": "Сиськисько."
+  },
+  "siyon": {
+   "asr": "чиё",
+   "asr_sha": "1413964a5a",
+   "cer": 0.5,
+   "seconds": 1.06,
+   "sha": "1413964a5a",
+   "text": "сиён"
+  },
   "sizym": {
    "asr": "сижын",
+   "asr_sha": "b3d1606a3d",
    "cer": 0.5,
    "seconds": 1.33,
    "sha": "b3d1606a3d",
    "text": "сизьым"
   },
+  "so-angli-kylyn-umoj-veraske": {
+   "asr": "со анли кылын умой вераське",
+   "asr_sha": "b1b9377a4f",
+   "cer": 0.036,
+   "seconds": 2.4,
+   "sha": "b1b9377a4f",
+   "text": "Со англи кылын умой вераське."
+  },
+  "so-nyan-basytiz": {
+   "asr": "со нянь басьтӥз",
+   "asr_sha": "2268b2566e",
+   "cer": 0.0,
+   "seconds": 1.38,
+   "sha": "2268b2566e",
+   "text": "Со нянь басьтӥз."
+  },
+  "so-uzha": {
+   "asr": "соу ра",
+   "asr_sha": "148e5bea8b",
+   "cer": 0.5,
+   "seconds": 0.91,
+   "sha": "148e5bea8b",
+   "text": "Со ужа."
+  },
   "soly-das-sizym-ares": {
    "asr": "солы дас сизьы марез",
+   "asr_sha": "5fceab1fa2",
    "cer": 0.15,
    "seconds": 2.3,
    "sha": "5fceab1fa2",
@@ -639,6 +1010,7 @@
   },
   "soos-suzeryos": {
    "asr": "соос сузэръёс",
+   "asr_sha": "04a130148b",
    "cer": 0.0,
    "seconds": 1.68,
    "sha": "04a130148b",
@@ -646,6 +1018,7 @@
   },
   "student": {
    "asr": "студе",
+   "asr_sha": "38107313dd",
    "cer": 0.286,
    "seconds": 1.09,
    "sha": "38107313dd",
@@ -653,6 +1026,7 @@
   },
   "suzer": {
    "asr": "руэ",
+   "asr_sha": "25907ead51",
    "cer": 0.6,
    "seconds": 0.8,
    "sha": "25907ead51",
@@ -660,6 +1034,7 @@
   },
   "syu": {
    "asr": "жек",
+   "asr_sha": "e886b057b1",
    "cer": 1.5,
    "seconds": 0.77,
    "sha": "e886b057b1",
@@ -667,6 +1042,7 @@
   },
   "syurs": {
    "asr": "иус",
+   "asr_sha": "e35b9fb1ce",
    "cer": 0.75,
    "seconds": 1.01,
    "sha": "e35b9fb1ce",
@@ -674,13 +1050,23 @@
   },
   "ta-kyshnomurt-emchi": {
    "asr": "та кышномурт левзи",
+   "asr_sha": "b67f7dc892",
    "cer": 0.235,
    "seconds": 2.11,
    "sha": "b67f7dc892",
    "text": "Та кышномурт — эмчи."
   },
+  "ta-magazinyn-nyan-vuzaske-a": {
+   "asr": "та магалинын нянь вузаське",
+   "asr_sha": "107e14bd04",
+   "cer": 0.107,
+   "seconds": 2.16,
+   "sha": "107e14bd04",
+   "text": "Та магазинын нянь вузаське-а?"
+  },
   "tau": {
    "asr": "ван",
+   "asr_sha": "ac48d29540",
    "cer": 0.667,
    "seconds": 0.67,
    "sha": "ac48d29540",
@@ -688,6 +1074,7 @@
   },
   "tau-umoj": {
    "asr": "та уг моы",
+   "asr_sha": "5e5686ea6e",
    "cer": 0.5,
    "seconds": 1.26,
    "sha": "5e5686ea6e",
@@ -695,34 +1082,79 @@
   },
   "tilad-nylpiosty-van-a": {
    "asr": "тӥляд нылпиосты ван-а",
+   "asr_sha": "9705604933",
    "cer": 0.045,
    "seconds": 2.1,
    "sha": "9705604933",
    "text": "Тӥляд нылпиосты вань-а?"
   },
+  "tom-angli-samen-ug-veraskhy": {
+   "asr": "том анвисьамен уг зераськы",
+   "asr_sha": "d2c5bfdba6",
+   "cer": 0.222,
+   "seconds": 2.48,
+   "sha": "d2c5bfdba6",
+   "text": "Том англи сямен уг вераськы."
+  },
   "tom-tynad-vynyd": {
    "asr": "зон тынад выны",
+   "asr_sha": "e6c12914f3",
    "cer": 0.2,
    "seconds": 1.9,
    "sha": "e6c12914f3",
    "text": "Том тынад выныд."
   },
+  "tomly-vu-kule": {
+   "asr": "тонлы вукулэ",
+   "asr_sha": "629f267544",
+   "cer": 0.154,
+   "seconds": 1.34,
+   "sha": "629f267544",
+   "text": "Томлы ву кулэ."
+  },
   "ton": {
    "asr": "ан",
+   "asr_sha": "cbca6528ca",
    "cer": 0.667,
    "seconds": 0.66,
    "sha": "cbca6528ca",
    "text": "тон"
   },
+  "ton-cheskyt-poraskiskod": {
+   "asr": "тон ческыт пӧраськисько",
+   "asr_sha": "4d1dff98f0",
+   "cer": 0.042,
+   "seconds": 2.19,
+   "sha": "4d1dff98f0",
+   "text": "Тон ческыт пӧраськиськод."
+  },
+  "ton-kinoe-vetlyny-yaratiskod-a": {
+   "asr": "тон киное ветлыны яратӥськод-а",
+   "asr_sha": "cf43ee8e2f",
+   "cer": 0.0,
+   "seconds": 2.85,
+   "sha": "cf43ee8e2f",
+   "text": "Тон киное ветлыны яратӥськод-а?"
+  },
   "ton-kytys-luiskod": {
    "asr": "тон кытысь луиськод",
+   "asr_sha": "ef4379ca48",
    "cer": 0.0,
    "seconds": 1.89,
    "sha": "ef4379ca48",
    "text": "Тон кытысь луиськод?"
   },
+  "ton-mone-ud-kylziskhy": {
+   "asr": "тон монэ уд кылзӥськы",
+   "asr_sha": "4d0d8de3f9",
+   "cer": 0.0,
+   "seconds": 2.32,
+   "sha": "4d0d8de3f9",
+   "text": "Тон монэ уд кылзӥськы."
+  },
   "ton-student-a": {
    "asr": "тон студента",
+   "asr_sha": "b123c8e97f",
    "cer": 0.077,
    "seconds": 1.5,
    "sha": "b123c8e97f",
@@ -730,6 +1162,7 @@
   },
   "ton-udmurt-samen-veraskiskod-a": {
    "asr": "тон уд мурт сянэн вераськиськод-а",
+   "asr_sha": "78e62e1683",
    "cer": 0.094,
    "seconds": 2.58,
    "sha": "78e62e1683",
@@ -737,6 +1170,7 @@
   },
   "tuzh-umoj": {
    "asr": "су жуумхы",
+   "asr_sha": "a03d1640c4",
    "cer": 0.625,
    "seconds": 0.93,
    "sha": "a03d1640c4",
@@ -744,20 +1178,47 @@
   },
   "tyamys": {
    "asr": "тямыз",
+   "asr_sha": "148f6c4c43",
    "cer": 0.2,
    "seconds": 1.06,
    "sha": "148f6c4c43",
    "text": "тямыс"
   },
+  "tynyd-kelshe-a": {
+   "asr": "тыныд кельше-а",
+   "asr_sha": "3af2873cc0",
+   "cer": 0.0,
+   "seconds": 1.74,
+   "sha": "3af2873cc0",
+   "text": "Тыныд кельше-а?"
+  },
   "ukmys": {
    "asr": "укумыз",
+   "asr_sha": "d609065a26",
    "cer": 0.4,
    "seconds": 1.02,
    "sha": "d609065a26",
    "text": "укмыс"
   },
+  "ulmo": {
+   "asr": "ул уо",
+   "asr_sha": "53ed5a4797",
+   "cer": 0.5,
+   "seconds": 0.85,
+   "sha": "53ed5a4797",
+   "text": "улмо"
+  },
+  "vai-mynym-nyan": {
+   "asr": "а ик мыным янь",
+   "asr_sha": "5b6efaa1d5",
+   "cer": 0.357,
+   "seconds": 1.49,
+   "sha": "5b6efaa1d5",
+   "text": "Вай мыным нянь."
+  },
   "van": {
    "asr": "пӧн",
+   "asr_sha": "cf96ab2788",
    "cer": 0.75,
    "seconds": 0.74,
    "sha": "cf96ab2788",
@@ -765,6 +1226,7 @@
   },
   "vit": {
    "asr": "ви",
+   "asr_sha": "a232472a0e",
    "cer": 0.5,
    "seconds": 0.51,
    "sha": "a232472a0e",
@@ -772,20 +1234,39 @@
   },
   "vitton": {
    "asr": "висон",
+   "asr_sha": "2548d5e2c0",
    "cer": 0.429,
    "seconds": 0.9,
    "sha": "2548d5e2c0",
    "text": "витьтон"
   },
+  "vu": {
+   "asr": "веп",
+   "asr_sha": "fc7b1552fb",
+   "cer": 1.0,
+   "seconds": 0.77,
+   "sha": "fc7b1552fb",
+   "text": "ву"
+  },
   "vyn": {
    "asr": "плы",
+   "asr_sha": "46084eaade",
    "cer": 1.0,
    "seconds": 0.5,
    "sha": "46084eaade",
    "text": "вын"
   },
+  "ya-mynisko": {
+   "asr": "я мынӥсько",
+   "asr_sha": "42c295faee",
+   "cer": 0.0,
+   "seconds": 1.39,
+   "sha": "42c295faee",
+   "text": "Я, мынӥсько."
+  },
   "zech-lu": {
    "asr": "пиеч вор",
+   "asr_sha": "45de81227e",
    "cer": 0.833,
    "seconds": 1.14,
    "sha": "45de81227e",
@@ -793,6 +1274,7 @@
   },
   "zech-lue": {
    "asr": "есь вуэ",
+   "asr_sha": "a1aaf0c915",
    "cer": 0.571,
    "seconds": 1.17,
    "sha": "a1aaf0c915",
@@ -800,6 +1282,7 @@
   },
   "zechbur": {
    "asr": "ӟеч вур",
+   "asr_sha": "96d2d9f197",
    "cer": 0.333,
    "seconds": 0.93,
    "sha": "96d2d9f197",
@@ -807,6 +1290,7 @@
   },
   "zechbures": {
    "asr": "ӟеч луресь",
+   "asr_sha": "ac6487b7a9",
    "cer": 0.222,
    "seconds": 1.31,
    "sha": "ac6487b7a9",

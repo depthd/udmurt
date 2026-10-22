@@ -1,0 +1,32 @@
+id: u4-l1
+title: Мон лыдӟисько
+goal: 'Сказать, что вы делаете'
+icon: 📖
+exercises:
+  - type: teach
+    item: mon-lydzisko
+  - type: build
+    item: mon-lydzisko
+    extra: [иськод, е]
+  - type: teach
+    item: mon-kniga-lydzisko
+  - type: choice
+    item: mon-kniga-lydzisko
+    distractors: [mon-lydzisko, mon-shkolae-vetlisko]
+  - type: teach
+    item: mon-dyshetskisko-no-uzhasko
+  - type: tiles
+    item: mon-dyshetskisko-no-uzhasko
+    extra: [ужа, тон]
+  - type: teach
+    item: mon-tyrshisko
+  - type: teach
+    item: mon-koshkisko
+  - type: match
+    items: [mon-lydzisko, mon-tyrshisko, mon-koshkisko, mon-dyshetskisko-no-uzhasko]
+  - type: type
+    dir: ru-udm
+    item: mon-lydzisko
+  - type: listen
+    item: mon-kniga-lydzisko
+    distractors: [mon-dyshetskisko-no-uzhasko]

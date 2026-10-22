@@ -1,0 +1,40 @@
+id: u4-story
+title: 'История: Мар кариськод?'
+goal: 'Понять разговор о планах на день'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: zechbur }
+      - { who: Даша, item: mar-kariskod }
+      - { who: '{name}', item: mon-kniga-lydzisko }
+      - { who: '{name}', item: nosh-ton-mar-kariskod }
+      - { who: Даша, item: mon-dyshetskisko-no-uzhasko }
+    question: Что делает Даша?
+    options: [Учится и работает, Читает книгу, Идёт в кино]
+    answer: Учится и работает
+  - type: dialogue
+    lines:
+      - { who: '{name}', item: kytyn-ton-uzhaskod }
+      - { who: Даша, udm: Мон кунокуаын ужасько., ru: Я работаю в гостинице. }
+      - { who: '{name}', item: tuzh-umoj }
+    question: Где работает Даша?
+    options: [В гостинице, В школе, В музее]
+    answer: В гостинице
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kytchy-ton-myniskod }
+      - { who: '{name}', item: mon-tunne-muzee-mynisko }
+      - { who: Даша, item: ton-kinoe-vetlyny-yaratiskod-a }
+      - { who: '{name}', item: mon-kinoe-vetlyny-yaratisko }
+      - { who: Даша, item: ya-mynisko }
+    question: Что ответила Даша в конце?
+    options: ['Ладно, иду', 'Я никуда не иду', 'Я не знаю']
+    answer: 'Ладно, иду'
+  - type: tiles
+    item: kytchy-ton-myniskod
+    extra: [кытын, мон]
+  - type: listen
+    item: mon-dyshetskisko-no-uzhasko
+    distractors: [mon-kniga-lydzisko]

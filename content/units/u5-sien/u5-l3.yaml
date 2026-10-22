@@ -1,0 +1,42 @@
+id: u5-l3
+title: Кыӵе ческыт!
+goal: '«Вкусно», «нравится», «люблю»'
+icon: 😋
+exercises:
+  - type: teach
+    item: kyche-cheskyt
+  - type: teach
+    item: sil-tuzh-cheskyt
+  - type: choice
+    item: sil-tuzh-cheskyt
+    distractors: [kyche-cheskyt, ton-cheskyt-poraskiskod]
+  - type: teach
+    item: ton-cheskyt-poraskiskod
+  - type: teach
+    item: tynyd-kelshe-a
+  - type: teach
+    item: mynym-so-tuzh-kelshe
+  - type: dialogue
+    lines:
+      - { who: Даша, item: tynyd-kelshe-a }
+      - { who: '{name}', item: kyche-cheskyt }
+      - { who: '{name}', item: ton-cheskyt-poraskiskod }
+    question: 'Понравилась ли еда?'
+    options: ['Да, очень вкусно', 'Нет', 'Не пробовал']
+    answer: 'Да, очень вкусно'
+  - type: teach
+    item: mon-pos-kofe-yaratisko
+  - type: teach
+    item: mon-kezyt-kofe-ug-yaratisky
+  - type: fill
+    text: Мон кезьыт кофе ___ яратӥськы.
+    ru: Я не люблю холодный кофе.
+    options: [уг, уд, ӧвӧл]
+    answer: уг
+    item: mon-kezyt-kofe-ug-yaratisky
+  - type: tiles
+    item: mon-pos-kofe-yaratisko
+    extra: [кезьыт, уг]
+  - type: listen
+    item: ton-cheskyt-poraskiskod
+    distractors: [sil-tuzh-cheskyt]

@@ -1,0 +1,219 @@
+# Юнит 4 «Мар кариськод?» — глаголы в настоящем времени, «куда?» и отрицание.
+# Спряжение — по таблицам Алатырева (1983): гыр-исько, гыр-иськод, гыр-е; вера-сько, вера-ськод, вера.
+items:
+  # ── Я делаю ──────────────────────────────────────────
+  - id: mon-lydzisko
+    udm: Мон лыдӟисько.
+    ru: Я читаю.
+    kind: phrase
+    emoji: 📖
+    morphemes:
+      - { form: лыдӟ, meaning: 'читать', kind: root }
+      - { form: исько, meaning: '(я) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12156796' }, { id: alatyrev1983 }]
+  - id: mon-kniga-lydzisko
+    udm: Мон книга лыдӟисько.
+    ru: Я читаю книгу.
+    kind: phrase
+    emoji: 📚
+    note: 'Неопределённое «книгу» — без окончания: книга лыдӟисько. «Эту книгу» — книгаез (винительный падеж).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11685310' }, { id: alatyrev1983 }]
+  - id: mon-dyshetskisko-no-uzhasko
+    udm: Мон дышетскисько но ужасько.
+    ru: Я учусь и работаю.
+    kind: phrase
+    emoji: 💼
+    morphemes:
+      - { form: дышетск, meaning: 'учиться', kind: root }
+      - { form: исько, meaning: '(я)', kind: suffix }
+      - { form: но, meaning: 'и', kind: particle }
+      - { form: ужа, meaning: 'работать', kind: root }
+      - { form: сько, meaning: '(я)', kind: suffix }
+    note: 'Два спряжения: у глаголов на -ыны окончание -исько (дышетскыны → дышетскисько), на -аны — -сько (ужаны → ужасько).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11739129' }, { id: alatyrev1983 }]
+  - id: mon-koshkisko
+    udm: Мон кошкисько.
+    ru: Я ухожу.
+    kind: phrase
+    emoji: 🚪
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11723839' }]
+  - id: mon-tyrshisko
+    udm: Мон тыршисько.
+    ru: Я стараюсь.
+    kind: phrase
+    emoji: 💪
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11667252' }]
+
+  # ── Ты, он ───────────────────────────────────────────
+  - id: mar-kariskod
+    udm: Мар кариськод?
+    ru: Что делаешь?
+    ru_alt: [Что ты делаешь?, Чем занимаешься?]
+    kind: phrase
+    emoji: 🤔
+    morphemes:
+      - { form: мар, meaning: 'что', kind: word }
+      - { form: кар, meaning: 'делать', kind: root }
+      - { form: иськод, meaning: '(ты) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12182561' }, { id: tatoeba, ref: '11726261' }]
+  - id: siskisko
+    udm: Сиськисько.
+    ru: Ем.
+    ru_alt: [Я ем., Кушаю.]
+    kind: phrase
+    emoji: 🍲
+    note: 'Местоимение можно опустить: окончание -исько и так говорит «я».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12182561' }]
+  - id: nosh-ton-mar-kariskod
+    udm: Нош тон мар кариськод?
+    ru: А ты что делаешь?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11726261' }]
+  - id: kytyn-ton-uzhaskod
+    udm: Кытын тон ужаськод?
+    ru: Где ты работаешь?
+    kind: phrase
+    morphemes:
+      - { form: кытын, meaning: 'где', kind: word }
+      - { form: ужа, meaning: 'работать', kind: root }
+      - { form: ськод, meaning: '(ты) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522813' }]
+  - id: so-uzha
+    udm: Со ужа.
+    ru: Она работает.
+    ru_alt: [Он работает.]
+    kind: phrase
+    note: '«Он/она» — без окончания у глаголов на -аны: ужа «работает», вера «говорит».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11565847' }, { id: alatyrev1983 }]
+  - id: kytyn-uzha-ataed
+    udm: Кытын ужа атаед?
+    ru: Где работает твой отец?
+    ru_alt: [Где работает твой папа?]
+    kind: phrase
+    morphemes:
+      - { form: кытын, meaning: 'где', kind: word }
+      - { form: ужа, meaning: 'работает', kind: word }
+      - { form: атай, meaning: 'отец', kind: root }
+      - { form: ед, meaning: 'твой', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527806' }]
+  - id: so-angli-kylyn-umoj-veraske
+    udm: Со англи кылын умой вераське.
+    ru: Он хорошо говорит на английском языке.
+    ru_alt: [Она хорошо говорит по-английски., Он хорошо говорит по-английски., Она хорошо говорит на английском языке.]
+    kind: phrase
+    note: 'У глаголов на -ыны «он/она» — окончание -е: вераськыны → вераське.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11704987' }]
+
+  # ── Куда? ────────────────────────────────────────────
+  - id: kytchy
+    udm: кытчы
+    ru: куда
+    pos: наречие
+    emoji: 🧭
+    note: 'Кытын — «где», кытысь — «откуда», кытчы — «куда».'
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11525900' }]
+  - id: kytchy-ton-myniskod
+    udm: Кытчы тон мынӥськод?
+    ru: Куда ты идёшь?
+    kind: phrase
+    emoji: 🚶
+    morphemes:
+      - { form: кытчы, meaning: 'куда', kind: word }
+      - { form: мын, meaning: 'идти', kind: root }
+      - { form: ӥськод, meaning: '(ты) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525900' }]
+  - id: mon-shkolae-vetlisko
+    udm: Мон школае ветлӥсько.
+    ru: Я хожу в школу.
+    kind: phrase
+    emoji: 🏫
+    morphemes:
+      - { form: школа, meaning: 'школа', kind: root }
+      - { form: е, meaning: 'в, куда (входный падеж)', kind: suffix }
+      - { form: ветл, meaning: 'ходить', kind: root }
+      - { form: ӥсько, meaning: '(я)', kind: suffix }
+    note: '«Куда?» — входный падеж -э/-е: школа → школае, музей → музее.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522811' }, { id: alatyrev1983 }]
+  - id: mon-tunne-muzee-mynisko
+    udm: Мон туннэ музее мынӥсько.
+    ru: Я сегодня иду в музей.
+    ru_alt: [Сегодня я иду в музей.]
+    kind: phrase
+    emoji: 🏛️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730445' }]
+  - id: ya-mynisko
+    udm: Я, мынӥсько.
+    ru: Ладно, иду.
+    ru_alt: [Хорошо, иду.]
+    kind: phrase
+    note: 'Я — «ладно, хорошо» (разговорное).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933202' }]
+
+  # ── Люблю ────────────────────────────────────────────
+  - id: mon-yaratisko-lydziskyny
+    udm: Мон яратӥсько лыдӟиськыны.
+    ru: Я люблю читать.
+    kind: phrase
+    emoji: 📖
+    note: 'После «люблю» — неопределённая форма на -ны: лыдӟиськыны «читать».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525038' }]
+  - id: mon-kinoe-vetlyny-yaratisko
+    udm: Мон киное ветлыны яратӥсько.
+    ru: Я люблю ходить в кино.
+    kind: phrase
+    emoji: 🎬
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525059' }]
+  - id: ton-kinoe-vetlyny-yaratiskod-a
+    udm: Тон киное ветлыны яратӥськод-а?
+    ru: Ты любишь ходить в кино?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11623320' }]
+
+  # ── Не ───────────────────────────────────────────────
+  - id: mon-nokytchy-no-ug-myniskhy
+    udm: Мон нокытчы но уг мынӥськы.
+    ru: Я никуда не иду.
+    kind: phrase
+    morphemes:
+      - { form: нокытчы но, meaning: 'никуда', kind: word }
+      - { form: уг, meaning: 'не (я, наст. время)', kind: word }
+      - { form: мынӥськы, meaning: 'иду (форма после отрицания)', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781551' }, { id: alatyrev1983 }]
+  - id: ton-mone-ud-kylziskhy
+    udm: Тон монэ уд кылзӥськы.
+    ru: Ты меня не слушаешь.
+    kind: phrase
+    morphemes:
+      - { form: монэ, meaning: 'меня', kind: word }
+      - { form: уд, meaning: 'не (ты)', kind: word }
+      - { form: кылзӥськы, meaning: 'слушаешь (после отрицания)', kind: word }
+    note: 'Отрицательный глагол спрягается: мон уг, тон уд, со уг — а основной глагол стоит в особой форме.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781552' }, { id: alatyrev1983 }]
+  - id: tom-angli-samen-ug-veraskhy
+    udm: Том англи сямен уг вераськы.
+    ru: Том не говорит по-английски.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11781554' }]

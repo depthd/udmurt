@@ -1,0 +1,37 @@
+id: u5-l2
+title: Мынам … потэ
+goal: '«Хочу» и «нужно»'
+icon: 🙋
+exercises:
+  - type: teach
+    item: mynam-chai-yueme-pote
+  - type: tiles
+    item: mynam-chai-yueme-pote
+    extra: [кофе, мыным]
+  - type: teach
+    item: mynym-ulmo-kule
+  - type: choice
+    item: mynym-ulmo-kule
+    distractors: [mynam-chai-yueme-pote, tomly-vu-kule]
+  - type: teach
+    item: tomly-vu-kule
+  - type: fill
+    text: Мыным улмо ___.
+    ru: Мне нужно яблоко.
+    options: [кулэ, потэ, вань]
+    answer: кулэ
+    item: mynym-ulmo-kule
+  - type: teach
+    item: vai-mynym-nyan
+  - type: tiles
+    dir: udm-ru
+    item: vai-mynym-nyan
+    extra: [воду, тебе]
+  - type: match
+    items: [mynym-ulmo-kule, tomly-vu-kule, vai-mynym-nyan]
+  - type: type
+    dir: ru-udm
+    item: mynym-ulmo-kule
+  - type: listen
+    item: mynam-chai-yueme-pote
+    distractors: [mynym-ulmo-kule]

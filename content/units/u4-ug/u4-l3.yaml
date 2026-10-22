@@ -1,0 +1,44 @@
+id: u4-l3
+title: Кытчы тон мынӥськод?
+goal: '«Куда?» — школае, музее'
+icon: 🧭
+exercises:
+  - type: teach
+    item: kytchy
+  - type: match
+    items: [kytchy, kytyn-ton-uliskod, ton-kytys-luiskod]
+  - type: teach
+    item: kytchy-ton-myniskod
+  - type: teach
+    item: mon-shkolae-vetlisko
+  - type: fill
+    text: Мон школа___ ветлӥсько.
+    ru: Я хожу в школу.
+    options: [е, ын, ысь]
+    answer: е
+    item: mon-shkolae-vetlisko
+    explain: '«Куда?» — -е/-э, «где?» — -ын, «откуда?» — -ысь.'
+  - type: teach
+    item: mon-tunne-muzee-mynisko
+  - type: tiles
+    item: mon-tunne-muzee-mynisko
+    extra: [музейын, тон]
+  - type: teach
+    item: ya-mynisko
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kytchy-ton-myniskod }
+      - { who: '{name}', item: mon-tunne-muzee-mynisko }
+    question: Куда идёт собеседник Даши?
+    options: [В музей, В школу, В кино]
+    answer: В музей
+  - type: choice
+    dir: ru-udm
+    item: kytchy-ton-myniskod
+    distractors: [kytyn-ton-uliskod, ton-kytys-luiskod]
+  - type: type
+    dir: ru-udm
+    item: mon-shkolae-vetlisko
+  - type: listen
+    item: mon-tunne-muzee-mynisko
+    distractors: [mon-shkolae-vetlisko]

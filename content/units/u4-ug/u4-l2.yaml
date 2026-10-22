@@ -1,0 +1,46 @@
+id: u4-l2
+title: Мар кариськод?
+goal: 'Спросить «что делаешь?» и сказать про другого'
+icon: 🤔
+exercises:
+  - type: teach
+    item: mar-kariskod
+  - type: teach
+    item: siskisko
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mar-kariskod }
+      - { who: '{name}', item: siskisko }
+      - { who: '{name}', item: nosh-ton-mar-kariskod }
+      - { who: Даша, item: mon-lydzisko }
+    question: Что делает Даша?
+    options: [Читает, Ест, Работает]
+    answer: Читает
+  - type: teach
+    item: kytyn-ton-uzhaskod
+  - type: fill
+    text: Кытын тон ужа___?
+    ru: Где ты работаешь?
+    options: [ськод, сько, ськом]
+    answer: ськод
+    item: kytyn-ton-uzhaskod
+    explain: '-сько — «я», -ськод — «ты».'
+  - type: teach
+    item: so-uzha
+  - type: teach
+    item: kytyn-uzha-ataed
+  - type: choice
+    item: kytyn-uzha-ataed
+    distractors: [kytyn-ton-uzhaskod, so-uzha]
+  - type: teach
+    item: so-angli-kylyn-umoj-veraske
+  - type: tiles
+    dir: udm-ru
+    item: so-angli-kylyn-umoj-veraske
+    extra: [плохо, русском]
+  - type: type
+    dir: ru-udm
+    item: mar-kariskod
+  - type: listen
+    item: kytyn-ton-uzhaskod
+    distractors: [kytyn-uzha-ataed, nosh-ton-mar-kariskod]

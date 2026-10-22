@@ -1,0 +1,41 @@
+id: u4-l5
+title: Мон уг…
+goal: 'Сказать «не делаю»'
+icon: 🙅
+exercises:
+  - type: teach
+    item: mon-ug-todisky
+  - type: teach
+    item: mon-nokytchy-no-ug-myniskhy
+  - type: choice
+    item: mon-nokytchy-no-ug-myniskhy
+    distractors: [kytchy-ton-myniskod, mon-tunne-muzee-mynisko]
+  - type: teach
+    item: ton-mone-ud-kylziskhy
+  - type: fill
+    text: Тон монэ ___ кылзӥськы.
+    ru: Ты меня не слушаешь.
+    options: [уд, уг, ӧвӧл]
+    answer: уд
+    item: ton-mone-ud-kylziskhy
+    explain: 'Мон — уг, тон — уд, со — уг.'
+  - type: teach
+    item: tom-angli-samen-ug-veraskhy
+  - type: fill
+    text: Том англи сямен ___ вераськы.
+    ru: Том не говорит по-английски.
+    options: [уг, уд, ӧвӧл]
+    answer: уг
+    item: tom-angli-samen-ug-veraskhy
+  - type: tiles
+    dir: udm-ru
+    item: ton-mone-ud-kylziskhy
+    extra: [слушаю, тебя]
+  - type: match
+    items: [mon-ug-todisky, mon-nokytchy-no-ug-myniskhy, tom-angli-samen-ug-veraskhy]
+  - type: type
+    dir: ru-udm
+    item: mon-ug-todisky
+  - type: listen
+    item: mon-nokytchy-no-ug-myniskhy
+    distractors: [mon-ug-todisky]

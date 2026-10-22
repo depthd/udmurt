@@ -47,7 +47,7 @@ function check<T extends z.ZodType>(schema: T, data: unknown, file: string): z.i
 const CourseHead = z.object({ id: z.string(), title: z.string(), units: z.array(z.string()).min(1) });
 const UnitHead = Unit.omit({ lessons: true }).extend({ lessons: z.array(z.string()).min(1) });
 
-export function loadCourse(contentDir: string): Course {
+export function loadCourse(contentDir: string, opts: { skipAudioCheck?: boolean } = {}): Course {
   ROOT = path.dirname(contentDir);
   const head = check(CourseHead, readYaml(path.join(contentDir, 'course.yaml')), path.join(contentDir, 'course.yaml'));
   const sources = check(SourcesFile, readYaml(path.join(contentDir, 'sources.yaml')), path.join(contentDir, 'sources.yaml')).sources;
@@ -105,7 +105,7 @@ export function loadCourse(contentDir: string): Course {
           const it = lexIds.get(ex.item);
           if (it && it.morphemes.length < 2) errors.push(`${rel(lfile)}: упражнение №${i + 1} (build): у слова «${ex.item}» меньше двух морфем`);
         }
-        if (ex.type === 'listen') {
+        if (ex.type === 'listen' && !opts.skipAudioCheck) {
           const it = lexIds.get(ex.item);
           if (it && !it.audio) errors.push(`${rel(lfile)}: упражнение №${i + 1} (listen): у слова «${ex.item}» нет аудио`);
         }

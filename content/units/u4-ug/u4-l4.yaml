@@ -1,0 +1,40 @@
+id: u4-l4
+title: Мон яратӥсько
+goal: 'Сказать, что вы любите делать'
+icon: ❤️
+exercises:
+  - type: teach
+    item: mon-yaratisko-lydziskyny
+  - type: tiles
+    item: mon-yaratisko-lydziskyny
+    extra: [лыдӟисько, тон]
+  - type: teach
+    item: mon-kinoe-vetlyny-yaratisko
+  - type: choice
+    item: mon-kinoe-vetlyny-yaratisko
+    distractors: [mon-yaratisko-lydziskyny, mon-shkolae-vetlisko]
+  - type: teach
+    item: ton-kinoe-vetlyny-yaratiskod-a
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-kinoe-vetlyny-yaratiskod-a }
+      - { who: '{name}', item: ben }
+      - { who: '{name}', item: mon-yaratisko-lydziskyny }
+    question: 'Что любит собеседник Даши?'
+    options: [Кино и чтение, Только кино, Музеи]
+    answer: Кино и чтение
+  - type: fill
+    text: Мон киное ветлыны яратӥсько___
+    ru: Я люблю ходить в кино.
+    options: [., -а?]
+    answer: .
+    item: mon-kinoe-vetlyny-yaratisko
+    explain: 'Без -а — утверждение, с -а? — вопрос.'
+  - type: match
+    items: [mon-yaratisko-lydziskyny, mon-kinoe-vetlyny-yaratisko, mon-anaime-yaratisko]
+  - type: type
+    dir: ru-udm
+    item: mon-yaratisko-lydziskyny
+  - type: listen
+    item: ton-kinoe-vetlyny-yaratiskod-a
+    distractors: [mon-kinoe-vetlyny-yaratisko]

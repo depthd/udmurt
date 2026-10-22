@@ -1,0 +1,198 @@
+# Юнит 5 «Еда» — словник. Слова — uniparser/Викисловарь, фразы — Tatoeba (номер в ref).
+items:
+  # ── Еда и напитки ────────────────────────────────────
+  - id: nyan
+    udm: нянь
+    ru: хлеб
+    pos: существительное
+    emoji: 🍞
+    note: 'От нянь — и пельнянь «пельмени»: пель «ухо» + нянь «хлеб» (по Фасмеру).'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: vu
+    udm: ву
+    ru: вода
+    pos: существительное
+    emoji: 💧
+    note: 'Родственно финскому vesi и венгерскому víz.'
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: jol
+    udm: йӧл
+    ru: молоко
+    pos: существительное
+    emoji: 🥛
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: chai
+    udm: чай
+    ru: чай
+    pos: существительное
+    emoji: 🍵
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: kofe
+    udm: кофе
+    ru: кофе
+    pos: существительное
+    emoji: ☕
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: ulmo
+    udm: улмо
+    ru: яблоко
+    pos: существительное
+    emoji: 🍎
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: sil
+    udm: сӥль
+    ru: мясо
+    pos: существительное
+    emoji: 🍖
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: kartofka
+    udm: картофка
+    ru: картошка
+    pos: существительное
+    emoji: 🥔
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: siyon
+    udm: сиён
+    ru: еда
+    ru_alt: [пища]
+    pos: существительное
+    emoji: 🍲
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11750154' }, { id: kyllyukam2012 }]
+
+  # ── Хочу, люблю, нужно ───────────────────────────────
+  - id: mynam-chai-yueme-pote
+    udm: Мынам чай юэме потэ.
+    ru: Я хочу чай.
+    ru_alt: [Я хочу чаю., Хочу чаю.]
+    kind: phrase
+    emoji: 🍵
+    morphemes:
+      - { form: мынам, meaning: 'у меня, мой', kind: word }
+      - { form: чай, meaning: 'чай', kind: word }
+      - { form: ю, meaning: 'пить', kind: root }
+      - { form: эме, meaning: '«моё питьё» (-эм + -е «моё»)', kind: suffix }
+      - { form: потэ, meaning: '«выходит» = хочется', kind: word }
+    note: '«Хочу» по-удмуртски — «моё (делание) выходит»: Мынам … -эме потэ.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527889' }]
+  - id: mon-pos-kofe-yaratisko
+    udm: Мон пӧсь кофе яратӥсько.
+    ru: Я люблю горячий кофе.
+    kind: phrase
+    emoji: ☕
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12189566' }]
+  - id: mon-kezyt-kofe-ug-yaratisky
+    udm: Мон кезьыт кофе уг яратӥськы.
+    ru: Я не люблю холодный кофе.
+    kind: phrase
+    emoji: 🧊
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12395914' }]
+  - id: mynym-ulmo-kule
+    udm: Мыным улмо кулэ.
+    ru: Мне нужно яблоко.
+    kind: phrase
+    emoji: 🍏
+    morphemes:
+      - { form: мыным, meaning: 'мне', kind: word }
+      - { form: улмо, meaning: 'яблоко', kind: word }
+      - { form: кулэ, meaning: 'нужно', kind: word }
+    note: '«Мне нужно» — Мыным … кулэ, как по-русски.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11821160' }]
+  - id: tomly-vu-kule
+    udm: Томлы ву кулэ.
+    ru: Тому нужна вода.
+    kind: phrase
+    emoji: 💧
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12160245' }]
+  - id: vai-mynym-nyan
+    udm: Вай мыным нянь.
+    ru: Дай мне хлеб.
+    ru_alt: [Дай мне хлеба.]
+    kind: phrase
+    emoji: 🍞
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12144996' }]
+
+  # ── Вкусно! Нравится ─────────────────────────────────
+  - id: kyche-cheskyt
+    udm: Кыӵе ческыт!
+    ru: Как вкусно!
+    kind: phrase
+    emoji: 😋
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11526006' }]
+  - id: sil-tuzh-cheskyt
+    udm: Сӥль туж ческыт.
+    ru: Мясо очень вкусное.
+    kind: phrase
+    emoji: 🍖
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12175503' }]
+  - id: ton-cheskyt-poraskiskod
+    udm: Тон ческыт пӧраськиськод.
+    ru: Ты вкусно готовишь.
+    kind: phrase
+    emoji: 👩‍🍳
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12189547' }]
+  - id: tynyd-kelshe-a
+    udm: Тыныд кельше-а?
+    ru: Тебе нравится?
+    kind: phrase
+    morphemes:
+      - { form: тыныд, meaning: 'тебе', kind: word }
+      - { form: кельше, meaning: 'нравится', kind: word }
+      - { form: а, meaning: 'вопрос', kind: particle }
+    note: '«Нравится» — как в русском: кому (мыным, тыныд) + кельше.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11584470' }]
+  - id: mynym-so-tuzh-kelshe
+    udm: Мыным со туж кельше.
+    ru: Мне он очень нравится.
+    ru_alt: [Мне она очень нравится., Мне это очень нравится.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11598386' }]
+
+  # ── В магазине ───────────────────────────────────────
+  - id: ta-magazinyn-nyan-vuzaske-a
+    udm: Та магазинын нянь вузаське-а?
+    ru: В этом магазине хлеб продаётся?
+    ru_alt: [В этом магазине продаётся хлеб?]
+    kind: phrase
+    emoji: 🏪
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12353446' }]
+  - id: koenya-ta-kartofka-syle
+    udm: Кӧня та картофка сылэ?
+    ru: Сколько стоит эта картошка?
+    kind: phrase
+    emoji: 🥔
+    morphemes:
+      - { form: кӧня, meaning: 'сколько', kind: word }
+      - { form: та, meaning: 'этот', kind: word }
+      - { form: картофка, meaning: 'картошка', kind: word }
+      - { form: сылэ, meaning: 'стоит', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11947326' }]
+  - id: so-nyan-basytiz
+    udm: Со нянь басьтӥз.
+    ru: Он купил хлеб.
+    ru_alt: [Она купила хлеб.]
+    kind: phrase
+    note: 'Басьтӥз — прошедшее время «купил(а)». Басьтыны — и «взять», и «купить».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12140451' }]
