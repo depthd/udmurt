@@ -100,6 +100,12 @@
         </button>
       </div>
 
+      <a class="mode card" href={href('/game')} style="margin-top: 12px; text-decoration: none">
+        <span class="ic" aria-hidden="true">🟩</span>
+        <span class="t">Игра «5 букв»</span>
+        <span class="s">удмуртское слово дня</span>
+      </a>
+
       <h2 class="sub">Сила слов</h2>
       <ul class="words">
         {#each weakest as it (it.id)}

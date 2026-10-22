@@ -176,6 +176,14 @@
       </span>
       <span class="chev" aria-hidden="true">→</span>
     </a>
+    <a class="card about" href={href('/game')} data-testid="game-tile">
+      <span class="about-icon" aria-hidden="true">🟩</span>
+      <span class="about-text">
+        <b>Игра «5 букв»</b>
+        <span class="muted">Угадайте удмуртское слово дня за 6 попыток</span>
+      </span>
+      <span class="chev" aria-hidden="true">→</span>
+    </a>
     <a class="card about" href={href('/group')} data-testid="group-tile">
       <span class="about-icon" aria-hidden="true">👥</span>
       <span class="about-text">

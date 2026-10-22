@@ -19,6 +19,7 @@
     credits: () => import('./routes/Credits.svelte'),
     group: () => import('./routes/Group.svelte'),
     projector: () => import('./routes/Projector.svelte'),
+    game: () => import('./routes/Game.svelte'),
   };
   const loaded = $state<Record<string, Component<any>>>({});
   $effect(() => {
@@ -29,7 +30,7 @@
   import NavBar from './components/NavBar.svelte';
 
   const r = $derived(router.current);
-  const inLesson = $derived(r.name === 'lesson' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
+  const inLesson = $derived(r.name === 'lesson' || ((r.name === 'practice' || r.name === 'projector' || r.name === 'game') && ui.immersive));
 
   $effect(() => {
     if (progress.data.xp > 0) void requestPersist();
