@@ -6,15 +6,25 @@
   import Home from './routes/Home.svelte';
   import Learn from './routes/Learn.svelte';
   import LessonPage from './routes/Lesson.svelte';
-  import Practice from './routes/Practice.svelte';
-  import About from './routes/About.svelte';
-  import Dict from './routes/Dict.svelte';
-  import Library from './routes/Library.svelte';
-  import Me from './routes/Me.svelte';
-  import Credits from './routes/Credits.svelte';
-  import Group from './routes/Group.svelte';
-  import Projector from './routes/Projector.svelte';
   import NotFound from './routes/NotFound.svelte';
+  import type { Component } from 'svelte';
+
+  // Редкие разделы грузятся отдельно, при первом открытии (первый экран — легче).
+  const lazy: Record<string, () => Promise<{ default: Component<any> }>> = {
+    practice: () => import('./routes/Practice.svelte'),
+    about: () => import('./routes/About.svelte'),
+    dict: () => import('./routes/Dict.svelte'),
+    library: () => import('./routes/Library.svelte'),
+    me: () => import('./routes/Me.svelte'),
+    credits: () => import('./routes/Credits.svelte'),
+    group: () => import('./routes/Group.svelte'),
+    projector: () => import('./routes/Projector.svelte'),
+  };
+  const loaded = $state<Record<string, Component<any>>>({});
+  $effect(() => {
+    const name = router.current.name;
+    if (lazy[name] && !loaded[name]) lazy[name]().then((m) => (loaded[name] = m.default));
+  });
   import TopBar from './components/TopBar.svelte';
   import NavBar from './components/NavBar.svelte';
 
@@ -41,22 +51,13 @@
     {#key r.params.id}
       <LessonPage id={r.params.id} />
     {/key}
-  {:else if r.name === 'practice'}
-    <Practice />
-  {:else if r.name === 'about'}
-    <About section={r.params.section} />
-  {:else if r.name === 'dict'}
-    <Dict q={r.params.q} />
-  {:else if r.name === 'library'}
-    <Library />
-  {:else if r.name === 'me'}
-    <Me />
-  {:else if r.name === 'credits'}
-    <Credits />
-  {:else if r.name === 'group'}
-    <Group code={r.params.code} />
-  {:else if r.name === 'projector'}
-    <Projector />
+  {:else if lazy[r.name]}
+    {@const Page = loaded[r.name]}
+    {#if Page}
+      <Page {...r.params} />
+    {:else}
+      <div class="page loading" aria-busy="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    {/if}
   {:else}
     <NotFound />
   {/if}
@@ -67,6 +68,30 @@
 {/if}
 
 <style>
+  .loading {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 30vh;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--line-strong);
+    animation: blinkdot 900ms ease-in-out infinite;
+  }
+  .dot:nth-child(2) {
+    animation-delay: 150ms;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 300ms;
+  }
+  @keyframes blinkdot {
+    50% {
+      opacity: 0.3;
+    }
+  }
   .skip {
     position: absolute;
     left: 8px;
