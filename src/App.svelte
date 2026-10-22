@@ -20,6 +20,8 @@
     group: () => import('./routes/Group.svelte'),
     projector: () => import('./routes/Projector.svelte'),
     game: () => import('./routes/Game.svelte'),
+    read: () => import('./routes/Read.svelte'),
+    phrases: () => import('./routes/Phrases.svelte'),
   };
   const loaded = $state<Record<string, Component<any>>>({});
   $effect(() => {

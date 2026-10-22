@@ -22,6 +22,9 @@ const routes: Array<[RegExp, string, string[]]> = [
   [/^\/group\/([^/]+)\/?$/, 'group', ['code']],
   [/^\/projector\/?$/, 'projector', []],
   [/^\/game\/?$/, 'game', []],
+  [/^\/read\/?$/, 'read', []],
+  [/^\/read\/([\w-]+)\/?$/, 'read', ['id']],
+  [/^\/phrases\/?$/, 'phrases', []],
 ];
 
 function parse(hash: string): Route {

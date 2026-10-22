@@ -176,6 +176,22 @@
       </span>
       <span class="chev" aria-hidden="true">→</span>
     </a>
+    <a class="card about" href={href('/read')} data-testid="read-tile">
+      <span class="about-icon" aria-hidden="true">📖</span>
+      <span class="about-text">
+        <b>Читалка</b>
+        <span class="muted">Короткие тексты: нажмите на слово — увидите значение</span>
+      </span>
+      <span class="chev" aria-hidden="true">→</span>
+    </a>
+    <a class="card about" href={href('/phrases')} data-testid="phrases-tile">
+      <span class="about-icon" aria-hidden="true">💬</span>
+      <span class="about-text">
+        <b>Разговорник и шпаргалки</b>
+        <span class="muted">Все фразы курса с озвучкой — повторить перед парой</span>
+      </span>
+      <span class="chev" aria-hidden="true">→</span>
+    </a>
     <a class="card about" href={href('/game')} data-testid="game-tile">
       <span class="about-icon" aria-hidden="true">🟩</span>
       <span class="about-text">
