@@ -1,0 +1,41 @@
+id: u9-l5
+title: Уг быгатӥськы
+goal: '«Не могу» и планы'
+icon: 😔
+exercises:
+  - type: teach
+    item: zhalyasa-verano-ug-bygatisky
+  - type: tiles
+    item: zhalyasa-verano-ug-bygatisky
+    extra: [быгатӥсько, ӧвӧл]
+  - type: teach
+    item: mon-kyrdzanyos-gozhyany-ug-bygatisky
+  - type: fill
+    text: Мон кырӟанъёс гожъяны ___ быгатӥськы.
+    ru: Я не умею писать песни.
+    options: [уг, ӧй, ӧвӧл]
+    answer: уг
+    item: mon-kyrdzanyos-gozhyany-ug-bygatisky
+    explain: 'Уг — «не» в настоящем времени, после него глагол на -ы: быгатӥськы.'
+  - type: teach
+    item: mar-karyny-malpaskod
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mar-karyny-malpaskod }
+      - { who: '{name}', item: mon-ognam-uzhalo }
+      - { who: Даша, item: yurttyny-bygatod-a }
+      - { who: '{name}', item: zhalyasa-verano-ug-bygatisky }
+    question: Сможет ли собеседник помочь Даше?
+    options: [Нет, Да, Завтра]
+    answer: Нет
+  - type: match
+    items: [zhalyasa-verano-ug-bygatisky, mon-kyrdzanyos-gozhyany-ug-bygatisky, mar-karyny-malpaskod]
+  - type: choice
+    item: mar-karyny-malpaskod
+    distractors: [mar-kariskod, mar-karod-tunne-zhyt]
+  - type: type
+    dir: ru-udm
+    item: zhalyasa-verano-ug-bygatisky
+  - type: listen
+    item: mar-karyny-malpaskod
+    distractors: [zhalyasa-verano-ug-bygatisky]

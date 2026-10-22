@@ -1,0 +1,39 @@
+id: u9-l2
+title: Мон ужало
+goal: '«Я сделаю» у глаголов на -аны: -ло'
+icon: 💻
+exercises:
+  - type: teach
+    item: mon-ognam-uzhalo
+  - type: build
+    item: mon-ognam-uzhalo
+    extra: [й, сько]
+  - type: fill
+    text: Мон огнам ужа___.
+    ru: Я буду работать одна.
+    options: [ло, й, сько]
+    answer: ло
+    item: mon-ognam-uzhalo
+    explain: 'Ужасько — работаю, ужай — работал(а), ужало — буду работать.'
+  - type: teach
+    item: mon-ataedly-veralo
+  - type: choice
+    item: mon-ataedly-veralo
+    distractors: [mon-ognam-uzhalo, mon-soly-zhingyrto]
+  - type: teach
+    item: mon-tone-tyamys-chasoz-vozmalo
+  - type: tiles
+    dir: udm-ru
+    item: mon-tone-tyamys-chasoz-vozmalo
+    extra: [семи, вчера]
+  - type: match
+    items: [mon-ognam-uzhalo, mon-ataedly-veralo, mon-tone-tyamys-chasoz-vozmalo, mon-soly-zhingyrto]
+  - type: tiles
+    item: mon-ataedly-veralo
+    extra: [вераськисько, анаедлы]
+  - type: type
+    dir: ru-udm
+    item: mon-ognam-uzhalo
+  - type: listen
+    item: mon-tone-tyamys-chasoz-vozmalo
+    distractors: [mon-ognam-uzhalo]

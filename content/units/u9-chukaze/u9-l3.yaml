@@ -1,0 +1,45 @@
+id: u9-l3
+title: Со лыктоз
+goal: '«Ты сделаешь» и «он сделает»: -од, -оз'
+icon: 🚶
+exercises:
+  - type: teach
+    item: mar-yuod
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mar-yuod }
+      - { who: '{name}', item: mynam-chai-yueme-pote }
+    question: Что будет пить собеседник Даши?
+    options: [Чай, Кофе, Воду]
+    answer: Чай
+  - type: teach
+    item: so-zhogen-lyktoz
+  - type: build
+    item: so-zhogen-lyktoz
+    extra: [ӥз, о]
+  - type: teach
+    item: tom-nyan-basytoz
+  - type: choice
+    item: tom-nyan-basytoz
+    distractors: [so-nyan-basytiz, so-kofe-pozytoz]
+  - type: fill
+    text: Том нянь басьт___.
+    ru: Том купит хлеб.
+    options: [оз, ӥз, о]
+    answer: оз
+    item: tom-nyan-basytoz
+    explain: 'Басьтӥз — купил, басьтоз — купит.'
+  - type: teach
+    item: so-kofe-pozytoz
+  - type: teach
+    item: so-tynyd-kelshoz
+  - type: teach
+    item: tom-zhogen-vuoz
+  - type: match
+    items: [mar-yuod, so-zhogen-lyktoz, tom-nyan-basytoz, so-tynyd-kelshoz]
+  - type: type
+    dir: ru-udm
+    item: mar-yuod
+  - type: listen
+    item: so-zhogen-lyktoz
+    distractors: [tom-zhogen-vuoz]

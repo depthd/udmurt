@@ -1,0 +1,30 @@
+id: u9-story
+title: 'История: Со ӝоген лыктоз'
+goal: 'Понять разговор о планах'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mar-karod-tunne-zhyt }
+      - { who: '{name}', item: mon-soly-zhingyrto }
+      - { who: '{name}', item: mon-tone-tyamys-chasoz-vozmalo }
+      - { who: Даша, item: so-zhogen-lyktoz }
+    question: До которого часа будут ждать?
+    options: [До восьми, До семи, До десяти]
+    answer: До восьми
+  - type: dialogue
+    lines:
+      - { who: Даша, item: tom-zhogen-vuoz }
+      - { who: Даша, item: tom-nyan-basytoz }
+      - { who: '{name}', item: mar-yuod }
+      - { who: Даша, item: mynam-chai-yueme-pote }
+    question: Что купит Том?
+    options: [Хлеб, Кофе, Яблоко]
+    answer: Хлеб
+  - type: tiles
+    item: so-zhogen-lyktoz
+    extra: [лыктӥз, мон]
+  - type: listen
+    item: mon-ataedly-veralo
+    distractors: [mon-soly-zhingyrto]

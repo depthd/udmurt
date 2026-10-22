@@ -178,3 +178,24 @@ texts:
       - q: Какая вчера была погода?
         options: [Холодно, Жарко, Шёл дождь]
         answer: Холодно
+
+  - id: t9-kuno
+    title: Том ӝоген вуоз
+    title_ru: Том скоро будет
+    after: u9-chukaze
+    icon: 🫖
+    lines:
+      - { who: Даша, item: zechbur }
+      - { who: Даша, item: mar-yuod }
+      - { who: '{name}', item: mynam-chai-yueme-pote }
+      - { who: Даша, item: tom-zhogen-vuoz }
+      - { who: Даша, item: tom-nyan-basytoz }
+      - { who: Даша, item: so-tynyd-kelshoz }
+      - { who: '{name}', item: badzym-tau }
+    questions:
+      - q: Что будет пить гость?
+        options: [Чай, Кофе, Молоко]
+        answer: Чай
+      - q: Что купит Том?
+        options: [Хлеб, Яблоки, Мясо]
+        answer: Хлеб

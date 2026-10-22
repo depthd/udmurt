@@ -1,0 +1,42 @@
+id: u9-l4
+title: Быгатӥсько
+goal: '«Могу» и «умею»'
+icon: 💪
+exercises:
+  - type: teach
+    item: mon-soe-tupatyny-bygatisko
+  - type: build
+    item: mon-soe-tupatyny-bygatisko
+    extra: [ӥськод, э]
+  - type: teach
+    item: main-yurttyny-bygatisko
+  - type: choice
+    item: main-yurttyny-bygatisko
+    distractors: [yurttyny-bygatod-a, mon-soe-tupatyny-bygatisko]
+  - type: teach
+    item: yurttyny-bygatod-a
+  - type: teach
+    item: so-ektyny-bygate
+  - type: teach
+    item: ton-uyany-bygatiskod
+  - type: fill
+    text: Тон уяны быгат___.
+    ru: Ты умеешь плавать.
+    options: [ӥськод, ӥсько, э]
+    answer: ӥськод
+    item: ton-uyany-bygatiskod
+    explain: 'Мон быгатӥсько, тон быгатӥськод, со быгатэ.'
+  - type: teach
+    item: so-francuz-kylyn-veraskyny-bygate
+  - type: tiles
+    dir: udm-ru
+    item: so-francuz-kylyn-veraskyny-bygate
+    extra: [английски, не]
+  - type: match
+    items: [so-ektyny-bygate, ton-uyany-bygatiskod, main-yurttyny-bygatisko, yurttyny-bygatod-a]
+  - type: type
+    dir: ru-udm
+    item: ton-uyany-bygatiskod
+  - type: listen
+    item: mon-soe-tupatyny-bygatisko
+    distractors: [main-yurttyny-bygatisko]

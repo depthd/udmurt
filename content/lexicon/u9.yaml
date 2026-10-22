@@ -1,0 +1,206 @@
+# Юнит 9 «Ӵуказе» — будущее время и «могу / умею» (быгатыны). Фразы — Tatoeba (номер в ref).
+# Окончания будущего времени — по Алатыреву (1983): мын-о, мын-од, мын-оз; ужа-ло, ужа-лод, ужа-лоз.
+items:
+  # ── Я сделаю: -о / -ло ────────────────────────────────
+  - id: mon-shkolae-myno
+    udm: Мон школае мыно.
+    ru: Я пойду в школу.
+    kind: phrase
+    emoji: 🏫
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: школае, meaning: 'в школу', kind: word }
+      - { form: мын, meaning: 'идти', kind: root }
+      - { form: о, meaning: '(я) — будущее время', kind: suffix }
+    note: 'Три времени одного глагола: мынӥсько «иду», мынӥ «пошёл», мыно «пойду».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11838952' }, { id: alatyrev1983 }]
+  - id: mon-soly-zhingyrto
+    udm: Мон солы жингырто.
+    ru: Я ей позвоню.
+    ru_alt: [Я ему позвоню.]
+    kind: phrase
+    emoji: 📞
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: солы, meaning: 'ему, ей', kind: word }
+      - { form: жингырт, meaning: 'звонить', kind: root }
+      - { form: о, meaning: '(я) — будущее время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933193' }, { id: uniparser }]
+  - id: mon-ognam-uzhalo
+    udm: Мон огнам ужало.
+    ru: Я буду работать одна.
+    ru_alt: [Я буду работать один., Я поработаю одна., Я поработаю один.]
+    kind: phrase
+    emoji: 💻
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: огнам, meaning: 'один (сам)', kind: word }
+      - { form: ужа, meaning: 'работать', kind: root }
+      - { form: ло, meaning: '(я) — будущее время', kind: suffix }
+    note: 'У глаголов на -аны будущее — на -ло: ужаны → ужало «буду работать».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12272328' }, { id: alatyrev1983 }]
+  - id: mon-tone-tyamys-chasoz-vozmalo
+    udm: Мон тонэ тямыс часозь возьмало.
+    ru: Я буду ждать тебя до восьми часов.
+    ru_alt: [Я буду тебя ждать до восьми часов., Я подожду тебя до восьми часов.]
+    kind: phrase
+    emoji: ⏳
+    note: 'Часозь — «до … часов»: -озь значит «до» (как в Ӵуказеозь!).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12238687' }]
+  - id: mon-ataedly-veralo
+    udm: Мон атаедлы верало.
+    ru: Я твоему отцу скажу.
+    ru_alt: [Я скажу твоему отцу., Я скажу твоему папе., Я твоему папе скажу.]
+    kind: phrase
+    emoji: 🗣️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12278866' }]
+
+  # ── Ты сделаешь? -од ─────────────────────────────────
+  - id: mar-yuod
+    udm: Мар юод?
+    ru: Что будешь пить?
+    ru_alt: [Что ты будешь пить?]
+    kind: phrase
+    emoji: 🥤
+    morphemes:
+      - { form: мар, meaning: 'что', kind: word }
+      - { form: ю, meaning: 'пить', kind: root }
+      - { form: од, meaning: '(ты) — будущее время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525958' }, { id: alatyrev1983 }]
+  - id: yurttyny-bygatod-a
+    udm: Юрттыны быгатод-а?
+    ru: Можешь помочь?
+    ru_alt: [Ты можешь помочь?, Сможешь помочь?]
+    kind: phrase
+    emoji: 🙏
+    morphemes:
+      - { form: юрттыны, meaning: 'помочь', kind: word }
+      - { form: быгат, meaning: 'мочь, уметь', kind: root }
+      - { form: од, meaning: '(ты) — будущее время', kind: suffix }
+      - { form: а, meaning: 'вопрос', kind: particle }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522656' }]
+  - id: mar-karyny-malpaskod
+    udm: Мар карыны малпаськод?
+    ru: Что думаешь делать?
+    ru_alt: [Что ты думаешь делать?, Что собираешься делать?, Что ты собираешься делать?]
+    kind: phrase
+    emoji: 🤔
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11750266' }]
+
+  # ── Он сделает: -оз ──────────────────────────────────
+  - id: so-zhogen-lyktoz
+    udm: Со ӝоген лыктоз.
+    ru: Он скоро придёт.
+    ru_alt: [Она скоро придёт.]
+    kind: phrase
+    emoji: 🚶
+    morphemes:
+      - { form: со, meaning: 'он, она', kind: word }
+      - { form: ӝоген, meaning: 'скоро', kind: word }
+      - { form: лыкт, meaning: 'прийти', kind: root }
+      - { form: оз, meaning: '(он, она) — будущее время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12122065' }, { id: alatyrev1983 }]
+  - id: tom-nyan-basytoz
+    udm: Том нянь басьтоз.
+    ru: Том купит хлеб.
+    kind: phrase
+    emoji: 🍞
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12241280' }]
+  - id: so-kofe-pozytoz
+    udm: Со кофе пӧзьтоз.
+    ru: Она сварит кофе.
+    ru_alt: [Он сварит кофе.]
+    kind: phrase
+    emoji: ☕
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12390876' }]
+  - id: so-tynyd-kelshoz
+    udm: Со тыныд кельшоз.
+    ru: Это тебе понравится.
+    ru_alt: [Тебе это понравится.]
+    kind: phrase
+    emoji: 😊
+    note: 'Сравните: кельше «нравится» — кельшоз «понравится».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12305875' }]
+  - id: tom-zhogen-vuoz
+    udm: Том ӝоген вуоз.
+    ru: Том скоро будет.
+    ru_alt: [Том скоро приедет., Том скоро придёт.]
+    kind: phrase
+    emoji: 🕐
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12275589' }]
+
+  # ── Могу, умею ───────────────────────────────────────
+  - id: mon-soe-tupatyny-bygatisko
+    udm: Мон сое тупатыны быгатӥсько.
+    ru: Я могу это исправить.
+    ru_alt: [Я могу это починить.]
+    kind: phrase
+    emoji: 🔧
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: сое, meaning: 'это, его', kind: word }
+      - { form: тупатыны, meaning: 'исправить, починить', kind: word }
+      - { form: быгат, meaning: 'мочь, уметь', kind: root }
+      - { form: ӥсько, meaning: '(я)', kind: suffix }
+    note: '«Могу/умею что-то делать» — неопределённая форма на -ны + быгатыны.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11619618' }, { id: uniparser }]
+  - id: main-yurttyny-bygatisko
+    udm: Маин юрттыны быгатӥсько?
+    ru: Чем могу помочь?
+    ru_alt: [Чем я могу помочь?]
+    kind: phrase
+    emoji: 🤝
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11523597' }]
+  - id: so-ektyny-bygate
+    udm: Со эктыны быгатэ.
+    ru: Он умеет танцевать.
+    ru_alt: [Она умеет танцевать.]
+    kind: phrase
+    emoji: 💃
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12161283' }]
+  - id: ton-uyany-bygatiskod
+    udm: Тон уяны быгатӥськод.
+    ru: Ты умеешь плавать.
+    kind: phrase
+    emoji: 🏊
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12143760' }]
+  - id: so-francuz-kylyn-veraskyny-bygate
+    udm: Со француз кылын вераськыны быгатэ.
+    ru: Она умеет говорить по-французски.
+    ru_alt: [Он умеет говорить по-французски.]
+    kind: phrase
+    emoji: 🇫🇷
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12141769' }]
+  - id: zhalyasa-verano-ug-bygatisky
+    udm: Жаляса верано, уг быгатӥськы.
+    ru: К сожалению, не могу.
+    kind: phrase
+    emoji: 😔
+    note: 'Жаляса верано — «к сожалению» (букв. «с сожалением сказать»).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12145629' }]
+  - id: mon-kyrdzanyos-gozhyany-ug-bygatisky
+    udm: Мон кырӟанъёс гожъяны уг быгатӥськы.
+    ru: Я не умею писать песни.
+    kind: phrase
+    emoji: 🎵
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12162697' }]

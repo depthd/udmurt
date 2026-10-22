@@ -1,0 +1,39 @@
+id: u9-l1
+title: Мон мыно
+goal: '«Я сделаю» — окончание -о'
+icon: ⏭️
+exercises:
+  - type: teach
+    item: mon-shkolae-myno
+  - type: build
+    item: mon-shkolae-myno
+    extra: [ӥ, ӥсько]
+  - type: choice
+    item: mon-shkolae-myno
+    distractors: [mon-shkolae-myni, mon-shkolae-vetlisko]
+  - type: fill
+    text: Мон школае мын___.
+    ru: Я пойду в школу.
+    options: [о, ӥ, ӥсько]
+    answer: о
+    item: mon-shkolae-myno
+    explain: 'Мынӥсько — иду, мынӥ — пошёл, мыно — пойду.'
+  - type: teach
+    item: mon-soly-zhingyrto
+  - type: tiles
+    item: mon-soly-zhingyrto
+    extra: [тон, жингыртӥ]
+  - type: teach
+    item: mon-bolnicae-myno
+  - type: match
+    items: [mon-shkolae-myno, mon-shkolae-myni, mon-shkolae-vetlisko]
+  - type: tiles
+    dir: udm-ru
+    item: mon-soly-zhingyrto
+    extra: [позвонил, вам]
+  - type: type
+    dir: ru-udm
+    item: mon-shkolae-myno
+  - type: listen
+    item: mon-soly-zhingyrto
+    distractors: [mon-shkolae-myno]
