@@ -1,0 +1,42 @@
+id: u2-l3
+title: Дас одӥг
+goal: Числа от 11 до 20
+icon: 🧮
+exercises:
+  - type: teach
+    item: das-odig
+  - type: build
+    item: das-odig
+    extra: [кык, кызь]
+  - type: teach
+    item: das-kuin
+  - type: choice
+    item: das-kuin
+    distractors: [das-odig, kuin]
+  - type: teach
+    item: das-sizym
+  - type: choice
+    dir: ru-udm
+    item: das-sizym
+    distractors: [das-kuin, sizym]
+  - type: teach
+    item: kyz
+  - type: match
+    items: [das, das-odig, das-kuin, das-sizym, kyz]
+  - type: teach
+    item: soly-das-sizym-ares
+  - type: tiles
+    item: soly-das-sizym-ares
+    extra: [мыным, кызь]
+  - type: fill
+    text: Солы дас ___ арес.
+    ru: Ей семнадцать лет.
+    options: [сизьым, куинь, одӥг]
+    answer: сизьым
+    item: soly-das-sizym-ares
+  - type: choice
+    item: mynym-das-ukmys-ares
+    distractors: [mynym-das-tyamys-ares, mynym-kyz-ares]
+  - type: type
+    dir: ru-udm
+    item: das-odig

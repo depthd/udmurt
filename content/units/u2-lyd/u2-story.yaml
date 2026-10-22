@@ -1,0 +1,41 @@
+id: u2-story
+title: 'История: Кӧня час?'
+goal: 'Понять разговор о времени и возрасте'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: zechbur }
+      - { who: '{name}', item: zechbur }
+      - { who: Даша, item: koenya-tynyd-ares }
+      - { who: '{name}', item: mynym-kyz-ares }
+      - { who: '{name}', item: nosh-ton }
+      - { who: Даша, item: mynym-das-ukmys-ares }
+    question: Сколько лет Даше?
+    options: ['19', '20', '17']
+    answer: '19'
+  - type: dialogue
+    lines:
+      - { who: '{name}', item: koenya-chas }
+      - { who: Даша, item: ali-kuin-chas }
+      - { who: '{name}', item: kyk-chasyn-lykty }
+      - { who: Даша, item: ben }
+    question: Сколько сейчас времени?
+    options: [Три часа, Два часа, Пять часов]
+    answer: Три часа
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-udmurt-samen-veraskiskod-a }
+      - { who: '{name}', item: ozhytak-gine }
+      - { who: Даша, item: mon-nyl-kyl-todisko }
+      - { who: '{name}', item: tuzh-umoj }
+    question: Сколько языков знает Даша?
+    options: ['4', '3', '2']
+    answer: '4'
+  - type: tiles
+    item: mon-nyl-kyl-todisko
+    extra: [куинь, мыным]
+  - type: type
+    dir: ru-udm
+    item: ali-kuin-chas

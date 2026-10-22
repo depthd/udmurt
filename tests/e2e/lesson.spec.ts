@@ -25,11 +25,11 @@ test('новичок проходит первый урок с главной, �
   expect(errors).toEqual([]);
 });
 
-test('все уроки юнита 1 проходятся до конца, ошибка возвращается в очередь', async ({ page }) => {
-  test.setTimeout(420_000);
+test('все уроки юнитов 1–2 проходятся до конца, ошибка возвращается в очередь', async ({ page }) => {
+  test.setTimeout(840_000);
   await page.goto('#/');
   await page.evaluate(() => localStorage.setItem('udm.progress.v1', JSON.stringify({ v: 1, name: 'Алексей', xp: 1, onboarded: true })));
-  for (const id of ['u1-l1', 'u1-l2', 'u1-l3', 'u1-l4', 'u1-l5', 'u1-l6', 'u1-story']) {
+  for (const id of ['u1-l1', 'u1-l2', 'u1-l3', 'u1-l4', 'u1-l5', 'u1-l6', 'u1-story', 'u2-l1', 'u2-l2', 'u2-l3', 'u2-l4', 'u2-l5', 'u2-l6', 'u2-story']) {
     await page.goto(`#/lesson/${id}`);
     await expect(page.getByTestId('lesson')).toBeVisible();
     const steps = await solveLesson(page, { wrongAt: id === 'u1-l3' ? 2 : undefined });
@@ -37,6 +37,6 @@ test('все уроки юнита 1 проходятся до конца, ош�
     await page.getByTestId('finish').click();
   }
   const p = await page.evaluate(() => JSON.parse(localStorage.getItem('udm.progress.v1') || '{}'));
-  expect(Object.keys(p.lessons)).toHaveLength(7);
+  expect(Object.keys(p.lessons)).toHaveLength(14);
   expect(p.streak.current).toBe(1);
 });

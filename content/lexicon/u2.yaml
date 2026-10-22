@@ -1,0 +1,296 @@
+# Юнит 2 «Числа» — словник. Числительные — по таблице Алатырева (1983, § 37) и словарю uniparser;
+# фразы — из Tatoeba (номер предложения в ref).
+items:
+  # ── 1–10 ─────────────────────────────────────────────
+  - id: odig
+    udm: одӥг
+    ru: один
+    pos: числительное
+    emoji: 1️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: kyk
+    udm: кык
+    ru: два
+    pos: числительное
+    emoji: 2️⃣
+    note: 'Как в финском kaksi и венгерском két — общее уральское слово.'
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: kuin
+    udm: куинь
+    ru: три
+    pos: числительное
+    emoji: 3️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: nyl
+    udm: ньыль
+    ru: четыре
+    pos: числительное
+    emoji: 4️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: vit
+    udm: вить
+    ru: пять
+    pos: числительное
+    emoji: 5️⃣
+    note: 'Ср. финское viisi «пять».'
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: kuat
+    udm: куать
+    ru: шесть
+    pos: числительное
+    emoji: 6️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: sizym
+    udm: сизьым
+    ru: семь
+    pos: числительное
+    emoji: 7️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: odig-kyk-kuin
+    udm: Одӥг, кык, куинь, старт!
+    ru: Раз, два, три, старт!
+    ru_alt: [Один, два, три, старт!]
+    kind: phrase
+    emoji: 🏁
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933174' }]
+  - id: arnyayn-sizym-nunal
+    udm: Арняын сизьым нунал.
+    ru: В неделе семь дней.
+    kind: phrase
+    emoji: 📅
+    morphemes:
+      - { form: арня, meaning: 'неделя', kind: root }
+      - { form: ын, meaning: 'в (местный падеж)', kind: suffix }
+      - { form: сизьым, meaning: 'семь', kind: word }
+      - { form: нунал, meaning: 'день', kind: word }
+    note: 'После числа существительное стоит в единственном числе: сизьым нунал — «семь день».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11523479' }, { id: alatyrev1983 }]
+
+  # ── 11–20 ────────────────────────────────────────────
+  - id: das-odig
+    udm: дас одӥг
+    ru: одиннадцать
+    kind: phrase
+    morphemes:
+      - { form: дас, meaning: 'десять', kind: word }
+      - { form: одӥг, meaning: 'один', kind: word }
+    note: '11–19 строятся просто: «десять» + число. Дас одӥг — «десять один».'
+    status: sourced
+    sources: [{ id: alatyrev1983 }]
+  - id: das-kuin
+    udm: дас куинь
+    ru: тринадцать
+    kind: phrase
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '12275749' }]
+  - id: das-sizym
+    udm: дас сизьым
+    ru: семнадцать
+    kind: phrase
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '12159452' }]
+  - id: soly-das-sizym-ares
+    udm: Солы дас сизьым арес.
+    ru: Ей семнадцать лет.
+    ru_alt: [Ему семнадцать лет., Ей 17 лет., Ему 17 лет.]
+    kind: phrase
+    morphemes:
+      - { form: солы, meaning: 'ему, ей (форма от со)', kind: word }
+      - { form: дас сизьым, meaning: 'семнадцать', kind: word }
+      - { form: арес, meaning: 'лет', kind: word }
+    note: 'Со — и «он», и «она»: рода нет.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12159452' }]
+
+  # ── Десятки ──────────────────────────────────────────
+  - id: kuamyn
+    udm: куамын
+    ru: тридцать
+    pos: числительное
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: nyldon
+    udm: ньыльдон
+    ru: сорок
+    pos: числительное
+    morphemes:
+      - { form: ньыль, meaning: 'четыре', kind: root }
+      - { form: дон, meaning: 'десяток (древнее «тон»)', kind: suffix }
+    note: 'С 40 до 90 десятки — «число + тон/дон»: ньыльдон, витьтон, куатьтон…'
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: vitton
+    udm: витьтон
+    ru: пятьдесят
+    pos: числительное
+    morphemes:
+      - { form: вить, meaning: 'пять', kind: root }
+      - { form: тон, meaning: 'десяток', kind: suffix }
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: kuatton
+    udm: куатьтон
+    ru: шестьдесят
+    pos: числительное
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: syu
+    udm: сю
+    ru: сто
+    pos: числительное
+    emoji: 💯
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: syurs
+    udm: сюрс
+    ru: тысяча
+    pos: числительное
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
+  - id: annaly-kuamyn-ares
+    udm: Анналы куамын арес.
+    ru: Анне тридцать лет.
+    ru_alt: [Анне 30 лет.]
+    kind: phrase
+    morphemes:
+      - { form: Анна, meaning: 'Анна', kind: root }
+      - { form: лы, meaning: 'кому (дательный падеж)', kind: suffix }
+      - { form: куамын, meaning: 'тридцать', kind: word }
+      - { form: арес, meaning: 'лет', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12279022' }]
+  - id: mynym-kyz-nyl-ares
+    udm: Мыным кызь ньыль арес.
+    ru: Мне двадцать четыре года.
+    ru_alt: [Мне 24 года.]
+    kind: phrase
+    note: 'Двадцать четыре — кызь ньыль, просто подряд.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11535965' }]
+  - id: mynym-kuatton-kyk-ares
+    udm: Мыным куатьтон кык арес.
+    ru: Мне шестьдесят два года.
+    ru_alt: [Мне 62 года.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12154176' }]
+
+  # ── Сколько? ─────────────────────────────────────────
+  - id: koenya
+    udm: кӧня
+    ru: сколько
+    pos: вопросительное слово
+    emoji: ❓
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11522823' }]
+  - id: mynam-kyk-korkae
+    udm: Мынам кык коркае.
+    ru: У меня два дома.
+    kind: phrase
+    emoji: 🏠
+    morphemes:
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: кык, meaning: 'два', kind: word }
+      - { form: корка, meaning: 'дом', kind: root }
+      - { form: е, meaning: 'мой (после гласной)', kind: suffix }
+    note: 'После гласной притяжательный суффикс «мой» — -е: корка → коркае.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12189515' }, { id: alatyrev1983 }]
+  - id: mon-nyl-kyl-todisko
+    udm: Мон ньыль кыл тодӥсько.
+    ru: Я знаю четыре языка.
+    kind: phrase
+    emoji: 🗣️
+    morphemes:
+      - { form: ньыль, meaning: 'четыре', kind: word }
+      - { form: кыл, meaning: 'язык', kind: word }
+      - { form: тод, meaning: 'знать', kind: root }
+      - { form: ӥсько, meaning: '(я) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12231901' }]
+  - id: mon-kuin-gozhtet-gozhti
+    udm: Мон куинь гожтэт гожтӥ.
+    ru: Я написал три письма.
+    ru_alt: [Я написала три письма.]
+    kind: phrase
+    emoji: ✉️
+    note: 'Гожтӥ — прошедшее время («написал»): -ӥ вместо -ӥсько.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12161975' }]
+
+  # ── Время ────────────────────────────────────────────
+  - id: ali
+    udm: али
+    ru: сейчас
+    pos: наречие
+    emoji: ⏱️
+    status: sourced
+    sources: [{ id: uniparser }, { id: tatoeba, ref: '11704970' }]
+  - id: chas
+    udm: час
+    ru: час
+    ru_alt: [часы]
+    pos: существительное
+    emoji: 🕒
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: koenya-chas
+    udm: Кӧня час?
+    ru: Который час?
+    ru_alt: [Сколько времени?, Сколько сейчас времени?]
+    kind: phrase
+    emoji: ⌚
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525044' }]
+  - id: ali-kuin-chas
+    udm: Али куинь час.
+    ru: Сейчас три часа.
+    ru_alt: [Сейчас 3 часа.]
+    kind: phrase
+    emoji: 🕒
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11704970' }]
+  - id: ali-vit-chas
+    udm: Али вить час.
+    ru: Сейчас пять часов.
+    ru_alt: [Сейчас 5 часов.]
+    kind: phrase
+    emoji: 🕔
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12272315' }]
+  - id: ali-sizym-chas
+    udm: Али сизьым час.
+    ru: Сейчас семь часов.
+    ru_alt: [Сейчас 7 часов.]
+    kind: phrase
+    emoji: 🕖
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730345' }]
+  - id: ali-nyl-chas-das-minut
+    udm: Али ньыль час дас минут.
+    ru: Сейчас четыре часа десять минут.
+    ru_alt: [Сейчас 4 часа 10 минут., Сейчас десять минут пятого.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730346' }]
+  - id: kyk-chasyn-lykty
+    udm: Кык часын лыкты.
+    ru: Приходи в два часа.
+    kind: phrase
+    morphemes:
+      - { form: кык, meaning: 'два', kind: word }
+      - { form: час, meaning: 'час', kind: root }
+      - { form: ын, meaning: 'в (когда?)', kind: suffix }
+      - { form: лыкты, meaning: 'приходи', kind: word }
+    note: '«Во сколько?» — местный падеж -ын: кык часын «в два часа».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12263823' }]

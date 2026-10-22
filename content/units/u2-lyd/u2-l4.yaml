@@ -1,0 +1,43 @@
+id: u2-l4
+title: Кызь, куамын, сю
+goal: Десятки и сотни
+icon: 💯
+exercises:
+  - type: teach
+    item: kuamyn
+  - type: teach
+    item: nyldon
+  - type: build
+    item: nyldon
+    extra: [тон, вить]
+  - type: teach
+    item: vitton
+  - type: choice
+    item: vitton
+    distractors: [nyldon, kuamyn]
+  - type: teach
+    item: kuatton
+  - type: teach
+    item: syu
+  - type: teach
+    item: syurs
+  - type: match
+    items: [kyz, kuamyn, nyldon, vitton, syu]
+  - type: teach
+    item: annaly-kuamyn-ares
+  - type: tiles
+    item: annaly-kuamyn-ares
+    extra: [мыным, ньыльдон]
+  - type: teach
+    item: mynym-kyz-nyl-ares
+  - type: choice
+    dir: ru-udm
+    item: mynym-kyz-nyl-ares
+    distractors: [mynym-kuatton-kyk-ares, annaly-kuamyn-ares]
+  - type: type
+    dir: ru-udm
+    item: syu
+  - type: tiles
+    dir: udm-ru
+    item: mynym-kuatton-kyk-ares
+    extra: [двадцать, тридцать]

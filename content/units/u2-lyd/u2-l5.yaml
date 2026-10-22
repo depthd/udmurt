@@ -1,0 +1,39 @@
+id: u2-l5
+title: Кӧня?
+goal: 'Считать предметы: «два дома», «четыре языка»'
+icon: 📦
+exercises:
+  - type: teach
+    item: koenya
+  - type: teach
+    item: mynam-kyk-korkae
+  - type: choice
+    item: mynam-kyk-korkae
+    distractors: [mon-nyl-kyl-todisko, arnyayn-sizym-nunal]
+  - type: teach
+    item: mon-nyl-kyl-todisko
+  - type: tiles
+    item: mon-nyl-kyl-todisko
+    extra: [куинь, кылъёс]
+    explain: 'После числа — единственное число: ньыль кыл, а не «ньыль кылъёс».'
+  - type: fill
+    text: Мон ___ кыл тодӥсько.
+    ru: Я знаю четыре языка.
+    options: [ньыль, вить, куинь]
+    answer: ньыль
+    item: mon-nyl-kyl-todisko
+  - type: teach
+    item: mon-kuin-gozhtet-gozhti
+  - type: tiles
+    dir: udm-ru
+    item: mon-kuin-gozhtet-gozhti
+    extra: [два, книги]
+  - type: match
+    items: [koenya, kyk, nyl, kuin]
+  - type: choice
+    dir: ru-udm
+    item: koenya
+    distractors: [ali, kyk]
+  - type: type
+    dir: ru-udm
+    item: mynam-kyk-korkae

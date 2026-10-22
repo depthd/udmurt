@@ -1,0 +1,47 @@
+id: u2-l6
+title: Али кӧня час?
+goal: Сказать время
+icon: 🕒
+exercises:
+  - type: teach
+    item: ali
+  - type: teach
+    item: chas
+  - type: teach
+    item: koenya-chas
+  - type: teach
+    item: ali-kuin-chas
+  - type: choice
+    item: ali-kuin-chas
+    distractors: [ali-vit-chas, ali-sizym-chas]
+  - type: teach
+    item: ali-vit-chas
+  - type: tiles
+    item: ali-vit-chas
+    extra: [куинь, минут]
+  - type: teach
+    item: ali-sizym-chas
+  - type: fill
+    text: Али ___ час.
+    ru: Сейчас семь часов.
+    options: [сизьым, куать, тямыс]
+    answer: сизьым
+    item: ali-sizym-chas
+  - type: teach
+    item: ali-nyl-chas-das-minut
+  - type: tiles
+    dir: udm-ru
+    item: ali-nyl-chas-das-minut
+    extra: [пять, утра]
+  - type: teach
+    item: kyk-chasyn-lykty
+  - type: fill
+    text: Кык час___ лыкты.
+    ru: Приходи в два часа.
+    options: [ын, ысь, лы]
+    answer: ын
+    item: kyk-chasyn-lykty
+    explain: '«Во сколько?» — местный падеж -ын: кык часын.'
+  - type: type
+    dir: ru-udm
+    item: ali-kuin-chas

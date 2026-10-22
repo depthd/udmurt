@@ -1,0 +1,38 @@
+id: u2-l1
+title: Одӥг, кык, куинь
+goal: Считать от одного до пяти
+icon: 🔢
+exercises:
+  - type: teach
+    item: odig
+  - type: teach
+    item: kyk
+  - type: choice
+    item: kyk
+    distractors: [odig]
+  - type: teach
+    item: kuin
+  - type: choice
+    dir: ru-udm
+    item: kuin
+    distractors: [kyk, odig]
+  - type: teach
+    item: nyl
+  - type: teach
+    item: vit
+  - type: match
+    items: [odig, kyk, kuin, nyl, vit]
+  - type: teach
+    item: odig-kyk-kuin
+  - type: tiles
+    item: odig-kyk-kuin
+    extra: [ньыль, вить]
+  - type: type
+    dir: ru-udm
+    item: vit
+  - type: choice
+    item: nyl
+    distractors: [vit, kuin]
+  - type: type
+    dir: ru-udm
+    item: kyk

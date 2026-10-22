@@ -1,0 +1,41 @@
+id: u2-l2
+title: Куать — дас
+goal: Считать до десяти
+icon: 🔟
+exercises:
+  - type: teach
+    item: kuat
+  - type: teach
+    item: sizym
+  - type: choice
+    item: sizym
+    distractors: [kuat, vit]
+  - type: teach
+    item: tyamys
+  - type: teach
+    item: ukmys
+  - type: choice
+    dir: ru-udm
+    item: ukmys
+    distractors: [tyamys, sizym]
+  - type: teach
+    item: das
+  - type: match
+    items: [kuat, sizym, tyamys, ukmys, das]
+  - type: teach
+    item: arnyayn-sizym-nunal
+  - type: tiles
+    dir: udm-ru
+    item: arnyayn-sizym-nunal
+    extra: [пять, месяце]
+  - type: fill
+    text: Арняын ___ нунал.
+    ru: В неделе семь дней.
+    options: [сизьым, куать, тямыс]
+    answer: сизьым
+    item: arnyayn-sizym-nunal
+  - type: type
+    dir: ru-udm
+    item: sizym
+  - type: match
+    items: [odig, kuin, vit, sizym, ukmys]
