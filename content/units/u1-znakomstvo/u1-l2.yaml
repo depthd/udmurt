@@ -1,16 +1,21 @@
 id: u1-l2
-title: Мон — {name}
+title: Мынам нимы…
 goal: Назвать себя и спросить имя
 icon: 🏷️
 exercises:
   - type: teach
     item: mon
   - type: teach
-    item: mon-name
+    item: ton
   - type: choice
     dir: ru-udm
     item: mon
     distractors: [ton]
+  - type: teach
+    item: mon-name
+  - type: tiles
+    item: mon-name
+    extra: [тон]
   - type: teach
     item: nimy
   - type: build
@@ -20,29 +25,24 @@ exercises:
     item: mynam-nimy
   - type: tiles
     item: mynam-nimy
-    extra: [тон, ысь]
+    extra: [тон, нимыд]
   - type: teach
-    item: kyzy-tilad-nimdy
-  - type: fill
-    text: Мон Глаз___.
-    ru: Я из Глазова.
-    options: [ысь, ын, э]
-    answer: ысь
-    item: mon-glazys
-    explain: -ысь — «из» (исходный падеж). -ын — «в» (местный), -э — «в, куда» (входный).
+    item: nosh-tynad
   - type: dialogue
     lines:
-      - { who: Преподаватель, item: zechbures }
-      - { who: '{name}', item: zechbures }
-      - { who: Преподаватель, item: kyzy-tilad-nimdy }
+      - { who: Даша, item: zechbur }
+      - { who: '{name}', item: zechbur }
       - { who: '{name}', item: mynam-nimy }
-    question: Что спросил преподаватель?
-    options: [Как вас зовут?, Откуда вы?, Как поживаете?]
-    answer: Как вас зовут?
+      - { who: '{name}', item: nosh-tynad }
+      - { who: Даша, udm: Мынам нимы Даша., ru: Меня зовут Даша. }
+    question: Как зовут девушку?
+    options: [Даша, Маша, Таня]
+    answer: Даша
+  - type: teach
+    item: kyzy-tilad-nimdy
+  - type: choice
+    item: kyzy-tilad-nimdy
+    distractors: [nosh-tynad, mynam-nimy]
   - type: type
     dir: ru-udm
-    item: mon-name
-  - type: tiles
-    dir: udm-ru
-    item: mon-glazys
-    extra: [в, Ижевска]
+    item: mynam-nimy

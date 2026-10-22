@@ -1,0 +1,54 @@
+id: u1-l6
+title: Мон дышетскисько
+goal: 'Рассказать, где вы живёте и учитесь'
+icon: 🏫
+exercises:
+  - type: teach
+    item: mon-univ-dyshetskisko
+  - type: fill
+    text: Мон университет___ дышетскисько.
+    ru: Я учусь в университете.
+    options: [ын, ысь, э]
+    answer: ын
+    item: mon-univ-dyshetskisko
+    explain: '-ын — «в, где» (местный падеж).'
+  - type: teach
+    item: mon-udmurt-kylez-dyshetisko
+  - type: tiles
+    item: mon-udmurt-kylez-dyshetisko
+    extra: [кылын, университетын]
+  - type: teach
+    item: kytyn-ton-uliskod
+  - type: teach
+    item: mon-glazkaryn-ulisko
+  - type: choice
+    item: mon-glazkaryn-ulisko
+    distractors: [mon-glazkarys, mon-univ-dyshetskisko]
+  - type: fill
+    text: Мон Глазкар___ улӥсько.
+    ru: Я живу в Глазове.
+    options: [ын, ысь]
+    answer: ын
+    item: mon-glazkaryn-ulisko
+    explain: 'Где? — -ын (Глазкарын «в Глазове»). Откуда? — -ысь (Глазкарысь «из Глазова»).'
+  - type: teach
+    item: ton-udmurt-samen-veraskiskod-a
+  - type: teach
+    item: ozhytak-gine
+  - type: match
+    items: [ozhytak-gine, ben, ovol, tau]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-udmurt-samen-veraskiskod-a }
+      - { who: '{name}', item: ozhytak-gine }
+      - { who: '{name}', item: mon-udmurt-kylez-dyshetisko }
+      - { who: Даша, item: tuzh-umoj }
+    question: 'Что ответил собеседник Даши?'
+    options: ['Говорит чуть-чуть и учит язык', 'Говорит свободно', 'Совсем не говорит']
+    answer: 'Говорит чуть-чуть и учит язык'
+  - type: type
+    dir: ru-udm
+    item: mon-glazkaryn-ulisko
+  - type: tiles
+    item: kytyn-ton-uliskod
+    extra: [кытысь, мон]

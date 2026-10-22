@@ -8,33 +8,31 @@ exercises:
   - type: teach
     item: zechbur
   - type: choice
-    item: zechbures
-    distractors: [tau, zech-lu]
+    item: zechbur
+    distractors: [zechbures]
+    explain: 'Ӟечбур — на «ты», Ӟечбуресь — вежливо или многим.'
   - type: teach
     item: tau
   - type: choice
     dir: ru-udm
     item: tau
-    distractors: [zechbur, ovol]
+    distractors: [zechbur, zechbures]
   - type: teach
     item: zech-lu
   - type: match
     items: [zechbures, zechbur, tau, zech-lu]
   - type: teach
-    item: ben
-  - type: teach
-    item: ovol
-  - type: choice
-    item: ovol
-    distractors: [ben, tau]
-    pictures: true
+    item: badzym-tau
   - type: tiles
-    item: tau-umoj
-    extra: [Ӟеч, Бен]
+    item: badzym-tau
+    extra: [Ӟеч, лу]
+  - type: choice
+    dir: ru-udm
+    item: zech-lu
+    distractors: [tau, zechbures]
   - type: type
     dir: ru-udm
     item: tau
-  - type: tiles
-    dir: udm-ru
-    item: tuzh-umoj
-    extra: [Спасибо, плохо]
+  - type: type
+    dir: ru-udm
+    item: zechbur

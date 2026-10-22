@@ -1,0 +1,54 @@
+id: u1-l4
+title: Кытысь тон?
+goal: 'Сказать, откуда вы'
+icon: 🏙️
+exercises:
+  - type: teach
+    item: ton-kytys-luiskod
+  - type: teach
+    item: glazkar
+  - type: teach
+    item: mon-glazkarys
+  - type: build
+    item: glazkarys
+    extra: [ын, э]
+  - type: teach
+    item: mon-izhkarys
+  - type: choice
+    dir: ru-udm
+    item: mon-izhkarys
+    distractors: [mon-glazkarys]
+  - type: fill
+    text: Мон Ижкар___.
+    ru: Я из Ижевска.
+    options: [ысь, ын, э]
+    answer: ысь
+    item: mon-izhkarys
+    explain: '-ысь — «из» (исходный падеж), -ын — «в, где» (местный), -э — «в, куда» (входный).'
+  - type: teach
+    item: mon-vengriys
+  - type: tiles
+    dir: udm-ru
+    item: mon-vengriys
+    extra: [в, Финляндии]
+  - type: teach
+    item: mon-udmurt
+  - type: teach
+    item: mon-dzuch
+  - type: match
+    items: [mon-udmurt, mon-dzuch, mon-glazkarys, mon-izhkarys]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-kytys-luiskod }
+      - { who: '{name}', item: mon-glazkarys }
+      - { who: '{name}', item: nosh-ton }
+      - { who: Даша, item: mon-izhkarys }
+    question: Откуда Даша?
+    options: [Из Ижевска, Из Глазова, Из Венгрии]
+    answer: Из Ижевска
+  - type: type
+    dir: ru-udm
+    item: mon-glazkarys
+  - type: tiles
+    item: ton-kytys-luiskod
+    extra: [кытын, мон]

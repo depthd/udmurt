@@ -1,0 +1,50 @@
+id: u1-l3
+title: Мон студент
+goal: 'Сказать, кто вы, и спросить «да или нет?»'
+icon: 🎓
+exercises:
+  - type: teach
+    item: mon-student
+  - type: teach
+    item: mon-dyshetis
+  - type: choice
+    item: mon-dyshetis
+    distractors: [mon-student, mon-name]
+  - type: teach
+    item: ton-student-a
+  - type: teach
+    item: ben
+  - type: teach
+    item: ovol
+  - type: match
+    items: [ben, ovol, mon, ton]
+  - type: teach
+    item: mon-student-ovol
+  - type: fill
+    text: Мон студент ___.
+    ru: Я не студент.
+    options: [ӧвӧл, бен, но]
+    answer: ӧвӧл
+    item: mon-student-ovol
+    explain: 'Ӧвӧл — «не»; ставится в конце.'
+  - type: teach
+    item: mon-no-student
+  - type: tiles
+    item: mon-no-student
+    extra: [ӧвӧл, тон]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-student-a }
+      - { who: '{name}', item: ben-mon-student }
+      - { who: '{name}', item: nosh-ton }
+      - { who: Даша, item: mon-no-student }
+    question: Даша — студентка?
+    options: [Да, Нет, Она преподаватель]
+    answer: Да
+  - type: type
+    dir: ru-udm
+    item: mon-student
+  - type: tiles
+    dir: udm-ru
+    item: mon-student-ovol
+    extra: [тоже, да]

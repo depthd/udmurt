@@ -1,0 +1,54 @@
+id: u1-story
+title: 'История: Тодматском!'
+goal: 'Понять разговор двух студентов в университете'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: zechbur }
+      - { who: '{name}', item: zechbur }
+      - { who: Даша, item: oydo-todmatskom }
+      - { who: Даша, udm: Мынам нимы Даша., ru: Меня зовут Даша. }
+      - { who: Даша, item: nosh-tynad }
+      - { who: '{name}', item: mynam-nimy }
+    question: Что предложила Даша?
+    options: [Познакомиться, Погулять, Поговорить по телефону]
+    answer: Познакомиться
+  - type: tiles
+    item: oydo-todmatskom
+    extra: [Ӟеч, лу]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-student-a }
+      - { who: '{name}', item: ben-mon-student }
+      - { who: '{name}', item: nosh-ton }
+      - { who: Даша, item: mon-no-student }
+      - { who: Даша, item: ton-kytys-luiskod }
+      - { who: '{name}', item: mon-glazkarys }
+      - { who: Даша, item: mon-izhkarys }
+    question: Кто из Ижевска?
+    options: [Даша, Собеседник Даши, Оба]
+    answer: Даша
+  - type: dialogue
+    lines:
+      - { who: Даша, item: koenya-tynyd-ares }
+      - { who: '{name}', item: mynym-das-ukmys-ares }
+      - { who: Даша, item: ton-udmurt-samen-veraskiskod-a }
+      - { who: '{name}', item: ozhytak-gine }
+      - { who: '{name}', item: mon-udmurt-kylez-dyshetisko }
+      - { who: Даша, item: tuzh-umoj }
+    question: Сколько лет собеседнику Даши?
+    options: ['19', '20', '18']
+    answer: '19'
+  - type: dialogue
+    lines:
+      - { who: '{name}', item: badzym-tau }
+      - { who: '{name}', item: zech-lu }
+      - { who: Даша, item: zech-lu }
+    question: Как они попрощались?
+    options: ['Ӟеч лу!', 'Ӟечбур!', 'Тау!']
+    answer: 'Ӟеч лу!'
+  - type: type
+    dir: ru-udm
+    item: mon-glazkarys

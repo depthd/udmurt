@@ -1,0 +1,53 @@
+id: u1-l5
+title: Кӧня тыныд арес?
+goal: Спросить и сказать возраст
+icon: 🎂
+exercises:
+  - type: teach
+    item: koenya-tynyd-ares
+  - type: teach
+    item: das
+  - type: teach
+    item: kyz
+  - type: choice
+    item: kyz
+    distractors: [das]
+  - type: teach
+    item: mynym-kyz-ares
+  - type: teach
+    item: ukmys
+  - type: teach
+    item: mynym-das-ukmys-ares
+  - type: choice
+    item: mynym-das-ukmys-ares
+    distractors: [mynym-kyz-ares]
+  - type: teach
+    item: tyamys
+  - type: match
+    items: [das, kyz, ukmys, tyamys]
+  - type: teach
+    item: mynym-das-tyamys-ares
+  - type: tiles
+    item: mynym-das-tyamys-ares
+    extra: [кызь, тыныд]
+  - type: fill
+    text: Мыным кызь ___.
+    ru: Мне двадцать лет.
+    options: [арес, ар]
+    answer: арес
+    item: mynym-kyz-ares
+    explain: 'Арес — возраст, «лет». Ар — год (в календаре).'
+  - type: dialogue
+    lines:
+      - { who: Даша, item: koenya-tynyd-ares }
+      - { who: '{name}', item: mynym-kyz-ares }
+    question: 'Сколько лет собеседнику Даши?'
+    options: ['20', '19', '18']
+    answer: '20'
+  - type: type
+    dir: ru-udm
+    item: koenya-tynyd-ares
+  - type: tiles
+    dir: udm-ru
+    item: mynym-das-ukmys-ares
+    extra: [двадцать, тебе]

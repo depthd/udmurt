@@ -1,7 +1,11 @@
-# Юнит 1 «Знакомство». Каждая запись — с источником и статусом проверки.
-# status: verified — проверено носителем/преподавателем; sourced — из источника, ждёт проверки; draft — черновик (в уроки нельзя).
+# Юнит 1 «Знакомство» — словник.
+# Каждая запись — с источником и статусом:
+#   verified — проверено носителем/преподавателем; sourced — из источника, ждёт проверки носителем;
+#   draft — черновик (в уроки нельзя, тест не пропустит).
 # {name} подставляется именем ученика (по умолчанию «Алексей»).
+# Если в тексте есть двоеточие с пробелом, # или фигурные скобки внутри [списка] — берите текст в кавычки '…'.
 items:
+  # ── Приветствия ──────────────────────────────────────────
   - id: zechbures
     udm: Ӟечбуресь!
     ru: Здравствуйте!
@@ -10,9 +14,9 @@ items:
     emoji: 👋
     morphemes:
       - { form: ӟеч, meaning: 'хороший', kind: root }
-      - { form: бур, meaning: '«здоровый, благополучный» (как в ӟечбур)', kind: root }
-      - { form: есь, meaning: 'вежливая/множественная форма', kind: suffix }
-    note: Вежливое приветствие — так здороваются с преподавателем, со старшими или с несколькими людьми.
+      - { form: бур, meaning: 'добрый, благополучный', kind: root }
+      - { form: есь, meaning: 'вежливая форма (многим)', kind: suffix }
+    note: 'Вежливое приветствие: преподавателю, старшим, сразу нескольким людям.'
     status: sourced
     sources: [{ id: tatoeba, ref: '5842206' }]
   - id: zechbur
@@ -21,9 +25,9 @@ items:
     ru_alt: [Привет!]
     kind: phrase
     emoji: 🙂
-    note: Приветствие на «ты» — для друзей и одногруппников.
+    note: Приветствие на «ты» — другу, одногруппнику.
     status: sourced
-    sources: [{ id: tatoeba, ref: '5842203' }, { id: tatoeba, ref: '11539124' }]
+    sources: [{ id: tatoeba, ref: '5842203' }, { id: tatoeba, ref: '11539124' }, { id: timerkhanova2012 }]
   - id: tau
     udm: Тау!
     ru: Спасибо!
@@ -32,30 +36,33 @@ items:
     emoji: 🙏
     status: sourced
     sources: [{ id: tatoeba, ref: '5842240' }, { id: uniparser }]
+  - id: badzym-tau
+    udm: Бадӟым тау!
+    ru: Большое спасибо!
+    kind: phrase
+    emoji: 💐
+    morphemes:
+      - { form: бадӟым, meaning: 'большой', kind: word }
+      - { form: тау, meaning: 'спасибо', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12300271' }, { id: tatoeba, ref: '12451210' }]
   - id: zech-lu
     udm: Ӟеч лу!
     ru: Пока!
-    ru_alt: [До свидания!, Прощай!]
+    ru_alt: [До свидания!]
     kind: phrase
     emoji: 👋
-    note: Прощание. Буквально — «будь хорошим, будь благополучен».
+    note: Прощание на «ты». Буквально — «будь хорошим».
     status: sourced
     sources: [{ id: tatoeba, ref: '12159539' }]
-  - id: ben
-    udm: Бен.
-    ru: Да.
-    kind: word
-    emoji: ✅
+  - id: zech-lue
+    udm: Ӟеч луэ!
+    ru: До свидания!
+    kind: phrase
+    emoji: 🤝
+    note: Вежливое прощание — на «вы» или многим.
     status: sourced
-    sources: [{ id: tatoeba, ref: '12139184' }, { id: uniparser }]
-  - id: ovol
-    udm: Ӧвӧл.
-    ru: Нет.
-    kind: word
-    emoji: ❌
-    note: Ӧвӧл — ещё и «нет, не имеется». Буква ӧ звучит как средний звук между о и э.
-    status: sourced
-    sources: [{ id: tatoeba, ref: '12139185' }, { id: uniparser }]
+    sources: [{ id: kuara }]
   - id: tau-umoj
     udm: Тау, умой!
     ru: Спасибо, хорошо!
@@ -81,58 +88,87 @@ items:
     kind: phrase
     morphemes:
       - { form: кызьы, meaning: 'как', kind: word }
-      - { form: улӥськоды, meaning: '«(вы) живёте, поживаете»', kind: word }
+      - { form: ул, meaning: 'жить', kind: root }
+      - { form: ӥськоды, meaning: '(вы) — наст. время', kind: suffix }
     status: sourced
     sources: [{ id: tatoeba, ref: '5842223' }]
+  - id: ben
+    udm: Бен.
+    ru: Да.
+    kind: word
+    emoji: ✅
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12139184' }, { id: napolskikh }]
+  - id: ovol
+    udm: Ӧвӧл.
+    ru: Нет.
+    kind: word
+    emoji: ❌
+    note: 'Ӧвӧл — «нет» и «не (есть)». Буква ӧ — звук между о и э.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12139185' }, { id: alatyrev1983 }]
+
+  # ── Я, ты, имя ───────────────────────────────────────────
   - id: mon
     udm: мон
     ru: я
     pos: местоимение
     emoji: 🙋
     status: sourced
-    sources: [{ id: uniparser }, { id: alatyrev1983 }]
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
   - id: ton
     udm: тон
     ru: ты
     pos: местоимение
     emoji: 👉
     status: sourced
-    sources: [{ id: uniparser }, { id: alatyrev1983 }]
+    sources: [{ id: alatyrev1983 }, { id: uniparser }]
   - id: nim
     udm: ним
     ru: имя
     pos: существительное
     emoji: 🏷️
     status: sourced
-    sources: [{ id: uniparser }]
+    sources: [{ id: uniparser }, { id: kyllyukam2012 }]
   - id: nimy
     udm: нимы
     ru: моё имя
     pos: существительное
     morphemes:
       - { form: ним, meaning: 'имя', kind: root }
-      - { form: ы, meaning: '«мой» (притяжательный суффикс 1 лица)', kind: suffix }
-    note: Притяжательный суффикс прирастает к слову, как в финском nimi → nimeni.
+      - { form: ы, meaning: 'мой (притяжательный суффикс 1 лица)', kind: suffix }
+    note: 'Притяжательный суффикс прирастает к слову — как в финском nimi → nimeni.'
     status: sourced
     sources: [{ id: tatoeba, ref: '11525033' }, { id: alatyrev1983 }]
   - id: mon-name
     udm: Мон {name}.
     ru: Я {name}.
     kind: phrase
-    note: Глагола «быть» в настоящем времени нет — как в русском «Я Алексей».
+    note: Глагола-связки «есть» в настоящем времени нет — как в русском «Я Алексей».
     status: sourced
-    sources: [{ id: tatoeba, ref: '11672703' }]
+    sources: [{ id: tatoeba, ref: '11672703' }, { id: timerkhanova2012 }]
   - id: mynam-nimy
     udm: Мынам нимы {name}.
     ru: Меня зовут {name}.
     ru_alt: ['Моё имя {name}.', 'Моё имя — {name}.']
     kind: phrase
     morphemes:
-      - { form: мынам, meaning: '«мой, у меня» (форма от мон)', kind: word }
+      - { form: мынам, meaning: 'мой, у меня (форма от мон)', kind: word }
       - { form: ним, meaning: 'имя', kind: root }
-      - { form: ы, meaning: '«моё»', kind: suffix }
+      - { form: ы, meaning: 'моё', kind: suffix }
     status: sourced
-    sources: [{ id: tatoeba, ref: '11525033' }]
+    sources: [{ id: tatoeba, ref: '11525033' }, { id: samarova2011 }, { id: kuara }]
+  - id: nosh-tynad
+    udm: Нош тынад?
+    ru: А тебя? (А твоё имя?)
+    ru_alt: [А тебя?, А твоё?, А твоё имя?]
+    kind: phrase
+    morphemes:
+      - { form: нош, meaning: 'а', kind: word }
+      - { form: тынад, meaning: 'твой, у тебя (форма от тон)', kind: word }
+    note: 'Короткий встречный вопрос после «Мынам нимы …» — «а твоё?».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12318610' }]
   - id: kyzy-tilad-nimdy
     udm: Кызьы тӥляд нимды?
     ru: Как вас зовут?
@@ -140,72 +176,348 @@ items:
     kind: phrase
     morphemes:
       - { form: кызьы, meaning: 'как', kind: word }
-      - { form: тӥляд, meaning: '«ваш, у вас»', kind: word }
+      - { form: тӥляд, meaning: 'ваш, у вас', kind: word }
       - { form: ним, meaning: 'имя', kind: root }
-      - { form: ды, meaning: '«ваше»', kind: suffix }
+      - { form: ды, meaning: 'ваше', kind: suffix }
     status: sourced
     sources: [{ id: tatoeba, ref: '11522722' }]
+  - id: oydo-todmatskom
+    udm: Ойдо тодматском!
+    ru: Давай познакомимся!
+    ru_alt: [Давай знакомиться!]
+    kind: phrase
+    emoji: 🤝
+    note: 'На «вы» или многим — Ойдолэ тодматском!'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11685347' }, { id: tatoeba, ref: '11525035' }]
+
+  # ── Кто я ────────────────────────────────────────────────
+  - id: student
+    udm: студент
+    ru: студент
+    ru_alt: [студентка]
+    pos: существительное
+    emoji: 🎓
+    status: sourced
+    sources: [{ id: uniparser }, { id: timerkhanova2012 }]
+  - id: mon-student
+    udm: Мон студент.
+    ru: Я студент.
+    ru_alt: [Я студентка.]
+    kind: phrase
+    emoji: 🎓
+    note: Рода нет — одно слово и для студента, и для студентки.
+    status: sourced
+    sources: [{ id: timerkhanova2012 }, { id: samarova2011 }, { id: napolskikh }]
+  - id: mon-no-student
+    udm: Мон но студент.
+    ru: Я тоже студент.
+    ru_alt: [Я тоже студентка.]
+    kind: phrase
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: но, meaning: 'тоже, и', kind: particle }
+      - { form: студент, meaning: 'студент', kind: word }
+    note: 'Но — «тоже», ставится после слова: мон но «я тоже».'
+    status: sourced
+    sources: [{ id: timerkhanova2012 }, { id: tatoeba, ref: '11547098' }]
+  - id: mon-dyshetis
+    udm: Мон дышетӥсь.
+    ru: Я преподаватель.
+    ru_alt: [Я учитель., Я учительница., Я преподавательница.]
+    kind: phrase
+    emoji: 🧑‍🏫
+    morphemes:
+      - { form: дышет, meaning: 'учить (кого-то)', kind: root }
+      - { form: ӥсь, meaning: 'тот, кто делает', kind: suffix }
+    status: sourced
+    sources: [{ id: kuara }, { id: tatoeba, ref: '11955871' }]
   - id: mon-dyshetskis
     udm: Мон дышетскись.
     ru: Я учащийся.
-    ru_alt: [Я ученик., Я ученица., Я учусь.]
+    ru_alt: [Я ученик., Я ученица.]
     kind: phrase
-    note: 'Дышетскись — «тот, кто учится»: ученик, учащийся, студент.'
+    morphemes:
+      - { form: дышетск, meaning: 'учиться', kind: root }
+      - { form: ись, meaning: 'тот, кто делает', kind: suffix }
+    note: 'Дышетскись — «тот, кто учится»; дышетӥсь — «тот, кто учит».'
     status: sourced
-    sources: [{ id: tatoeba, ref: '12285180' }]
-  - id: mon-zhurnalist
-    udm: Мон журналист.
-    ru: Я журналист.
+    sources: [{ id: tatoeba, ref: '12285180' }, { id: kyllyukam2012 }]
+  - id: ton-student-a
+    udm: Тон студент-а?
+    ru: Ты студент?
+    ru_alt: [Ты студентка?]
+    kind: phrase
+    morphemes:
+      - { form: тон, meaning: 'ты', kind: word }
+      - { form: студент, meaning: 'студент', kind: root }
+      - { form: а, meaning: 'вопросительная частица', kind: particle }
+    note: 'Вопрос без вопросительного слова — частица -а после главного слова.'
+    status: sourced
+    sources: [{ id: napolskikh }]
+  - id: ben-mon-student
+    udm: Бен, мон студент.
+    ru: Да, я студент.
+    ru_alt: [Да, я студентка.]
     kind: phrase
     status: sourced
-    sources: [{ id: tatoeba, ref: '11726191' }]
+    sources: [{ id: napolskikh }]
+  - id: mon-student-ovol
+    udm: Мон студент ӧвӧл.
+    ru: Я не студент.
+    ru_alt: [Я не студентка.]
+    kind: phrase
+    note: 'Ӧвӧл ставится в конце: «я студент не-есть».'
+    status: sourced
+    sources: [{ id: napolskikh }, { id: tatoeba, ref: '11672707' }]
   - id: mon-emchi-ovol
     udm: Мон эмчи ӧвӧл.
     ru: Я не врач.
     ru_alt: [Я не доктор.]
     kind: phrase
-    morphemes:
-      - { form: мон, meaning: 'я', kind: word }
-      - { form: эмчи, meaning: 'врач', kind: word }
-      - { form: ӧвӧл, meaning: 'не (есть)', kind: word }
-    note: Отрицание «я не …» — ӧвӧл после слова.
     status: sourced
     sources: [{ id: tatoeba, ref: '11672707' }]
-  - id: mon-zambiys
-    udm: Мон Замбиысь.
-    ru: Я из Замбии.
+  - id: nosh-ton
+    udm: Нош тон?
+    ru: А ты?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11726261' }, { id: tatoeba, ref: '12259123' }]
+
+  # ── Откуда я ─────────────────────────────────────────────
+  - id: ton-kytys-luiskod
+    udm: Тон кытысь луиськод?
+    ru: Ты откуда?
+    ru_alt: [Откуда ты?]
     kind: phrase
     morphemes:
-      - { form: Замби, meaning: 'Замбия', kind: root }
-      - { form: ысь, meaning: '«из» (исходный падеж)', kind: suffix }
+      - { form: тон, meaning: 'ты', kind: word }
+      - { form: кытысь, meaning: 'откуда', kind: word }
+      - { form: луиськод, meaning: '(ты) бываешь, есть', kind: word }
+    note: 'Вежливо — Тӥ кытысь луиськоды? «Вы откуда?»'
     status: sourced
-    sources: [{ id: tatoeba, ref: '11933284' }, { id: alatyrev1983 }]
-  - id: glazys
-    udm: Глазысь
-    ru: из Глазова
+    sources: [{ id: samarova2011 }, { id: alatyrev1983 }]
+  - id: glazkar
+    udm: Глазкар
+    ru: Глазов
+    udm_alt: [Глаз]
+    kind: word
+    emoji: 🏙️
     morphemes:
       - { form: Глаз, meaning: 'Глазов', kind: root }
-      - { form: ысь, meaning: '«из» (исходный падеж)', kind: suffix }
-    note: Глазов по-удмуртски — Глаз (полностью — Глаз кар, «город Глаз»).
+      - { form: кар, meaning: 'город', kind: root }
+    note: 'Глазов по-удмуртски — Глаз или Глазкар (кар — «город»). В разговоре говорят и «Глазов» с удмуртскими окончаниями.'
     status: sourced
-    sources: [{ id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }, { id: uniparser }, { id: alatyrev1983 }]
-  - id: mon-glazys
-    udm: Мон Глазысь.
+    sources: [{ id: timerkhanova2012 }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }, { id: uniparser }, { id: karakulova2001 }]
+  - id: glazkarys
+    udm: Глазкарысь
+    ru: из Глазова
+    udm_alt: [Глазысь, Глазовысь]
+    kind: word
+    morphemes:
+      - { form: Глаз, meaning: 'Глазов', kind: root }
+      - { form: кар, meaning: 'город', kind: root }
+      - { form: ысь, meaning: 'из (исходный падеж)', kind: suffix }
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: samarova2011 }, { id: tatoeba, ref: '12275677' }]
+  - id: mon-glazkarys
+    udm: Мон Глазкарысь.
     ru: Я из Глазова.
+    udm_alt: [Мон Глазысь., Мон Глазовысь.]
+    kind: phrase
+    emoji: 🏙️
+    note: 'Модель «Мон + место + -ысь», как в учебнике: Мон Вавожысь «я из Вавожа».'
+    status: sourced
+    sources: [{ id: samarova2011 }, { id: tatoeba, ref: '12275677' }, { id: timerkhanova2012 }]
+  - id: izhkar
+    udm: Ижкар
+    ru: Ижевск
+    kind: word
+    emoji: 🏛️
+    note: 'Ижкар — столица Удмуртии (шоркар).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12275365' }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Иж' }]
+  - id: mon-izhkarys
+    udm: Мон Ижкарысь.
+    ru: Я из Ижевска.
+    kind: phrase
+    morphemes:
+      - { form: Ижкар, meaning: 'Ижевск', kind: root }
+      - { form: ысь, meaning: 'из', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12275365' }, { id: samarova2011 }]
+  - id: mon-vengriys
+    udm: Мон Венгриысь.
+    ru: Я из Венгрии.
+    kind: phrase
+    emoji: 🇭🇺
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12275677' }]
+  - id: mon-udmurt
+    udm: Мон удмурт.
+    ru: Я удмурт.
+    ru_alt: [Я удмуртка.]
     kind: phrase
     status: sourced
-    sources: [{ id: tatoeba, ref: '11933284' }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }]
+    sources: [{ id: samarova2011 }]
+  - id: mon-dzuch
+    udm: Мон ӟуч.
+    ru: Я русский.
+    ru_alt: [Я русская.]
+    kind: phrase
+    note: 'Ӟуч — «русский (человек)».'
+    status: sourced
+    sources: [{ id: samarova2011 }, { id: uniparser }]
+
+  # ── Возраст ──────────────────────────────────────────────
+  - id: das
+    udm: дас
+    ru: десять
+    pos: числительное
+    emoji: 🔟
+    status: sourced
+    sources: [{ id: alatyrev1983 }]
+  - id: kyz
+    udm: кызь
+    ru: двадцать
+    pos: числительное
+    status: sourced
+    sources: [{ id: alatyrev1983 }]
+  - id: tyamys
+    udm: тямыс
+    ru: восемь
+    pos: числительное
+    emoji: 8️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }]
+  - id: ukmys
+    udm: укмыс
+    ru: девять
+    pos: числительное
+    emoji: 9️⃣
+    status: sourced
+    sources: [{ id: alatyrev1983 }]
+  - id: koenya-tynyd-ares
+    udm: Кӧня тыныд арес?
+    ru: Сколько тебе лет?
+    kind: phrase
+    morphemes:
+      - { form: кӧня, meaning: 'сколько', kind: word }
+      - { form: тыныд, meaning: 'тебе (форма от тон)', kind: word }
+      - { form: арес, meaning: 'лет, возраст', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522823' }, { id: tatoeba, ref: '12583237' }]
+  - id: mynym-kyz-ares
+    udm: Мыным кызь арес.
+    ru: Мне двадцать лет.
+    ru_alt: [Мне 20 лет.]
+    kind: phrase
+    morphemes:
+      - { form: мыным, meaning: 'мне (форма от мон)', kind: word }
+      - { form: кызь, meaning: 'двадцать', kind: word }
+      - { form: арес, meaning: 'лет', kind: word }
+    note: 'Возраст — «кому сколько лет», как в русском: мыным «мне».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11535965' }, { id: kuara }, { id: alatyrev1983 }]
+  - id: mynym-das-ukmys-ares
+    udm: Мыным дас укмыс арес.
+    ru: Мне девятнадцать лет.
+    ru_alt: [Мне 19 лет.]
+    kind: phrase
+    note: '19 = дас укмыс — «десять девять». Так же 11–19: дас одӥг, дас кык…'
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '11525036' }]
+  - id: mynym-das-tyamys-ares
+    udm: Мыным дас тямыс арес.
+    ru: Мне восемнадцать лет.
+    ru_alt: [Мне 18 лет.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '11525036' }]
+
+  # ── Учёба, жизнь, язык ──────────────────────────────────
+  - id: mon-univ-dyshetskisko
+    udm: Мон университетын дышетскисько.
+    ru: Я учусь в университете.
+    kind: phrase
+    emoji: 🏫
+    morphemes:
+      - { form: университет, meaning: 'университет', kind: root }
+      - { form: ын, meaning: 'в (местный падеж)', kind: suffix }
+      - { form: дышетск, meaning: 'учиться', kind: root }
+      - { form: исько, meaning: '(я) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11526026' }, { id: alatyrev1983 }]
+  - id: mon-udmurt-kylez-dyshetisko
+    udm: Мон удмурт кылэз дышетӥсько.
+    ru: Я учу удмуртский язык.
+    ru_alt: [Я изучаю удмуртский язык., Я учу удмуртский.]
+    kind: phrase
+    emoji: 📖
+    morphemes:
+      - { form: удмурт, meaning: 'удмуртский', kind: word }
+      - { form: кыл, meaning: 'язык', kind: root }
+      - { form: эз, meaning: 'винительный падеж (что?)', kind: suffix }
+      - { form: дышет, meaning: 'учить', kind: root }
+      - { form: ӥсько, meaning: '(я) — наст. время', kind: suffix }
+    note: 'Кыл — и «язык», и «слово». Как в финском: kieli — «язык».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522745' }, { id: tatoeba, ref: '12142159' }]
+  - id: kytyn-ton-uliskod
+    udm: Кытын тон улӥськод?
+    ru: Где ты живёшь?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522647' }]
+  - id: mon-glazkaryn-ulisko
+    udm: Мон Глазкарын улӥсько.
+    ru: Я живу в Глазове.
+    udm_alt: [Мон Глазын улӥсько., Мон Глазовын улӥсько., Улӥсько Глазкарын.]
+    kind: phrase
+    emoji: 🏠
+    morphemes:
+      - { form: Глазкар, meaning: 'Глазов', kind: root }
+      - { form: ын, meaning: 'в (местный падеж)', kind: suffix }
+      - { form: ул, meaning: 'жить', kind: root }
+      - { form: ӥсько, meaning: '(я) — наст. время', kind: suffix }
+    status: sourced
+    sources: [{ id: timerkhanova2012 }, { id: tatoeba, ref: '11522715' }, { id: karakulova2001 }]
+  - id: ton-udmurt-samen-veraskiskod-a
+    udm: Тон удмурт сямен вераськиськод-а?
+    ru: Ты говоришь по-удмуртски?
+    kind: phrase
+    morphemes:
+      - { form: удмурт сямен, meaning: 'по-удмуртски', kind: word }
+      - { form: вераськ, meaning: 'говорить, разговаривать', kind: root }
+      - { form: иськод, meaning: '(ты) — наст. время', kind: suffix }
+      - { form: а, meaning: 'вопрос', kind: particle }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11933268' }]
+  - id: ozhytak-gine
+    udm: Ӧжытак гинэ.
+    ru: Чуть-чуть.
+    ru_alt: [Немножко., Совсем немного.]
+    kind: phrase
+    emoji: 🤏
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12471708' }]
+  - id: mon-dzuch-samen-veraskisko
+    udm: Мон ӟуч сямен вераськисько.
+    ru: Я говорю по-русски.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '13924164' }]
   - id: mon-ug-todisky
     udm: Мон уг тодӥськы.
     ru: Я не знаю.
     kind: phrase
     morphemes:
       - { form: мон, meaning: 'я', kind: word }
-      - { form: уг, meaning: '«не» (отрицательный глагол, наст. время)', kind: word }
-      - { form: тодӥськы, meaning: '«знаю» (форма после отрицания)', kind: word }
-    note: Отрицание в удмуртском — особый глагол «не», как в финском (en tiedä).
+      - { form: уг, meaning: 'не (отрицательный глагол)', kind: word }
+      - { form: тодӥськы, meaning: 'знаю (форма после отрицания)', kind: word }
+    note: 'Отрицание — особый глагол «не», он спрягается: уг (я), уд (ты)… Как в финском en, et.'
     status: sourced
-    sources: [{ id: tatoeba, ref: '11525052' }]
+    sources: [{ id: tatoeba, ref: '11525052' }, { id: alatyrev1983 }]
   - id: mon-oj-vala
     udm: Мон ӧй вала.
     ru: Я не понял.
