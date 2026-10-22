@@ -1,0 +1,29 @@
+id: u10-story
+title: 'История: Мынам йыры висе'
+goal: 'Понять разговор с утра'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Даша, item: vyl-chuknaen }
+      - { who: Даша, item: kyzy-uliskody }
+      - { who: '{name}', item: mynam-yyry-vise }
+      - { who: Даша, item: maid-tynad-vise }
+    question: Как себя чувствует собеседник Даши?
+    options: [Болит голова, Всё хорошо, Устал]
+    answer: Болит голова
+  - type: dialogue
+    lines:
+      - { who: Даша, item: mon-vozh-mashina-basyti }
+      - { who: '{name}', item: tuzh-cheber }
+      - { who: '{name}', item: ta-zech-ivor }
+    question: Какого цвета машина у Даши?
+    options: [Зелёная, Красная, Белая]
+    answer: Зелёная
+  - type: tiles
+    item: kyche-cheber-vuyuis
+    extra: [пичи, сьӧд]
+  - type: listen
+    item: mynam-vozh-yablokee-van
+    distractors: [mon-vozh-mashina-basyti]

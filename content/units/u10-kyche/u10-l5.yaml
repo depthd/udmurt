@@ -1,0 +1,42 @@
+id: u10-l5
+title: Мынам йыры висе
+goal: '«У меня болит»'
+icon: 🤕
+exercises:
+  - type: teach
+    item: yyr
+  - type: teach
+    item: mynam-yyry-vise
+  - type: build
+    item: mynam-yyry-vise
+    extra: [ыд, ез]
+  - type: teach
+    item: maid-tynad-vise
+  - type: dialogue
+    lines:
+      - { who: Эмчи, item: maid-tynad-vise }
+      - { who: '{name}', item: mynam-yyry-vise }
+    question: Что болит у пациента?
+    options: [Голова, Сердце, Зуб]
+    answer: Голова
+  - type: teach
+    item: yyryd-vise-na
+  - type: fill
+    text: Йыр___ висе на?
+    ru: Голова ещё болит?
+    options: [ыд, ы, ыз]
+    answer: ыд
+    item: yyryd-vise-na
+    explain: 'Йыр-ы — моя голова, йыр-ыд — твоя, йыр-ыз — его/её.'
+  - type: teach
+    item: so-vise
+  - type: teach
+    item: mynam-sulemy-vise
+  - type: match
+    items: [mynam-yyry-vise, maid-tynad-vise, so-vise, mynam-sulemy-vise]
+  - type: type
+    dir: ru-udm
+    item: mynam-yyry-vise
+  - type: listen
+    item: maid-tynad-vise
+    distractors: [mynam-yyry-vise]

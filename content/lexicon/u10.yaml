@@ -1,0 +1,313 @@
+# Юнит 10 «Кыӵе?» — цвета, «какой?», пожелания, «у меня болит». Слова — uniparser/Викисловарь, фразы — Tatoeba.
+items:
+  # ── Цвета ────────────────────────────────────────────
+  - id: gord
+    udm: горд
+    ru: красный
+    pos: прилагательное
+    emoji: 🔴
+    note: 'Горд — и «красный», и «рыжий».'
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: todyy
+    udm: тӧдьы
+    ru: белый
+    pos: прилагательное
+    emoji: ⚪
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: syod
+    udm: сьӧд
+    ru: чёрный
+    pos: прилагательное
+    emoji: ⚫
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: vozh
+    udm: вож
+    ru: зелёный
+    pos: прилагательное
+    emoji: 🟢
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: lyz
+    udm: лыз
+    ru: синий
+    pos: прилагательное
+    emoji: 🔵
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: chuzh
+    udm: ӵуж
+    ru: жёлтый
+    pos: прилагательное
+    emoji: 🟡
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: purys
+    udm: пурысь
+    ru: серый
+    pos: прилагательное
+    emoji: 🩶
+    status: sourced
+    sources: [{ id: uniparser }, { id: ruwikt }]
+  - id: ta-bumaga-todyy
+    udm: Та бумага тӧдьы.
+    ru: Эта бумага белая.
+    kind: phrase
+    emoji: 📄
+    note: 'Глагола «быть» нет: «эта бумага — белая».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11531517' }]
+  - id: so-gord-a
+    udm: Со горд-а?
+    ru: Она красная?
+    ru_alt: [Он красный?, Оно красное?, Это красное?]
+    kind: phrase
+    emoji: 🍎
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12324466' }]
+  - id: mynam-vozh-yablokee-van
+    udm: Мынам вож яблоке вань.
+    ru: У меня есть зелёное яблоко.
+    kind: phrase
+    emoji: 🍏
+    morphemes:
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: вож, meaning: 'зелёный', kind: word }
+      - { form: яблок, meaning: 'яблоко', kind: root }
+      - { form: е, meaning: 'моё', kind: suffix }
+      - { form: вань, meaning: 'есть', kind: word }
+    note: 'Цвет стоит перед словом и не меняется: вож яблоко, вож машина.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12313567' }]
+  - id: mynym-lyz-buyol-kelshe
+    udm: Мыным лыз буёл кельше.
+    ru: Мне нравится синий цвет.
+    kind: phrase
+    emoji: 💙
+    note: 'Буёл — «краска, цвет».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12307473' }, { id: uniparser }]
+
+  # ── Цвета в жизни ────────────────────────────────────
+  - id: tomlen-todyy-kochyshez-van
+    udm: Томлэн тӧдьы коӵышез вань.
+    ru: У Тома есть белый кот.
+    ru_alt: [У Тома есть белая кошка.]
+    kind: phrase
+    emoji: 🐈
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12159462' }]
+  - id: mon-vozh-mashina-basyti
+    udm: Мон вож машина басьтӥ.
+    ru: Я купила зелёную машину.
+    ru_alt: [Я купил зелёную машину.]
+    kind: phrase
+    emoji: 🚗
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12259711' }]
+  - id: so-syod-kofe-yarate
+    udm: Со сьӧд кофе яратэ.
+    ru: Он любит чёрный кофе.
+    ru_alt: [Она любит чёрный кофе.]
+    kind: phrase
+    emoji: ☕
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12446416' }]
+  - id: gord-derem-soly-myne
+    udm: Горд дэрем солы мынэ.
+    ru: Красное платье ей идёт.
+    ru_alt: [Красная рубашка ему идёт., Красное платье ему идёт., Ей идёт красное платье.]
+    kind: phrase
+    emoji: 👗
+    note: 'Дэрем — рубаха; так называют и удмуртское платье-рубаху.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12172688' }, { id: uniparser }]
+  - id: piyash-chuzh-syaska-bicha
+    udm: Пияш ӵуж сяська бича.
+    ru: Мальчик собирает жёлтые цветы.
+    kind: phrase
+    emoji: 🌼
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12376280' }]
+
+  # ── Какой? ───────────────────────────────────────────
+  - id: badzym
+    udm: бадӟым
+    ru: большой
+    pos: прилагательное
+    emoji: 🐘
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: pichi
+    udm: пичи
+    ru: маленький
+    pos: прилагательное
+    emoji: 🐭
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: vyl
+    udm: выль
+    ru: новый
+    pos: прилагательное
+    emoji: ✨
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: cheber
+    udm: чебер
+    ru: красивый
+    ru_alt: [красиво]
+    pos: прилагательное
+    emoji: 🌸
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: tuzh-cheber
+    udm: Туж чебер.
+    ru: Очень красиво.
+    kind: phrase
+    emoji: 😍
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11091458' }]
+  - id: kyche-cheber-vuyuis
+    udm: Кыӵе чебер вуюись!
+    ru: Какая красивая радуга!
+    kind: phrase
+    emoji: 🌈
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11758402' }]
+  - id: kudiz-korka-vyl
+    udm: Кудӥз корка выль?
+    ru: Который дом новый?
+    ru_alt: [Какой дом новый?]
+    kind: phrase
+    emoji: 🏠
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5864745' }]
+  - id: ton-badzym
+    udm: Тон бадӟым.
+    ru: Ты большой.
+    ru_alt: [Ты большая.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12154107' }]
+  - id: ta-zech-ivor
+    udm: Та ӟеч ивор.
+    ru: Это хорошая новость.
+    kind: phrase
+    emoji: 📰
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11525838' }]
+  - id: zech-malpan
+    udm: Ӟеч малпан.
+    ru: Хорошая идея.
+    kind: phrase
+    emoji: 💡
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522681' }]
+
+  # ── Пожелания ────────────────────────────────────────
+  - id: vyl-chuknaen
+    udm: Выль ӵукнаен!
+    ru: Доброе утро!
+    kind: phrase
+    emoji: 🌅
+    note: 'Буквально «С новым утром!» — как Выль арен! «С Новым годом!».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842208' }]
+  - id: zech-nunalen
+    udm: Ӟеч нуналэн.
+    ru: Добрый день.
+    ru_alt: [Добрый день!]
+    kind: phrase
+    emoji: ☀️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842214' }]
+  - id: vyl-aren
+    udm: Выль арен!
+    ru: С Новым годом!
+    kind: phrase
+    emoji: 🎄
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11523067' }]
+  - id: zech-nunal-tiledly
+    udm: Ӟеч нунал тӥледлы!
+    ru: Хорошего вам дня!
+    kind: phrase
+    emoji: 🌞
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11958125' }]
+  - id: surestu-zech-medlo
+    udm: Сюресты ӟеч медло!
+    ru: Счастливого пути!
+    ru_alt: [Хорошей дороги!]
+    kind: phrase
+    emoji: 🛤️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '5842264' }]
+  - id: zech-shutetske
+    udm: Ӟеч шутэтске!
+    ru: Приятного отдыха!
+    ru_alt: [Хорошего отдыха!]
+    kind: phrase
+    emoji: 🏖️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11530012' }]
+
+  # ── Болит ────────────────────────────────────────────
+  - id: yyr
+    udm: йыр
+    ru: голова
+    pos: существительное
+    emoji: 🙆
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: mynam-yyry-vise
+    udm: Мынам йыры висе.
+    ru: У меня голова болит.
+    ru_alt: [У меня болит голова., Голова у меня болит.]
+    kind: phrase
+    emoji: 🤕
+    morphemes:
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: йыр, meaning: 'голова', kind: root }
+      - { form: ы, meaning: 'моя', kind: suffix }
+      - { form: висе, meaning: 'болит', kind: word }
+    note: '«У меня болит…» — Мынам + часть тела с -ы «мой» + висе.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11818085' }]
+  - id: maid-tynad-vise
+    udm: Маид тынад висе?
+    ru: Что у тебя болит?
+    kind: phrase
+    emoji: 🩺
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12247645' }]
+  - id: yyryd-vise-na
+    udm: Йырыд висе на?
+    ru: Голова ещё болит?
+    ru_alt: [Голова всё ещё болит?]
+    kind: phrase
+    morphemes:
+      - { form: йыр, meaning: 'голова', kind: root }
+      - { form: ыд, meaning: 'твоя', kind: suffix }
+      - { form: висе, meaning: 'болит', kind: word }
+      - { form: на, meaning: 'ещё', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12171245' }]
+  - id: so-vise
+    udm: Со висе.
+    ru: Он болеет.
+    ru_alt: [Она болеет.]
+    kind: phrase
+    emoji: 🤒
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12162990' }]
+  - id: mynam-sulemy-vise
+    udm: Мынам сюлэмы висе.
+    ru: У меня болит сердце.
+    ru_alt: [У меня сердце болит.]
+    kind: phrase
+    emoji: 💔
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11522744' }]

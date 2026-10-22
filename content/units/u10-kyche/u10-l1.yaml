@@ -1,0 +1,37 @@
+id: u10-l1
+title: Горд, тӧдьы, сьӧд
+goal: 'Цвета'
+icon: 🎨
+exercises:
+  - type: teach
+    item: gord
+  - type: teach
+    item: todyy
+  - type: teach
+    item: syod
+  - type: match
+    items: [gord, todyy, syod]
+  - type: teach
+    item: ta-bumaga-todyy
+  - type: tiles
+    item: ta-bumaga-todyy
+    extra: [сьӧд, со]
+  - type: teach
+    item: so-gord-a
+  - type: choice
+    item: so-gord-a
+    distractors: [ta-bumaga-todyy, ton-student-a]
+  - type: teach
+    item: vozh
+  - type: teach
+    item: lyz
+  - type: teach
+    item: chuzh
+  - type: match
+    items: [vozh, lyz, chuzh, gord, syod]
+  - type: type
+    dir: ru-udm
+    item: ta-bumaga-todyy
+  - type: listen
+    item: ta-bumaga-todyy
+    distractors: [so-gord-a]

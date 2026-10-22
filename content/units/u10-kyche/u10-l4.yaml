@@ -1,0 +1,40 @@
+id: u10-l4
+title: Выль ӵукнаен!
+goal: 'Пожелания на каждый день'
+icon: 🌅
+exercises:
+  - type: teach
+    item: vyl-chuknaen
+  - type: teach
+    item: zech-nunalen
+  - type: choice
+    item: zech-nunalen
+    distractors: [vyl-chuknaen, zech-lue]
+  - type: teach
+    item: vyl-aren
+  - type: tiles
+    dir: udm-ru
+    item: vyl-chuknaen
+    extra: [добрый, день]
+  - type: teach
+    item: zech-nunal-tiledly
+  - type: teach
+    item: surestu-zech-medlo
+  - type: teach
+    item: zech-shutetske
+  - type: match
+    items: [vyl-chuknaen, zech-nunalen, vyl-aren, surestu-zech-medlo, zech-shutetske]
+  - type: dialogue
+    lines:
+      - { who: Даша, item: vyl-chuknaen }
+      - { who: '{name}', item: zechbur }
+      - { who: Даша, item: zech-nunal-tiledly }
+    question: Когда, скорее всего, встретились Даша и её собеседник?
+    options: [Утром, Вечером, Ночью]
+    answer: Утром
+  - type: type
+    dir: ru-udm
+    item: vyl-aren
+  - type: listen
+    item: zech-nunal-tiledly
+    distractors: [zech-shutetske]

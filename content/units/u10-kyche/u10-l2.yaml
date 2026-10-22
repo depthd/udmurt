@@ -1,0 +1,44 @@
+id: u10-l2
+title: Вож машина
+goal: 'Цвет перед словом'
+icon: 🚗
+exercises:
+  - type: teach
+    item: mynam-vozh-yablokee-van
+  - type: build
+    item: mynam-vozh-yablokee-van
+    extra: [ыд, ез]
+  - type: teach
+    item: mon-vozh-mashina-basyti
+  - type: tiles
+    item: mon-vozh-mashina-basyti
+    extra: [горд, басьтоз]
+  - type: teach
+    item: tomlen-todyy-kochyshez-van
+  - type: choice
+    item: tomlen-todyy-kochyshez-van
+    distractors: [mynam-vozh-yablokee-van, so-syod-kofe-yarate]
+  - type: teach
+    item: so-syod-kofe-yarate
+  - type: fill
+    text: Со ___ кофе яратэ.
+    ru: Он любит чёрный кофе.
+    options: [сьӧд, тӧдьы, горд]
+    answer: сьӧд
+    item: so-syod-kofe-yarate
+  - type: teach
+    item: purys
+  - type: teach
+    item: mynym-lyz-buyol-kelshe
+  - type: match
+    items: [mon-vozh-mashina-basyti, tomlen-todyy-kochyshez-van, so-syod-kofe-yarate, mynym-lyz-buyol-kelshe]
+  - type: tiles
+    dir: udm-ru
+    item: mynym-lyz-buyol-kelshe
+    extra: [красный, тебе]
+  - type: type
+    dir: ru-udm
+    item: so-syod-kofe-yarate
+  - type: listen
+    item: mon-vozh-mashina-basyti
+    distractors: [tomlen-todyy-kochyshez-van]

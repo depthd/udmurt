@@ -1,0 +1,45 @@
+id: u10-l3
+title: Кыӵе чебер!
+goal: 'Большой, маленький, новый, красивый'
+icon: 🌈
+exercises:
+  - type: teach
+    item: badzym
+  - type: teach
+    item: pichi
+  - type: teach
+    item: ton-badzym
+  - type: teach
+    item: vyl
+  - type: teach
+    item: kudiz-korka-vyl
+  - type: choice
+    item: kudiz-korka-vyl
+    distractors: [kyche-uram-ta, ton-badzym]
+  - type: teach
+    item: cheber
+  - type: teach
+    item: tuzh-cheber
+  - type: teach
+    item: kyche-cheber-vuyuis
+  - type: tiles
+    item: kyche-cheber-vuyuis
+    extra: [урод, туж]
+  - type: match
+    items: [badzym, pichi, vyl, cheber]
+  - type: teach
+    item: ta-zech-ivor
+  - type: teach
+    item: zech-malpan
+  - type: fill
+    text: Та ___ ивор.
+    ru: Это хорошая новость.
+    options: [ӟеч, урод, пичи]
+    answer: ӟеч
+    item: ta-zech-ivor
+  - type: type
+    dir: ru-udm
+    item: tuzh-cheber
+  - type: listen
+    item: kyche-cheber-vuyuis
+    distractors: [tuzh-cheber]

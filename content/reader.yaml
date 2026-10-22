@@ -199,3 +199,24 @@ texts:
       - q: Что купит Том?
         options: [Хлеб, Яблоки, Мясо]
         answer: Хлеб
+
+  - id: t10-mashina
+    title: Вож машина
+    title_ru: Зелёная машина
+    after: u10-kyche
+    icon: 🚗
+    lines:
+      - { who: Даша, item: vyl-chuknaen }
+      - { who: '{name}', item: zechbur }
+      - { who: Даша, item: mon-vozh-mashina-basyti }
+      - { who: '{name}', item: tuzh-cheber }
+      - { who: '{name}', item: ta-zech-ivor }
+      - { who: Даша, item: mi-aeroporte-myniskom }
+      - { who: '{name}', item: surestu-zech-medlo }
+    questions:
+      - q: Что купила Даша?
+        options: [Зелёную машину, Красное платье, Белого кота]
+        answer: Зелёную машину
+      - q: Что пожелали Даше?
+        options: [Счастливого пути, С Новым годом, Приятного отдыха]
+        answer: Счастливого пути
