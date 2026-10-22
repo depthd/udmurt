@@ -124,8 +124,8 @@
     height: 55%;
   }
   .slow .ico {
-    width: 62%;
-    height: 62%;
+    width: 72%;
+    height: 72%;
   }
   .ring {
     position: absolute;

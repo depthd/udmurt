@@ -77,8 +77,9 @@
       const after = reward?.streakAfter ?? 0;
       const before = reward?.streakBefore ?? after;
       const timers: number[] = [];
-      if (reward?.streakExtended && !prefs.reduceMotion && after !== before) {
-        streakShown = before;
+      const flip = !!reward?.streakExtended && !prefs.reduceMotion && before > 0 && after !== before;
+      streakShown = flip ? before : after;
+      if (reward?.streakExtended && !prefs.reduceMotion) {
         timers.push(
           window.setTimeout(() => {
             streakShown = after;
@@ -86,7 +87,7 @@
             sfx.unlock();
           }, 900),
         );
-      } else streakShown = after;
+      }
 
       if ((reward?.newAchievements.length ?? 0) > 0) timers.push(window.setTimeout(() => sfx.unlock(), 1300));
 
@@ -137,12 +138,11 @@
         {#if reward.streakAfter > 0}
           <p class="streak" class:bump={streakBump}>
             <span class="flame" aria-hidden="true">🔥</span>
-            {#key streakShown}<b class="num">{streakShown}</b>{/key}
-            {plural(reward.streakAfter, ['день', 'дня', 'дней'])} подряд
-            {#if reward.streakExtended && reward.streakBefore === 0 && reward.streakAfter === 1}
-              <span class="hint">— серия началась!</span>
-            {/if}
+            <span>{#key streakShown}<b class="num">{streakShown}</b>{/key} {plural(reward.streakAfter, ['день', 'дня', 'дней'])} подряд</span>
           </p>
+          {#if reward.streakExtended && reward.streakBefore === 0 && reward.streakAfter === 1}
+            <p class="hint">Серия началась! Завтра — второй день.</p>
+          {/if}
         {/if}
         {#if reward.usedFreeze > 0}
           <p class="freeze">
@@ -280,8 +280,8 @@
     min-width: 1ch;
   }
   .hint {
-    font-weight: 500;
-    color: var(--ink);
+    font-weight: 600;
+    color: var(--muted);
   }
   .freeze,
   .goal {

@@ -42,6 +42,7 @@
   const shown = $derived(verdict?.seed === seed ? verdict.v : null);
 
   let input: HTMLInputElement | null = $state(null);
+  const uid = $props.id();
 
   function check(): AnswerResult {
     const meaning = `${udm} — ${ru}`;
@@ -79,14 +80,16 @@
 <div class="listen">
   {#if hasAudio}
     <div class="stage">
-      <span class="ear" aria-hidden="true">🥟</span>
       <div class="buttons">
         <span data-testid="listen-play"
-          ><AudioButton audio={it.audio} synth={it.audio_synth} size="lg" autoplay={prefs.value.sound} label="Прослушать ещё раз" /></span
+          ><AudioButton audio={it.audio} size="lg" autoplay={prefs.value.sound} label="Прослушать ещё раз" /></span
         >
         <AudioButton audio={it.audio} size="md" rate={0.75} label="Прослушать медленно" />
       </div>
-      <p class="hint muted">{mode === 'type' ? 'Напишите, что услышали' : 'Что прозвучало?'}</p>
+      <p class="hint">
+        {mode === 'type' ? 'Напишите, что услышали' : 'Что прозвучало?'}
+        {#if it.audio_synth}<span class="synth" title="Голос синтезирован, не записан носителем">· синтез речи</span>{/if}
+      </p>
       {#if locked}
         <p class="reveal rise"><span class="udm" lang="udm">{udm}</span> — {ru}</p>
       {/if}
@@ -109,10 +112,10 @@
     />
   {:else}
     <div class="type">
-      <label class="visually-hidden" for="listen-input-{seed}">Услышанное слово по-удмуртски</label>
+      <label class="visually-hidden" for="{uid}-input">Услышанное слово по-удмуртски</label>
       <input
         bind:this={input}
-        id="listen-input-{seed}"
+        id="{uid}-input"
         class="field udm"
         class:ok={locked && shown === 'ok'}
         class:almost={locked && shown === 'almost'}
@@ -148,26 +151,27 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 20px 16px 16px;
+    padding: 24px 16px 18px;
     border: 2px solid var(--line);
     border-radius: var(--radius-l);
     background: var(--surface);
   }
-  .ear {
-    position: absolute;
-    top: 10px;
-    left: 12px;
-    font-size: 28px;
-    line-height: 1;
-  }
   .buttons {
     display: flex;
-    align-items: flex-end;
-    gap: 16px;
+    align-items: center;
+    gap: 18px;
+    padding-left: 66px; /* визуально центрируем большую кнопку: справа от неё маленькая */
   }
   .hint {
-    margin: 4px 0 0;
+    margin: 6px 0 0;
     font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+  }
+  .synth {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
   .reveal {
     margin: 0;

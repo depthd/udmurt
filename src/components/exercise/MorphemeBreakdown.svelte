@@ -78,29 +78,35 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    row-gap: 12px;
+    gap: 12px 18px;
   }
+  /* Колонки делят строку поровну и переносятся, только если не влезают даже в ширину самого длинного слова. */
   .part {
+    position: relative;
+    flex: 1 1 0;
+    min-width: min-content;
+    max-width: 11rem;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
   }
+  /* «+» или пробел стоит ровно в промежутке между колонками */
   .join {
-    display: inline-grid;
-    place-items: center;
-    width: 14px;
+    position: absolute;
+    top: 0;
+    left: -18px;
+    width: 18px;
     height: 44px;
+    display: grid;
+    place-items: center;
     font: 700 1rem/1 var(--font-head);
     color: var(--muted);
   }
-  .glued .join {
-    width: 18px;
-  }
   .cube-wrap {
+    min-width: min-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    max-width: 9.5em;
   }
   .cube {
     display: inline-grid;

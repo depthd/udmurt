@@ -7,6 +7,7 @@
   import type { Exercise } from '$lib/content/schema';
   import type { ExerciseProps } from './types';
   import { item, personalize, sources } from '$lib/course';
+  import { normalize } from '$lib/answer';
   import { prefs } from '$lib/prefs.svelte';
   import AudioButton from '../components/exercise/AudioButton.svelte';
   import MorphemeBreakdown from '../components/exercise/MorphemeBreakdown.svelte';
@@ -16,7 +17,11 @@
   const it = $derived(item(ex.item));
   const udm = $derived(personalize(it.udm));
   const ru = $derived(personalize(it.ru));
-  const alts = $derived(it.ru_alt.map(personalize));
+  /** Другие переводы — без тех, что отличаются от основного только регистром/пунктуацией. */
+  const alts = $derived.by(() => {
+    const seen = new Set([normalize(ru)]);
+    return it.ru_alt.map(personalize).filter((a) => !seen.has(normalize(a)) && seen.add(normalize(a)));
+  });
   const kindLabel = $derived(it.kind === 'phrase' ? 'фраза' : it.kind === 'pattern' ? 'образец' : (it.pos ?? 'слово'));
   /** Разбор показываем, если он включён в настройках; иначе — по кнопке. */
   let openMorph = $state(false);
@@ -55,11 +60,11 @@
   </div>
   <p class="ru">{ru}</p>
   {#if alts.length}
-    <p class="alt">также: {alts.join(', ')}</p>
+    <p class="alt">также: {alts.join(' · ')}</p>
   {/if}
 
   {#if it.morphemes.length}
-    <div class="stitch" aria-hidden="true"></div>
+    <svg class="stitch" aria-hidden="true" height="4" width="100%"><line x1="3" y1="2" x2="100%" y2="2" /></svg>
     {#if showMorph}
       <MorphemeBreakdown morphemes={it.morphemes} />
     {:else}
@@ -89,7 +94,7 @@
     align-items: center;
     gap: 6px;
     width: 100%;
-    padding: 18px 18px 16px;
+    padding: 16px 16px 14px;
     border: 2px solid var(--line);
     border-radius: var(--radius-l);
     background: var(--surface);
@@ -128,12 +133,12 @@
   .pic {
     display: grid;
     place-items: center;
-    width: 104px;
-    height: 104px;
-    margin: 4px 0 6px;
+    width: 88px;
+    height: 88px;
+    margin: 0 0 4px;
     border-radius: 50%;
     background: var(--surface-2);
-    font-size: 58px;
+    font-size: 48px;
     line-height: 1;
   }
   .word-row {
@@ -162,11 +167,18 @@
   }
   /* «стежок» красной нитью */
   .stitch {
+    display: block;
     align-self: stretch;
-    height: 3px;
-    margin: 12px 8px 10px;
-    border-radius: 2px;
-    background: repeating-linear-gradient(90deg, var(--red) 0 10px, transparent 10px 22px);
+    width: auto;
+    height: 4px;
+    margin: 10px 8px 8px;
+    overflow: visible;
+  }
+  .stitch line {
+    stroke: var(--red);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 10 12;
     opacity: 0.55;
   }
   .note {
@@ -174,11 +186,11 @@
     gap: 10px;
     align-items: flex-start;
     align-self: stretch;
-    margin: 14px 0 0;
-    padding: 12px 14px;
+    margin: 12px 0 0;
+    padding: 10px 14px;
     border-radius: var(--radius);
     background: var(--surface-2);
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     line-height: 1.45;
     text-align: left;
   }
@@ -188,7 +200,7 @@
     line-height: 1.3;
   }
   .src {
-    margin: 12px 0 0;
+    margin: 10px 0 0;
     font-size: 0.75rem;
     color: var(--muted);
   }
