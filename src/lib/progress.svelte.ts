@@ -37,6 +37,8 @@ export type ProgressData = {
   /** Обещание после первого урока: 7/14/30 дней. */
   commitment: number | null;
   onboarded: boolean;
+  /** Читалка: id текста → сколько раз прочитан. */
+  read?: Record<string, number>;
 };
 
 const KEY = 'udm.progress.v1';
@@ -235,6 +237,23 @@ class Progress {
     return { xp, ...a, newAchievements, firstTime: false };
   }
 
+  /** Текст в «Читалке» дочитан: XP (первый раз больше), серия дней, достижение «Читатель». */
+  completeReading(id: string, correct: number, total: number): Reward {
+    const d = this.data;
+    d.read ??= {};
+    const firstTime = !d.read[id];
+    d.read[id] = (d.read[id] ?? 0) + 1;
+    const xp = (firstTime ? 6 : 2) + correct * 2;
+    const a = this.#award(xp);
+    const newAchievements = this.#checkAchievements(total ? correct / total : 1);
+    this.save();
+    return { xp, ...a, newAchievements, firstTime };
+  }
+
+  timesRead(id: string): number {
+    return this.data.read?.[id] ?? 0;
+  }
+
   setOnboarded() {
     this.data.onboarded = true;
     this.save();
@@ -254,6 +273,7 @@ class Progress {
     want('xp-100', d.xp >= 100);
     want('xp-500', d.xp >= 500);
     want('words-25', Object.keys(d.cards).length >= 25);
+    want('reader-3', Object.keys(d.read ?? {}).length >= 3);
     d.achievements.push(...add);
     return add;
   }
@@ -330,4 +350,5 @@ export const ACHIEVEMENTS: Record<string, { title: string; text: string; icon: s
   'xp-100': { title: 'Сотня', text: '100 XP', icon: '💯' },
   'xp-500': { title: 'Полтысячи', text: '500 XP', icon: '⭐' },
   'words-25': { title: 'Словарный запас', text: '25 слов в повторении', icon: '📚' },
+  'reader-3': { title: 'Читатель', text: 'Прочитаны три текста', icon: '📖' },
 };

@@ -103,7 +103,11 @@ export function pieceLabel(p: Pick<Piece, 'text' | 'kind'>): string {
 
 /** Нужен ли пробел перед i-й частью: отдельные слова пишутся раздельно, морфемы — слитно. */
 export function spaceBefore(parts: readonly { kind: PieceKind }[], i: number): boolean {
-  return i > 0 && (parts[i].kind === 'word' || parts[i - 1].kind === 'word');
+  if (i === 0) return false;
+  const cur = parts[i].kind;
+  const prev = parts[i - 1].kind;
+  // корень после суффикса — уже следующее слово: школа+е | ветл+ӥсько
+  return cur === 'word' || prev === 'word' || (cur === 'root' && prev === 'suffix');
 }
 
 /** Склеить морфемы в слово: ним + ы → нимы; мынам + ним + ы → мынам нимы. */

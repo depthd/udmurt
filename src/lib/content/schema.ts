@@ -222,11 +222,28 @@ export type Source = z.infer<typeof Source>;
 
 export const SourcesFile = z.object({ sources: z.array(Source) });
 
+/** Текст для «Читалки»: строки — ссылки на проверенные фразы словника (своих удмуртских предложений не пишем). */
+export const ReaderText = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  title: z.string(),
+  title_ru: z.string(),
+  /** После какого юнита текст по силам (для подписи «юнит N»). */
+  after: z.string(),
+  icon: z.string().optional(),
+  lines: z.array(z.object({ item: z.string(), who: z.string().optional() })).min(2),
+  questions: z
+    .array(z.object({ q: z.string(), options: z.array(z.string()).min(2), answer: z.string() }))
+    .default([]),
+});
+export type ReaderText = z.infer<typeof ReaderText>;
+export const ReaderFile = z.object({ texts: z.array(ReaderText) });
+
 export const Course = z.object({
   id: z.string(),
   title: z.string(),
   units: z.array(Unit),
   lexicon: z.array(LexItem),
   sources: z.array(Source),
+  texts: z.array(ReaderText).default([]),
 });
 export type Course = z.infer<typeof Course>;

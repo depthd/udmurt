@@ -54,4 +54,15 @@ describe('renderMarkdown', () => {
     expect(html).not.toMatch(/\*|##/);
     expect(html.match(/<h2>/g)).toHaveLength(2);
   });
+  it('таблицы: шапка, разделитель не выводится, жирный внутри ячеек', () => {
+    const html = renderMarkdown('| вопрос | пример |\n|---|---|\n| **кытын?** | карын |');
+    expect(html).toContain('<thead><tr><th>вопрос</th><th>пример</th></tr></thead>');
+    expect(html).toContain('<td><strong>кытын?</strong></td><td>карын</td>');
+    expect(html).not.toContain('---');
+  });
+  it('таблица без шапки', () => {
+    const html = renderMarkdown('| | |\n|---|---|\n| понедельник | вордӥськон |');
+    expect(html).not.toContain('<thead>');
+    expect(html).toContain('<td>понедельник</td>');
+  });
 });

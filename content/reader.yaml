@@ -1,0 +1,180 @@
+# «Читалка»: короткие тексты из уже проверенных фраз словника (у каждой — источник).
+# Новых удмуртских предложений здесь не пишем: только ссылаемся на item из content/lexicon.
+# who — кто говорит (для диалогов); '{name}' — имя ученика.
+texts:
+  - id: t1-mon
+    title: Мон {name}
+    title_ru: 'Я {name} — о себе'
+    after: u1-znakomstvo
+    icon: 🙋
+    lines:
+      - { item: zechbures }
+      - { item: mynam-nimy }
+      - { item: mon-student }
+      - { item: mon-glazkarys }
+      - { item: mon-glazkaryn-ulisko }
+      - { item: mynym-kyz-ares }
+      - { item: mon-univ-dyshetskisko }
+      - { item: mon-dzuch-samen-veraskisko }
+      - { item: mon-udmurt-kylez-dyshetisko }
+      - { item: zech-lue }
+    questions:
+      - q: Откуда автор?
+        options: [Из Глазова, Из Ижевска, Из Венгрии]
+        answer: Из Глазова
+      - q: Какой язык автор учит?
+        options: [Удмуртский, Английский, Русский]
+        answer: Удмуртский
+
+  - id: t2-tod
+    title: Ойдо тодматском!
+    title_ru: Давай познакомимся
+    after: u2-lyd
+    icon: 🤝
+    lines:
+      - { who: Даша, item: zechbur }
+      - { who: Даша, item: oydo-todmatskom }
+      - { who: Даша, item: kyzy-tilad-nimdy }
+      - { who: '{name}', item: mynam-nimy }
+      - { who: '{name}', item: nosh-tynad }
+      - { who: Даша, item: koenya-tynyd-ares }
+      - { who: '{name}', item: mynym-kyz-nyl-ares }
+      - { who: '{name}', item: mon-nyl-kyl-todisko }
+      - { who: Даша, item: koenya-chas }
+      - { who: '{name}', item: ali-nyl-chas-das-minut }
+    questions:
+      - q: Сколько лет собеседнику Даши?
+        options: ['24', '20', '19']
+        answer: '24'
+      - q: Который час?
+        options: [Четыре часа десять минут, Три часа, Семь часов]
+        answer: Четыре часа десять минут
+
+  - id: t3-semya
+    title: Мынам бадӟым семьяе
+    title_ru: У меня большая семья
+    after: u3-semya
+    icon: 👨‍👩‍👧
+    lines:
+      - { who: Песятай, item: mynam-badzym-semyae }
+      - { who: Песятай, item: mynam-kyshnoe-dyshetis }
+      - { who: Песятай, item: mynam-pie-student }
+      - { who: Песятай, item: mynam-nyly-van }
+      - { who: Песятай, item: mynam-odig-agae }
+      - { who: Песятай, item: mynam-dyry-ovol }
+    questions:
+      - q: Кем работает жена?
+        options: [Учительницей, Врачом, Продавцом]
+        answer: Учительницей
+      - q: Кто сын?
+        options: [Студент, Преподаватель, Врач]
+        answer: Студент
+
+  - id: t4-mar
+    title: Мар кариськод?
+    title_ru: Что делаешь?
+    after: u4-ug
+    icon: 🤔
+    lines:
+      - { who: Даша, item: mar-kariskod }
+      - { who: '{name}', item: mon-kniga-lydzisko }
+      - { who: '{name}', item: nosh-ton-mar-kariskod }
+      - { who: Даша, item: siskisko }
+      - { who: Даша, item: ton-kinoe-vetlyny-yaratiskod-a }
+      - { who: '{name}', item: ben }
+      - { who: '{name}', item: mon-yaratisko-lydziskyny }
+      - { who: Даша, item: mon-tunne-muzee-mynisko }
+      - { who: '{name}', item: ya-mynisko }
+    questions:
+      - q: Что делает Даша?
+        options: [Ест, Читает, Работает]
+        answer: Ест
+      - q: Куда Даша идёт сегодня?
+        options: [В музей, В кино, В школу]
+        answer: В музей
+
+  - id: t5-magazin
+    title: Магазинын
+    title_ru: В магазине
+    after: u5-sien
+    icon: 🛒
+    lines:
+      - { who: '{name}', item: zechbures }
+      - { who: '{name}', item: ta-magazinyn-nyan-vuzaske-a }
+      - { who: Продавец, item: ben }
+      - { who: '{name}', item: vai-mynym-nyan }
+      - { who: '{name}', item: mynym-ulmo-kule }
+      - { who: '{name}', item: koenya-ta-kartofka-syle }
+      - { who: '{name}', item: badzym-tau }
+    questions:
+      - q: Что продаётся в магазине?
+        options: [Хлеб, Мясо, Молоко]
+        answer: Хлеб
+      - q: Что ещё нужно покупателю?
+        options: [Яблоко, Вода, Кофе]
+        answer: Яблоко
+
+  - id: t6-kar
+    title: Мон Глазкарын улӥсько
+    title_ru: Я живу в Глазове
+    after: u6-kar
+    icon: 🏙️
+    lines:
+      - { item: mon-glazkaryn-ulisko }
+      - { item: mon-vokzal-vozyn-ulisko }
+      - { item: apteka-bolnica-doryn }
+      - { item: mon-avtobusen-mynisko }
+      - { item: mon-avtobusyn-ini }
+      - { item: malpasko-mi-matyn-ini }
+    questions:
+      - q: Где живёт автор?
+        options: [Рядом с вокзалом, Рядом с больницей, Далеко от города]
+        answer: Рядом с вокзалом
+      - q: На чём автор едет?
+        options: [На автобусе, На такси, На поезде]
+        answer: На автобусе
+
+  - id: t7-arnya
+    title: Туннэ удмуртарня
+    title_ru: Сегодня пятница
+    after: u7-nunal
+    icon: 🗓️
+    lines:
+      - { who: Даша, item: tunne-kyche-nunal }
+      - { who: '{name}', item: tunne-udmurtarnya }
+      - { who: '{name}', item: chukaze-bere-arnyanunal-luoz }
+      - { who: Даша, item: kyche-kuaz-tunne }
+      - { who: '{name}', item: tunne-shundyyo-nunal }
+      - { who: '{name}', item: chukaze-pos-luoz }
+      - { who: Даша, item: mar-karod-tunne-zhyt }
+      - { who: '{name}', item: mon-kinoe-vetlyny-yaratisko }
+      - { who: Даша, item: chukazeoz }
+    questions:
+      - q: Какой день будет послезавтра?
+        options: [Воскресенье, Суббота, Понедельник]
+        answer: Воскресенье
+      - q: Какая погода будет завтра?
+        options: [Жарко, Холодно, Облачно]
+        answer: Жарко
+
+  - id: t8-tolon
+    title: Толон
+    title_ru: Вчера
+    after: u8-tolon
+    icon: ⏮️
+    lines:
+      - { who: Даша, item: kytyn-ton-tolon-val }
+      - { who: '{name}', item: mon-tolon-shkolayn-oi-val }
+      - { who: '{name}', item: mon-tolon-emchi-dory-vetli }
+      - { who: '{name}', item: mon-banke-vetli }
+      - { who: '{name}', item: tolon-kezyt-val }
+      - { who: Даша, item: ton-zhadid-a }
+      - { who: '{name}', item: ben }
+      - { who: Даша, item: chukaze-pumiskom }
+    questions:
+      - q: Куда собеседник Даши ходил вчера?
+        options: [К врачу и в банк, В школу, В кино]
+        answer: К врачу и в банк
+      - q: Какая вчера была погода?
+        options: [Холодно, Жарко, Шёл дождь]
+        answer: Холодно

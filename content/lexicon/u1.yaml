@@ -187,9 +187,13 @@ items:
     ru_alt: [Давай знакомиться!]
     kind: phrase
     emoji: 🤝
-    note: 'На «вы» или многим — Ойдолэ тодматском!'
+    morphemes:
+      - { form: ойдо, meaning: 'давай', kind: word }
+      - { form: тодматск, meaning: 'знакомиться', kind: root }
+      - { form: ом, meaning: '(мы) — будущее время', kind: suffix }
+    note: 'На «вы» или многим — Ойдолэ тодматском! Сравните: ми тодматским «мы познакомились».'
     status: sourced
-    sources: [{ id: tatoeba, ref: '11685347' }, { id: tatoeba, ref: '11525035' }]
+    sources: [{ id: tatoeba, ref: '11685347' }, { id: tatoeba, ref: '11525035' }, { id: tatoeba, ref: '12278978' }, { id: alatyrev1983 }]
 
   # ── Кто я ────────────────────────────────────────────────
   - id: student

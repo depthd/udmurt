@@ -13,7 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { z } from 'zod';
-import { Course, LexiconFile, Lesson, SourcesFile, Unit, type Exercise } from '../src/lib/content/schema.ts';
+import { Course, LexiconFile, Lesson, ReaderFile, SourcesFile, Unit, type Exercise } from '../src/lib/content/schema.ts';
 import { LibraryFile, type LibraryItem } from '../src/lib/content/library-schema.ts';
 import { exerciseRefs } from '../src/lib/content/refs.ts';
 export { exerciseRefs };
@@ -122,8 +122,26 @@ export function loadCourse(contentDir: string, opts: { skipAudioCheck?: boolean 
       ids.add(l.id);
     }
 
+  // Читалка: content/reader.yaml — тексты из фраз словника.
+  const readerFile = path.join(contentDir, 'reader.yaml');
+  const texts = fs.existsSync(readerFile) ? check(ReaderFile, readYaml(readerFile), readerFile).texts : [];
+  const unitIds = new Set(units.map((u) => u.id));
+  const textIds = new Set<string>();
+  for (const t of texts) {
+    if (textIds.has(t.id)) errors.push(`${rel(readerFile)}: текст «${t.id}» встречается дважды`);
+    textIds.add(t.id);
+    if (!unitIds.has(t.after)) errors.push(`${rel(readerFile)}: текст «${t.id}»: нет юнита «${t.after}»`);
+    for (const l of t.lines) {
+      const it = lexIds.get(l.item);
+      if (!it) errors.push(`${rel(readerFile)}: текст «${t.id}»: нет слова «${l.item}» в словнике`);
+      else if (it.status === 'draft') errors.push(`${rel(readerFile)}: текст «${t.id}»: «${l.item}» — черновик, в текст нельзя`);
+    }
+    for (const q of t.questions)
+      if (!q.options.includes(q.answer)) errors.push(`${rel(readerFile)}: текст «${t.id}»: ответ «${q.answer}» не среди вариантов`);
+  }
+
   if (errors.length) throw new ContentError(`Ошибки в контенте:\n${errors.map((e) => '  • ' + e).join('\n')}`);
-  return Course.parse({ id: head.id, title: head.title, units, lexicon, sources });
+  return Course.parse({ id: head.id, title: head.title, units, lexicon, sources, texts });
 }
 
 /** Каталог материалов: content/library.yaml. */

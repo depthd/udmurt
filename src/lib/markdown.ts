@@ -2,7 +2,8 @@
  * Крошечный безопасный рендер Markdown для шпаргалок юнитов (unit.guide).
  *
  * Поддерживается ровно то, что пишут в content/units/*\/unit.yaml:
- *   # / ## / ### заголовки, списки «- » / «* » и «1. », **жирный**, *курсив*, `код`, абзацы.
+ *   # / ## / ### заголовки, списки «- » / «* » и «1. », **жирный**, *курсив*, `код`, абзацы,
+ *   таблицы «| a | b |» (вторая строка «|---|---|» — разделитель под заголовком).
  * Весь исходный текст сначала экранируется, поэтому HTML из YAML никогда не попадёт на страницу:
  * результат можно безопасно вставлять через {@html}.
  */
@@ -41,11 +42,14 @@ function inline(s: string, o: MarkdownOptions): string {
 type Block =
   | { t: 'h'; level: number; text: string }
   | { t: 'ul' | 'ol'; items: string[] }
-  | { t: 'p'; lines: string[] };
+  | { t: 'p'; lines: string[] }
+  | { t: 'table'; rows: string[][] };
 
 const RE_H = /^(#{1,6})\s+(.*?)\s*#*\s*$/;
 const RE_UL = /^\s{0,3}[-*+]\s+(.*)$/;
 const RE_OL = /^\s{0,3}\d{1,3}[.)]\s+(.*)$/;
+const RE_ROW = /^\s{0,3}\|(.*)\|\s*$/;
+const RE_SEP = /^\s*:?-{2,}:?\s*$/;
 
 export function renderMarkdown(src: string, opts: MarkdownOptions = {}): string {
   const lines = escapeHtml(src.replace(/\r\n?/g, '\n')).split('\n');
@@ -66,6 +70,17 @@ export function renderMarkdown(src: string, opts: MarkdownOptions = {}): string 
     if (h) {
       flush();
       blocks.push({ t: 'h', level: h[1].length, text: h[2] });
+      continue;
+    }
+    const row = line.match(RE_ROW);
+    if (row) {
+      const cells = row[1].split('|').map((c) => c.trim());
+      if ((cur as Block | null)?.t !== 'table') {
+        flush();
+        cur = { t: 'table', rows: [] };
+      }
+      // строка-разделитель «|---|---|» не выводится
+      if (!cells.every((c) => RE_SEP.test(c))) (cur as { rows: string[][] }).rows.push(cells);
       continue;
     }
     const ul = line.match(RE_UL);
@@ -102,6 +117,13 @@ export function renderMarkdown(src: string, opts: MarkdownOptions = {}): string 
         return `<h${n}>${inline(b.text, opts)}</h${n}>`;
       }
       if (b.t === 'p') return `<p>${inline(b.lines.join(' '), opts)}</p>`;
+      if (b.t === 'table') {
+        const [head, ...body] = b.rows;
+        const cell = (tag: string, c: string) => `<${tag}>${inline(c, opts)}</${tag}>`;
+        // пустой заголовок («| | |») — таблица без шапки
+        const thead = head.some((c) => c) ? `<thead><tr>${head.map((c) => cell('th', c)).join('')}</tr></thead>` : '';
+        return `<div class="table-wrap"><table>${thead}<tbody>${body.map((r) => `<tr>${r.map((c) => cell('td', c)).join('')}</tr>`).join('')}</tbody></table></div>`;
+      }
       return `<${b.t}>${b.items.map((i) => `<li>${inline(i, opts)}</li>`).join('')}</${b.t}>`;
     })
     .join('\n');

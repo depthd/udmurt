@@ -72,6 +72,17 @@ describe('morphPieces / glue', () => {
         { text: 'ы', kind: 'suffix' },
       ]),
     ).toBe('мынам нимы');
+    // корень после суффикса — новое слово
+    expect(
+      glue([
+        { text: 'школа', kind: 'root' },
+        { text: 'е', kind: 'suffix' },
+        { text: 'ветл', kind: 'root' },
+        { text: 'ӥсько', kind: 'suffix' },
+      ]),
+    ).toBe('школае ветлӥсько');
+    // два корня подряд — сложное слово, слитно
+    expect(glue([{ text: 'покчи', kind: 'root' }, { text: 'арня', kind: 'root' }])).toBe('покчиарня');
   });
 
   it('проверка сборки', () => {

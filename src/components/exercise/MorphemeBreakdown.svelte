@@ -25,7 +25,7 @@
         kind: m.kind,
         form: m.kind === 'suffix' ? `-${form}` : form,
         meaning: personalize(m.meaning),
-        glued: !!prev && prev.kind !== 'word' && m.kind !== 'word',
+        glued: !!prev && prev.kind !== 'word' && m.kind !== 'word' && !(m.kind === 'root' && prev.kind === 'suffix'),
       };
     }),
   );
