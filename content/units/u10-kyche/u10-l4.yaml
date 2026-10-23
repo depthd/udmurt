@@ -29,7 +29,7 @@ exercises:
       - { who: Даша, item: vyl-chuknaen }
       - { who: '{name}', item: zechbur }
       - { who: Даша, item: zech-nunal-tiledly }
-    question: Когда, скорее всего, встретились Даша и её собеседник?
+    question: Когда, скорее всего, вы встретились с Дашей?
     options: [Утром, Вечером, Ночью]
     answer: Утром
   - type: type

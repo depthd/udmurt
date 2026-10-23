@@ -6,7 +6,7 @@ icon: 📖
 exercises:
   - type: dialogue
     lines:
-      - { who: Даша, item: zechbures }
+      - { who: Даша, item: zechbur }
       - { who: Даша, item: mar-kariskod }
       - { who: '{name}', item: mon-avtobusen-mynisko }
       - { who: '{name}', item: malpasko-mi-matyn-ini }

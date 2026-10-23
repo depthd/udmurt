@@ -23,7 +23,7 @@ exercises:
   - type: tiles
     dir: udm-ru
     item: mon-tunne-vaz-saikai
-    extra: [вчера, поздно]
+    extra: [вчера, поздно, проснулась]
   - type: teach
     item: tunne-mon-tros-uzh-lestiy
   - type: fill

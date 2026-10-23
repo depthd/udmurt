@@ -22,15 +22,15 @@ exercises:
       - { who: Даша, item: ton-tunne-uzhaskod-a }
       - { who: '{name}', item: ovol }
       - { who: '{name}', item: tunne-kosnunal }
-    question: Почему собеседник Даши не работает?
-    options: [Сегодня суббота, Плохая погода, Болеет]
+    question: Почему вы сегодня не работаете?
+    options: [Сегодня суббота, Плохая погода, Болею]
     answer: Сегодня суббота
   - type: dialogue
     lines:
       - { who: Даша, item: mar-karod-tunne-zhyt }
       - { who: '{name}', item: mon-kinoe-vetlyny-yaratisko }
       - { who: Даша, item: chukaze-pumiskom }
-    question: Когда они увидятся?
+    question: Когда вы увидитесь с Дашей?
     options: [Завтра, Сегодня вечером, В воскресенье]
     answer: Завтра
   - type: match

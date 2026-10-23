@@ -10,7 +10,7 @@ exercises:
       - { who: '{name}', item: mon-soly-zhingyrto }
       - { who: '{name}', item: mon-tone-tyamys-chasoz-vozmalo }
       - { who: Даша, item: so-zhogen-lyktoz }
-    question: До которого часа будут ждать?
+    question: До какого часа вы будете ждать Дашу?
     options: [До восьми, До семи, До десяти]
     answer: До восьми
   - type: dialogue

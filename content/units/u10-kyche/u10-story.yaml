@@ -7,11 +7,10 @@ exercises:
   - type: dialogue
     lines:
       - { who: Даша, item: vyl-chuknaen }
-      - { who: Даша, item: kyzy-uliskody }
-      - { who: '{name}', item: mynam-yyry-vise }
       - { who: Даша, item: maid-tynad-vise }
-    question: Как себя чувствует собеседник Даши?
-    options: [Болит голова, Всё хорошо, Устал]
+      - { who: '{name}', item: mynam-yyry-vise }
+    question: Как вы себя чувствуете?
+    options: [Болит голова, Всё хорошо, 'Устал(а)']
     answer: Болит голова
   - type: dialogue
     lines:

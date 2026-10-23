@@ -8,8 +8,6 @@ exercises:
   - type: teach
     item: pichi
   - type: teach
-    item: ton-badzym
-  - type: teach
     item: vyl
   - type: teach
     item: kudiz-korka-vyl
@@ -29,8 +27,9 @@ exercises:
     items: [badzym, pichi, vyl, cheber]
   - type: teach
     item: ta-zech-ivor
-  - type: teach
-    item: zech-malpan
+  - type: choice
+    item: ta-zech-ivor
+    distractors: [tuzh-cheber, kudiz-korka-vyl]
   - type: fill
     text: Та ___ ивор.
     ru: Это хорошая новость.

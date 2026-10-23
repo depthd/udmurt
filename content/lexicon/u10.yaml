@@ -78,7 +78,7 @@ items:
       - { form: яблок, meaning: 'яблоко', kind: root }
       - { form: е, meaning: 'моё', kind: suffix }
       - { form: вань, meaning: 'есть', kind: word }
-    note: 'Цвет стоит перед словом и не меняется: вож яблоко, вож машина.'
+    note: 'Цвет стоит перед словом и не меняется: вож яблок, вож машина. Яблок — то же, что улмо «яблоко».'
     status: sourced
     sources: [{ id: tatoeba, ref: '12313567' }]
   - id: mynym-lyz-buyol-kelshe
@@ -115,15 +115,6 @@ items:
     emoji: ☕
     status: sourced
     sources: [{ id: tatoeba, ref: '12446416' }]
-  - id: gord-derem-soly-myne
-    udm: Горд дэрем солы мынэ.
-    ru: Красное платье ей идёт.
-    ru_alt: [Красная рубашка ему идёт., Красное платье ему идёт., Ей идёт красное платье.]
-    kind: phrase
-    emoji: 👗
-    note: 'Дэрем — рубаха; так называют и удмуртское платье-рубаху.'
-    status: sourced
-    sources: [{ id: tatoeba, ref: '12172688' }, { id: uniparser }]
   - id: piyash-chuzh-syaska-bicha
     udm: Пияш ӵуж сяська бича.
     ru: Мальчик собирает жёлтые цветы.
@@ -285,8 +276,8 @@ items:
     sources: [{ id: tatoeba, ref: '12247645' }]
   - id: yyryd-vise-na
     udm: Йырыд висе на?
-    ru: Голова ещё болит?
-    ru_alt: [Голова всё ещё болит?]
+    ru: У тебя голова ещё болит?
+    ru_alt: [У тебя ещё болит голова?, Голова ещё болит?, Голова всё ещё болит?]
     kind: phrase
     morphemes:
       - { form: йыр, meaning: 'голова', kind: root }

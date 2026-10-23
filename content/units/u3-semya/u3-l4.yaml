@@ -22,7 +22,7 @@ exercises:
   - type: dialogue
     lines:
       - { who: Даша, item: tilad-nylpiosty-van-a }
-      - { who: Преподаватель, item: milyam-nylpiosmy-ovol }
+      - { who: Анна, item: milyam-nylpiosmy-ovol }
     question: Есть ли у преподавателя дети?
     options: [Нет, Да, Двое]
     answer: Нет

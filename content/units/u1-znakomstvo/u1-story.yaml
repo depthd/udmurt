@@ -4,6 +4,8 @@ goal: 'Понять разговор двух студентов в универ
 kind: story
 icon: 📖
 exercises:
+  - type: teach
+    item: oydo-todmatskom
   - type: dialogue
     lines:
       - { who: Даша, item: zechbur }

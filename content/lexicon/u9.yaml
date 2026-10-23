@@ -75,8 +75,8 @@ items:
     sources: [{ id: tatoeba, ref: '11525958' }, { id: alatyrev1983 }]
   - id: yurttyny-bygatod-a
     udm: Юрттыны быгатод-а?
-    ru: Можешь помочь?
-    ru_alt: [Ты можешь помочь?, Сможешь помочь?]
+    ru: Сможешь помочь?
+    ru_alt: [Ты сможешь помочь?, Можешь помочь?, Ты можешь помочь?]
     kind: phrase
     emoji: 🙏
     morphemes:
@@ -92,6 +92,7 @@ items:
     ru_alt: [Что ты думаешь делать?, Что собираешься делать?, Что ты собираешься делать?]
     kind: phrase
     emoji: 🤔
+    note: 'Малпаськод — настоящее время («думаешь»): малпаны «думать» → малпасько, малпаськод, как вераськод. Будущее было бы малпалод.'
     status: sourced
     sources: [{ id: tatoeba, ref: '11750266' }]
 
@@ -194,7 +195,7 @@ items:
     ru: К сожалению, не могу.
     kind: phrase
     emoji: 😔
-    note: 'Жаляса верано — «к сожалению» (букв. «с сожалением сказать»).'
+    note: 'Жаляса верано — «к сожалению» (букв. «жалея, надо сказать»).'
     status: sourced
     sources: [{ id: tatoeba, ref: '12145629' }]
   - id: mon-kyrdzanyos-gozhyany-ug-bygatisky

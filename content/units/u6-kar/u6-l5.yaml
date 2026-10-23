@@ -21,7 +21,7 @@ exercises:
     item: mon-vokzal-vozyn-ulisko
   - type: build
     item: mon-vokzal-vozyn-ulisko
-    extra: [дорын, ысь]
+    extra: [вокзалын, улӥськод]
   - type: teach
     item: apteka-bolnica-doryn
   - type: tiles

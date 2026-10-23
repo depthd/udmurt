@@ -35,7 +35,7 @@ items:
     ru: неделя
     pos: существительное
     emoji: 🗓️
-    note: 'Старое значение слова — «воскресенье». От него — названия дней: покчиарня, удмуртарня, арнянунал.'
+    note: 'Второе значение — «воскресенье»: туннэ арня «сегодня воскресенье». От него — названия дней: покчиарня, удмуртарня, арнянунал.'
     status: sourced
     sources: [{ id: uniparser }, { id: ruwikt }]
   - id: tunne-kyche-nunal
@@ -53,7 +53,7 @@ items:
     udm: вордӥськон
     ru: понедельник
     pos: существительное
-    note: 'Второе значение слова — «рождение».'
+    note: 'Основное значение слова — «рождение» (вордӥськыны «родиться»), «понедельник» — второе.'
     status: sourced
     sources: [{ id: ruwikt }, { id: tatoeba, ref: '11730357' }]
   - id: pukson
@@ -76,9 +76,9 @@ items:
     ru: четверг
     pos: существительное
     morphemes:
-      - { form: покчи, meaning: 'младший, малый', kind: root }
-      - { form: арня, meaning: 'неделя', kind: root }
-    note: 'Буквально «малая неделя».'
+      - { form: покчи, meaning: 'младший', kind: root }
+      - { form: арня, meaning: 'воскресенье (второе значение арня)', kind: root }
+    note: 'Буквально «младшее воскресенье».'
     status: sourced
     sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730363' }]
   - id: udmurtarnya
@@ -87,8 +87,8 @@ items:
     pos: существительное
     morphemes:
       - { form: удмурт, meaning: 'удмурт, удмуртский', kind: root }
-      - { form: арня, meaning: 'неделя', kind: root }
-    note: 'Буквально «удмуртская неделя».'
+      - { form: арня, meaning: 'воскресенье (второе значение арня)', kind: root }
+    note: 'Буквально «удмуртское воскресенье»; а зуч арня «русское воскресенье» — это само воскресенье.'
     status: sourced
     sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730365' }]
   - id: kosnunal
@@ -105,7 +105,7 @@ items:
     ru: воскресенье
     pos: существительное
     morphemes:
-      - { form: арня, meaning: 'неделя', kind: root }
+      - { form: арня, meaning: 'воскресный (второе значение арня)', kind: root }
       - { form: нунал, meaning: 'день', kind: root }
     status: sourced
     sources: [{ id: uniparser }, { id: ruwikt }, { id: tatoeba, ref: '11730371' }]
@@ -167,6 +167,7 @@ items:
       - { form: ӵуказе бере, meaning: 'после завтра = послезавтра', kind: word }
       - { form: арнянунал, meaning: 'воскресенье', kind: word }
       - { form: луоз, meaning: 'будет', kind: word }
+    note: 'Ӵуказе бере — «после завтра», так говорят и ӵуказе улыса или усьсэ (все три — у Вахрушева).'
     status: sourced
     sources: [{ id: tatoeba, ref: '11730383' }]
 

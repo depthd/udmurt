@@ -9,7 +9,7 @@ exercises:
     lines:
       - { who: Даша, item: mar-yuod }
       - { who: '{name}', item: mynam-chai-yueme-pote }
-    question: Что будет пить собеседник Даши?
+    question: Что вы будете пить?
     options: [Чай, Кофе, Воду]
     answer: Чай
   - type: teach

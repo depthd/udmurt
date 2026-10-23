@@ -6,10 +6,10 @@ icon: 📖
 exercises:
   - type: dialogue
     lines:
-      - { who: Песянай, item: zechbures }
+      - { who: Песянай, item: zechbur }
       - { who: Песянай, item: mar-kariskod }
       - { who: '{name}', item: mynam-chai-yueme-pote }
-      - { who: Песянай, item: vai-mynym-nyan }
+      - { who: '{name}', item: vai-mynym-nyan }
     question: Что хочет внук или внучка?
     options: [Чай, Кофе, Молоко]
     answer: Чай

@@ -25,7 +25,7 @@ exercises:
   - type: teach
     item: tunne-udmurtarnya
   - type: match
-    items: [vordiskon, pukson, virnunal, pokchiarnya, udmurtarnya]
+    items: [tunne-vordiskon, chukaze-pukson, tunne-virnunal, tunne-pokchiarnya, tunne-udmurtarnya]
   - type: tiles
     item: tunne-udmurtarnya
     extra: [ӵуказе, вирнунал]

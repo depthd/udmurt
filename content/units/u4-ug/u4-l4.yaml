@@ -24,12 +24,12 @@ exercises:
     options: [Кино и чтение, Только кино, Музеи]
     answer: Кино и чтение
   - type: fill
-    text: Мон киное ветлыны яратӥсько___
+    text: Мон киное ветлыны ярат___.
     ru: Я люблю ходить в кино.
-    options: [., -а?]
-    answer: .
+    options: [ӥсько, ӥськод, э]
+    answer: ӥсько
     item: mon-kinoe-vetlyny-yaratisko
-    explain: 'Без -а — утверждение, с -а? — вопрос.'
+    explain: '-ӥсько — «я», -ӥськод — «ты», -э — «он, она» (яратэ).'
   - type: match
     items: [mon-yaratisko-lydziskyny, mon-kinoe-vetlyny-yaratisko, mon-anaime-yaratisko]
   - type: type

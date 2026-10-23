@@ -32,11 +32,11 @@ exercises:
   - type: teach
     item: kyche-uram-ta
   - type: match
-    items: [avtobus, uram, vokzal, dugdylonni]
+    items: [uram, dugdylonni, tatyn-taksi-van-a, kyche-uram-ta]
   - type: tiles
     dir: udm-ru
     item: mon-avtobusen-mynisko
-    extra: [в автобусе, иду]
+    extra: [такси, иду]
   - type: type
     dir: ru-udm
     item: mon-avtobusen-mynisko

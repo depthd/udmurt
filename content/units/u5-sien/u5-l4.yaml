@@ -27,7 +27,7 @@ exercises:
     options: [Хлеб, Молоко, Картошку]
     answer: Хлеб
   - type: match
-    items: [kartofka, nyan, ulmo, kofe]
+    items: [kartofka, nyan, ulmo, jol]
   - type: type
     dir: ru-udm
     item: vai-mynym-nyan

@@ -5,6 +5,7 @@ items:
   - id: mon-lydzisko
     udm: Мон лыдӟисько.
     ru: Я читаю.
+    udm_alt: ['Лыдӟисько.']
     kind: phrase
     emoji: 📖
     morphemes:
@@ -131,6 +132,7 @@ items:
   - id: kytchy-ton-myniskod
     udm: Кытчы тон мынӥськод?
     ru: Куда ты идёшь?
+    udm_alt: ['Тон кытчы мынӥськод?']
     kind: phrase
     emoji: 🚶
     morphemes:
@@ -157,6 +159,7 @@ items:
   - id: mon-tunne-muzee-mynisko
     udm: Мон туннэ музее мынӥсько.
     ru: Я сегодня иду в музей.
+    udm_alt: ['Туннэ мон музее мынӥсько.']
     ru_alt: [Сегодня я иду в музей.]
     kind: phrase
     emoji: 🏛️
@@ -175,6 +178,7 @@ items:
   - id: mon-yaratisko-lydziskyny
     udm: Мон яратӥсько лыдӟиськыны.
     ru: Я люблю читать.
+    udm_alt: ['Мон лыдӟиськыны яратӥсько.']
     kind: phrase
     emoji: 📖
     note: 'После «люблю» — неопределённая форма на -ны: лыдӟиськыны «читать».'
@@ -209,6 +213,7 @@ items:
   - id: ton-mone-ud-kylziskhy
     udm: Тон монэ уд кылзӥськы.
     ru: Ты меня не слушаешь.
+    ru_alt: ['Ты не слушаешь меня.']
     kind: phrase
     morphemes:
       - { form: тон, meaning: 'ты', kind: word }

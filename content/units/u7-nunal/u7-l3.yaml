@@ -26,7 +26,7 @@ exercises:
   - type: teach
     item: chukaze-pumiskom
   - type: match
-    items: [kosnunal, arnyanunal, chukazeoz, chukaze-pumiskom]
+    items: [tunne-kosnunal, arnyanunal, chukazeoz, chukaze-pumiskom]
   - type: fill
     text: Ӵуказе___!
     ru: До завтра!

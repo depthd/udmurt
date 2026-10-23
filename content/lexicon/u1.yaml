@@ -9,7 +9,6 @@ items:
   - id: zechbures
     udm: Ӟечбуресь!
     ru: Здравствуйте!
-    ru_alt: [Здравствуй!]
     kind: phrase
     emoji: 👋
     morphemes:
@@ -62,7 +61,7 @@ items:
     emoji: 🤝
     note: Вежливое прощание — на «вы» или многим.
     status: sourced
-    sources: [{ id: kuara }]
+    sources: [{ id: kuara }, { id: vakhrushev1983 }, { id: karakulova2001 }]
   - id: tau-umoj
     udm: Тау, умой!
     ru: Спасибо, хорошо!
@@ -225,7 +224,7 @@ items:
       - { form: студент, meaning: 'студент', kind: word }
     note: 'Но — «тоже», ставится после слова: мон но «я тоже».'
     status: sourced
-    sources: [{ id: timerkhanova2012 }, { id: tatoeba, ref: '11547098' }]
+    sources: [{ id: timerkhanova2012 }, { id: tatoeba, ref: '12261336' }]
   - id: mon-dyshetis
     udm: Мон дышетӥсь.
     ru: Я преподаватель.
@@ -237,7 +236,7 @@ items:
       - { form: дышет, meaning: 'учить (кого-то)', kind: root }
       - { form: ӥсь, meaning: 'тот, кто делает', kind: suffix }
     status: sourced
-    sources: [{ id: kuara }, { id: tatoeba, ref: '11955871' }]
+    sources: [{ id: kuara }, { id: tatoeba, ref: '11955871' }, { id: tatoeba, ref: '12156594' }]
   - id: mon-dyshetskis
     udm: Мон дышетскись.
     ru: Я учащийся.
@@ -259,9 +258,9 @@ items:
       - { form: тон, meaning: 'ты', kind: word }
       - { form: студент, meaning: 'студент', kind: root }
       - { form: '-а', meaning: 'вопросительная частица', kind: particle }
-    note: 'Вопрос без вопросительного слова — частица -а после главного слова.'
+    note: 'Вопрос без вопросительного слова — частица -а после того слова, о котором спрашивают: Тон студент-а?'
     status: sourced
-    sources: [{ id: napolskikh }]
+    sources: [{ id: napolskikh }, { id: tatoeba, ref: '12341535' }]
   - id: ben-mon-student
     udm: Бен, мон студент.
     ru: Да, я студент.
@@ -295,6 +294,7 @@ items:
   - id: ton-kytys-luiskod
     udm: Тон кытысь луиськод?
     ru: Ты откуда?
+    udm_alt: ['Тон кытысь?']
     ru_alt: [Откуда ты?]
     kind: phrase
     morphemes:
@@ -303,7 +303,7 @@ items:
       - { form: луиськод, meaning: '(ты) бываешь, есть', kind: word }
     note: 'Вежливо — Тӥ кытысь луиськоды? «Вы откуда?»'
     status: sourced
-    sources: [{ id: samarova2011 }, { id: alatyrev1983 }]
+    sources: [{ id: samarova2011 }, { id: alatyrev1983 }, { id: tatoeba, ref: '12273605' }]
   - id: glazkar
     udm: Глазкар
     ru: Глазов
@@ -313,17 +313,16 @@ items:
     morphemes:
       - { form: Глаз, meaning: 'Глазов', kind: root }
       - { form: кар, meaning: 'город', kind: root }
-    note: 'Глазов по-удмуртски — Глаз или Глазкар (кар — «город»). В разговоре говорят и «Глазов» с удмуртскими окончаниями.'
+    note: 'Глазов по-удмуртски — Глаз или Глазкар (кар — «город»). Глазкар — скорее книжная форма; в разговоре говорят Глаз, «Глазов» с удмуртскими окончаниями или просто Кар — «город».'
     status: sourced
-    sources: [{ id: timerkhanova2012 }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }, { id: uniparser }, { id: karakulova2001 }]
+    sources: [{ id: timerkhanova2012 }, { id: udmwiki, ref: 'https://udm.wikipedia.org/wiki/Глаз' }, { id: uniparser }, { id: karakulova2001 }, { id: vakhrushev1983, ref: 'с. 554: Глазов — Глазов, Кар' }]
   - id: glazkarys
     udm: Глазкарысь
     ru: из Глазова
     udm_alt: [Глазысь, Глазовысь]
     kind: word
     morphemes:
-      - { form: Глаз, meaning: 'Глазов', kind: root }
-      - { form: кар, meaning: 'город', kind: root }
+      - { form: Глазкар, meaning: 'Глазов (Глаз + кар «город»)', kind: root }
       - { form: ысь, meaning: 'из (исходный падеж)', kind: suffix }
     status: sourced
     sources: [{ id: alatyrev1983 }, { id: samarova2011 }, { id: tatoeba, ref: '12275677' }]
@@ -353,7 +352,7 @@ items:
       - { form: Ижкар, meaning: 'Ижевск', kind: root }
       - { form: ысь, meaning: 'из', kind: suffix }
     status: sourced
-    sources: [{ id: tatoeba, ref: '12275365' }, { id: samarova2011 }]
+    sources: [{ id: tatoeba, ref: '12275365' }, { id: samarova2011 }, { id: tatoeba, ref: '12275677' }]
   - id: mon-vengriys
     udm: Мон Венгриысь.
     ru: Я из Венгрии.
@@ -408,6 +407,7 @@ items:
   - id: koenya-tynyd-ares
     udm: Кӧня тыныд арес?
     ru: Сколько тебе лет?
+    udm_alt: ['Кӧня арес тыныд?']
     kind: phrase
     morphemes:
       - { form: кӧня, meaning: 'сколько', kind: word }
@@ -426,7 +426,7 @@ items:
       - { form: арес, meaning: 'лет', kind: word }
     note: 'Возраст — «кому сколько лет», как в русском: мыным «мне».'
     status: sourced
-    sources: [{ id: tatoeba, ref: '11535965' }, { id: kuara }, { id: alatyrev1983 }]
+    sources: [{ id: tatoeba, ref: '11732861' }, { id: kuara }, { id: alatyrev1983 }]
   - id: mynym-das-ukmys-ares
     udm: Мыным дас укмыс арес.
     ru: Мне девятнадцать лет.
@@ -441,7 +441,7 @@ items:
     ru_alt: [Мне 18 лет.]
     kind: phrase
     status: sourced
-    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '11525036' }]
+    sources: [{ id: alatyrev1983 }, { id: tatoeba, ref: '11525036' }, { id: tatoeba, ref: '12306042' }]
 
   # ── Учёба, жизнь, язык ──────────────────────────────────
   - id: mon-univ-dyshetskisko
@@ -476,6 +476,7 @@ items:
   - id: kytyn-ton-uliskod
     udm: Кытын тон улӥськод?
     ru: Где ты живёшь?
+    udm_alt: ['Тон кытын улӥськод?']
     kind: phrase
     status: sourced
     sources: [{ id: tatoeba, ref: '11522647' }]

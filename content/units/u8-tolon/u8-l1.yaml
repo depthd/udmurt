@@ -34,7 +34,7 @@ exercises:
   - type: tiles
     dir: udm-ru
     item: mon-tolon-emchi-dory-vetli
-    extra: [сегодня, иду]
+    extra: [сегодня, иду, ходила]
   - type: type
     dir: ru-udm
     item: mon-lydzi

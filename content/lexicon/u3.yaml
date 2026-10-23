@@ -34,16 +34,18 @@ items:
     ru: бабушка
     pos: существительное
     emoji: 👵
+    note: 'Бабушка по папе. Бабушка по маме — ӵужанай.'
     status: sourced
-    sources: [{ id: uniparser }]
+    sources: [{ id: uniparser }, { id: kyllyukam2012 }]
   - id: pesyatai
     udm: песятай
     ru: дедушка
     ru_alt: [дед]
     pos: существительное
     emoji: 👴
+    note: 'Дедушка по папе. Дедушка по маме — ӵужатай.'
     status: sourced
-    sources: [{ id: uniparser }]
+    sources: [{ id: uniparser }, { id: kyllyukam2012 }]
   - id: mon-anaime-yaratisko
     udm: Мон анайме яратӥсько.
     ru: Я люблю свою маму.
@@ -243,8 +245,8 @@ items:
     sources: [{ id: uniparser }, { id: ruwikt }]
   - id: mynam-pie-student
     udm: Мынам пие студент.
-    ru: У меня сын студент.
-    ru_alt: [Мой сын студент., Мой сын — студент.]
+    ru: Мой сын — студент.
+    ru_alt: [Мой сын студент., У меня сын студент.]
     kind: phrase
     morphemes:
       - { form: мынам, meaning: 'у меня, мой', kind: word }

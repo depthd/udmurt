@@ -4,6 +4,8 @@ goal: 'Понять рассказ о вчерашнем дне'
 kind: story
 icon: 📖
 exercises:
+  - type: teach
+    item: mar-ti-tolon-karidy
   - type: dialogue
     lines:
       - { who: Дышетӥсь, item: mar-ti-tolon-karidy }

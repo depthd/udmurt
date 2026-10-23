@@ -35,7 +35,7 @@ exercises:
     extra: [завтра, вторник]
   - type: type
     dir: ru-udm
-    item: tunne-pukson
+    item: chukaze-pukson
   - type: listen
     item: tunne-kyche-nunal
     distractors: [tunne-vordiskon]

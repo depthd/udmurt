@@ -27,7 +27,7 @@ exercises:
   - type: teach
     item: kytyn-siskonni
   - type: match
-    items: [kar, pochta, lydziskonni, siskonni]
+    items: [kar, kytyn-pochta, lydziskonni, siskonni]
   - type: fill
     text: ___ почта?
     ru: Где почта?

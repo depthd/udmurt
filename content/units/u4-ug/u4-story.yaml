@@ -17,6 +17,7 @@ exercises:
   - type: dialogue
     lines:
       - { who: '{name}', item: kytyn-ton-uzhaskod }
+      # Tatoeba 11759108; кунокуа в словарях — «квартира», в Tatoeba и uniparser — ещё «гостиница»
       - { who: Даша, udm: Мон кунокуаын ужасько., ru: Я работаю в гостинице. }
       - { who: '{name}', item: tuzh-umoj }
     question: Где работает Даша?

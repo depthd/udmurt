@@ -6,7 +6,7 @@ items:
     pos: существительное
     emoji: 📚
     morphemes:
-      - { form: лыдӟиськ, meaning: 'читать', kind: root }
+      - { form: лыдӟиськ, meaning: 'читать (основа глагола лыдӟиськыны)', kind: root }
       - { form: онни, meaning: 'место, где…', kind: suffix }
     note: '-онни — «место, где делают»: сиськонни «столовая» (где едят), дугдылонни «остановка», вузаськонни «рынок».'
     status: sourced
@@ -262,7 +262,7 @@ items:
       - { form: вокзал, meaning: 'вокзал', kind: word }
       - { form: вӧзын, meaning: 'рядом с (послелог)', kind: word }
       - { form: улӥсько, meaning: 'живу', kind: word }
-    note: 'Вместо предлогов — послелоги: они стоят после слова. Вокзал вӧзын — «вокзал рядом».'
+    note: 'Вместо предлогов — послелоги: они стоят после слова. Вокзал вӧзын — «возле вокзала».'
     status: sourced
     sources: [{ id: tatoeba, ref: '12324370' }, { id: alatyrev1983 }]
   - id: apteka-bolnica-doryn

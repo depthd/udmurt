@@ -34,18 +34,16 @@ texts:
     lines:
       - { who: Даша, item: zechbur }
       - { who: Даша, item: oydo-todmatskom }
-      - { who: Даша, item: kyzy-tilad-nimdy }
       - { who: '{name}', item: mynam-nimy }
-      - { who: '{name}', item: nosh-tynad }
       - { who: Даша, item: koenya-tynyd-ares }
-      - { who: '{name}', item: mynym-kyz-nyl-ares }
+      - { who: '{name}', item: mynym-kyz-ares }
       - { who: '{name}', item: mon-nyl-kyl-todisko }
       - { who: Даша, item: koenya-chas }
       - { who: '{name}', item: ali-nyl-chas-das-minut }
     questions:
-      - q: Сколько лет собеседнику Даши?
+      - q: Сколько вам лет?
         options: ['24', '20', '19']
-        answer: '24'
+        answer: '20'
       - q: Который час?
         options: [Четыре часа десять минут, Три часа, Семь часов]
         answer: Четыре часа десять минут
@@ -172,7 +170,7 @@ texts:
       - { who: '{name}', item: ben }
       - { who: Даша, item: chukaze-pumiskom }
     questions:
-      - q: Куда собеседник Даши ходил вчера?
+      - q: Куда вы ходили вчера?
         options: [К врачу и в банк, В школу, В кино]
         answer: К врачу и в банк
       - q: Какая вчера была погода?
@@ -193,7 +191,7 @@ texts:
       - { who: Даша, item: so-tynyd-kelshoz }
       - { who: '{name}', item: badzym-tau }
     questions:
-      - q: Что будет пить гость?
+      - q: Что будете пить вы?
         options: [Чай, Кофе, Молоко]
         answer: Чай
       - q: Что купит Том?

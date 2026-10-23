@@ -16,14 +16,14 @@ exercises:
     lines:
       - { who: Эмчи, item: maid-tynad-vise }
       - { who: '{name}', item: mynam-yyry-vise }
-    question: Что болит у пациента?
+    question: Что у вас болит?
     options: [Голова, Сердце, Зуб]
     answer: Голова
   - type: teach
     item: yyryd-vise-na
   - type: fill
     text: Йыр___ висе на?
-    ru: Голова ещё болит?
+    ru: У тебя голова ещё болит?
     options: [ыд, ы, ыз]
     answer: ыд
     item: yyryd-vise-na

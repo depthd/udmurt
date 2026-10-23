@@ -1,6 +1,6 @@
 id: u2-l4
 title: Кызь, куамын, сю
-goal: Десятки и сотни
+goal: Десятки, сто и тысяча
 icon: 💯
 exercises:
   - type: teach
@@ -37,6 +37,8 @@ exercises:
   - type: type
     dir: ru-udm
     item: syu
+  - type: teach
+    item: mynym-kuatton-kyk-ares
   - type: tiles
     dir: udm-ru
     item: mynym-kuatton-kyk-ares

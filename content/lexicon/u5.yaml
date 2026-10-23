@@ -72,7 +72,7 @@ items:
   - id: mynam-chai-yueme-pote
     udm: Мынам чай юэме потэ.
     ru: Я хочу чай.
-    ru_alt: [Я хочу чаю., Хочу чаю.]
+    ru_alt: [Я хочу чаю., Хочу чаю., Я хочу попить чаю., Хочу попить чаю.]
     kind: phrase
     emoji: 🍵
     morphemes:

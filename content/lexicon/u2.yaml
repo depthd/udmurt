@@ -124,7 +124,7 @@ items:
     pos: числительное
     morphemes:
       - { form: ньыль, meaning: 'четыре', kind: root }
-      - { form: дон, meaning: 'десяток (древнее «тон»)', kind: suffix }
+      - { form: дон, meaning: 'десять: -дон после звонкого, -тон после глухого (тон когда-то значило «10»)', kind: suffix }
     note: 'С 40 до 90 десятки — «число + тон/дон»: ньыльдон, витьтон, куатьтон…'
     status: sourced
     sources: [{ id: alatyrev1983 }, { id: uniparser }]

@@ -32,6 +32,10 @@ exercises:
   - type: tiles
     item: mon-no-student
     extra: [ӧвӧл, тон]
+  - type: teach
+    item: ben-mon-student
+  - type: teach
+    item: nosh-ton
   - type: dialogue
     lines:
       - { who: Даша, item: ton-student-a }

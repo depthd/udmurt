@@ -31,7 +31,7 @@ exercises:
   - type: tiles
     dir: udm-ru
     item: so-francuz-kylyn-veraskyny-bygate
-    extra: [английски, не]
+    extra: [по-английски, не]
   - type: match
     items: [so-ektyny-bygate, ton-uyany-bygatiskod, main-yurttyny-bygatisko, yurttyny-bygatod-a]
   - type: type

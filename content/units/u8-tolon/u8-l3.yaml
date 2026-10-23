@@ -12,7 +12,7 @@ exercises:
     lines:
       - { who: Даша, item: kytchy-vetlid }
       - { who: '{name}', item: mon-banke-vetli }
-    question: Куда ходил собеседник Даши?
+    question: Куда вы ходили?
     options: [В банк, В школу, К врачу]
     answer: В банк
   - type: teach

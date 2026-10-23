@@ -25,7 +25,7 @@ exercises:
       - { who: '{name}', item: mon-ognam-uzhalo }
       - { who: Даша, item: yurttyny-bygatod-a }
       - { who: '{name}', item: zhalyasa-verano-ug-bygatisky }
-    question: Сможет ли собеседник помочь Даше?
+    question: Сможете ли вы помочь Даше?
     options: [Нет, Да, Завтра]
     answer: Нет
   - type: match

@@ -29,7 +29,7 @@ exercises:
     lines:
       - { who: Даша, item: kytchy-ton-myniskod }
       - { who: '{name}', item: mynym-gurte-bertyny-kule }
-    question: Куда идёт собеседник Даши?
+    question: Куда вы идёте?
     options: [Домой, В больницу, В аэропорт]
     answer: Домой
   - type: match

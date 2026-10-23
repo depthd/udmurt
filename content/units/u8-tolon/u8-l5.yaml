@@ -26,7 +26,7 @@ exercises:
     options: [ӧй, уг, ӧз]
     answer: ӧй
     item: mon-tolon-nokytchy-no-oi-vetly
-    explain: 'Уг — «не» сейчас, ӧй — «не» в прошлом (я), ӧз — (он, она).'
+    explain: 'Ӧй ветлы — «(я) не ходил(а)», ӧз ветлы — «он(а) не ходил(а)». А уг ветлы — это будущее: «не пойду».'
   - type: teach
     item: tolon-oz-zory
   - type: match
@@ -34,7 +34,7 @@ exercises:
   - type: tiles
     dir: udm-ru
     item: mon-tolon-nokytchy-no-oi-vetly
-    extra: [сегодня, иду]
+    extra: [сегодня, иду, ходила]
   - type: type
     dir: ru-udm
     item: kytyn-ton-tolon-val

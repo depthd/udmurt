@@ -36,7 +36,7 @@ exercises:
     options: [арес, ар]
     answer: арес
     item: mynym-kyz-ares
-    explain: 'Арес — возраст, «лет». Ар — год (в календаре).'
+    explain: 'Арес — возраст человека: «кому сколько лет». Ар — «год»: куинь ар «три года», Выль ар «Новый год».'
   - type: dialogue
     lines:
       - { who: Даша, item: koenya-tynyd-ares }

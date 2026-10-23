@@ -37,6 +37,8 @@ exercises:
     item: ozhytak-gine
   - type: match
     items: [ozhytak-gine, ben, ovol, tau]
+  - type: teach
+    item: tuzh-umoj
   - type: dialogue
     lines:
       - { who: Даша, item: ton-udmurt-samen-veraskiskod-a }
