@@ -36,7 +36,7 @@
   <p class="visually-hidden" role="status" aria-live="polite">{cur.udm} — {cur.ru}</p>
 
   <p class="sum"><Rich text={EVIDENTIAL.summary} /></p>
-  <p class="an">С частицами <span lang="udm" class="u">вал</span> «было» и <span lang="udm" class="u">вылэм</span> «было, оказывается» то же различие есть и в сложных временах:</p>
+  <p class="an">Со вспомогательными глаголами <span lang="udm" class="u">вал</span> «было» и <span lang="udm" class="u">вылэм</span> «было, оказывается» то же различие есть и в сложных временах:</p>
   <ul class="ex">
     {#each EVIDENTIAL.analytic as a (a.udm)}
       <li><span lang="udm" class="u">{a.udm}</span> — {a.ru}</li>

@@ -125,7 +125,7 @@ export const TYPING_TIPS: TypingTip[] = [
   },
   {
     title: 'Раскладка для телефона и компьютера',
-    text: 'Удмуртская раскладка GiellaLT есть для Windows, macOS, Android и iOS (ставится через Divvun).',
+    text: 'Удмуртская раскладка GiellaLT (Divvun) есть для Windows и macOS — ставится через Divvun Manager, — а также для Linux. На телефоне поищите удмуртский язык в настройках своей клавиатуры.',
     source: [GIELLALT_KBD, REPORT_05('§ 6')],
   },
   {

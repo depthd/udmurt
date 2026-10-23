@@ -128,7 +128,7 @@
     </li>
     <li class="ins" use:reveal={{ delay: 120 }}>
       <span class="big">92,8 %</span>
-      <span>носителей говорят и по-русски: почти все двуязычны.</span>
+      <span>носителей говорят и по-русски: почти все двуязычны. Это оценка энциклопедии «Кругосвет», год в ней не указан.</span>
     </li>
     <li class="ins" use:reveal={{ delay: 180 }}>
       <span class="big">предмет</span>

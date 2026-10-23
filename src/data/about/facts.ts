@@ -53,10 +53,10 @@ export const FACT_CARDS: FlipCard[] = [
     id: 'puzkar',
     front: 'пузкар',
     frontLang: 'udm',
-    ask: '«Яйцо» + «город» = ?',
+    ask: '«Яйцо» + «кар» = ?',
     title: 'Гнездо',
-    text: '{udm:пузкар} «гнездо» = {udm:пуз} «яйцо» + {udm:кар} «город». А {udm:пуз} родственно финскому {fi:pesä} и венгерскому {hu:fészek} — «гнездо».',
-    src: [S.uew, S.uniparser],
+    text: '{udm:пузкар} «гнездо» = {udm:пуз} «яйцо» + {udm:кар}. У {udm:кар} два значения: «гнездо, логово» и «город», как в {udm:Ижкар}. А {udm:пуз} родственно финскому {fi:pesä} и венгерскому {hu:fészek} — «гнездо».',
+    src: [S.vakhrushev, S.uew, S.uniparser],
   },
   {
     id: 'pelnyan',
@@ -96,4 +96,4 @@ export const FACT_CARDS: FlipCard[] = [
   },
 ];
 
-export const FACTS_SOURCES: Src[] = [S.ruBuranovo, S.ruUdmWiki, S.udmWikiStats, S.udmWikiIzh, S.wiktZuch, S.ruPelmeni, S.enUdmurt, S.uew];
+export const FACTS_SOURCES: Src[] = [S.vakhrushev, S.ruBuranovo, S.ruUdmWiki, S.udmWikiStats, S.udmWikiIzh, S.wiktZuch, S.ruPelmeni, S.enUdmurt, S.uew];

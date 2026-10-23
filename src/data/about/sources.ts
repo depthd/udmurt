@@ -17,6 +17,7 @@ export const S = {
   ruPermic: { label: 'Википедия: Пермские языки', url: ru('Пермские_языки') },
   ruUdmurtia: { label: 'Википедия: Удмуртия', url: ru('Удмуртия') },
   ruGlazov: { label: 'Википедия: Глазов', url: ru('Глазов') },
+  ruIzhevsk: { label: 'Википедия: Ижевск', url: ru('Ижевск') },
   ruIzhRiver: { label: 'Википедия: Иж (приток Камы)', url: ru('Иж_(приток_Камы)') },
   ruKama: { label: 'Википедия: Кама', url: ru('Кама') },
   ruCheptsa: { label: 'Википедия: Чепца', url: ru('Чепца') },

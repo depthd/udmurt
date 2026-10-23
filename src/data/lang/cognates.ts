@@ -3,12 +3,12 @@
  * Основа — docs/research/07-cognates.json и отчёт 07 §14.1–14.2 (UEW/Uralonet + Wiktionary).
  * Правила отбора:
  *  • оставлены только пары, подтверждённые источником в json/отчёте;
- *  • ячейки с ⚠️ (мар. ӱй, пыжаш; коми кувны, кин, би) НЕ показываются — формы не сверены по словарю;
+ *  • ячейки с ⚠️ (мар. ӱй, пыжаш, нӧлӧ; коми кувны, кин, би) НЕ показываются — формы не сверены по словарю;
  *  • строка «дом» (куа/корка) убрана: там родственна лишь часть сложного слова, без пояснения это вводит в заблуждение;
  *  • удмуртские формы сверены с public/data/dict.json (uniparser, MIT);
  *  • cognate: false — слово в языке есть, но другого происхождения (это тоже факт из источника).
  */
-import { DICT, uew, wiktionary, REPORT_07, type Source } from './sources';
+import { DICT, alatyrev, uew, wiktionary, REPORT_07, type Source } from './sources';
 
 export type LangId = 'kpv' | 'mhr' | 'fin' | 'est' | 'hun';
 export const LANGS: { id: LangId; ru: string; short: string; script: 'cyr' | 'lat' }[] = [
@@ -84,7 +84,7 @@ export const COGNATES: CognateRow[] = [
   { id: 'tree', ru: 'дерево', udm: 'пу', group: 'nature', forms: { kpv: y('пу'), mhr: y('пу'), fin: y('puu'), est: y('puu'), hun: y('fa') }, source: [uew(829), DICT] },
   { id: 'butter', ru: 'масло', udm: 'вӧй', group: 'nature', forms: { kpv: y('вый'), fin: y('voi'), est: y('või'), hun: y('vaj') }, source: [uew(1156), DICT] },
   { id: 'nest', ru: 'яйцо / гнездо', udm: 'пуз', udmGloss: 'яйцо', group: 'nature', forms: { kpv: y('поз', 'гнездо'), fin: y('pesä', 'гнездо'), est: y('pesa', 'гнездо'), hun: y('fészek', 'гнездо') }, note: 'В удмуртском значение сдвинулось к «яйцо».', source: [uew(753), DICT] },
-  { id: 'arrow', ru: 'стрела', udm: 'ньӧл', group: 'nature', forms: { kpv: y('ньӧв'), mhr: y('нӧлӧ', 'наконечник стрелы'), fin: y('nuoli'), est: y('nool'), hun: y('nyíl') }, source: [uew(622), DICT] },
+  { id: 'arrow', ru: 'стрела', udm: 'ньӧл', group: 'nature', forms: { kpv: y('ньӧв'), fin: y('nuoli'), est: y('nool'), hun: y('nyíl') }, source: [uew(622), DICT] },
   { id: 'mouse', ru: 'мышь', udm: 'шыр', group: 'nature', forms: { kpv: y('шыр'), fin: y('hiiri'), est: y('hiir'), hun: y('egér') }, source: [uew(1006), DICT] },
   { id: 'fish', ru: 'рыба', udm: 'чорыг', group: 'nature', forms: { kpv: y('чери'), mhr: n('кол'), fin: n('kala'), est: n('kala'), hun: n('hal') }, note: 'У марийцев, финнов, эстонцев и венгров общее слово (_kala_), а у удмуртов и коми — своё.', source: [wiktionary('чорыг'), uew(228), DICT] },
   // ── глаголы и местоимения ──
@@ -96,8 +96,8 @@ export const COGNATES: CognateRow[] = [
   { id: 'know', ru: 'знать', udm: 'тодыны', group: 'basic', forms: { kpv: y('тӧдны'), fin: y('tuntea', 'чувствовать; знать кого-то'), est: y('tundma'), hun: y('tud') }, source: [uew(1077), DICT] },
   { id: 'i', ru: 'я', udm: 'мон', group: 'basic', forms: { kpv: y('ме'), mhr: y('мый'), fin: y('minä'), est: y('mina'), hun: y('én') }, source: [uew(576), DICT] },
   { id: 'you', ru: 'ты', udm: 'тон', group: 'basic', forms: { kpv: y('тэ'), mhr: y('тый'), fin: y('sinä'), est: y('sina'), hun: y('te') }, source: [uew(1083), DICT] },
-  { id: 'who', ru: 'кто', udm: 'кин', group: 'basic', forms: { mhr: y('кӧ'), fin: y('ken'), est: y('kes'), hun: y('ki') }, source: [uew(272), DICT] },
-  { id: 'what', ru: 'что', udm: 'ма', group: 'basic', forms: { kpv: y('мый'), mhr: y('мо'), fin: y('mikä'), est: y('mis'), hun: y('mi') }, source: [uew(581), DICT] },
+  { id: 'who', ru: 'кто', udm: 'кин', group: 'basic', forms: { mhr: y('кӧ'), fin: y('ken', 'книжн.; обычно _kuka_'), est: y('kes'), hun: y('ki') }, source: [uew(272), DICT] },
+  { id: 'what', ru: 'что', udm: 'ма', group: 'basic', forms: { kpv: y('мый'), mhr: y('мо'), fin: y('mikä'), est: y('mis'), hun: y('mi') }, note: 'Есть и форма *мар* — в речи она даже чаще: *Мар та?* «Что это?».', source: [uew(581), alatyrev('§ 41'), DICT] },
 ];
 
 export const COGNATES_INFO = {
