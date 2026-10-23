@@ -196,7 +196,7 @@
     width: 100%;
     min-height: 56px;
     padding: 12px 16px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--ink);

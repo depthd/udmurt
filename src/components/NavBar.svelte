@@ -6,9 +6,10 @@
 
   const due = $derived(progress.dueCards().length);
 
-  const items = [
+  // short — подпись для узких экранов (≤400 px), чтобы не уменьшать шрифт ниже 11 px
+  const items: { name: string; path: string; label: string; short?: string; icon: string; match: string[] }[] = [
     { name: 'learn', path: '/learn', label: 'Учиться', icon: 'M4 19V8l8-5 8 5v11h-5v-6H9v6z', match: ['learn', 'home'] },
-    { name: 'practice', path: '/practice', label: 'Повторять', icon: 'M12 4a8 8 0 1 0 8 8h-2a6 6 0 1 1-1.76-4.24L14 10h6V4l-2.35 2.35A7.97 7.97 0 0 0 12 4z', match: ['practice'] },
+    { name: 'practice', path: '/practice', label: 'Повторять', short: 'Повтор', icon: 'M12 4a8 8 0 1 0 8 8h-2a6 6 0 1 1-1.76-4.24L14 10h6V4l-2.35 2.35A7.97 7.97 0 0 0 12 4z', match: ['practice'] },
     { name: 'about', path: '/about', label: 'О языке', icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z', match: ['about'] },
     { name: 'dict', path: '/dict', label: 'Словарь', icon: 'M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1 3v2h9V6zm0 4v2h9v-2zm0 4v2h6v-2z', match: ['dict'] },
     { name: 'library', path: '/library', label: 'Ресурсы', icon: 'M4 4h4v16H4zm6 0h4v16h-4zm6.2.6 3.8-1 4.1 15.4-3.8 1z', match: ['library', 'credits'] },
@@ -23,7 +24,11 @@
       <li>
         <a href={href(it.path)} class:active aria-current={active ? 'page' : undefined}>
           <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d={it.icon} fill="currentColor" /></svg>
-          <span>{it.label}</span>
+          {#if it.short}
+            <span class="full">{it.label}</span><span class="short">{it.short}</span>
+          {:else}
+            <span>{it.label}</span>
+          {/if}
           {#if it.name === 'practice' && due > 0}
             <b class="badge" aria-label="{due} слов пора повторить">{due > 99 ? '99+' : due}</b>
           {/if}
@@ -62,7 +67,7 @@
     min-height: var(--nav-h);
     color: var(--muted);
     text-decoration: none;
-    font: 600 0.68rem/1.1 var(--font-head);
+    font: 600 0.75rem/1.1 var(--font-head);
     border-radius: 12px;
     -webkit-tap-highlight-color: transparent;
     min-width: 0;
@@ -73,15 +78,27 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .short {
+    display: none;
+  }
+  /* не меньше 11 px даже на 320 px */
   @media (max-width: 430px) {
     a {
-      font-size: 0.62rem;
-      letter-spacing: -0.02em;
+      font-size: 0.6875rem;
+      letter-spacing: -0.01em;
+    }
+  }
+  /* «Повторять» при 11 px — 58 px: не помещается в колонку уже ~380 px */
+  @media (max-width: 400px) {
+    .full {
+      display: none;
+    }
+    .short {
+      display: inline;
     }
   }
   @media (max-width: 370px) {
     a {
-      font-size: 0.55rem;
       padding-inline: 0;
     }
   }
@@ -91,8 +108,10 @@
   a.active svg {
     transform: translateY(-1px) scale(1.08);
   }
-  svg {
-    transition: transform var(--dur-fast) var(--ease-overshoot);
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html:not([data-motion='reduce'])) svg {
+      transition: transform var(--dur-fast) var(--ease-overshoot);
+    }
   }
   .badge {
     position: absolute;

@@ -105,7 +105,7 @@
     min-width: 0;
   }
   .field-wrap {
-    --fc: var(--line);
+    --fc: var(--field-border);
     --fbg: var(--surface);
     position: relative;
   }

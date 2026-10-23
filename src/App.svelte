@@ -3,6 +3,7 @@
   import { progress } from '$lib/progress.svelte';
   import { requestPersist } from '$lib/storage';
   import { ui } from '$lib/ui.svelte';
+  import { course, personalize } from '$lib/course';
   import Home from './routes/Home.svelte';
   import Learn from './routes/Learn.svelte';
   import LessonPage from './routes/Lesson.svelte';
@@ -33,7 +34,38 @@
   import NavBar from './components/NavBar.svelte';
 
   const r = $derived(router.current);
-  const inLesson = $derived(r.name === 'lesson' || ((r.name === 'practice' || r.name === 'projector' || r.name === 'game') && ui.immersive));
+  // «5 букв» всегда идёт без шапки и навигации — переключаем режим сразу, а не после загрузки чанка (иначе сдвиг вёрстки)
+  const inLesson = $derived(r.name === 'lesson' || r.name === 'game' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
+
+  // Заголовок вкладки для каждого раздела (WCAG 2.4.2). У урока — свой, в Lesson.svelte.
+  const SITE = 'Удмурт кыл';
+  const TITLES: Record<string, string> = {
+    learn: 'Уроки',
+    practice: 'Повторение',
+    about: 'О языке',
+    dict: 'Словарь',
+    library: 'Материалы',
+    me: 'Профиль',
+    credits: 'Источники и благодарности',
+    group: 'Группа и лига недели',
+    projector: 'Режим проектора',
+    game: '5 букв',
+    read: 'Читалка',
+    phrases: 'Разговорник',
+    help: 'Помочь проекту',
+    notfound: 'Страница не найдена',
+  };
+  const pageTitle = $derived.by(() => {
+    if (r.name === 'home') return `${SITE} — учим удмуртский`;
+    if (r.name === 'read' && r.params.id) {
+      const t = course.texts.find((x) => x.id === r.params.id);
+      return `Читалка: ${t ? personalize(t.title) : 'текст не найден'} — ${SITE}`;
+    }
+    return `${TITLES[r.name] ?? TITLES.notfound} — ${SITE}`;
+  });
+  $effect(() => {
+    if (r.name !== 'lesson') document.title = pageTitle;
+  });
 
   $effect(() => {
     if (progress.data.xp > 0) void requestPersist();
@@ -83,13 +115,17 @@
     height: 10px;
     border-radius: 50%;
     background: var(--line-strong);
-    animation: blinkdot 900ms ease-in-out infinite;
   }
-  .dot:nth-child(2) {
-    animation-delay: 150ms;
-  }
-  .dot:nth-child(3) {
-    animation-delay: 300ms;
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html:not([data-motion='reduce'])) .dot {
+      animation: blinkdot 900ms ease-in-out infinite;
+    }
+    :global(html:not([data-motion='reduce'])) .dot:nth-child(2) {
+      animation-delay: 150ms;
+    }
+    :global(html:not([data-motion='reduce'])) .dot:nth-child(3) {
+      animation-delay: 300ms;
+    }
   }
   @keyframes blinkdot {
     50% {

@@ -137,6 +137,7 @@
   const nMarked = $derived(Object.keys(marks).length);
   const nWrong = $derived(Object.values(marks).filter((m) => !m.ok).length);
   const nRec = $derived(Object.keys(recorded).length);
+  const hasWork = $derived(nMarked > 0 || nRec > 0);
   let busy = $state(false);
 
   async function download() {
@@ -184,7 +185,7 @@
     </label>
   </div>
 
-  <div class="chips" role="group" aria-label="Юнит">
+  <div class="chips scroll-x" role="group" aria-label="Юнит">
     {#each groups as g (g.unit.id)}
       {@const left = g.items.filter((i) => !marks[i.id]).length}
       <button class="fchip" class:on={unit === g.n} aria-pressed={unit === g.n} onclick={() => (unit = g.n)}>
@@ -244,13 +245,20 @@
   </p>
 </section>
 
-<div class="bar" class:has={nMarked || nRec}>
-  <span class="sum" role="status">Проверено <b>{nMarked}</b>{#if nWrong} · замечаний <b>{nWrong}</b>{/if} · записей <b>{nRec}</b></span>
-  <div class="bar-acts">
-    <button class="btn btn--sm" disabled={busy || (!nMarked && !nRec)} onclick={download} data-testid="download-zip">⬇ Архив</button>
-    <a class="btn btn--sm btn--ghost" class:off={!nMarked && !nRec} href={issue} target="_blank" rel="noopener">Заявка на GitHub</a>
+<!-- Панель появляется, только когда есть что выгрузить -->
+{#if hasWork}
+  <div class="bar">
+    <span class="sum" role="status">
+      <span class="long">Проверено <b>{nMarked}</b>{#if nWrong} · замечаний <b>{nWrong}</b>{/if} · записей <b>{nRec}</b></span>
+      <!-- на узком экране — коротко, теми же значками, что у кнопок в строках -->
+      <span class="short" aria-hidden="true"><span>✓ <b>{nMarked}</b></span>{#if nWrong} <span>✎ <b>{nWrong}</b></span>{/if} <span>🎙 <b>{nRec}</b></span></span>
+    </span>
+    <div class="bar-acts">
+      <button class="btn btn--sm" disabled={busy} onclick={download} data-testid="download-zip">⬇ Архив</button>
+      <a class="btn btn--sm btn--ghost" href={issue} target="_blank" rel="noopener" aria-label="Заявка на GitHub">Заявка<span class="wide"> на GitHub</span></a>
+    </div>
   </div>
-</div>
+{/if}
 
 <style>
   h1 {
@@ -278,7 +286,7 @@
     font-weight: 400;
     color: inherit;
     background: var(--surface);
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: var(--radius-s);
     padding: 10px 12px;
     min-width: 0;
@@ -295,6 +303,9 @@
     align-items: flex-start;
     font-weight: 400 !important;
     line-height: 1.4;
+    min-height: 44px;
+    padding: 4px 0;
+    cursor: pointer;
   }
   .consent input,
   .filters input {
@@ -306,13 +317,12 @@
   .chips {
     display: flex;
     gap: 8px;
-    overflow-x: auto;
     padding-bottom: 6px;
-    scrollbar-width: none;
   }
   .fchip {
     flex: none;
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 999px;
     padding: 7px 12px;
@@ -334,10 +344,13 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
+  /* вся подпись — область нажатия высотой 44 px */
   .filters label {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
+    min-height: 44px;
+    cursor: pointer;
   }
   .err {
     color: var(--red);
@@ -355,7 +368,6 @@
     border: 2px solid var(--line);
     border-radius: var(--radius);
     padding: 10px 12px;
-    transition: border-color var(--dur-base);
   }
   .row.ok {
     border-color: var(--green);
@@ -372,9 +384,10 @@
     margin: 2px 0 0;
     color: var(--muted);
   }
+  /* --amber: 5,4:1 на белом и 8:1 на тёмной карточке (--amber-edge в тёмной теме — лишь 3,2:1) */
   .fix {
     margin: 4px 0 0;
-    color: var(--amber-edge, var(--amber));
+    color: var(--amber);
   }
   .acts {
     display: flex;
@@ -384,8 +397,8 @@
     align-items: center;
   }
   .act {
-    min-height: 40px;
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 12px;
     padding: 6px 12px;
@@ -427,8 +440,9 @@
     line-height: 1.5;
   }
   .help {
-    padding-bottom: calc(var(--nav-h) + 110px + env(safe-area-inset-bottom));
+    padding-bottom: calc(var(--nav-h) + 100px + env(safe-area-inset-bottom));
   }
+  /* одна строка даже на 320 px: текст итога переносится внутри себя, кнопки — справа */
   .bar {
     position: fixed;
     left: 50%;
@@ -437,28 +451,72 @@
     width: min(560px, calc(100% - 2 * var(--gutter)));
     z-index: 25;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 12px;
+    padding: 8px 10px 8px 14px;
     background: var(--surface);
     border: 2px solid var(--line-strong);
     border-radius: var(--radius-l);
     box-shadow: var(--shadow);
   }
   .sum {
+    flex: 1 1 auto;
+    min-width: 0;
     font-size: 0.9rem;
+    line-height: 1.25;
   }
   .bar-acts {
     display: flex;
+    flex: none;
     gap: 6px;
   }
-  .off {
-    pointer-events: none;
-    opacity: 0.5;
+  .bar-acts .btn {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+  .sum .short {
+    display: none;
+  }
+  .sum .short > span {
+    display: inline-block;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  @media (max-width: 420px) {
+    .sum {
+      position: relative;
+    }
+    /* полный текст остаётся для скринридера */
+    .sum .long {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .sum .short {
+      display: inline;
+    }
+    .wide {
+      display: none;
+    }
+    .bar-acts .btn {
+      padding-inline: 10px;
+    }
+  }
+  @media (min-width: 900px) {
+    .bar {
+      left: calc(50% + 48px);
+      bottom: calc(16px + env(safe-area-inset-bottom));
+    }
   }
   @media (prefers-reduced-motion: no-preference) {
+    :global(html:not([data-motion='reduce'])) .row {
+      transition: border-color var(--dur-base);
+    }
     :global(html:not([data-motion='reduce'])) .rec.live {
       animation: pulse 1.2s ease-in-out infinite;
     }

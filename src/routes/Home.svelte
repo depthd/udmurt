@@ -450,7 +450,7 @@
   .small-link {
     display: inline-flex;
     align-items: center;
-    min-height: 32px;
+    min-height: 44px;
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;

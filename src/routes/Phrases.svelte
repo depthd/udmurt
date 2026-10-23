@@ -29,6 +29,22 @@
   });
   const total = $derived(shown.reduce((s, g) => s + g.items.length, 0));
 
+  // Тяжёлый DOM (≈200 кнопок озвучки): сначала рисуем первые юниты, остальные — в простое браузера.
+  let rendered = $state(2);
+  $effect(() => {
+    if (rendered >= groups.length) return;
+    const ric = (globalThis as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    const grow = () => (rendered = Math.min(groups.length, rendered + 3));
+    if (ric) {
+      const h = ric(grow, { timeout: 300 });
+      return () => cancelIdleCallback(h);
+    }
+    const t = setTimeout(grow, 50);
+    return () => clearTimeout(t);
+  });
+  // при поиске или фильтре по юниту показываем всё найденное сразу
+  const visible = $derived(query.trim() || unitFilter ? shown : shown.slice(0, rendered));
+
   const guideHtml = (g: string) => renderMarkdown(personalize(g), { headingShift: 1, strongLang: 'udm', strongClass: 'udm' });
 </script>
 
@@ -38,12 +54,13 @@
     <p class="lead">Все фразы курса по темам и все шпаргалки на одной странице — удобно повторить перед парой.</p>
   </header>
 
-  <div class="tabs" role="tablist" aria-label="Раздел">
-    <button role="tab" aria-selected={tab === 'phrases'} class:on={tab === 'phrases'} onclick={() => (tab = 'phrases')} data-testid="tab-phrases">Фразы</button>
-    <button role="tab" aria-selected={tab === 'guides'} class:on={tab === 'guides'} onclick={() => (tab = 'guides')} data-testid="tab-guides">Шпаргалки</button>
+  <!-- Сегментный переключатель раздела: кнопки с aria-pressed -->
+  <div class="tabs" role="group" aria-label="Раздел">
+    <button type="button" aria-pressed={tab === 'phrases'} class:on={tab === 'phrases'} onclick={() => (tab = 'phrases')} data-testid="tab-phrases">Фразы</button>
+    <button type="button" aria-pressed={tab === 'guides'} class:on={tab === 'guides'} onclick={() => (tab = 'guides')} data-testid="tab-guides">Шпаргалки</button>
   </div>
 
-  <div class="chips" role="group" aria-label="Юнит">
+  <div class="chips scroll-x" role="group" aria-label="Юнит">
     <button class="fchip" class:on={!unitFilter} aria-pressed={!unitFilter} onclick={() => (unitFilter = 0)}>Все</button>
     {#each groups as g (g.unit.id)}
       <button class="fchip" class:on={unitFilter === g.n} aria-pressed={unitFilter === g.n} onclick={() => (unitFilter = unitFilter === g.n ? 0 : g.n)}>
@@ -59,7 +76,8 @@
     </div>
     <p class="muted found" role="status">Найдено: {total}</p>
 
-    {#each shown as g (g.unit.id)}
+    {#each visible as g (g.unit.id)}
+      <section class="grp">
       <h2 class="ut"><span class="n">{g.n}</span> {g.unit.title}{#if g.unit.title_udm}<span class="udm muted" lang="udm"> · {personalize(g.unit.title_udm)}</span>{/if}</h2>
       <ul class="list">
         {#each g.items as it (it.id)}
@@ -88,12 +106,13 @@
           </li>
         {/each}
       </ul>
+      </section>
     {:else}
       <p class="muted">Ничего не нашлось. Попробуйте <a href={href(`/dict/${encodeURIComponent(query)}`)}>поискать в словаре</a>.</p>
     {/each}
   {:else}
     {#each groups.filter((g) => g.unit.guide && (!unitFilter || g.n === unitFilter)) as g (g.unit.id)}
-      <article class="card guide">
+      <article class="card guide grp">
         <h2 class="ut"><span class="n">{g.n}</span> {g.unit.title}</h2>
         <div class="md">{@html guideHtml(g.unit.guide ?? '')}</div>
       </article>
@@ -120,6 +139,7 @@
     margin-bottom: 12px;
   }
   .tabs button {
+    min-height: 44px;
     border: 0;
     background: none;
     border-radius: 999px;
@@ -130,20 +150,19 @@
   }
   .tabs button.on {
     background: var(--surface);
-    color: var(--fg);
+    color: var(--ink);
     box-shadow: 0 1px 0 var(--line-strong);
   }
   .chips {
     display: flex;
     gap: 8px;
-    overflow-x: auto;
     padding-bottom: 6px;
     margin-bottom: 10px;
-    scrollbar-width: none;
   }
   .fchip {
     flex: none;
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 999px;
     padding: 7px 12px;
@@ -164,7 +183,7 @@
   .search {
     height: 48px;
     padding: 0 16px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: var(--radius);
     background: var(--surface);
     font: inherit;
@@ -175,12 +194,25 @@
     outline: none;
     border-color: var(--focus);
   }
+  /* вся подпись — область нажатия 44 px, сам флажок крупнее */
   .sw {
     display: flex;
     gap: 8px;
     align-items: center;
+    min-height: 44px;
     font-size: 0.9rem;
     color: var(--muted);
+    cursor: pointer;
+  }
+  .sw input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--red);
+  }
+  /* юниты вне экрана не верстаются и не рисуются, пока до них не долистали */
+  .grp {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
   }
   .found {
     margin: 8px 0 4px;

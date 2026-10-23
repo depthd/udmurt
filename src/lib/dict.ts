@@ -48,20 +48,52 @@ export function buildPhrases(raw: [number, string, string[], string][]): Phrase[
   }));
 }
 
+/** Дождаться простоя главного потока (requestIdleCallback; в Safari — setTimeout). */
+const idle = () =>
+  new Promise<void>((resolve) => {
+    const ric = (globalThis as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    if (ric) ric(() => resolve(), { timeout: 150 });
+    else setTimeout(resolve, 0);
+  });
+
+/**
+ * Построить индекс кусками в простое браузера, а не одной длинной задачей (была 2+ с на телефоне):
+ * каждая порция — не дольше ~8 мс, между порциями браузер обрабатывает ввод и отрисовку.
+ * Результат тот же, что у build(raw).
+ */
+async function buildIdle<R, T>(raw: R[], build: (chunk: R[]) => T[], sliceMs = 8, step = 200): Promise<T[]> {
+  const out: T[] = [];
+  let i = 0;
+  while (i < raw.length) {
+    await idle();
+    const t0 = performance.now();
+    do {
+      const end = Math.min(raw.length, i + step);
+      for (const x of build(raw.slice(i, end))) out.push(x);
+      i = end;
+    } while (i < raw.length && performance.now() - t0 < sliceMs);
+  }
+  return out;
+}
+
 export function loadDict() {
   dictP ??= fetch(url('dict.json'))
     .then((r) => r.json())
-    .then((j) => ({ meta: j.meta, entries: buildEntries(j.entries) }));
+    .then(async (j) => ({ meta: j.meta, entries: await buildIdle(j.entries, buildEntries) }));
+  // неудачная загрузка (офлайн) не должна запоминаться навсегда
+  dictP.catch(() => (dictP = undefined));
   return dictP;
 }
 export function loadPhrases() {
   phrasesP ??= fetch(url('phrases.json'))
     .then((r) => r.json())
-    .then((j) => ({ meta: j.meta, entries: buildPhrases(j.entries) }));
+    .then(async (j) => ({ meta: j.meta, entries: await buildIdle(j.entries, buildPhrases) }));
+  phrasesP.catch(() => (phrasesP = undefined));
   return phrasesP;
 }
 export function loadWikt() {
   wiktP ??= fetch(url('wikt.json')).then((r) => r.json());
+  wiktP.catch(() => (wiktP = undefined));
   return wiktP;
 }
 

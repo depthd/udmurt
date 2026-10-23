@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script>
+      // Тема и «меньше анимации» из настроек (src/lib/prefs.svelte.ts) — до первой отрисовки, без вспышки светлой темы
+      try {
+        var p = JSON.parse(localStorage.getItem('udm.prefs.v1') || '{}'),
+          h = document.documentElement;
+        if (p.theme === 'light' || p.theme === 'dark') h.setAttribute('data-theme', p.theme);
+        if (p.motion === 'reduce') h.setAttribute('data-motion', 'reduce');
+      } catch (e) {}
+    </script>
     <meta name="theme-color" content="#fbf7f0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141110" media="(prefers-color-scheme: dark)" />
     <meta name="description" content="Удмурт кыл — бесплатный тренажёр удмуртского языка: короткие уроки, повторение, словарь и всё о языке." />

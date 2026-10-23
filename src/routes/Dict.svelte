@@ -15,57 +15,85 @@
     type Entry,
     type Phrase,
     type Wikt,
-    type Meta,
   } from '$lib/dict';
 
   let { q = '' }: { q?: string } = $props();
 
   let query = $state('');
+  /** Запрос, по которому реально ищем: отстаёт от ввода на ~120 мс, чтобы не пересчитывать на каждый символ. */
+  let sq = $state('');
   let tab = $state<'words' | 'phrases'>('words');
   let input: HTMLInputElement | null = $state(null);
-  let entries = $state<Entry[] | null>(null);
-  let phrases = $state<Phrase[] | null>(null);
-  let wikt = $state<Record<string, Wikt> | null>(null);
-  let metas = $state<Meta[]>([]);
+  // Большие неизменяемые данные — без глубокой реактивности ($state.raw): Svelte не оборачивает 38 тыс. записей в прокси.
+  let entries = $state.raw<Entry[] | null>(null);
+  let phrases = $state.raw<Phrase[] | null>(null);
+  let wikt = $state.raw<Record<string, Wikt> | null>(null);
   let failed = $state(false);
+  let phrasesFailed = $state(false);
   let limit = $state(50);
   let open = $state<string | null>(null);
 
   $effect.pre(() => {
-    query = decodeURIComponent(q ?? '');
+    const v = decodeURIComponent(q ?? '');
+    query = v;
+    sq = v;
   });
 
   onMount(() => {
-    Promise.all([loadDict(), loadPhrases(), loadWikt()])
-      .then(([d, p, w]) => {
-        entries = d.entries;
-        phrases = p.entries;
-        wikt = (w as { entries: Record<string, Wikt> }).entries;
-        metas = [d.meta, p.meta, (w as { meta: Meta }).meta];
-      })
+    loadDict()
+      .then((d) => (entries = d.entries))
       .catch(() => (failed = true));
+  });
+
+  // Фразы и Викисловарь нужны только для поиска, вкладки «Фразы» и раскрытой статьи — грузим при первой надобности.
+  let extraAsked = false;
+  function loadExtra() {
+    if (extraAsked) return;
+    extraAsked = true;
+    loadPhrases()
+      .then((p) => (phrases = p.entries))
+      .catch(() => {
+        phrasesFailed = true;
+        extraAsked = false;
+      });
+    loadWikt()
+      .then((w) => (wikt = (w as { entries: Record<string, Wikt> }).entries))
+      .catch(() => {});
+  }
+  $effect(() => {
+    if (sq.trim() || tab === 'phrases') loadExtra();
   });
 
   // Синхронизируем запрос с адресом без перехода (чтобы ссылкой можно было поделиться)
   let syncTimer: ReturnType<typeof setTimeout> | undefined;
+  let searchTimer: ReturnType<typeof setTimeout> | undefined;
   function onInput() {
     limit = 50;
     open = null;
+    clearTimeout(searchTimer);
+    // пустой запрос — сразу (вернуть подсказки), иначе — после паузы в наборе
+    if (!query.trim()) sq = query;
+    else searchTimer = setTimeout(() => (sq = query), 120);
     clearTimeout(syncTimer);
     syncTimer = setTimeout(() => {
       const h = '#/dict' + (query.trim() ? '/' + encodeURIComponent(query.trim()) : '');
       if (location.hash !== h) history.replaceState(null, '', h);
     }, 300);
   }
+  onMount(() => () => {
+    clearTimeout(searchTimer);
+    clearTimeout(syncTimer);
+  });
 
-  const words = $derived(entries && query.trim() ? searchEntries(entries, query, limit) : null);
-  const phraseResults = $derived(phrases && query.trim() ? searchPhrases(phrases, query, limit) : null);
+  const words = $derived(entries && sq.trim() ? searchEntries(entries, sq, limit) : null);
+  const phraseResults = $derived(phrases && sq.trim() ? searchPhrases(phrases, sq, limit) : null);
   const top = $derived(entries ? entries.filter((e) => e.rank > 0 && e.rank <= 400 && e.ru.length < 40).slice(0, 30) : []);
   const lessonWords = $derived(course.lexicon.filter((i) => i.kind === 'word' && i.status !== 'draft'));
 
   function toggle(e: Entry) {
     const id = e.udm + '|' + e.pos;
     open = open === id ? null : id;
+    loadExtra();
   }
   const examples = (e: Entry) => (phrases ? examplesFor(phrases, e.udm, 5) : []);
   const wiktFor = (e: Entry) => wikt?.[e.udm] ?? wikt?.[e.udm.toLowerCase()];
@@ -73,6 +101,8 @@
   function pick(word: string) {
     query = word;
     onInput();
+    clearTimeout(searchTimer);
+    sq = word;
     input?.focus();
   }
 </script>
@@ -80,7 +110,7 @@
 <section class="page dict">
   <header class="head">
     <h1>Словарь</h1>
-    <p class="muted">38 842 слова и 4 896 фраз с переводом — из открытых источников.</p>
+    <p class="muted">Более 38 тысяч словарных статей и почти 5 тысяч фраз с переводом — из открытых источников.</p>
   </header>
 
   <div class="search" role="search">
@@ -104,15 +134,19 @@
   </div>
   <div class="kb"><UdmKeyboard target={input} /></div>
 
-  <div class="tabs" role="tablist" aria-label="Что искать">
+  <!-- Сегментный переключатель (не вкладки): две кнопки с aria-pressed -->
+  <div class="tabs" role="group" aria-label="Что искать">
     <span class="pill" class:right={tab === 'phrases'} aria-hidden="true"></span>
-    <button role="tab" aria-selected={tab === 'words'} class:active={tab === 'words'} onclick={() => (tab = 'words')} data-testid="tab-words">
+    <button type="button" aria-pressed={tab === 'words'} class:active={tab === 'words'} onclick={() => (tab = 'words')} data-testid="tab-words">
       Слова {#if words}<b>{words.total}</b>{/if}
     </button>
-    <button role="tab" aria-selected={tab === 'phrases'} class:active={tab === 'phrases'} onclick={() => (tab = 'phrases')} data-testid="tab-phrases">
+    <button type="button" aria-pressed={tab === 'phrases'} class:active={tab === 'phrases'} onclick={() => (tab = 'phrases')} data-testid="tab-phrases">
       Фразы {#if phraseResults}<b>{phraseResults.total}</b>{/if}
     </button>
   </div>
+
+  <!-- min-height: подвал не прыгает, когда приходят данные (CLS) -->
+  <div class="results">
 
   {#if failed}
     <div class="empty card">
@@ -125,7 +159,7 @@
         <li class="row skeleton"><span></span><span></span></li>
       {/each}
     </ul>
-  {:else if !query.trim()}
+  {:else if !sq.trim()}
     <div class="intro rise">
       <h2>Слова из уроков</h2>
       <div class="chips">
@@ -145,7 +179,7 @@
     {#if words.items.length === 0}
       <div class="empty card">
         <Mascot mood="think" size={90} />
-        <p>Ничего не нашлось по запросу «{query}». Попробуйте начальную форму слова или посмотрите вкладку «Фразы».</p>
+        <p>Ничего не нашлось по запросу «{sq}». Попробуйте начальную форму слова или посмотрите вкладку «Фразы».</p>
       </div>
     {:else}
       <ul class="list">
@@ -154,7 +188,7 @@
           {@const w = open === id ? wiktFor(e) : undefined}
           <li class="row" class:open={open === id} data-testid="dict-result-{i}">
             <button class="row-btn" aria-expanded={open === id} onclick={() => toggle(e)}>
-              <span class="lemma" lang="udm">{#each highlight(e.udm, query) as [t, m]}{#if m}<mark>{t}</mark>{:else}{t}{/if}{/each}</span>
+              <span class="lemma" lang="udm">{#each highlight(e.udm, sq) as [t, m]}{#if m}<mark>{t}</mark>{:else}{t}{/if}{/each}</span>
               <span class="pos">{e.pos}</span>
               {#if e.loan}<span class="loan" title="Русское заимствование">рус.</span>{/if}
               <span class="tr">{e.ru}</span>
@@ -193,13 +227,13 @@
     {#if phraseResults.items.length === 0}
       <div class="empty card">
         <Mascot mood="think" size={90} />
-        <p>Фраз с «{query}» нет. Попробуйте другое слово.</p>
+        <p>Фраз с «{sq}» нет. Попробуйте другое слово.</p>
       </div>
     {:else}
       <ul class="list">
         {#each phraseResults.items as p (p.id)}
           <li class="row phrase">
-            <p class="pu" lang="udm">{#each highlight(p.udm, query) as [t, m]}{#if m}<mark>{t}</mark>{:else}{t}{/if}{/each}</p>
+            <p class="pu" lang="udm">{#each highlight(p.udm, sq) as [t, m]}{#if m}<mark>{t}</mark>{:else}{t}{/if}{/each}</p>
             <p class="pr">{p.ru.join(' / ')}</p>
             <a class="src" href="https://tatoeba.org/ru/sentences/show/{p.id}" target="_blank" rel="noopener">Tatoeba №{p.id} · {p.author}</a>
           </li>
@@ -209,7 +243,19 @@
         <button class="btn btn--ghost btn--block more-btn" onclick={() => (limit += 50)}>Показать ещё</button>
       {/if}
     {/if}
+  {:else if tab === 'phrases' && phrasesFailed}
+    <div class="empty card">
+      <Mascot mood="sad" size={90} />
+      <p>Не получилось загрузить фразы. Проверьте интернет и попробуйте ещё раз.</p>
+    </div>
+  {:else}
+    <ul class="list" aria-busy="true" aria-label="Загрузка фраз">
+      {#each Array(4) as _, i (i)}
+        <li class="row skeleton"><span></span><span></span></li>
+      {/each}
+    </ul>
   {/if}
+  </div>
 
   <footer class="attr muted">
     <p>
@@ -218,7 +264,6 @@
       <a href="https://ru.wiktionary.org" target="_blank" rel="noopener">Викисловарь</a> (CC BY-SA 4.0).
       <a href={href('/credits')}>Все источники</a>
     </p>
-    {#if metas.length === 0 && entries}<p></p>{/if}
   </footer>
 </section>
 
@@ -244,7 +289,7 @@
     width: 100%;
     height: 56px;
     padding: 0 48px 0 48px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: var(--radius);
     background: var(--surface);
     font: 500 1.1rem var(--font-text);
@@ -262,9 +307,9 @@
   }
   .clear {
     position: absolute;
-    right: 8px;
-    width: 40px;
-    height: 40px;
+    right: 6px;
+    width: 44px;
+    height: 44px;
     border: 0;
     border-radius: 50%;
     background: var(--surface-2);
@@ -287,6 +332,7 @@
     z-index: 1;
     border: 0;
     background: none;
+    min-height: 44px;
     padding: 10px;
     border-radius: 999px;
     font: 700 0.95rem var(--font-head);
@@ -404,8 +450,10 @@
     color: var(--muted);
   }
   .ext {
-    display: inline-block;
-    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 4px;
     font-size: 0.9rem;
   }
   .phrase {
@@ -451,10 +499,11 @@
     margin-bottom: 18px;
   }
   .chip-btn {
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 999px;
-    padding: 6px 12px;
+    padding: 6px 14px;
     font-size: 0.9rem;
     cursor: pointer;
     box-shadow: 0 2px 0 var(--line);
@@ -474,6 +523,9 @@
   }
   .more-btn {
     margin-top: 12px;
+  }
+  .results {
+    min-height: 70vh;
   }
   .attr {
     margin-top: 28px;

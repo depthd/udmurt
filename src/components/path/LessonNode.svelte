@@ -53,7 +53,8 @@
     onclick={() => el && onselect(ref, el)}
   >
     <span class="visually-hidden">
-      {kindLabel}{ref.lesson.kind === 'lesson' ? ` ${ref.lessonIndex + 1}` : ''}: {title.prefix}<span lang="udm">{title.udm}</span> — {stateLabel}
+      <!-- у историй и повторений тип уже есть в названии («История: …») — не повторяем его -->
+      {#if title.prefix}{title.prefix}{:else}{kindLabel}{ref.lesson.kind === 'lesson' ? ` ${ref.lessonIndex + 1}` : ''}: {/if}<span lang="udm">{title.udm}</span> — {stateLabel}
     </span>
     <span class="icon" aria-hidden="true">{icon}</span>
     {#if nodeState === 'done' || nodeState === 'perfect'}

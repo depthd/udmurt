@@ -208,7 +208,8 @@
   }
   .goals button {
     flex: 1;
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 12px;
     padding: 6px;
@@ -275,8 +276,9 @@
     background: none;
     color: var(--muted);
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
+    margin-right: -8px;
   }
   .share,
   .add {
@@ -293,7 +295,7 @@
   textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: 12px;
     background: var(--surface-2);
     font: 0.85rem/1.4 ui-monospace, monospace;

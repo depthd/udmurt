@@ -13,6 +13,8 @@
   import { loadDict } from '$lib/dict';
   import { sfx, haptic } from '$lib/sfx';
   import { celebrate } from '$lib/celebrate';
+  import { plural } from '$lib/lesson';
+  import { prefs } from '$lib/prefs.svelte';
   import AudioButton from '../components/exercise/AudioButton.svelte';
   import MorphemeBreakdown from '../components/exercise/MorphemeBreakdown.svelte';
 
@@ -44,7 +46,8 @@
     // слово не должно оказаться под панелью со значением
     if (el) {
       const r = el.getBoundingClientRect();
-      if (r.bottom > window.innerHeight * 0.45) requestAnimationFrame(() => window.scrollBy({ top: r.top - window.innerHeight * 0.3, behavior: 'smooth' }));
+      if (r.bottom > window.innerHeight * 0.45)
+        requestAnimationFrame(() => window.scrollBy({ top: r.top - window.innerHeight * 0.3, behavior: prefs.reduceMotion ? 'instant' : 'smooth' }));
     }
     const l = lines[line];
     const local = glossLocal(word, l.it, courseIdx);
@@ -68,6 +71,14 @@
     gloss = null;
     picked = null;
   }
+  // Для скринридера: значение объявляется в живой области, фокус остаётся на слове (можно идти дальше по тексту).
+  const announce = $derived(
+    !gloss || glossLoading
+      ? ''
+      : gloss.gloss
+        ? `${gloss.word} — ${personalize(gloss.gloss)}`
+        : `${gloss.word}: нет в словаре в такой форме. Перевод фразы: ${gloss.ru}`,
+  );
 
   // ── Перевод и озвучка ──
   let showAll = $state(false);
@@ -96,7 +107,7 @@
       const a = lines[i].it.audio;
       if (!a) continue;
       playingLine = i;
-      document.querySelector(`[data-line="${i}"]`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      document.querySelector(`[data-line="${i}"]`)?.scrollIntoView({ block: 'nearest', behavior: prefs.reduceMotion ? 'instant' : 'smooth' });
       await playOne(a);
       await new Promise((r) => setTimeout(r, 350));
     }
@@ -173,9 +184,12 @@
             <span class="tt">
               <b class="udm" lang="udm">{personalize(t.title)}</b>
               <span class="muted">{personalize(t.title_ru)}</span>
-              <span class="meta">Юнит {unitNo(t.after)} · {unitTitle(t.after)} · {t.lines.length} строк</span>
+              <span class="meta">Юнит {unitNo(t.after)} · {unitTitle(t.after)} · {t.lines.length} {plural(t.lines.length, ['строка', 'строки', 'строк'])}</span>
             </span>
-            {#if times}<span class="done" title="Прочитано {times} раз">✓</span>{:else}<span class="chev" aria-hidden="true">→</span>{/if}
+            {#if times}
+              {@const readLabel = `Прочитано ${times} ${plural(times, ['раз', 'раза', 'раз'])}`}
+              <span class="done" title={readLabel}><span aria-hidden="true">✓</span><span class="visually-hidden">{readLabel}</span></span>
+            {:else}<span class="chev" aria-hidden="true">→</span>{/if}
           </a>
         </li>
       {/each}
@@ -225,7 +239,7 @@
             </p>
             <div class="acts">
               <AudioButton audio={l.it.audio} size="sm" synth={l.it.audio_synth} />
-              <button class="ru-btn" aria-pressed={showAll || !!shown[i]} aria-label="Перевод строки" onclick={() => (shown[i] = !shown[i])}>RU</button>
+              <button class="ru-btn" aria-pressed={showAll || !!shown[i]} aria-label="RU — перевод строки" onclick={() => (shown[i] = !shown[i])}>RU</button>
             </div>
           </div>
           {#if showAll || shown[i]}<p class="ru">{l.ru}</p>{/if}
@@ -278,16 +292,23 @@
     {/if}
   </article>
 
+  <p class="visually-hidden" aria-live="polite" aria-atomic="true">{announce}</p>
   {#if gloss}
-    <div class="gloss" role="dialog" aria-label="Значение слова" data-testid="gloss">
-      <button class="x" aria-label="Закрыть" onclick={closeGloss}>×</button>
+    <!-- Не модальное окно: фокус не забирает, значение объявляется через aria-live выше; Esc закрывает -->
+    <aside class="gloss" aria-label="Значение слова" data-testid="gloss">
+      <button class="x" aria-label="Закрыть значение слова" onclick={closeGloss}>×</button>
       <p class="gw udm" lang="udm">{gloss.word}</p>
       {#if glossLoading}
         <p class="muted">Ищу в словаре…</p>
       {:else if gloss.gloss}
         <p class="gm">{personalize(gloss.gloss)}</p>
         {#if gloss.lemma}<p class="muted small">≈ форма слова <b class="udm" lang="udm">{gloss.lemma}</b> (по словарю, проверьте)</p>{/if}
-        {#if gloss.parts}<MorphemeBreakdown morphemes={gloss.parts} caption="Из чего состоит" />{/if}
+        {#if gloss.parts}
+          <details class="parts">
+            <summary>Из чего состоит</summary>
+            <MorphemeBreakdown morphemes={gloss.parts} caption="Из чего состоит" />
+          </details>
+        {/if}
         <p class="src muted small">
           {gloss.from === 'phrase' ? 'Из разбора этой фразы' : gloss.from === 'course' ? 'Из словника курса' : 'Из словаря uniparser-udm'}
           · <a href={href(`/dict/${encodeURIComponent(gloss.lemma ?? gloss.word)}`)}>в словаре →</a>
@@ -296,7 +317,7 @@
         <p class="muted">Этого слова нет в словаре в такой форме. Перевод всей фразы:</p>
         <p class="gm">{gloss.ru}</p>
       {/if}
-    </div>
+    </aside>
   {/if}
 {/if}
 
@@ -323,13 +344,9 @@
     align-items: center;
     color: inherit;
     text-decoration: none;
-    transition: transform var(--dur-fast) var(--ease-standard), border-color var(--dur-fast);
   }
   .text-card:hover {
     border-color: var(--line-strong);
-  }
-  .text-card:active {
-    transform: scale(0.98);
   }
   .ic {
     font-size: 1.8rem;
@@ -364,8 +381,10 @@
   }
 
   .back {
-    display: inline-block;
-    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-bottom: 2px;
     color: var(--muted);
     text-decoration: none;
     font-weight: 600;
@@ -394,14 +413,13 @@
   }
   /* место под панелью значения, чтобы до последних строк можно было долистать */
   .reader.glossing {
-    padding-bottom: calc(60vh + var(--nav-h));
+    padding-bottom: calc(45vh + var(--nav-h));
   }
   .line {
     padding: 10px 12px;
     border-radius: var(--radius);
     background: var(--surface);
     border: 2px solid var(--line);
-    transition: border-color var(--dur-base), background var(--dur-base);
   }
   .line.speaking {
     border-color: var(--red);
@@ -453,14 +471,21 @@
     flex: none;
   }
   .ru-btn {
-    height: 32px;
-    min-width: 36px;
+    position: relative;
+    height: 36px;
+    min-width: 44px;
     border-radius: 10px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     background: var(--surface);
     font: 700 0.72rem var(--font-head);
     color: var(--muted);
     cursor: pointer;
+  }
+  /* область нажатия 44×44: продолжается вниз, в поле строки (над кнопкой — озвучка) */
+  .ru-btn::after {
+    content: '';
+    position: absolute;
+    inset: -2px -2px -10px;
   }
   .ru-btn[aria-pressed='true'] {
     background: var(--ink);
@@ -497,14 +522,11 @@
     border-bottom-width: 4px;
     background: var(--surface);
     border-radius: var(--radius-s);
+    min-height: 44px;
     padding: 9px 14px;
     font: 600 0.95rem var(--font-text);
     color: inherit;
     cursor: pointer;
-    transition: transform var(--dur-press) var(--ease-standard);
-  }
-  .opt:active:not(:disabled) {
-    transform: translateY(2px);
   }
   .opt:disabled {
     cursor: default;
@@ -552,15 +574,24 @@
     border-radius: var(--radius-l);
     box-shadow: var(--shadow);
     padding: 14px 16px 12px;
-    max-height: 55vh;
+    max-height: 40vh;
     overflow: auto;
+    overscroll-behavior: contain;
+  }
+  /* десктоп: навигация — рейка слева (96 px), снизу ничего нет — центр по колонке текста */
+  @media (min-width: 900px) {
+    .gloss {
+      left: calc(50% + 48px);
+      bottom: calc(16px + env(safe-area-inset-bottom));
+    }
   }
   .x {
     position: absolute;
-    top: 6px;
-    right: 8px;
-    width: 36px;
-    height: 36px;
+    top: 2px;
+    right: 4px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     border: 0;
     background: none;
     font-size: 1.5rem;
@@ -570,7 +601,21 @@
   .gw {
     margin: 0;
     font-size: 1.35rem;
-    padding-right: 36px;
+    padding-right: 44px;
+  }
+  .parts {
+    margin: 4px 0 0;
+  }
+  .parts summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blue);
+  }
+  .parts :global(.cap) {
+    display: none;
   }
   .gm {
     margin: 4px 0 8px;
@@ -586,6 +631,25 @@
   @media (prefers-reduced-motion: no-preference) {
     :global(html:not([data-motion='reduce'])) .gloss {
       animation: gloss-in var(--spring-snappy-dur) var(--spring-snappy);
+    }
+    :global(html:not([data-motion='reduce'])) .text-card {
+      transition:
+        transform var(--dur-fast) var(--ease-standard),
+        border-color var(--dur-fast);
+    }
+    :global(html:not([data-motion='reduce'])) .text-card:active {
+      transform: scale(0.98);
+    }
+    :global(html:not([data-motion='reduce'])) .line {
+      transition:
+        border-color var(--dur-base),
+        background var(--dur-base);
+    }
+    :global(html:not([data-motion='reduce'])) .opt {
+      transition: transform var(--dur-press) var(--ease-standard);
+    }
+    :global(html:not([data-motion='reduce'])) .opt:active:not(:disabled) {
+      transform: translateY(2px);
     }
   }
   @keyframes gloss-in {

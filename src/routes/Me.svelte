@@ -221,9 +221,9 @@
   .name-edit input {
     flex: 1;
     min-width: 0;
-    height: 40px;
+    height: 44px;
     padding: 0 12px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: 12px;
     background: var(--surface);
   }
@@ -304,21 +304,28 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
   }
+  /* неполученное: приглушены значок и фон, текст остаётся контрастным (≥4,5:1) */
   .ach li {
     display: grid;
     gap: 2px;
     padding: 12px;
-    filter: grayscale(1);
-    opacity: 0.55;
+    background: var(--surface-2);
+    border-style: dashed;
   }
   .ach li.got {
-    filter: none;
-    opacity: 1;
+    background: var(--surface);
+    border-style: solid;
     border-color: var(--amber);
     box-shadow: 0 3px 0 var(--amber);
   }
   .ai {
     font-size: 1.6rem;
+    filter: grayscale(1);
+    opacity: 0.45;
+  }
+  .ach li.got .ai {
+    filter: none;
+    opacity: 1;
   }
   .at {
     font: 700 0.95rem var(--font-head);
@@ -374,7 +381,6 @@
     position: relative;
     cursor: pointer;
     flex: none;
-    transition: background-color var(--dur-fast);
   }
   .toggle input::after {
     content: '';
@@ -386,7 +392,14 @@
     border-radius: 50%;
     background: #fff;
     box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
-    transition: transform var(--spring-snappy-dur) var(--spring-snappy);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html:not([data-motion='reduce'])) .toggle input {
+      transition: background-color var(--dur-fast);
+    }
+    :global(html:not([data-motion='reduce'])) .toggle input::after {
+      transition: transform var(--spring-snappy-dur) var(--spring-snappy);
+    }
   }
   .toggle input:checked {
     background: var(--green);
@@ -406,6 +419,7 @@
     gap: 6px;
   }
   .seg button {
+    min-height: 44px;
     padding: 8px 10px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -427,7 +441,7 @@
   .time input {
     height: 44px;
     padding: 0 12px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: 12px;
     background: var(--surface);
     font: inherit;
@@ -444,7 +458,7 @@
     width: 100%;
     font: 0.8rem/1.4 ui-monospace, monospace;
     padding: 10px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: 12px;
     background: var(--surface-2);
     resize: vertical;
@@ -461,9 +475,14 @@
   .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 0 16px;
     align-items: center;
     margin-top: 24px;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
   .danger {
     --fg: var(--red);

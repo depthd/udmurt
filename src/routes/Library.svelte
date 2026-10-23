@@ -77,9 +77,10 @@
     </div>
     {#if i.url}
       <div class="links">
-        <a class="btn btn--sm btn--ghost" href={i.url} target="_blank" rel="noopener">Открыть · {host(i.url)}</a>
+        <a class="btn btn--sm btn--ghost" href={i.url} target="_blank" rel="noopener" aria-label="Открыть сайт {host(i.url)}">Открыть сайт</a>
         {#each i.urls as u (u)}<a class="alt" href={u} target="_blank" rel="noopener">{host(u)}</a>{/each}
       </div>
+      <p class="host muted">{host(i.url)}</p>
       {#if i.unreachable}<p class="warn muted">Ссылка не открылась при проверке — возможно, работает только из России.</p>{/if}
     {/if}
   </article>
@@ -104,7 +105,7 @@
   <h2 class="sec">Весь каталог</h2>
   <div class="tools">
     <input class="search" type="search" bind:value={query} placeholder="Поиск по названию или автору" aria-label="Поиск по каталогу" />
-    <div class="chips" role="group" aria-label="Тип материала">
+    <div class="chips scroll-x" role="group" aria-label="Тип материала">
       <button class="fchip" class:on={kind === 'all'} aria-pressed={kind === 'all'} onclick={() => (kind = 'all')}>Все <b>{items.length}</b></button>
       {#each kinds as k (k)}
         <button class="fchip" class:on={kind === k} aria-pressed={kind === k} onclick={() => (kind = kind === k ? 'all' : k)}>
@@ -112,7 +113,7 @@
         </button>
       {/each}
     </div>
-    <div class="chips" role="group" aria-label="Права">
+    <div class="chips scroll-x" role="group" aria-label="Права">
       {#each [['all', 'Любые права'], ['open', '🟢 Можно переносить'], ['free', '🔵 Бесплатно онлайн'], ['print', '🟠 Печатные']] as [v, l] (v)}
         <button class="fchip small" class:on={rights === v} aria-pressed={rights === v} onclick={() => (rights = v as typeof rights)}>{l}</button>
       {/each}
@@ -131,7 +132,7 @@
     <div class="card">
       <h2>Открытые данные в этом тренажёре</h2>
       <p>
-        Словарь на 38 842 слова (MIT), 4 896 фраз Tatoeba (CC BY) и статьи Викисловаря (CC BY-SA) встроены прямо в сайт —
+        Словарь на 38 842 статьи (MIT), 4 896 фраз Tatoeba (CC BY) и статьи Викисловаря (CC BY-SA) встроены прямо в сайт —
         <a href={href('/dict')}>откройте словарь</a>. Авторы и лицензии — на странице <a href={href('/credits')}>«Источники»</a>.
       </p>
     </div>
@@ -253,19 +254,23 @@
     gap: 10px;
   }
   .links .btn {
-    display: block;
-    flex: 0 1 auto;
-    min-width: 0;
+    flex: none;
+    min-height: 44px;
     line-height: 1.2;
     text-transform: none;
     letter-spacing: 0;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .alt {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 0.85rem;
+  }
+  /* домен — отдельной строкой: длинные адреса не обрезаются в кнопке */
+  .host {
+    margin: -4px 0 0;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
   }
   .warn {
     margin: 0;
@@ -280,7 +285,7 @@
   .search {
     height: 48px;
     padding: 0 16px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--field-border);
     border-radius: var(--radius);
     background: var(--surface);
     font: inherit;
@@ -292,13 +297,12 @@
   .chips {
     display: flex;
     gap: 8px;
-    overflow-x: auto;
     padding-bottom: 4px;
-    scrollbar-width: none;
   }
   .fchip {
     flex: none;
-    border: 2px solid var(--line);
+    min-height: 44px;
+    border: 2px solid var(--field-border);
     background: var(--surface);
     border-radius: 999px;
     padding: 7px 12px;

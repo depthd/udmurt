@@ -200,7 +200,7 @@
       <div class="kb" aria-label="Клавиатура">
         {#each KB as r, i (i)}
           <div class="kr" class:udm-row={i === 3}>
-            {#if i === 3}<button class="k wide" onclick={submit} aria-label="Проверить слово">ввод</button>{/if}
+            {#if i === 3}<button class="k wide" onclick={submit} aria-label="Ввод — проверить слово">ввод</button>{/if}
             {#each r as k (k)}
               <button class="k {km[k] ?? ''}" lang="udm" onclick={() => type(k)}>{k}</button>
             {/each}
