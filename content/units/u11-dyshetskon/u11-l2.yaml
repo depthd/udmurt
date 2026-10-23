@@ -13,6 +13,8 @@ exercises:
   - type: tiles
     item: vozhdes-en-vae-mynam-yuane-van
     extra: [ӧвӧл, тынад]
+  - type: teach
+    item: tunsyko-yuan
   - type: dialogue
     lines:
       - { who: Дышетӥсь, item: yuanyosty-van-a }
