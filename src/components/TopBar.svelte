@@ -47,6 +47,7 @@
     gap: 12px;
   }
   .brand {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -59,6 +60,7 @@
     gap: 6px;
   }
   .stat {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -68,6 +70,13 @@
     text-decoration: none;
     font: 700 1rem/1 var(--font-head);
     font-variant-numeric: tabular-nums;
+  }
+  /* область нажатия ≥44 px без увеличения шапки */
+  .brand::before,
+  .stat::before {
+    content: '';
+    position: absolute;
+    inset: -9px -2px;
   }
   .stat:hover {
     background: var(--surface-2);

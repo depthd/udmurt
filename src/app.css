@@ -27,6 +27,8 @@
   --muted: #5e5650;
   --line: #e6ded3;
   --line-strong: #cfc6ba;
+  /* Граница полей ввода и чипов: ≥3:1 к --surface/--bg/--surface-2 (WCAG 1.4.11). --line — только декор. */
+  --field-border: #8a8076;
   --red: #b3261e;
   --red-edge: #7f1a15;
   --red-soft: #fbe5e1;
@@ -92,6 +94,7 @@
     --muted: #b9b0a6;
     --line: #3a332f;
     --line-strong: #524842;
+    --field-border: #80756d;
     --red: #ff7a6b;
     --red-edge: #b3261e;
     --red-soft: #3a1a17;
@@ -117,6 +120,7 @@
   --muted: #b9b0a6;
   --line: #3a332f;
   --line-strong: #524842;
+  --field-border: #80756d;
   --red: #ff7a6b;
   --red-edge: #b3261e;
   --red-soft: #3a1a17;
@@ -144,6 +148,15 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scrollbar-gutter: stable;
+  /* Фокус с клавиатуры не прячется под липкой шапкой и нижней навигацией (WCAG 2.4.11) */
+  scroll-padding-top: 64px;
+  scroll-padding-bottom: calc(var(--nav-h) + 16px + env(safe-area-inset-bottom));
+}
+@media (min-width: 900px) {
+  /* навигация — боковая рейка, снизу ничего не перекрывает */
+  html {
+    scroll-padding-bottom: 16px;
+  }
 }
 
 body {
@@ -516,10 +529,32 @@ html[data-motion='reduce'] ::view-transition-new(*) {
   animation: none !important;
 }
 
+/* ─── Горизонтальные ленты чипов: тонкая полоса и затухание у правого края ─── */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+/* запас в конце, чтобы последний чип можно было вывести из зоны затухания */
+.scroll-x::after {
+  content: '';
+  flex: 0 0 20px;
+}
+
 /* ─── Таблицы в шпаргалках (renderMarkdown) ─── */
 .md .table-wrap {
   overflow-x: auto;
   margin: 0 0 12px;
+  /* тени у края, за которым есть продолжение таблицы (видны только при прокрутке) */
+  background:
+    linear-gradient(to right, var(--surface) 30%, transparent) left center / 32px 100% no-repeat local,
+    linear-gradient(to left, var(--surface) 30%, transparent) right center / 32px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / 0.18), transparent) left center / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / 0.18), transparent) right center / 12px 100% no-repeat scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
 }
 .md table {
   width: 100%;
