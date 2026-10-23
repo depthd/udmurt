@@ -7,7 +7,7 @@ exercises:
     item: tom-tolon-lyktiz
   - type: build
     item: tom-tolon-lyktiz
-    extra: [ӥд, ӥсько]
+    extra: [ӥд, -ӥсько]
   - type: teach
     item: so-iziz
   - type: choice

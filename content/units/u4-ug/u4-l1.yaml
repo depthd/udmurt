@@ -7,7 +7,7 @@ exercises:
     item: mon-lydzisko
   - type: build
     item: mon-lydzisko
-    extra: [иськод, е]
+    extra: [-иськод, е]
   - type: teach
     item: mon-kniga-lydzisko
   - type: choice

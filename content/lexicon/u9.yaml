@@ -83,7 +83,7 @@ items:
       - { form: юрттыны, meaning: 'помочь', kind: word }
       - { form: быгат, meaning: 'мочь, уметь', kind: root }
       - { form: од, meaning: '(ты) — будущее время', kind: suffix }
-      - { form: а, meaning: 'вопрос', kind: particle }
+      - { form: '-а', meaning: 'вопрос', kind: particle }
     status: sourced
     sources: [{ id: tatoeba, ref: '11522656' }]
   - id: mar-karyny-malpaskod

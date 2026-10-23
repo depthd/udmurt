@@ -7,7 +7,7 @@ exercises:
     item: mon-lumbyt-uzhai
   - type: build
     item: mon-lumbyt-uzhai
-    extra: [сько, и]
+    extra: [-сько, и]
   - type: teach
     item: mon-gozhtet-gozhyai
   - type: choice

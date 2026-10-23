@@ -30,7 +30,7 @@ items:
   - id: valasko-lesya
     udm: Валасько, лэся.
     ru: Кажется, понимаю.
-    ru_alt: [Наверное, понимаю.]
+    ru_alt: ['Наверное, понимаю.']
     kind: phrase
     emoji: 🤔
     note: 'Лэся — «наверно, кажется».'
@@ -76,14 +76,14 @@ items:
       - { form: ъёс, meaning: 'мн. число', kind: suffix }
       - { form: ты, meaning: 'ваши', kind: suffix }
       - { form: вань, meaning: 'есть', kind: word }
-      - { form: а, meaning: 'вопрос', kind: particle }
+      - { form: '-а', meaning: 'вопрос', kind: particle }
     note: 'Юан — «вопрос» (от юаны «спрашивать»).'
     status: sourced
     sources: [{ id: tatoeba, ref: '11955832' }]
   - id: vozhdes-en-vae-mynam-yuane-van
     udm: Вождэс эн вае, мынам юанэ вань.
     ru: Извините, у меня есть вопрос.
-    ru_alt: [Простите, у меня есть вопрос., Извините, у меня вопрос.]
+    ru_alt: ['Простите, у меня есть вопрос.', 'Извините, у меня вопрос.']
     kind: phrase
     emoji: 🙋
     note: 'Вождэс эн вае — вежливое «извините» (букв. «не держите обиды»).'

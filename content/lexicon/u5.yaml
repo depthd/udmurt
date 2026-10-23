@@ -155,7 +155,7 @@ items:
     morphemes:
       - { form: тыныд, meaning: 'тебе', kind: word }
       - { form: кельше, meaning: 'нравится', kind: word }
-      - { form: а, meaning: 'вопрос', kind: particle }
+      - { form: '-а', meaning: 'вопрос', kind: particle }
     note: '«Нравится» — как в русском: кому (мыным, тыныд) + кельше.'
     status: sourced
     sources: [{ id: tatoeba, ref: '11584470' }]

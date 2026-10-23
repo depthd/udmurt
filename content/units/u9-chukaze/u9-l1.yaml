@@ -7,7 +7,7 @@ exercises:
     item: mon-shkolae-myno
   - type: build
     item: mon-shkolae-myno
-    extra: [ӥ, ӥсько]
+    extra: [ӥ, -ӥсько]
   - type: choice
     item: mon-shkolae-myno
     distractors: [mon-shkolae-myni, mon-shkolae-vetlisko]

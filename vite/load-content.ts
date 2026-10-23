@@ -84,6 +84,14 @@ export function loadCourse(contentDir: string, opts: { skipAudioCheck?: boolean 
     if (lexIds.has(it.id)) errors.push(`словник: повторяется id «${it.id}»`);
     lexIds.set(it.id, it);
   }
+  // Список YAML без кавычек режется по запятой: [Хорошо, иду.] → «Хорошо» и «иду.» — оба стали бы верными ответами.
+  for (const it of lexicon)
+    for (const [field, base, alts] of [['ru_alt', it.ru, it.ru_alt], ['udm_alt', it.udm, it.udm_alt]] as const) {
+      const endsSentence = /[.!?…]$/.test(base);
+      for (const a of alts)
+        if ((endsSentence && !/[.!?…]$/.test(a)) || (/^\p{Lu}/u.test(base) && !/^[\p{Lu}{]/u.test(a)))
+          errors.push(`словник «${it.id}»: ${field} «${a}» похоже на обрывок — фразу с запятой возьмите в кавычки: ['…, …']`);
+    }
   const srcIds = new Set(sources.map((s) => s.id));
   for (const it of lexicon)
     for (const s of it.sources) if (!srcIds.has(s.id)) errors.push(`словник «${it.id}»: неизвестный источник «${s.id}» (добавьте его в sources.yaml)`);

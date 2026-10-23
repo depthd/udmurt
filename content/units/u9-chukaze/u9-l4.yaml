@@ -7,7 +7,7 @@ exercises:
     item: mon-soe-tupatyny-bygatisko
   - type: build
     item: mon-soe-tupatyny-bygatisko
-    extra: [ӥськод, э]
+    extra: [-ӥськод, э]
   - type: teach
     item: main-yurttyny-bygatisko
   - type: choice

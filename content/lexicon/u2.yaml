@@ -56,7 +56,7 @@ items:
   - id: odig-kyk-kuin
     udm: Одӥг, кык, куинь, старт!
     ru: Раз, два, три, старт!
-    ru_alt: [Один, два, три, старт!]
+    ru_alt: ['Один, два, три, старт!']
     kind: phrase
     emoji: 🏁
     status: sourced
@@ -211,6 +211,7 @@ items:
     kind: phrase
     emoji: 🗣️
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: ньыль, meaning: 'четыре', kind: word }
       - { form: кыл, meaning: 'язык', kind: word }
       - { form: тод, meaning: 'знать', kind: root }

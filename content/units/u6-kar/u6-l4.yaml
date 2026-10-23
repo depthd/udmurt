@@ -9,7 +9,7 @@ exercises:
     item: mon-avtobusen-mynisko
   - type: build
     item: mon-avtobusen-mynisko
-    extra: [ын, ӥськод]
+    extra: [ын, -ӥськод]
   - type: teach
     item: mon-avtobusyn-ini
   - type: choice

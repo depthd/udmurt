@@ -7,7 +7,7 @@ exercises:
     item: mon-ognam-uzhalo
   - type: build
     item: mon-ognam-uzhalo
-    extra: [й, сько]
+    extra: [й, -сько]
   - type: fill
     text: Мон огнам ужа___.
     ru: Я буду работать одна.

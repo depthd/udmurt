@@ -81,6 +81,9 @@ describe('morphPieces / glue', () => {
         { text: 'ӥсько', kind: 'suffix' },
       ]),
     ).toBe('школае ветлӥсько');
+    // часть с дефисом впереди — через дефис: студент + -а, анай + -атай
+    expect(glue([{ text: 'тон', kind: 'word' }, { text: 'студент', kind: 'root' }, { text: '-а', kind: 'particle' }])).toBe('тон студент-а');
+    expect(glue([{ text: 'анай', kind: 'word' }, { text: '-атай', kind: 'word' }])).toBe('анай-атай');
     // два корня подряд — сложное слово, слитно
     expect(glue([{ text: 'покчи', kind: 'root' }, { text: 'арня', kind: 'root' }])).toBe('покчиарня');
   });

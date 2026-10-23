@@ -20,12 +20,13 @@
   const parts = $derived(
     morphemes.map((m, i) => {
       const prev = morphemes[i - 1];
-      const form = personalize(m.form).replace(/^[-‑]+/, '');
+      const raw = personalize(m.form);
+      const form = raw.replace(/^[-‑]+/, '');
       return {
         kind: m.kind,
-        form: m.kind === 'suffix' ? `-${form}` : form,
+        form: m.kind === 'suffix' || raw !== form ? `-${form}` : form,
         meaning: personalize(m.meaning),
-        glued: !!prev && prev.kind !== 'word' && m.kind !== 'word' && !(m.kind === 'root' && prev.kind === 'suffix'),
+        glued: !!prev && raw === form && prev.kind !== 'word' && m.kind !== 'word' && !(m.kind === 'root' && prev.kind === 'suffix'),
       };
     }),
   );

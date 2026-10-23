@@ -7,7 +7,7 @@ exercises:
     item: mon-lydzi
   - type: build
     item: mon-lydzi
-    extra: [исько, ид]
+    extra: [-исько, ид]
   - type: teach
     item: mon-siski
   - type: choice

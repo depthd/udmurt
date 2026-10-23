@@ -25,7 +25,7 @@ items:
     emoji: 👨‍👩‍👧
     morphemes:
       - { form: анай, meaning: 'мама', kind: word }
-      - { form: атай, meaning: 'папа', kind: word }
+      - { form: '-атай', meaning: 'папа', kind: word }
     note: 'Парное слово: «мама-папа» = родители. В удмуртском таких пар много.'
     status: sourced
     sources: [{ id: tatoeba, ref: '11704978' }, { id: tatoeba, ref: '11955864' }]
@@ -51,6 +51,7 @@ items:
     kind: phrase
     emoji: ❤️
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: анай, meaning: 'мама', kind: root }
       - { form: ме, meaning: 'мою (кого? + «мой»)', kind: suffix }
       - { form: ярат, meaning: 'любить', kind: root }
@@ -104,9 +105,12 @@ items:
     ru: У меня один старший брат и две младшие сестры.
     kind: phrase
     morphemes:
-      - { form: агай, meaning: 'старший брат', kind: root }
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: одӥг, meaning: 'один', kind: word }
+      - { form: ага, meaning: 'старший брат (агай: й + е пишется как е)', kind: root }
       - { form: е, meaning: 'мой', kind: suffix }
-      - { form: но, meaning: 'и', kind: particle }
+      - { form: но, meaning: 'и', kind: word }
+      - { form: кык, meaning: 'два', kind: word }
       - { form: сузэр, meaning: 'младшая сестра', kind: root }
       - { form: ъёс, meaning: 'множественное число', kind: suffix }
       - { form: ы, meaning: 'мои', kind: suffix }
@@ -119,6 +123,7 @@ items:
     ru_alt: [Том — твой брат., Том твой младший брат.]
     kind: phrase
     morphemes:
+      - { form: том, meaning: 'Том', kind: word }
       - { form: тынад, meaning: 'твой', kind: word }
       - { form: вын, meaning: 'младший брат', kind: root }
       - { form: ыд, meaning: 'твой', kind: suffix }
@@ -197,7 +202,7 @@ items:
       - { form: ос, meaning: 'множественное число', kind: suffix }
       - { form: ты, meaning: 'ваши', kind: suffix }
       - { form: вань, meaning: 'есть', kind: word }
-      - { form: а, meaning: 'вопрос', kind: particle }
+      - { form: '-а', meaning: 'вопрос', kind: particle }
     status: sourced
     sources: [{ id: tatoeba, ref: '11522638' }]
   - id: milyam-nylpiosmy-ovol
@@ -242,8 +247,10 @@ items:
     ru_alt: [Мой сын студент., Мой сын — студент.]
     kind: phrase
     morphemes:
+      - { form: мынам, meaning: 'у меня, мой', kind: word }
       - { form: пи, meaning: 'сын', kind: root }
       - { form: е, meaning: 'мой (после гласной)', kind: suffix }
+      - { form: студент, meaning: 'студент', kind: word }
     status: sourced
     sources: [{ id: tatoeba, ref: '12144335' }]
   - id: mynam-kyshnoe-dyshetis

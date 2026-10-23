@@ -74,16 +74,18 @@ export function assemble(pieces: readonly Piece[], chosen: readonly number[]): s
 }
 
 /** Вид лишней морфемы: «-ыд» или короткая строчная — суффикс, иначе корень. */
-function extraKind(x: string, hasSuffix: boolean): PieceKind {
+function extraKind(x: string, kinds: ReadonlySet<PieceKind>): PieceKind {
   if (x.startsWith('-')) return 'suffix';
-  if (hasSuffix && x.length <= 3 && x === x.toLowerCase()) return 'suffix';
+  // фраза собирается из целых слов — обманка тоже слово (иначе выдаёт себя цветом)
+  if (kinds.size === 1 && kinds.has('word')) return 'word';
+  if (kinds.has('suffix') && x.length <= 3 && x === x.toLowerCase()) return 'suffix';
   return 'root';
 }
 
 /** Кубики для «соберите слово»: морфемы слова + обманки. */
 export function morphPieces(morphemes: readonly Morpheme[], extra: readonly string[], fallback: string, seed: string): Piece[] {
   const ms: Morpheme[] = morphemes.length ? [...morphemes] : [{ form: fallback, meaning: '', kind: 'root' }];
-  const hasSuffix = ms.some((m) => m.kind === 'suffix');
+  const kinds = new Set(ms.map((m) => m.kind));
   const forms = new Set(ms.map((m) => normalize(m.form)));
   const extras = uniqBy(
     extra.map((x) => x.trim()).filter((x) => x && !forms.has(normalize(x.replace(/^-/, '')))),
@@ -91,19 +93,21 @@ export function morphPieces(morphemes: readonly Morpheme[], extra: readonly stri
   );
   const pieces: Piece[] = [
     ...ms.map((m, i) => ({ key: `m${i}`, text: m.form, kind: m.kind, note: m.meaning, correctAt: i })),
-    ...extras.map((x, j) => ({ key: `x${j}`, text: x.replace(/^-/, ''), kind: extraKind(x, hasSuffix), correctAt: -1 })),
+    ...extras.map((x, j) => ({ key: `x${j}`, text: x.replace(/^-/, ''), kind: extraKind(x, kinds), correctAt: -1 })),
   ];
   return shuffleNotSolved(pieces, seed);
 }
 
 /** Подпись кубика: суффикс — с дефисом впереди (-ы). */
 export function pieceLabel(p: Pick<Piece, 'text' | 'kind'>): string {
-  return p.kind === 'suffix' ? `-${p.text}` : p.text;
+  return p.kind === 'suffix' && !p.text.startsWith('-') ? `-${p.text}` : p.text;
 }
 
 /** Нужен ли пробел перед i-й частью: отдельные слова пишутся раздельно, морфемы — слитно. */
-export function spaceBefore(parts: readonly { kind: PieceKind }[], i: number): boolean {
+export function spaceBefore(parts: readonly { kind: PieceKind; text?: string }[], i: number): boolean {
   if (i === 0) return false;
+  // часть с дефисом впереди пишется через дефис: студент + -а → студент-а, анай + -атай → анай-атай
+  if (parts[i].text?.startsWith('-')) return false;
   const cur = parts[i].kind;
   const prev = parts[i - 1].kind;
   // корень после суффикса — уже следующее слово: школа+е | ветл+ӥсько

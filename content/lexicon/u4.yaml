@@ -8,6 +8,7 @@ items:
     kind: phrase
     emoji: 📖
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: лыдӟ, meaning: 'читать', kind: root }
       - { form: исько, meaning: '(я) — наст. время', kind: suffix }
     status: sourced
@@ -26,9 +27,10 @@ items:
     kind: phrase
     emoji: 💼
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: дышетск, meaning: 'учиться', kind: root }
       - { form: исько, meaning: '(я)', kind: suffix }
-      - { form: но, meaning: 'и', kind: particle }
+      - { form: но, meaning: 'и', kind: word }
       - { form: ужа, meaning: 'работать', kind: root }
       - { form: сько, meaning: '(я)', kind: suffix }
     note: 'Два спряжения: у глаголов на -ыны окончание -исько (дышетскыны → дышетскисько), на -аны — -сько (ужаны → ужасько).'
@@ -83,6 +85,7 @@ items:
     kind: phrase
     morphemes:
       - { form: кытын, meaning: 'где', kind: word }
+      - { form: тон, meaning: 'ты', kind: word }
       - { form: ужа, meaning: 'работать', kind: root }
       - { form: ськод, meaning: '(ты) — наст. время', kind: suffix }
     status: sourced
@@ -103,7 +106,7 @@ items:
     morphemes:
       - { form: кытын, meaning: 'где', kind: word }
       - { form: ужа, meaning: 'работает', kind: word }
-      - { form: атай, meaning: 'отец', kind: root }
+      - { form: ата, meaning: 'отец (атай: й + е пишется как е)', kind: root }
       - { form: ед, meaning: 'твой', kind: suffix }
     status: sourced
     sources: [{ id: tatoeba, ref: '11527806' }]
@@ -132,6 +135,7 @@ items:
     emoji: 🚶
     morphemes:
       - { form: кытчы, meaning: 'куда', kind: word }
+      - { form: тон, meaning: 'ты', kind: word }
       - { form: мын, meaning: 'идти', kind: root }
       - { form: ӥськод, meaning: '(ты) — наст. время', kind: suffix }
     status: sourced
@@ -142,6 +146,7 @@ items:
     kind: phrase
     emoji: 🏫
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: школа, meaning: 'школа', kind: root }
       - { form: е, meaning: 'в, куда (входный падеж)', kind: suffix }
       - { form: ветл, meaning: 'ходить', kind: root }
@@ -160,7 +165,7 @@ items:
   - id: ya-mynisko
     udm: Я, мынӥсько.
     ru: Ладно, иду.
-    ru_alt: [Хорошо, иду.]
+    ru_alt: ['Хорошо, иду.']
     kind: phrase
     note: 'Я — «ладно, хорошо» (разговорное).'
     status: sourced
@@ -195,6 +200,7 @@ items:
     ru: Я никуда не иду.
     kind: phrase
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: нокытчы но, meaning: 'никуда', kind: word }
       - { form: уг, meaning: 'не (я, наст. время)', kind: word }
       - { form: мынӥськы, meaning: 'иду (форма после отрицания)', kind: word }
@@ -205,6 +211,7 @@ items:
     ru: Ты меня не слушаешь.
     kind: phrase
     morphemes:
+      - { form: тон, meaning: 'ты', kind: word }
       - { form: монэ, meaning: 'меня', kind: word }
       - { form: уд, meaning: 'не (ты)', kind: word }
       - { form: кылзӥськы, meaning: 'слушаешь (после отрицания)', kind: word }

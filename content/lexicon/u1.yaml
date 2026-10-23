@@ -66,7 +66,7 @@ items:
   - id: tau-umoj
     udm: Тау, умой!
     ru: Спасибо, хорошо!
-    ru_alt: [Благодарю, хорошо!]
+    ru_alt: ['Благодарю, хорошо!']
     kind: phrase
     status: sourced
     sources: [{ id: tatoeba, ref: '5842240' }]
@@ -156,6 +156,7 @@ items:
       - { form: мынам, meaning: 'мой, у меня (форма от мон)', kind: word }
       - { form: ним, meaning: 'имя', kind: root }
       - { form: ы, meaning: 'моё', kind: suffix }
+      - { form: '{name}', meaning: 'имя', kind: word }
     status: sourced
     sources: [{ id: tatoeba, ref: '11525033' }, { id: samarova2011 }, { id: kuara }]
   - id: nosh-tynad
@@ -220,7 +221,7 @@ items:
     kind: phrase
     morphemes:
       - { form: мон, meaning: 'я', kind: word }
-      - { form: но, meaning: 'тоже, и', kind: particle }
+      - { form: но, meaning: 'тоже, и', kind: word }
       - { form: студент, meaning: 'студент', kind: word }
     note: 'Но — «тоже», ставится после слова: мон но «я тоже».'
     status: sourced
@@ -232,6 +233,7 @@ items:
     kind: phrase
     emoji: 🧑‍🏫
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: дышет, meaning: 'учить (кого-то)', kind: root }
       - { form: ӥсь, meaning: 'тот, кто делает', kind: suffix }
     status: sourced
@@ -242,6 +244,7 @@ items:
     ru_alt: [Я ученик., Я ученица.]
     kind: phrase
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: дышетск, meaning: 'учиться', kind: root }
       - { form: ись, meaning: 'тот, кто делает', kind: suffix }
     note: 'Дышетскись — «тот, кто учится»; дышетӥсь — «тот, кто учит».'
@@ -255,14 +258,14 @@ items:
     morphemes:
       - { form: тон, meaning: 'ты', kind: word }
       - { form: студент, meaning: 'студент', kind: root }
-      - { form: а, meaning: 'вопросительная частица', kind: particle }
+      - { form: '-а', meaning: 'вопросительная частица', kind: particle }
     note: 'Вопрос без вопросительного слова — частица -а после главного слова.'
     status: sourced
     sources: [{ id: napolskikh }]
   - id: ben-mon-student
     udm: Бен, мон студент.
     ru: Да, я студент.
-    ru_alt: [Да, я студентка.]
+    ru_alt: ['Да, я студентка.']
     kind: phrase
     status: sourced
     sources: [{ id: napolskikh }]
@@ -346,6 +349,7 @@ items:
     ru: Я из Ижевска.
     kind: phrase
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: Ижкар, meaning: 'Ижевск', kind: root }
       - { form: ысь, meaning: 'из', kind: suffix }
     status: sourced
@@ -446,6 +450,7 @@ items:
     kind: phrase
     emoji: 🏫
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: университет, meaning: 'университет', kind: root }
       - { form: ын, meaning: 'в (местный падеж)', kind: suffix }
       - { form: дышетск, meaning: 'учиться', kind: root }
@@ -459,6 +464,7 @@ items:
     kind: phrase
     emoji: 📖
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: удмурт, meaning: 'удмуртский', kind: word }
       - { form: кыл, meaning: 'язык', kind: root }
       - { form: эз, meaning: 'винительный падеж (что?)', kind: suffix }
@@ -480,6 +486,7 @@ items:
     kind: phrase
     emoji: 🏠
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: Глазкар, meaning: 'Глазов', kind: root }
       - { form: ын, meaning: 'в (местный падеж)', kind: suffix }
       - { form: ул, meaning: 'жить', kind: root }
@@ -491,10 +498,11 @@ items:
     ru: Ты говоришь по-удмуртски?
     kind: phrase
     morphemes:
+      - { form: тон, meaning: 'ты', kind: word }
       - { form: удмурт сямен, meaning: 'по-удмуртски', kind: word }
       - { form: вераськ, meaning: 'говорить, разговаривать', kind: root }
       - { form: иськод, meaning: '(ты) — наст. время', kind: suffix }
-      - { form: а, meaning: 'вопрос', kind: particle }
+      - { form: '-а', meaning: 'вопрос', kind: particle }
     status: sourced
     sources: [{ id: tatoeba, ref: '11933268' }]
   - id: ozhytak-gine

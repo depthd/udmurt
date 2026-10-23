@@ -43,11 +43,13 @@ export function morphemeWords(ms: readonly Morpheme[]): { text: string; parts: M
   for (const m of ms) {
     const prev = groups.at(-1);
     const last = prev?.parts.at(-1)!.kind;
-    // слитно пишутся части одного слова; корень после суффикса начинает новое слово
-    const glued = !!prev && last !== 'word' && m.kind !== 'word' && !(m.kind === 'root' && last === 'suffix');
+    const hyphen = /^[-‑]/.test(m.form);
+    // слитно пишутся части одного слова; корень после суффикса начинает новое слово;
+    // часть с дефисом впереди (-а, -атай) пишется через дефис к предыдущему слову
+    const glued = !!prev && (hyphen || (last !== 'word' && m.kind !== 'word' && !(m.kind === 'root' && last === 'suffix')));
     if (glued) {
       prev!.parts.push(m);
-      prev!.text += m.form.replace(/^[-‑]+/, '');
+      prev!.text += hyphen ? '-' + m.form.replace(/^[-‑]+/, '') : m.form;
     } else groups.push({ text: m.form.replace(/^[-‑]+/, ''), parts: [m] });
   }
   return groups;

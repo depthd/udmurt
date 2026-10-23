@@ -34,12 +34,17 @@ describe('читалка: разбивка на слова', () => {
 describe('читалка: значение слова', () => {
   it('морфемы склеиваются в слова', () => {
     const it = lex.get('mon-shkolae-vetlisko')!;
-    expect(morphemeWords(it.morphemes).map((g) => g.text)).toEqual(['школае', 'ветлӥсько']);
+    expect(morphemeWords(it.morphemes).map((g) => g.text)).toEqual(['мон', 'школае', 'ветлӥсько']);
   });
   it('берёт значение из разбора самой фразы', () => {
     const g = glossInMorphemes('ветлӥсько', lex.get('mon-shkolae-vetlisko')!.morphemes);
     expect(g?.gloss).toContain('ходить');
     expect(g?.parts?.length).toBe(2);
+  });
+  it('частица -а пишется через дефис и находится как одно слово', () => {
+    const it = lex.get('ton-student-a')!;
+    expect(morphemeWords(it.morphemes).map((g) => g.text)).toEqual(['тон', 'студент-а']);
+    expect(glossInMorphemes('студент-а', it.morphemes)?.parts?.length).toBe(2);
   });
   it('слово-группа из двух слов', () => {
     expect(glossInMorphemes('нокытчы', lex.get('mon-nokytchy-no-ug-myniskhy')!.morphemes)?.gloss).toBe('никуда');

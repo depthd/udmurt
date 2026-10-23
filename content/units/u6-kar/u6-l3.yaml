@@ -7,7 +7,7 @@ exercises:
     item: mi-aeroporte-myniskom
   - type: build
     item: mi-aeroporte-myniskom
-    extra: [ын, ӥсько]
+    extra: [ын, -ӥсько]
   - type: choice
     item: mi-aeroporte-myniskom
     distractors: [mon-shkolae-vetlisko, kytchy-ton-myniskod]

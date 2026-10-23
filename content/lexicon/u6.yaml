@@ -236,6 +236,7 @@ items:
     kind: phrase
     emoji: 🚌
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: автобус, meaning: 'автобус', kind: root }
       - { form: эн, meaning: 'на чём, чем (творительный падеж)', kind: suffix }
       - { form: мын, meaning: 'идти, ехать', kind: root }
@@ -257,6 +258,7 @@ items:
     kind: phrase
     emoji: 🏠
     morphemes:
+      - { form: мон, meaning: 'я', kind: word }
       - { form: вокзал, meaning: 'вокзал', kind: word }
       - { form: вӧзын, meaning: 'рядом с (послелог)', kind: word }
       - { form: улӥсько, meaning: 'живу', kind: word }
