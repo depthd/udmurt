@@ -1,0 +1,40 @@
+id: u11-l5
+title: Луоз-а?
+goal: '«Можно?» и «не поняли»'
+icon: 🪟
+exercises:
+  - type: teach
+    item: ukno-usytyny-luoz-a
+  - type: tiles
+    item: ukno-usytyny-luoz-a
+    extra: [усьтӥ, луоз]
+  - type: teach
+    item: ti-mone-od-valale
+  - type: choice
+    item: ti-mone-od-valale
+    distractors: [mon-tone-oi-vala, ton-mone-ud-kylziskhy]
+  - type: teach
+    item: soos-udmurt-samen-verasko
+  - type: fill
+    text: Соос удмурт ___ верасько.
+    ru: Они говорят по-удмуртски.
+    options: [сямен, кылэз, кылын]
+    answer: сямен
+    item: soos-udmurt-samen-verasko
+    explain: '«По-удмуртски» — удмурт сямен (или удмурт кылын — «на удмуртском языке»).'
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-udmurt-samen-veraskiskod-a }
+      - { who: '{name}', item: ozhytak-gine }
+      - { who: '{name}', item: kyzy-so-mon-oi-vala }
+    question: Как хорошо собеседник Даши говорит по-удмуртски?
+    options: [Чуть-чуть, Свободно, Совсем не говорит]
+    answer: Чуть-чуть
+  - type: match
+    items: [ukno-usytyny-luoz-a, ti-mone-od-valale, soos-udmurt-samen-verasko]
+  - type: type
+    dir: ru-udm
+    item: soos-udmurt-samen-verasko
+  - type: listen
+    item: ukno-usytyny-luoz-a
+    distractors: [soos-udmurt-samen-verasko]

@@ -1,0 +1,41 @@
+id: u11-l2
+title: Юанъёсты вань-а?
+goal: 'Задать вопрос на паре'
+icon: 🙋
+exercises:
+  - type: teach
+    item: yuanyosty-van-a
+  - type: choice
+    item: yuanyosty-van-a
+    distractors: [tilad-nylpiosty-van-a, tatyn-taksi-van-a]
+  - type: teach
+    item: vozhdes-en-vae-mynam-yuane-van
+  - type: tiles
+    item: vozhdes-en-vae-mynam-yuane-van
+    extra: [ӧвӧл, тынад]
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: yuanyosty-van-a }
+      - { who: '{name}', item: vozhdes-en-vae-mynam-yuane-van }
+      - { who: Дышетӥсь, item: tunsyko-yuan }
+    question: Что ответил преподаватель на вопрос?
+    options: [Интересный вопрос, Я не понял, Есть вопросы?]
+    answer: Интересный вопрос
+  - type: teach
+    item: mar-ta
+  - type: teach
+    item: mar-so-syche
+  - type: teach
+    item: kyzy-so-mon-oi-vala
+  - type: match
+    items: [mar-ta, mar-so-syche, tunsyko-yuan, yuanyosty-van-a]
+  - type: tiles
+    dir: udm-ru
+    item: kyzy-so-mon-oi-vala
+    extra: [понимаю, что]
+  - type: type
+    dir: ru-udm
+    item: mar-ta
+  - type: listen
+    item: vozhdes-en-vae-mynam-yuane-van
+    distractors: [yuanyosty-van-a]

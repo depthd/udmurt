@@ -1,0 +1,42 @@
+id: u11-l1
+title: Валай!
+goal: 'Понимаю и не понимаю'
+icon: 👌
+exercises:
+  - type: teach
+    item: valai
+  - type: teach
+    item: valamon
+  - type: choice
+    item: valamon
+    distractors: [valai, mon-oj-vala]
+  - type: teach
+    item: tabere-valamon
+  - type: teach
+    item: valasko-lesya
+  - type: tiles
+    dir: udm-ru
+    item: valasko-lesya
+    extra: [не, понял]
+  - type: teach
+    item: mon-tone-oi-vala
+  - type: fill
+    text: Мон тонэ ___ вала.
+    ru: Я тебя не понял.
+    options: [ӧй, уг, ӧвӧл]
+    answer: ӧй
+    item: mon-tone-oi-vala
+    explain: 'В прошедшем «не» для «я» — ӧй.'
+  - type: teach
+    item: ben-mon-tone-umoj-valasko
+  - type: match
+    items: [valai, valamon, tabere-valamon, mon-tone-oi-vala]
+  - type: tiles
+    item: ben-mon-tone-umoj-valasko
+    extra: [ӧй, монэ]
+  - type: type
+    dir: ru-udm
+    item: valamon
+  - type: listen
+    item: ben-mon-tone-umoj-valasko
+    distractors: [mon-tone-oi-vala]

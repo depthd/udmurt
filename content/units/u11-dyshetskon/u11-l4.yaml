@@ -1,0 +1,42 @@
+id: u11-l4
+title: Дышетскон
+goal: 'Учёба и экзамены'
+icon: 🎓
+exercises:
+  - type: teach
+    item: kyche-universitetyn-ti-dyshetskiskody
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: kyche-universitetyn-ti-dyshetskiskody }
+      - { who: '{name}', item: mon-univ-dyshetskisko }
+    question: Что спросил преподаватель?
+    options: [В каком университете учатся, Где живут, Сколько лет]
+    answer: В каком университете учатся
+  - type: teach
+    item: ton-kinly-dyshetskiskod
+  - type: choice
+    item: ton-kinly-dyshetskiskod
+    distractors: [kyche-universitetyn-ti-dyshetskiskody, kytyn-ton-uzhaskod]
+  - type: teach
+    item: mon-gurte-uzh-lestisko
+  - type: tiles
+    item: mon-gurte-uzh-lestisko
+    extra: [лэсьтӥ, тон]
+  - type: teach
+    item: taiz-ekzamen-tuzh-sekyt-ovol
+  - type: tiles
+    dir: udm-ru
+    item: taiz-ekzamen-tuzh-sekyt-ovol
+    extra: [очень, лёгкий]
+  - type: teach
+    item: tolon-mon-urokyn-umme-usi
+  - type: teach
+    item: mon-dyshetisely-gozhtet-gozhti
+  - type: match
+    items: [mon-gurte-uzh-lestisko, taiz-ekzamen-tuzh-sekyt-ovol, tolon-mon-urokyn-umme-usi, ton-kinly-dyshetskiskod]
+  - type: type
+    dir: ru-udm
+    item: mon-gurte-uzh-lestisko
+  - type: listen
+    item: taiz-ekzamen-tuzh-sekyt-ovol
+    distractors: [mon-gurte-uzh-lestisko]

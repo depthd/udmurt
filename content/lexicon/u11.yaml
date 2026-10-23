@@ -1,0 +1,252 @@
+# Юнит 11 «Дышетскон» — на паре: понимаю / не понимаю, вопросы, книги, учёба. Фразы — Tatoeba (номер в ref).
+items:
+  # ── Понимаю ──────────────────────────────────────────
+  - id: valai
+    udm: Валай.
+    ru: Понял.
+    ru_alt: [Поняла., Я понял., Я поняла.]
+    kind: phrase
+    emoji: 👌
+    note: 'Валаны — «понять». Валай — прошедшее время: «(я) понял(а)».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11672712' }]
+  - id: valamon
+    udm: Валамон.
+    ru: Понятно.
+    ru_alt: [Ясно.]
+    kind: phrase
+    emoji: 💡
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11672713' }, { id: uniparser }]
+  - id: tabere-valamon
+    udm: Табере валамон.
+    ru: Теперь понятно.
+    ru_alt: [Теперь ясно.]
+    kind: phrase
+    emoji: 💡
+    note: 'Табере — «теперь».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11730408' }]
+  - id: valasko-lesya
+    udm: Валасько, лэся.
+    ru: Кажется, понимаю.
+    ru_alt: [Наверное, понимаю.]
+    kind: phrase
+    emoji: 🤔
+    note: 'Лэся — «наверно, кажется».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527844' }, { id: uniparser }]
+  - id: mon-tone-oi-vala
+    udm: Мон тонэ ӧй вала.
+    ru: Я тебя не понял.
+    ru_alt: [Я тебя не поняла., Я не понял тебя., Я не поняла тебя.]
+    kind: phrase
+    emoji: 😕
+    morphemes:
+      - { form: мон, meaning: 'я', kind: word }
+      - { form: тонэ, meaning: 'тебя', kind: word }
+      - { form: ӧй, meaning: 'не (я, прошедшее)', kind: word }
+      - { form: вала, meaning: 'понял (форма после отрицания)', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11526016' }, { id: alatyrev1983 }]
+  - id: ben-mon-tone-umoj-valasko
+    udm: Бен, мон тонэ умой валасько.
+    ru: Да, я тебя хорошо понимаю.
+    kind: phrase
+    emoji: 🙂
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11528309' }]
+  - id: ti-mone-od-valale
+    udm: Тӥ монэ ӧд валалэ.
+    ru: Вы меня не поняли.
+    kind: phrase
+    note: 'С «вы» отрицание ӧд и окончание -лэ: ӧд валалэ.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11838852' }, { id: alatyrev1983 }]
+
+  # ── Вопросы ──────────────────────────────────────────
+  - id: yuanyosty-van-a
+    udm: Юанъёсты вань-а?
+    ru: Есть вопросы?
+    ru_alt: [У вас есть вопросы?]
+    kind: phrase
+    emoji: ❓
+    morphemes:
+      - { form: юан, meaning: 'вопрос', kind: root }
+      - { form: ъёс, meaning: 'мн. число', kind: suffix }
+      - { form: ты, meaning: 'ваши', kind: suffix }
+      - { form: вань, meaning: 'есть', kind: word }
+      - { form: а, meaning: 'вопрос', kind: particle }
+    note: 'Юан — «вопрос» (от юаны «спрашивать»).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11955832' }]
+  - id: vozhdes-en-vae-mynam-yuane-van
+    udm: Вождэс эн вае, мынам юанэ вань.
+    ru: Извините, у меня есть вопрос.
+    ru_alt: [Простите, у меня есть вопрос., Извините, у меня вопрос.]
+    kind: phrase
+    emoji: 🙋
+    note: 'Вождэс эн вае — вежливое «извините» (букв. «не держите обиды»).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12420483' }]
+  - id: tunsyko-yuan
+    udm: Тунсыко юан.
+    ru: Интересный вопрос.
+    kind: phrase
+    emoji: 🧐
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12149130' }]
+  - id: mar-ta
+    udm: Мар та?
+    ru: Что это?
+    kind: phrase
+    emoji: ❔
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11770202' }]
+  - id: mar-so-syche
+    udm: Мар со сыӵе?
+    ru: Что это такое?
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11569530' }]
+  - id: kyzy-so-mon-oi-vala
+    udm: Кызьы со? Мон ӧй вала.
+    ru: Как это? Я не понял.
+    ru_alt: [Как это? Я не поняла.]
+    kind: phrase
+    emoji: 🤷
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11754387' }]
+
+  # ── Книга ────────────────────────────────────────────
+  - id: kniga
+    udm: книга
+    ru: книга
+    pos: существительное
+    emoji: 📕
+    status: sourced
+    sources: [{ id: uniparser }]
+  - id: mynam-knigae-van
+    udm: Мынам книгае вань.
+    ru: У меня есть книга.
+    kind: phrase
+    emoji: 📕
+    morphemes:
+      - { form: мынам, meaning: 'у меня', kind: word }
+      - { form: книга, meaning: 'книга', kind: root }
+      - { form: е, meaning: 'моя', kind: suffix }
+      - { form: вань, meaning: 'есть', kind: word }
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12140454' }]
+  - id: kytyn-mynam-knigae
+    udm: Кытын мынам книгае?
+    ru: Где моя книга?
+    kind: phrase
+    emoji: 🔍
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11732801' }]
+  - id: ta-kniga-mynam
+    udm: Та книга мынам.
+    ru: Эта книга моя.
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11770227' }]
+  - id: kinlen-knigaez
+    udm: Кинлэн книгаез?
+    ru: Чья книга?
+    ru_alt: [Чья это книга?]
+    kind: phrase
+    emoji: 🤔
+    morphemes:
+      - { form: кин, meaning: 'кто', kind: root }
+      - { form: лэн, meaning: 'чей (родительный падеж)', kind: suffix }
+      - { form: книга, meaning: 'книга', kind: root }
+      - { form: ез, meaning: 'его (притяжательный)', kind: suffix }
+    note: '«Чья?» — кинлэн, а у самой вещи окончание «его»: книгаез.'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11770216' }, { id: alatyrev1983 }]
+  - id: lydze-ta-knigaez
+    udm: Лыдӟе та книгаез.
+    ru: Прочтите эту книгу.
+    ru_alt: [Прочитайте эту книгу.]
+    kind: phrase
+    emoji: 📖
+    note: 'Лыдӟе — просьба к нескольким или на «вы»: «прочтите».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11739119' }]
+  - id: mon-ta-knigaez-lydzo
+    udm: Мон та книгаез лыдӟо.
+    ru: Я прочту эту книгу.
+    ru_alt: [Я прочитаю эту книгу.]
+    kind: phrase
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12162992' }]
+
+  # ── Учёба ────────────────────────────────────────────
+  - id: kyche-universitetyn-ti-dyshetskiskody
+    udm: Кыӵе университетын тӥ дышетскиськоды?
+    ru: В каком университете вы учитесь?
+    kind: phrase
+    emoji: 🎓
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11939380' }]
+  - id: ton-kinly-dyshetskiskod
+    udm: Тон кинлы дышетскиськод?
+    ru: Ты на кого учишься?
+    ru_alt: [На кого ты учишься?]
+    kind: phrase
+    emoji: 🧑‍🎓
+    note: 'Буквально «ты кем учишься»: кинлы — «кому, на кого».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11704999' }]
+  - id: mon-gurte-uzh-lestisko
+    udm: Мон гуртэ уж лэсьтӥсько.
+    ru: Я делаю домашнее задание.
+    kind: phrase
+    emoji: 📝
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11527710' }]
+  - id: taiz-ekzamen-tuzh-sekyt-ovol
+    udm: Таиз экзамен туж секыт ӧвӧл.
+    ru: Этот экзамен не очень сложный.
+    ru_alt: [Этот экзамен не очень трудный.]
+    kind: phrase
+    emoji: 📋
+    note: 'Секыт — «трудно, тяжело». Ӧвӧл после прилагательного — «не».'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12175713' }, { id: uniparser }]
+  - id: tolon-mon-urokyn-umme-usi
+    udm: Толон мон урокын умме уси.
+    ru: Я вчера заснула на уроке.
+    ru_alt: [Я вчера заснул на уроке., Вчера я заснул на уроке., Вчера я заснула на уроке.]
+    kind: phrase
+    emoji: 😴
+    note: 'Умме усьыны — «заснуть» (букв. «упасть в сон»).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12158429' }]
+  - id: mon-dyshetisely-gozhtet-gozhti
+    udm: Мон дышетӥселы гожтэт гожтӥ.
+    ru: Я написал письмо своей учительнице.
+    ru_alt: [Я написала письмо своей учительнице., Я написал письмо своему учителю., Я написала письмо своему учителю.]
+    kind: phrase
+    emoji: ✉️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12202314' }]
+
+  # ── Можно? ───────────────────────────────────────────
+  - id: ukno-usytyny-luoz-a
+    udm: Укноез усьтыны луоз-а?
+    ru: Можно окно открыть?
+    ru_alt: [Можно открыть окно?]
+    kind: phrase
+    emoji: 🪟
+    note: '«Можно …?» — глагол на -ны + луоз-а? (букв. «будет ли»).'
+    status: sourced
+    sources: [{ id: tatoeba, ref: '11950504' }]
+  - id: soos-udmurt-samen-verasko
+    udm: Соос удмурт сямен верасько.
+    ru: Они говорят по-удмуртски.
+    kind: phrase
+    emoji: 🗣️
+    status: sourced
+    sources: [{ id: tatoeba, ref: '12156727' }]

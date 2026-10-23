@@ -1,0 +1,31 @@
+id: u11-story
+title: 'История: На паре'
+goal: 'Понять разговор на занятии'
+kind: story
+icon: 📖
+exercises:
+  - type: dialogue
+    lines:
+      - { who: Дышетӥсь, item: lydze-ta-knigaez }
+      - { who: Дышетӥсь, item: yuanyosty-van-a }
+      - { who: '{name}', item: vozhdes-en-vae-mynam-yuane-van }
+      - { who: '{name}', item: mar-so-syche }
+      - { who: Дышетӥсь, item: tunsyko-yuan }
+    question: Что просит сделать преподаватель?
+    options: [Прочитать книгу, Открыть окно, Написать письмо]
+    answer: Прочитать книгу
+  - type: dialogue
+    lines:
+      - { who: Даша, item: ton-kinly-dyshetskiskod }
+      - { who: '{name}', item: mon-dyshetskisko-no-uzhasko }
+      - { who: Даша, item: taiz-ekzamen-tuzh-sekyt-ovol }
+      - { who: '{name}', item: valasko-lesya }
+    question: Каким Даша считает экзамен?
+    options: [Не очень сложным, Очень трудным, Интересным]
+    answer: Не очень сложным
+  - type: tiles
+    item: kinlen-knigaez
+    extra: [мынам, кин]
+  - type: listen
+    item: tolon-mon-urokyn-umme-usi
+    distractors: [mon-dyshetisely-gozhtet-gozhti]

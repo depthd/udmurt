@@ -1,0 +1,43 @@
+id: u11-l3
+title: Кинлэн книгаез?
+goal: 'Книга: моя, чья, где'
+icon: 📕
+exercises:
+  - type: teach
+    item: kniga
+  - type: teach
+    item: mynam-knigae-van
+  - type: build
+    item: mynam-knigae-van
+    extra: [ыд, ез]
+  - type: teach
+    item: kytyn-mynam-knigae
+  - type: choice
+    item: kytyn-mynam-knigae
+    distractors: [kytyn-mynam-anai-atae, mynam-knigae-van]
+  - type: teach
+    item: kinlen-knigaez
+  - type: build
+    item: kinlen-knigaez
+    extra: [лы, е]
+  - type: teach
+    item: ta-kniga-mynam
+  - type: dialogue
+    lines:
+      - { who: Даша, item: kinlen-knigaez }
+      - { who: '{name}', item: ta-kniga-mynam }
+    question: Чья книга?
+    options: [Собеседника Даши, Даши, Преподавателя]
+    answer: Собеседника Даши
+  - type: teach
+    item: lydze-ta-knigaez
+  - type: teach
+    item: mon-ta-knigaez-lydzo
+  - type: match
+    items: [mynam-knigae-van, kytyn-mynam-knigae, ta-kniga-mynam, mon-ta-knigaez-lydzo]
+  - type: type
+    dir: ru-udm
+    item: ta-kniga-mynam
+  - type: listen
+    item: kinlen-knigaez
+    distractors: [kytyn-mynam-knigae]
