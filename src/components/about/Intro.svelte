@@ -127,6 +127,8 @@
   .label {
     font-weight: 700;
     line-height: 1.25;
+    overflow-wrap: anywhere;
+    hyphens: auto;
   }
   .letters {
     font: 700 1.5rem/1.2 var(--font-head);
@@ -137,6 +139,8 @@
     font-size: 0.85rem;
     line-height: 1.35;
     color: var(--muted);
+    overflow-wrap: anywhere;
+    hyphens: auto;
   }
   @media (min-width: 640px) {
     .facts {

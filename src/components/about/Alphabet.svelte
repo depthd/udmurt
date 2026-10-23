@@ -39,7 +39,7 @@
             class:on={selected === l.upper}
             aria-pressed={selected === l.upper}
             aria-controls={CARD_ID}
-            aria-label="Буква {l.upper}: показать, как звучит"
+            aria-label="{l.upper}{l.lower} — показать, как звучит буква"
             onclick={() => pick(l.upper)}
           >
             <span lang="udm" class="u">{l.upper}</span><span lang="udm" class="l">{l.lower}</span>

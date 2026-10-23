@@ -243,8 +243,7 @@
   }
   .self {
     font: 600 0.8rem/1 var(--font-head);
-    color: var(--red);
-    opacity: 0.85;
+    color: var(--red-edge);
   }
   .pop {
     position: absolute;
