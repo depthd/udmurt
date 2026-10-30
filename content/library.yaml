@@ -565,8 +565,9 @@ items:
     level: B1+
     lang: udm
     rights: free
-    url: http://udmurt.web-corpora.net/
+    url: https://udmurt.web-corpora.net/
     note: 'Поиск по реальным текстам: как на самом деле употребляют слово.'
+    checked: '2026-10-30'
 
   # ── История языка (общественное достояние) ─────────────
   - id: grammar1775

@@ -19,7 +19,12 @@
     const r = findLesson(id);
     return r ? isUnlocked(r) : false;
   };
-  const unlocked = lookup();
+  let unlocked = $state(lookup());
+  // Урок задали в группе раньше, чем ученик дошёл до него по пути, — можно открыть сразу
+  function openAnyway() {
+    progress.openLesson(id);
+    unlocked = true;
+  }
   const prev = $derived(ref && ref.flatIndex > 0 ? allLessons[ref.flatIndex - 1] : undefined);
   const next = $derived(currentLesson());
 
@@ -71,6 +76,10 @@
       {/if}
       <a class="btn btn--ghost" href={href('/learn')}>К урокам</a>
     </div>
+    <div class="anyway">
+      <p class="muted">Урок задали в группе? Его можно открыть сразу — в нём могут встретиться слова из прошлых уроков.</p>
+      <button type="button" class="btn btn--flat btn--sm" onclick={openAnyway} data-testid="open-anyway">Открыть урок</button>
+    </div>
   </section>
 {:else if stage === 'onboarding'}
   <Onboarding ondone={() => router.go('/learn', 'forward')} />
@@ -106,5 +115,15 @@
     gap: 10px;
     width: 100%;
     max-width: 320px;
+  }
+  .anyway {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    max-width: 340px;
+  }
+  .anyway p {
+    margin: 0 0 4px;
+    font-size: 0.9rem;
   }
 </style>

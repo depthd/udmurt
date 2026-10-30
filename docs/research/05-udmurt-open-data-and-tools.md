@@ -300,7 +300,7 @@ API (`/opusapi?source=udm…`) показывает только четыре к
 
 ### 3.6. Корпуса (только поиск) ⛔ для импорта
 
-- **[udmurt.web-corpora.net](http://udmurt.web-corpora.net/)** (Т. Архангельский, М. Медведева; платформа Tsakorpus):
+- **[udmurt.web-corpora.net](https://udmurt.web-corpora.net/)** (Т. Архангельский, М. Медведева; платформа Tsakorpus):
   - **основной корпус 9,57 млн** словоупотреблений: пресса до января 2018 г., блоги, Новый Завет, Википедия, немного художественной литературы;
   - **корпус соцсетей:** 2,66 млн на удмуртском и 9,83 млн на русском (VK, до февраля 2018);
   - **звуковой корпус:** 11 тыс. словоупотреблений диалектной речи 2014 г.
@@ -542,7 +542,7 @@ API (`/opusapi?source=udm…`) показывает только четыре к
 - NLLB-200: https://huggingface.co/facebook/nllb-200-distilled-600M · MADLAD-400: https://huggingface.co/google/madlad400-3b-mt
 - Удмуртская Википедия, дампы: https://dumps.wikimedia.org/udmwiki/latest/ · статьи: https://udm.wikipedia.org/wiki/Удмурт_кыл · https://udm.wikipedia.org/wiki/Глаз
 - Wikivoyage, Udmurt phrasebook: https://en.wikivoyage.org/wiki/Udmurt_phrasebook
-- Корпуса: http://udmurt.web-corpora.net/ · http://web-corpora.net/UdmurtCorpus/search/?interface_language=ru · https://udmcorpus.udman.ru/
+- Корпуса: https://udmurt.web-corpora.net/ (с 2026 — только по https) · http://web-corpora.net/UdmurtCorpus/search/?interface_language=ru · https://udmcorpus.udman.ru/
 - Universal Dependencies: https://universaldependencies.org/
 - Finugorbib: http://finugorbib.com/index.html
 - Archive.org: https://archive.org/details/grammatikderwotj00wied · https://archive.org/details/wotjakischechre00wichgoog · https://archive.org/details/ru_udm_dictionary_pdf

@@ -17,6 +17,7 @@
     morphemes = [],
     oncontinue,
     reportUrl,
+    reportText,
   }: {
     kind: Outcome;
     title: string;
@@ -29,7 +30,20 @@
     morphemes?: Morpheme[];
     oncontinue: () => void;
     reportUrl?: string;
+    /** Тот же отчёт простым текстом — для тех, у кого нет аккаунта на GitHub. */
+    reportText?: string;
   } = $props();
+
+  let copied = $state(false);
+  async function copyReport() {
+    if (!reportText) return;
+    try {
+      await navigator.clipboard.writeText(reportText);
+      copied = true;
+    } catch {
+      prompt('Скопируйте текст и отправьте преподавателю:', reportText);
+    }
+  }
 
   let btn = $state<HTMLButtonElement>();
   $effect(() => {
@@ -81,7 +95,17 @@
       {/if}
 
       {#if explain}<p class="explain">{explain}</p>{/if}
-      {#if reportUrl}<a class="report" href={reportUrl} target="_blank" rel="noopener">⚑ Сообщить об ошибке</a>{/if}
+      {#if reportUrl}
+        <p class="report">
+          <a href={reportUrl} target="_blank" rel="noopener">⚑ Сообщить об ошибке</a>
+          {#if reportText}
+            или
+            <button type="button" class="linkish" onclick={copyReport} data-testid="copy-report">
+              {copied ? 'текст скопирован' : 'скопировать текст для преподавателя'}
+            </button>
+          {/if}
+        </p>
+      {/if}
     </div>
 
     <button bind:this={btn} class="btn go" type="button" data-testid="continue" onclick={oncontinue}>Продолжить</button>
@@ -162,10 +186,22 @@
     color: var(--ink);
   }
   .report {
-    display: inline-block;
-    margin-top: 6px;
+    margin: 6px 0 0;
     font-size: 0.8rem;
     color: var(--muted);
+  }
+  .report a {
+    color: inherit;
+  }
+  .linkish {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
   }
   .explain {
     margin-top: 6px;

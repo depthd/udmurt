@@ -13,10 +13,29 @@
   • печатает замечания носителя (review.md) — их нужно разобрать вручную в content/lexicon.
 Согласие на публикацию (CC BY 4.0) обязательно: без него записи не импортируются.
 """
-import hashlib, json, os, subprocess, sys, tempfile, zipfile
+import hashlib, json, os, re, subprocess, sys, tempfile, zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 AUDIO = os.path.join(ROOT, "public", "audio")
+
+# Архив присылает посторонний человек — это недоверенные данные:
+ID_RE = re.compile(r"^[a-z0-9-]{1,80}$")          # id фразы: только так, никаких путей
+EXTS = {".webm", ".ogg", ".m4a", ".mp4", ".wav"}   # только звук из браузера
+MAX_FILE = 5 * 1024 * 1024                        # одна запись — до 5 МБ (12 с в браузере — это ~200 КБ)
+MAX_TOTAL = 300 * 1024 * 1024                     # весь архив в распакованном виде
+MAX_JSON = 2 * 1024 * 1024
+
+
+def clean(text, limit=4000):
+    """Текст от автора архива без управляющих символов (иначе можно испортить терминал)."""
+    return re.sub(r"[\x00-\x08\x0b-\x1f\x7f\x1b]", "", str(text))[:limit]
+
+
+def read_limited(z, name, limit):
+    info = z.getinfo(name)
+    if info.file_size > limit:
+        raise ValueError(f"{name}: слишком большой файл ({info.file_size} байт)")
+    return z.read(info)
 
 
 def lexicon_texts():
@@ -36,9 +55,14 @@ def main():
         print(__doc__)
         sys.exit(1)
     z = zipfile.ZipFile(args[0])
-    meta = json.loads(z.read("review.json").decode("utf-8"))
-    speaker = meta.get("speaker", {})
-    print(z.read("review.md").decode("utf-8"))
+    total = sum(i.file_size for i in z.infolist())
+    if total > MAX_TOTAL or len(z.infolist()) > 3000:
+        sys.exit(f"Архив слишком большой ({total} байт, {len(z.infolist())} файлов) — не импортирую.")
+    meta = json.loads(read_limited(z, "review.json", MAX_JSON).decode("utf-8"))
+    if not isinstance(meta, dict):
+        sys.exit("review.json: неверный формат")
+    speaker = meta.get("speaker") if isinstance(meta.get("speaker"), dict) else {}
+    print(clean(read_limited(z, "review.md", MAX_JSON).decode("utf-8", "replace"), 200_000))
     if not speaker.get("consent"):
         print("\n⚠ Нет согласия на публикацию (CC BY 4.0) — записи не импортированы. Замечания выше можно разобрать.")
         return
@@ -46,21 +70,29 @@ def main():
     man_path = os.path.join(AUDIO, "manifest.json")
     man = json.load(open(man_path, encoding="utf-8"))
     done = skipped = 0
-    for r in meta.get("recordings", []):
-        id_, text = r["id"], r["text"]
+    for r in meta.get("recordings", []) if isinstance(meta.get("recordings"), list) else []:
+        if not isinstance(r, dict):
+            continue
+        id_, text, fname = str(r.get("id", "")), str(r.get("text", "")), str(r.get("file", ""))
+        ext = os.path.splitext(fname)[1].lower()
+        if not ID_RE.match(id_) or ext not in EXTS or fname != f"audio/{id_}{ext}":
+            print(f"пропуск: странная запись {clean(id_, 80)!r} / {clean(fname, 120)!r}")
+            skipped += 1
+            continue
         if texts.get(id_) != text:
             print(f"пропуск {id_}: фраза в словнике изменилась ({texts.get(id_)!r} ≠ {text!r})")
             skipped += 1
             continue
-        data = z.read(r["file"])
+        data = read_limited(z, fname, MAX_FILE)
         if dry:
             print(f"[dry-run] {id_}: {len(data)} байт")
             continue
-        with tempfile.NamedTemporaryFile(suffix=os.path.splitext(r["file"])[1], delete=False) as tmp:
+        with tempfile.NamedTemporaryFile(suffix=ext, delete=False) as tmp:
             tmp.write(data)
         out = os.path.join(AUDIO, f"{id_}.mp3")
         subprocess.run(
-            ["ffmpeg", "-y", "-loglevel", "error", "-i", tmp.name, "-af",
+            # -t 20: даже «бесконечный» файл даст не больше 20 с звука
+            ["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-t", "20", "-i", tmp.name, "-t", "20", "-af",
              "silenceremove=start_periods=1:start_threshold=-45dB:stop_periods=-1:stop_threshold=-45dB:stop_duration=0.4,"
              "adelay=120,loudnorm=I=-18:TP=-2", "-ac", "1", "-ar", "22050", "-codec:a", "libmp3lame", "-b:a", "64k", out],
             check=True,
@@ -73,8 +105,8 @@ def main():
             "sha": hashlib.sha1(text.encode()).hexdigest()[:10],
             "seconds": round(dur, 2),
             "native": True,
-            "speaker": speaker.get("name", ""),
-            "place": speaker.get("place", ""),
+            "speaker": clean(speaker.get("name", ""), 80),
+            "place": clean(speaker.get("place", ""), 120),
         }
         done += 1
         print(f"✓ {id_}: {text} ({dur:.1f} с)")

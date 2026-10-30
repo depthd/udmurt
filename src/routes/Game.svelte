@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { score, answerFor, dayIndex, keyMarks, EMOJI, type Mark } from '$lib/wordle';
   import { readJSON, writeJSON } from '$lib/storage';
+  import { isObj, int, bool, list } from '$lib/safe';
   import { dayKey } from '$lib/dates';
   import { href } from '$lib/router.svelte';
   import { prefs } from '$lib/prefs.svelte';
@@ -29,10 +30,23 @@
   const idx = dayIndex();
 
   const blank: Saved = { day: today, rows: [], done: false, won: false, stats: { played: 0, won: 0, streak: 0, best: 0, dist: [0, 0, 0, 0, 0, 0] } };
-  let saved = $state<Saved>((() => {
-    const s = readJSON<Saved>(KEY, blank);
-    return s.day === today ? s : { ...blank, stats: s.stats ?? blank.stats };
-  })());
+  const MARKS: readonly string[] = ['correct', 'similar', 'present', 'absent'];
+  /** Сохранённая игра: только поля нужного вида (испорченные данные не должны ронять страницу). */
+  function readSaved(): Saved {
+    const r = readJSON<unknown>(KEY, null);
+    const o = isObj(r) ? r : {};
+    const st = isObj(o.stats) ? o.stats : {};
+    const dist = Array.isArray(st.dist) && st.dist.length === TRIES ? st.dist.map((n) => int(n, 0, 1e5, 0)) : [...blank.stats.dist];
+    const n = (x: unknown) => int(x, 0, 1e5, 0);
+    const stats = { played: n(st.played), won: n(st.won), streak: n(st.streak), best: n(st.best), dist };
+    if (o.day !== today) return { ...blank, stats };
+    const row = (v: unknown): Row | undefined =>
+      isObj(v) && typeof v.guess === 'string' && v.guess.length === LEN && Array.isArray(v.marks) && v.marks.length === LEN && v.marks.every((m) => MARKS.includes(m as string))
+        ? { guess: v.guess, marks: v.marks as Mark[] }
+        : undefined;
+    return { day: today, rows: list(o.rows, row, TRIES), done: bool(o.done), won: bool(o.won), stats };
+  }
+  let saved = $state<Saved>(readSaved());
   let current = $state('');
   let shake = $state(false);
   let toast = $state('');

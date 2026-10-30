@@ -9,6 +9,7 @@
 import { readJSON, writeJSON } from './storage';
 import { dayKey, addDays, diffDays } from './dates';
 import { review, newCard, type Card, type Grade } from './srs';
+import { isObj, num, int, str, bool, record, list, dayStr } from './safe';
 
 export type LessonState = { done: number; best: number; last: number };
 
@@ -39,6 +40,8 @@ export type ProgressData = {
   onboarded: boolean;
   /** Читалка: id текста → сколько раз прочитан. */
   read?: Record<string, number>;
+  /** Уроки, открытые раньше очереди (урок задали в группе): id уроков. */
+  opened?: string[];
 };
 
 const KEY = 'udm.progress.v1';
@@ -64,11 +67,55 @@ function fresh(): ProgressData {
   };
 }
 
-function migrate(raw: unknown): ProgressData {
+const T_MAX = 8.64e15; // предел Date в мс
+
+function card(v: unknown): Card | undefined {
+  if (!isObj(v)) return undefined;
+  const c: Card = { due: num(v.due, 0, T_MAX, 0), reps: int(v.reps, 0, 1e6, 0), lapses: int(v.lapses, 0, 1e6, 0) };
+  // те же пределы, что держит srs.ts: S = 0 дало бы NaN в сроках повторения
+  if (v.S !== undefined) c.S = num(v.S, 0.001, 36500, 1);
+  if (v.D !== undefined) c.D = num(v.D, 1, 10, 5);
+  if (v.last !== undefined) c.last = num(v.last, 0, T_MAX, 0);
+  return c;
+}
+
+/**
+ * Прогресс из localStorage или кода переноса: берём только поля нужного типа и в разумных пределах.
+ * Испорченные данные не должны ронять приложение — иначе до кнопки «Сбросить» уже не добраться.
+ */
+export function migrate(raw: unknown): ProgressData {
   const base = fresh();
-  if (!raw || typeof raw !== 'object') return base;
-  const r = raw as Partial<ProgressData>;
-  return { ...base, ...r, streak: { ...base.streak, ...(r.streak ?? {}) }, v: 1 };
+  if (!isObj(raw)) return base;
+  const s = isObj(raw.streak) ? raw.streak : {};
+  const lost = isObj(s.lost) && dayStr(s.lost.since)
+    ? { value: int(s.lost.value, 0, 1e5, 0), since: dayStr(s.lost.since)!, lessons: int(s.lost.lessons, 0, 1e3, 0) }
+    : null;
+  return {
+    v: 1,
+    name: str(raw.name, 40),
+    createdAt: num(raw.createdAt, 0, T_MAX, base.createdAt),
+    xp: int(raw.xp, 0, 1e9, 0),
+    days: record(raw.days, (v, k) => (dayStr(k) ? int(v, 0, 1e6, NaN) : undefined)),
+    streak: {
+      current: int(s.current, 0, 1e5, 0),
+      best: int(s.best, 0, 1e5, 0),
+      last: dayStr(s.last) ?? null,
+      freezes: int(s.freezes, 0, MAX_FREEZES, base.streak.freezes),
+      frozen: list(s.frozen, dayStr, 400),
+      lost,
+    },
+    lessons: record(raw.lessons, (v) =>
+      isObj(v) ? { done: int(v.done, 0, 1e6, 0), best: num(v.best, 0, 1, 0), last: num(v.last, 0, T_MAX, 0) } : undefined,
+    ),
+    cards: record(raw.cards, card),
+    mistakes: record(raw.mistakes, (v) => int(v, 0, 1e6, NaN)),
+    dailyGoal: int(raw.dailyGoal, 5, 1000, base.dailyGoal),
+    achievements: list(raw.achievements, (v) => (typeof v === 'string' && v.length <= 40 ? v : undefined), 100),
+    commitment: raw.commitment == null ? null : int(raw.commitment, 1, 365, 7),
+    onboarded: bool(raw.onboarded),
+    read: record(raw.read, (v) => int(v, 0, 1e6, NaN)),
+    opened: list(raw.opened, (v) => (typeof v === 'string' && v.length <= 80 ? v : undefined), 500),
+  };
 }
 
 export type LessonResult = {
@@ -133,6 +180,18 @@ class Progress {
 
   isDone(id: string) {
     return (this.data.lessons[id]?.done ?? 0) > 0;
+  }
+
+  /** Урок открыт вне очереди (ученик сам открыл: его задали в группе). */
+  isOpened(id: string) {
+    return !!this.data.opened?.includes(id);
+  }
+
+  openLesson(id: string) {
+    if (this.isOpened(id)) return;
+    // новый массив целиком: push в результат «??=» попал бы мимо реактивной обёртки Svelte
+    this.data.opened = [...(this.data.opened ?? []), id];
+    this.save();
   }
 
   /** Начислить XP за сегодня и продлить серию дней. */
@@ -323,9 +382,10 @@ class Progress {
       const body = code.trim().replace(/^UDM1\./, '').replace(/-/g, '+').replace(/_/g, '/');
       const bin = atob(body + '==='.slice((body.length + 3) % 4));
       const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
-      const data = migrate(JSON.parse(new TextDecoder().decode(bytes)));
-      if (typeof data.xp !== 'number') return false;
-      this.data = data;
+      const raw: unknown = JSON.parse(new TextDecoder().decode(bytes));
+      // чужой или испорченный код не должен затирать прогресс
+      if (!isObj(raw) || raw.v !== 1 || typeof raw.xp !== 'number') return false;
+      this.data = migrate(raw);
       this.save();
       return true;
     } catch {

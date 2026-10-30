@@ -34,4 +34,11 @@ describe('напоминание', () => {
     expect(ics).toContain('DTSTART:20261022T193000');
     expect(ics).toContain('BEGIN:VALARM');
   });
+  it('пустое или странное время — 19:00, без NaN в файле', () => {
+    for (const t of ['', '25:99', 'abc']) {
+      const ics = makeIcs(t, 'https://depthd.github.io/udmurt/', new Date(2026, 9, 22, 12, 0));
+      expect(ics, t).not.toContain('NaN');
+    }
+    expect(makeIcs('', 'u', new Date(2026, 9, 22, 12, 0))).toContain('DTSTART:20261022T190000');
+  });
 });

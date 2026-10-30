@@ -17,7 +17,7 @@
   ];
 </script>
 
-<nav class="nav" aria-label="Основная навигация">
+<nav class="nav no-print" aria-label="Основная навигация">
   <ul>
     {#each items as it (it.name)}
       {@const active = it.match.includes(current)}

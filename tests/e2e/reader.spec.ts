@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { loadCourse } from '../../vite/load-content.ts';
 
 const course = loadCourse('content');

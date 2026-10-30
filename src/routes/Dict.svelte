@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { decodeSafe } from '$lib/safe';
   import UdmKeyboard from '../components/UdmKeyboard.svelte';
   import Mascot from '../components/Mascot.svelte';
   import { href } from '$lib/router.svelte';
@@ -34,7 +35,7 @@
   let open = $state<string | null>(null);
 
   $effect.pre(() => {
-    const v = decodeURIComponent(q ?? '');
+    const v = decodeSafe(q ?? '');
     query = v;
     sq = v;
   });

@@ -581,3 +581,42 @@ html[data-motion='reduce'] ::view-transition-new(*) {
 .md tr:last-child td {
   border-bottom: 0;
 }
+
+/* ─── Печать: всегда светлая тема, без панелей навигации и кнопок управления ─── */
+@media print {
+  :root:not([data-theme='light']),
+  :root[data-theme] {
+    color-scheme: light;
+    --bg: #fff;
+    --surface: #fff;
+    --surface-2: #f4f1ec;
+    --ink: #000;
+    --muted: #4a443f;
+    --line: #d9d2c8;
+    --line-strong: #b8afa3;
+    --red: #b3261e;
+    --red-soft: #fbe5e1;
+    --green: #2a744a;
+    --green-soft: #e3f2e8;
+    --amber: #9a5b00;
+    --amber-soft: #fcefd9;
+    --blue: #24609b;
+    --blue-soft: #e2edf8;
+    --shadow: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #fff;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .rise {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

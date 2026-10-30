@@ -26,15 +26,28 @@ export function item(id: string): LexItem {
   return it;
 }
 
-/** Урок открыт, если пройден предыдущий (первый открыт всегда). */
+/** Урок открыт, если пройден предыдущий (первый открыт всегда) или ученик открыл его сам — урок задали в группе. */
 export function isUnlocked(ref: LessonRef): boolean {
-  if (ref.flatIndex === 0) return true;
+  if (ref.flatIndex === 0 || progress.isOpened(ref.lesson.id)) return true;
   return progress.isDone(allLessons[ref.flatIndex - 1].lesson.id);
 }
 
-/** Текущий урок — первый непройденный. */
+/**
+ * Текущий урок — следующий непройденный после последнего пройденного. Кто идёт по порядку, получает первый
+ * непройденный; кто проходил урок, заданный в группе, вне очереди, — продолжает с этого места, а не с начала.
+ */
 export function currentLesson(): LessonRef | undefined {
-  return allLessons.find((l) => !progress.isDone(l.lesson.id)) ?? allLessons.at(-1);
+  let lastIdx = -1;
+  let lastAt = -1;
+  for (const l of allLessons) {
+    const st = progress.lesson(l.lesson.id);
+    if (st && st.done > 0 && st.last > lastAt) [lastIdx, lastAt] = [l.flatIndex, st.last];
+  }
+  return (
+    allLessons.find((l) => l.flatIndex > lastIdx && !progress.isDone(l.lesson.id)) ??
+    allLessons.find((l) => !progress.isDone(l.lesson.id)) ??
+    allLessons.at(-1)
+  );
 }
 
 /** Подстановка имени ученика в фразы с {name}. По умолчанию — «Алексей». */

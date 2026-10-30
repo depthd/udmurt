@@ -6,7 +6,7 @@
   const streak = $derived(progress.streakState);
 </script>
 
-<header class="top">
+<header class="top no-print">
   <div class="inner">
     <a class="brand" href={href('/')} aria-label="Удмурт кыл — на главную">
       <Octagram size={26} />

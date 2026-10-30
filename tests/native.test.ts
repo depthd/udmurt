@@ -53,4 +53,32 @@ describe('помочь проекту', () => {
     expect(e.map((x) => x.name)).toEqual(['review.md', 'review.json', 'audio/a.webm', 'README.txt']);
     expect(JSON.parse(e[1].data as string).recordings[0]).toEqual({ id: 'a', file: 'audio/a.webm', text: 'Мон студент.' });
   });
+  it('импорт: вредный архив (пути ../, управляющие символы, чужие id) не проходит', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'evil-'));
+    const f = path.join(dir, 'evil.zip');
+    const meta = {
+      v: 1,
+      speaker: { name: 'Злоумышленник\u001b[2J', place: '', consent: true },
+      marks: {},
+      recordings: [
+        { id: '../../src/main', file: 'audio/../../src/main.webm', text: 'x' },
+        { id: 'mon-student', file: '../../mon-student.webm', text: 'Мон студент.' },
+        { id: 'mon-student', file: 'audio/mon-student.exe', text: 'Мон студент.' },
+      ],
+    };
+    fs.writeFileSync(
+      f,
+      makeZip([
+        { name: 'review.md', data: 'отчёт \u001b]0;взлом\u0007 конец' },
+        { name: 'review.json', data: JSON.stringify(meta) },
+        { name: 'audio/../../src/main.webm', data: new Uint8Array([1]) },
+      ]),
+    );
+    const out = execFileSync('python3', ['-I', 'scripts/tts/import_native.py', f, '--dry-run'], { encoding: 'utf8' });
+    expect(out.match(/пропуск: странная запись/g)?.length).toBe(3);
+    expect(out).not.toContain('[dry-run]');
+    expect(out).not.toContain('\u001b');
+    expect(out).toContain('отчёт');
+  });
 });
+

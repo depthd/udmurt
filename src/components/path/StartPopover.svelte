@@ -62,6 +62,12 @@
     router.go('/lesson/' + ref.lesson.id, 'lesson');
   }
 
+  // урок задали в группе раньше, чем ученик до него дошёл, — открываем вне очереди
+  function openAnyway() {
+    progress.openLesson(ref.lesson.id);
+    start();
+  }
+
   function onkeydown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
       e.stopPropagation();
@@ -102,6 +108,10 @@
         <path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7" />
       </svg>
       Сначала пройдите предыдущий урок
+    </p>
+    <p class="anyway">
+      Урок задали в группе?
+      <button type="button" class="btn btn--flat btn--sm" data-testid="open-anyway" onclick={openAnyway}>Открыть сейчас</button>
     </p>
   {:else}
     {#if done && st}
@@ -158,6 +168,18 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--red);
+  }
+  .anyway {
+    margin: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 4px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .anyway .btn {
+    padding-inline: 8px;
   }
   .pop--locked .eyebrow {
     color: var(--muted);

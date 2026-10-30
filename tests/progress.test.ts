@@ -46,3 +46,47 @@ describe('серия дней и её починка', () => {
     expect(progress.repair).toBeNull();
   });
 });
+
+describe('урок вне очереди (задали в группе)', () => {
+  beforeEach(() => progress.reset());
+  it('открытый вручную урок доступен, соседние — нет; после него открывается следующий', async () => {
+    const { allLessons, isUnlocked } = await import('../src/lib/course.ts');
+    const [first, second, mid, after] = [allLessons[0], allLessons[1], allLessons[5], allLessons[6]];
+    expect(isUnlocked(first)).toBe(true);
+    expect(isUnlocked(mid)).toBe(false);
+    progress.openLesson(mid.lesson.id);
+    progress.openLesson(mid.lesson.id); // повтор не дублирует
+    expect(progress.data.opened).toEqual([mid.lesson.id]);
+    expect(isUnlocked(mid)).toBe(true);
+    expect(isUnlocked(after)).toBe(false);
+    progress.completeLesson(res(mid.lesson.id));
+    expect(isUnlocked(after)).toBe(true);
+    expect(isUnlocked(second)).toBe(false);
+  });
+  it('«Продолжить» ведёт дальше с места, где занимались, а по порядку — к первому непройденному', async () => {
+    const { allLessons, currentLesson } = await import('../src/lib/course.ts');
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2026, 9, 1, 12));
+    expect(currentLesson()?.flatIndex).toBe(0);
+    progress.completeLesson(res(allLessons[0].lesson.id));
+    progress.completeLesson(res(allLessons[1].lesson.id));
+    expect(currentLesson()?.flatIndex).toBe(2);
+    // повторили старый урок — «Продолжить» всё равно ведёт к первому непройденному
+    vi.setSystemTime(new Date(2026, 9, 2, 12));
+    progress.completeLesson(res(allLessons[0].lesson.id));
+    expect(currentLesson()?.flatIndex).toBe(2);
+    // прошли урок вне очереди — продолжаем за ним
+    vi.setSystemTime(new Date(2026, 9, 3, 12));
+    progress.openLesson(allLessons[10].lesson.id);
+    progress.completeLesson(res(allLessons[10].lesson.id));
+    expect(currentLesson()?.flatIndex).toBe(11);
+    vi.useRealTimers();
+  });
+  it('из сохранённых данных берутся только строки-id; карточки — в пределах FSRS', async () => {
+    const { migrate } = await import('../src/lib/progress.svelte.ts');
+    expect(migrate({ v: 1, opened: ['u2-l1', 5, null, 'x'.repeat(200), { a: 1 }] }).opened).toEqual(['u2-l1']);
+    expect(migrate({ v: 1, opened: 'u2-l1' }).opened).toEqual([]);
+    const c = migrate({ v: 1, cards: { w: { due: 1, reps: 1, lapses: 0, S: 0, D: 99 } } }).cards.w;
+    expect([c.S, c.D]).toEqual([1, 5]);
+  });
+});

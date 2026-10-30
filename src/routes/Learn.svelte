@@ -5,7 +5,7 @@
    * При открытии путь плавно прокручивается к текущему узлу; новый отрезок нити прорисовывается.
    */
   import { onMount, tick } from 'svelte';
-  import { course, allLessons, isUnlocked, type LessonRef } from '$lib/course';
+  import { course, allLessons, currentLesson, isUnlocked, type LessonRef } from '$lib/course';
   import type { Unit } from '$lib/content/schema';
   import { progress } from '$lib/progress.svelte';
   import { prefs } from '$lib/prefs.svelte';
@@ -92,7 +92,9 @@
 
     const t = setTimeout(async () => {
       await tick();
-      const cur = document.querySelector<HTMLElement>('[data-current="true"]');
+      // к тому же уроку, что предлагает «Продолжить» на главной (открытых узлов может быть несколько)
+      const id = currentLesson()?.lesson.id;
+      const cur = (id && document.querySelector<HTMLElement>(`[data-testid="node-${id}"]`)) || document.querySelector<HTMLElement>('[data-current="true"]');
       if (!cur) return;
       const r = cur.getBoundingClientRect();
       if (r.top > innerHeight * 0.62 || r.bottom < 90) {

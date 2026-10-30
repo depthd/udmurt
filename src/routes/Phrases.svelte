@@ -3,6 +3,7 @@
    * Разговорник: все фразы курса по юнитам (с озвучкой и разбором) и все шпаргалки юнитов на одной странице.
    * Удобно открыть перед парой. Поиск — по-удмуртски (можно без ӧ/ӥ) и по-русски.
    */
+  import { tick } from 'svelte';
   import { itemsByUnit, personalize } from '$lib/course';
   import type { LexItem } from '$lib/content/schema';
   import { renderMarkdown } from '$lib/markdown';
@@ -45,8 +46,21 @@
   // при поиске или фильтре по юниту показываем всё найденное сразу
   const visible = $derived(query.trim() || unitFilter ? shown : shown.slice(0, rendered));
 
+  // Печать: дорисовываем все юниты (обычно они догружаются по мере прокрутки) и открываем диалог печати
+  async function printPage() {
+    rendered = groups.length;
+    await tick();
+    window.print();
+  }
+
   const guideHtml = (g: string) => renderMarkdown(personalize(g), { headingShift: 1, strongLang: 'udm', strongClass: 'udm' });
 </script>
+
+{#snippet printBtn()}
+  <button type="button" class="btn btn--flat btn--sm no-print" onclick={printPage} data-testid="print">
+    Распечатать{unitFilter ? ` юнит ${unitFilter}` : ''}
+  </button>
+{/snippet}
 
 <section class="page phrasebook">
   <header class="rise">
@@ -74,7 +88,10 @@
       <input class="search" type="search" bind:value={query} placeholder="Поиск: «где», «кытын», «тау»…" aria-label="Поиск по фразам" />
       <label class="sw"><input type="checkbox" checked={kind === 'all'} onchange={(e) => (kind = e.currentTarget.checked ? 'all' : 'phrase')} /> и отдельные слова</label>
     </div>
-    <p class="muted found" role="status">Найдено: {total}</p>
+    <div class="found-row">
+      <p class="muted found" role="status">Найдено: {total}</p>
+      {@render printBtn()}
+    </div>
 
     {#each visible as g (g.unit.id)}
       <section class="grp">
@@ -111,6 +128,7 @@
       <p class="muted">Ничего не нашлось. Попробуйте <a href={href(`/dict/${encodeURIComponent(query)}`)}>поискать в словаре</a>.</p>
     {/each}
   {:else}
+    <div class="found-row">{@render printBtn()}</div>
     {#each groups.filter((g) => g.unit.guide && (!unitFilter || g.n === unitFilter)) as g (g.unit.id)}
       <article class="card guide grp">
         <h2 class="ut"><span class="n">{g.n}</span> {g.unit.title}</h2>
@@ -325,5 +343,61 @@
   }
   .foot {
     margin-top: 20px;
+  }
+  .found-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .found-row .btn {
+    margin-inline-start: auto;
+  }
+
+  /* Печать: компактный список в две колонки, без кнопок и озвучки */
+  @media print {
+    .tabs,
+    .chips,
+    .tools,
+    .found-row,
+    .foot,
+    .lead {
+      display: none !important;
+    }
+    .grp {
+      content-visibility: visible;
+      contain-intrinsic-size: none;
+    }
+    .ut {
+      break-after: avoid;
+      margin: 14px 0 6px;
+    }
+    .ut .n {
+      background: none;
+      color: var(--ink);
+      border: 1.5px solid currentColor;
+    }
+    .list {
+      display: block;
+      columns: 2;
+      column-gap: 28px;
+    }
+    .ph {
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 3px 0;
+      break-inside: avoid;
+    }
+    .ph-main {
+      padding-left: 0;
+    }
+    .ph-row :global(.wrap) {
+      display: none;
+    }
+    .md :global(strong.udm) {
+      color: inherit;
+    }
   }
 </style>

@@ -5,7 +5,10 @@
 const pad = (n: number) => String(n).padStart(2, '0');
 
 export function makeIcs(time: string, url: string, now = new Date()): string {
-  const [h, m] = time.split(':').map(Number);
+  // поле времени можно очистить — тогда «19:00», а не файл с NaN вместо даты
+  const t = /^(\d{1,2}):(\d{2})/.exec(time);
+  const h = t ? Math.min(23, Number(t[1])) : 19;
+  const m = t ? Math.min(59, Number(t[2])) : 0;
   const start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
   if (start <= now) start.setDate(start.getDate() + 1);
   const dt = (d: Date) => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;

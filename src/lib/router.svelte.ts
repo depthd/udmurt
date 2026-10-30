@@ -3,6 +3,7 @@
  * Переходы анимируются через View Transitions API (если браузер умеет и движение не отключено).
  */
 import { prefs } from './prefs.svelte';
+import { decodeSafe } from './safe';
 
 export type Route = { name: string; params: Record<string, string>; path: string };
 
@@ -29,7 +30,8 @@ const routes: Array<[RegExp, string, string[]]> = [
 ];
 
 function parse(hash: string): Route {
-  const path = decodeURIComponent(hash.replace(/^#/, '') || '/');
+  // «битый» %-код в ссылке (#/dict/%) не должен ронять приложение
+  const path = decodeSafe(hash.replace(/^#/, '') || '/');
   const clean = path.split('?')[0];
   for (const [re, name, keys] of routes) {
     const m = clean.match(re);

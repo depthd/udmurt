@@ -1,5 +1,6 @@
 /** Настройки интерфейса: звук, вибрация, анимации, тема. Хранятся в localStorage. */
 import { readJSON, writeJSON } from './storage';
+import { isObj, bool, oneOf } from './safe';
 
 type Prefs = {
   sound: boolean;
@@ -13,8 +14,21 @@ type Prefs = {
 const KEY = 'udm.prefs.v1';
 const DEFAULTS: Prefs = { sound: true, haptics: true, motion: 'auto', theme: 'auto', morphemes: true };
 
+/** Настройки из localStorage — только известные поля нужного типа. */
+function readPrefs(): Prefs {
+  const r = readJSON<unknown>(KEY, {});
+  const o = isObj(r) ? r : {};
+  return {
+    sound: bool(o.sound, DEFAULTS.sound),
+    haptics: bool(o.haptics, DEFAULTS.haptics),
+    motion: oneOf(o.motion, ['auto', 'reduce'] as const, DEFAULTS.motion),
+    theme: oneOf(o.theme, ['auto', 'light', 'dark'] as const, DEFAULTS.theme),
+    morphemes: bool(o.morphemes, DEFAULTS.morphemes),
+  };
+}
+
 class PrefsStore {
-  value = $state<Prefs>({ ...DEFAULTS, ...readJSON<Partial<Prefs>>(KEY, {}) });
+  value = $state<Prefs>(readPrefs());
   systemReduce = $state(false);
 
   constructor() {

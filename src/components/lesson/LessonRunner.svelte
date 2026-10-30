@@ -65,24 +65,34 @@
     lang?: 'udm' | 'ru';
     morphemes: Morpheme[];
     reportUrl?: string;
+    reportText?: string;
   };
 
-  /** Ссылка «Сообщить об ошибке»: готовая заявка на GitHub с данными задания. */
-  function reportUrl(ex: Exercise, expected: string, kind: Outcome): string {
+  /**
+   * «Сообщить об ошибке»: готовая заявка на GitHub с данными задания — и тот же текст без разметки,
+   * чтобы ученик без аккаунта на GitHub мог отправить его преподавателю или в чат группы.
+   */
+  function report(ex: Exercise, expected: string, kind: Outcome): { reportUrl: string; reportText: string } {
     const item = 'item' in ex && ex.item ? ex.item : '';
     const title = `Ошибка в задании: ${runId} — ${ex.type}${item ? ' / ' + item : ''}`;
+    const rows: [string, string][] = [
+      ['Урок', `${runId} (${title})`],
+      ['Задание', `${ex.type}${item ? `, слово ${item}` : ''}`],
+      ['Правильный ответ на сайте', expected || '—'],
+      ['Мой результат', kind],
+    ];
     const body = [
-      `**Урок:** ${runId} (${title})`,
-      `**Задание:** ${ex.type}${item ? `, слово \`${item}\`` : ''}`,
-      `**Правильный ответ на сайте:** ${expected || '—'}`,
-      `**Мой результат:** ${kind}`,
+      ...rows.map(([k, v]) => `**${k}:** ${v}`),
       '',
       '**Что не так** (например: «мой ответ тоже верный», «опечатка», «носители так не говорят»):',
       '',
       '',
       `_Отправлено со страницы ${location.href}_`,
     ].join('\n');
-    return `https://github.com/depthd/udmurt/issues/new?labels=${encodeURIComponent('контент')}&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    return {
+      reportUrl: `https://github.com/depthd/udmurt/issues/new?labels=${encodeURIComponent('контент')}&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`,
+      reportText: [title, ...rows.map(([k, v]) => `${k}: ${v}`), 'Что не так: ', location.href].join('\n'),
+    };
   }
 
   const E2E = import.meta.env.VITE_E2E === '1';
@@ -236,7 +246,7 @@
       explain: ex.explain,
       lang: answerLang(ex, expected),
       morphemes: morphemesOf(ex),
-      reportUrl: reportUrl(ex, expected, kind),
+      ...report(ex, expected, kind),
     };
     phase = 'feedback';
     lockUntil = now() + LOCK_MS;

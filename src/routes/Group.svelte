@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { decodeSafe } from '$lib/safe';
   import { flip } from 'svelte/animate';
   import { progress } from '$lib/progress.svelte';
   import { group, makeCode, parseCode, parseMany, weekKey, weekXp, type Member } from '$lib/group.svelte';
@@ -47,7 +48,7 @@
 
   onMount(() => {
     if (code) {
-      const m = parseCode(decodeURIComponent(code));
+      const m = parseCode(decodeSafe(code));
       if (m && m.name.toLowerCase() !== me.name.toLowerCase()) {
         group.add(m);
         msg = { ok: true, text: `${m.name} добавлен(а) в вашу лигу!` };

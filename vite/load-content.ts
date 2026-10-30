@@ -23,6 +23,12 @@ export class ContentError extends Error {}
 /** Порог качества синтеза (доля ошибок обратного распознавания). */
 export const AUDIO_MAX_CER = 0.35;
 
+/**
+ * Озвучку можно давать ученику: запись носителя (scripts/tts/import_native.py) — всегда, синтез — только
+ * прошедший обратную проверку распознаванием. По этому же правилу сборка убирает с сайта остальные mp3.
+ */
+export const usableAudio = (a: { cer?: number; native?: boolean }) => !!a.native || (a.cer ?? 1) <= AUDIO_MAX_CER;
+
 function readYaml(file: string): unknown {
   const text = fs.readFileSync(file, 'utf8');
   try {
@@ -68,13 +74,9 @@ export function loadCourse(contentDir: string, opts: { skipAudioCheck?: boolean 
     };
     for (const it of lexicon) {
       const a = man.items[it.id];
-      if (it.audio || !a || a.text !== it.udm) continue;
-      // запись носителя (scripts/tts/import_native.py) используется всегда, синтез — только чистый
-      if (a.native) it.audio = it.id;
-      else if ((a.cer ?? 1) <= AUDIO_MAX_CER) {
-        it.audio = it.id;
-        it.audio_synth = true;
-      }
+      if (it.audio || !a || a.text !== it.udm || !usableAudio(a)) continue;
+      it.audio = it.id;
+      if (!a.native) it.audio_synth = true;
     }
   }
 

@@ -26,9 +26,37 @@
     help: () => import('./routes/Help.svelte'),
   };
   const loaded = $state<Record<string, Component<any>>>({});
+  let loadError = $state<string | null>(null);
   $effect(() => {
     const name = router.current.name;
-    if (lazy[name] && !loaded[name]) lazy[name]().then((m) => (loaded[name] = m.default));
+    if (!lazy[name] || loaded[name]) return;
+    loadError = null;
+    const flag = 'udm.reload-once';
+    lazy[name]()
+      .then((m) => {
+        loaded[name] = m.default;
+        try {
+          if (sessionStorage.getItem(flag) === name) sessionStorage.removeItem(flag);
+        } catch {
+          /* sessionStorage недоступен */
+        }
+      })
+      .catch(() => {
+        // После нового выпуска старые файлы разделов удаляются с сервера: один раз перезагружаем
+        // страницу (она подтянет новую версию). Если и это не помогло (нет сети) — честно говорим.
+        let reloaded = false;
+        try {
+          reloaded = sessionStorage.getItem(flag) === name;
+          if (!reloaded && navigator.onLine) {
+            sessionStorage.setItem(flag, name);
+            location.reload();
+            return;
+          }
+        } catch {
+          /* sessionStorage недоступен */
+        }
+        loadError = name;
+      });
   });
   import TopBar from './components/TopBar.svelte';
   import NavBar from './components/NavBar.svelte';
@@ -70,33 +98,100 @@
   $effect(() => {
     if (progress.data.xp > 0) void requestPersist();
   });
+
+  // ── Предохранитель: страница упала — показываем, что делать, а не пустой экран ──
+  let pageError = $state('');
+  let failedPath = '';
+  let resetBoundary: (() => void) | undefined;
+  let copied = $state(false);
+  function onPageError(error: unknown, reset: () => void) {
+    console.error(error);
+    pageError = String((error as Error)?.message ?? error).slice(0, 200);
+    failedPath = router.current.path;
+    resetBoundary = reset;
+  }
+  // ушли на другую страницу — пробуем показать её заново
+  $effect(() => {
+    const path = r.path;
+    if (resetBoundary && path !== failedPath) {
+      const reset = resetBoundary;
+      resetBoundary = undefined;
+      pageError = '';
+      reset();
+    }
+  });
+  async function copyBackup() {
+    try {
+      await navigator.clipboard.writeText(progress.exportCode());
+      copied = true;
+    } catch {
+      prompt('Скопируйте код прогресса:', progress.exportCode());
+    }
+  }
+  function resetAll() {
+    if (!confirm('Удалить все данные сайта в этом браузере (прогресс, настройки, группу)?')) return;
+    try {
+      for (const k of Object.keys(localStorage)) if (k.startsWith('udm.')) localStorage.removeItem(k);
+    } catch {
+      /* нет доступа к хранилищу */
+    }
+    location.href = href('/');
+    location.reload();
+  }
 </script>
 
-<a class="skip" href="#main" onclick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>К содержимому</a>
+<a class="skip no-print" href="#main" onclick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>К содержимому</a>
 
 {#if !inLesson}
   <TopBar />
 {/if}
 
 <main id="main" tabindex="-1" class:lesson-mode={inLesson}>
-  {#if r.name === 'home'}
-    <Home />
-  {:else if r.name === 'learn'}
-    <Learn />
-  {:else if r.name === 'lesson'}
-    {#key r.params.id}
-      <LessonPage id={r.params.id} />
-    {/key}
-  {:else if lazy[r.name]}
-    {@const Page = loaded[r.name]}
-    {#if Page}
-      <Page {...r.params} />
+  <svelte:boundary onerror={onPageError}>
+    {#if r.name === 'home'}
+      <Home />
+    {:else if r.name === 'learn'}
+      <Learn />
+    {:else if r.name === 'lesson'}
+      {#key r.params.id}
+        <LessonPage id={r.params.id} />
+      {/key}
+    {:else if lazy[r.name]}
+      {@const Page = loaded[r.name]}
+      {#if Page}
+        <Page {...r.params} />
+      {:else if loadError === r.name}
+        <div class="page oops" role="alert">
+          <h1>Раздел не загрузился</h1>
+          <p class="muted">{navigator.onLine ? 'Возможно, сайт только что обновился.' : 'Похоже, нет интернета, а этот раздел ещё не сохранён для работы без сети.'}</p>
+          <button class="btn" onclick={() => location.reload()}>Обновить страницу</button>
+          <a class="btn btn--ghost" href={href('/')}>На главную</a>
+        </div>
+      {:else}
+        <div class="page loading" aria-busy="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      {/if}
     {:else}
-      <div class="page loading" aria-busy="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <NotFound />
     {/if}
-  {:else}
-    <NotFound />
-  {/if}
+
+    {#snippet failed()}
+      <div class="page oops" role="alert">
+        <h1>Что-то пошло не так</h1>
+        <p class="muted">Эта страница сломалась. Прогресс хранится в браузере и никуда не делся.</p>
+        <div class="oops-acts">
+          <button class="btn" onclick={() => location.reload()}>Обновить страницу</button>
+          <a class="btn btn--ghost" href={href('/')}>На главную</a>
+        </div>
+        <details class="oops-more">
+          <summary>Не помогает?</summary>
+          <p>Сохраните код прогресса (его можно вставить потом в «Профиле»), затем сбросьте данные сайта.</p>
+          <button class="btn btn--sm btn--ghost" onclick={copyBackup}>{copied ? 'Код скопирован' : 'Скопировать код прогресса'}</button>
+          <button class="btn btn--sm btn--ghost" onclick={resetAll}>Сбросить данные сайта</button>
+          {#if pageError}<p class="muted small">Ошибка: {pageError}</p>{/if}
+        </details>
+      </div>
+    {/snippet}
+  </svelte:boundary>
 </main>
 
 {#if !inLesson}
@@ -104,6 +199,34 @@
 {/if}
 
 <style>
+  .oops {
+    max-width: 520px;
+    padding-top: 12vh;
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+  }
+  .oops h1 {
+    margin: 0;
+  }
+  .oops-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .oops-more {
+    margin-top: 8px;
+  }
+  .oops-more summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .oops-more .btn {
+    margin: 6px 6px 0 0;
+  }
+  .small {
+    font-size: 0.82rem;
+  }
   .loading {
     display: flex;
     justify-content: center;

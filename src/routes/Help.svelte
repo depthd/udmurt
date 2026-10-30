@@ -7,6 +7,7 @@
   import { itemsByUnit, personalize } from '$lib/course';
   import type { LexItem } from '$lib/content/schema';
   import { readJSON, writeJSON } from '$lib/storage';
+  import { isObj, str, bool, num, record as recordOf, safeKey } from '$lib/safe';
   import { idbGet, idbSet, idbDel, idbKeys } from '$lib/idb';
   import { makeZip } from '$lib/zip';
   import { archiveEntries, extFor, issueUrl, pickMime, reviewMarkdown, REPO, type Marks, type Speaker } from '$lib/native';
@@ -15,7 +16,16 @@
   import AudioButton from '../components/exercise/AudioButton.svelte';
 
   const KEY = 'udm.native.v1';
-  const saved = readJSON<{ speaker: Speaker; marks: Marks }>(KEY, { speaker: { name: '', place: '', consent: false }, marks: {} });
+  // сохранённое могло испортиться — берём только поля нужного типа
+  const raw = readJSON<unknown>(KEY, null);
+  const o = isObj(raw) ? raw : {};
+  const sp = isObj(o.speaker) ? o.speaker : {};
+  const saved: { speaker: Speaker; marks: Marks } = {
+    speaker: { name: str(sp.name, 80), place: str(sp.place, 120), consent: bool(sp.consent) },
+    marks: recordOf(o.marks, (v) =>
+      isObj(v) ? { ok: bool(v.ok), fix: v.fix === undefined ? undefined : str(v.fix, 500), comment: v.comment === undefined ? undefined : str(v.comment, 1000), at: num(v.at, 0, 8.64e15, 0) } : undefined,
+    ),
+  };
   let speaker = $state<Speaker>(saved.speaker);
   let marks = $state<Marks>(saved.marks);
   $effect(() => writeJSON(KEY, { speaker: $state.snapshot(speaker), marks: $state.snapshot(marks) }));
@@ -71,7 +81,8 @@
     void idbKeys().then(async (keys) => {
       for (const k of keys.filter((k) => k.startsWith('rec:'))) {
         const r = await idbGet<{ blob: Blob }>(k);
-        if (r?.blob) recorded[k.slice(4)] = URL.createObjectURL(r.blob);
+        const id = k.slice(4);
+        if (r?.blob instanceof Blob && safeKey(id)) recorded[id] = URL.createObjectURL(r.blob);
       }
     });
     return () => {
@@ -146,7 +157,7 @@
       const recs: { id: string; ext: string; data: Uint8Array }[] = [];
       for (const id of Object.keys(recorded)) {
         const r = await idbGet<{ blob: Blob; mime: string }>(`rec:${id}`);
-        if (r?.blob) recs.push({ id, ext: extFor(r.mime), data: new Uint8Array(await r.blob.arrayBuffer()) });
+        if (r?.blob instanceof Blob) recs.push({ id, ext: extFor(typeof r.mime === 'string' ? r.mime : r.blob.type), data: new Uint8Array(await r.blob.arrayBuffer()) });
       }
       const zip = makeZip(archiveEntries(all, $state.snapshot(marks), $state.snapshot(speaker), recs));
       const url = URL.createObjectURL(new Blob([zip as BlobPart], { type: 'application/zip' }));
