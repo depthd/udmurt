@@ -50,7 +50,6 @@ test('материалы открываются по прямой ссылке, 
   for (const label of [/Числительные от 1 до 31/, /Полный урок/]) {
     await page.getByRole('link', { name: label }).click();
     await page.getByTestId('exit').click();
-    await page.getByTestId('exit-leave').click();
     await expect(plan).toBeVisible();
   }
 });
