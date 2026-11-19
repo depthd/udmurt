@@ -1,6 +1,7 @@
 id: u10-body
-title: "Части тела"
-goal: "Назвать части лица и тела по-удмуртски"
+title: "Мугор люкетъёс"
+goal: "Части тела и лица"
+icon: ✋
 exercises:
   - type: teach
     item: "yyr"
@@ -8,6 +9,10 @@ exercises:
     item: "body-hair"
   - type: teach
     item: "body-forehead"
+  - type: choice
+    dir: ru-udm
+    item: body-forehead
+    distractors: [body-hair, yyr]
   - type: teach
     item: "body-brow"
   - type: teach
@@ -44,6 +49,10 @@ exercises:
     item: "body-armpit"
   - type: teach
     item: "body-hand"
+  - type: choice
+    dir: ru-udm
+    item: body-shoulder
+    distractors: [body-neck, body-nose]
   - type: teach
     item: "body-finger"
   - type: match
@@ -56,6 +65,10 @@ exercises:
     item: "body-back"
   - type: teach
     item: "body-belly"
+  - type: choice
+    dir: ru-udm
+    item: body-heart
+    distractors: [body-chest, body-back]
   - type: teach
     item: "body-bottom"
   - type: match

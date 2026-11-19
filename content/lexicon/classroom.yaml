@@ -16,6 +16,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "Глава 4, словарь: синкаш"}]
   - id: body-eye
+    emoji: "👁️"
     udm: "син"
     ru: "глаз"
     status: sourced
@@ -27,11 +28,13 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "синлыс"}]
   - id: body-ear
+    emoji: "👂"
     udm: "пель"
     ru: "ухо"
     status: sourced
     sources: [{"id": "uniparser", "ref": "пель"}]
   - id: body-nose
+    emoji: "👃"
     udm: "ныр"
     ru: "нос"
     status: sourced
@@ -59,11 +62,13 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "ымдур"}]
   - id: body-tooth
+    emoji: "🦷"
     udm: "пинь"
     ru: "зуб"
     status: sourced
     sources: [{"id": "uniparser", "ref": "пинь"}]
   - id: body-tongue
+    emoji: "👅"
     udm: "кыл"
     ru: "язык во рту"
     ru_alt: ["язык"]
@@ -85,6 +90,7 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "кунул"}]
   - id: body-hand
+    emoji: "✋"
     udm: "ки"
     ru: "рука"
     ru_alt: ["кисть"]
@@ -102,6 +108,7 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "гадь"}]
   - id: body-heart
+    emoji: "🫀"
     udm: "сюлэм"
     ru: "сердце"
     status: sourced
@@ -123,6 +130,7 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "сӥтян"}]
   - id: body-leg
+    emoji: "🦵"
     udm: "пыд"
     ru: "нога"
     status: sourced
@@ -144,6 +152,7 @@ items:
     status: sourced
     sources: [{"id": "uniparser", "ref": "пыдчиньы"}]
   - id: num-23
+    emoji: "🔢"
     udm: "кызь куинь"
     ru: "двадцать три"
     status: sourced
@@ -154,6 +163,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
   - id: ord-first
+    emoji: "🥇"
     udm: "нырысетӥ"
     ru: "первый"
     status: sourced
@@ -179,6 +189,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
   - id: season-winter
+    emoji: "❄️"
     udm: "тол"
     ru: "зима"
     status: sourced
@@ -202,6 +213,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
   - id: season-spring
+    emoji: "🌱"
     udm: "тулыс"
     ru: "весна"
     status: sourced
@@ -225,6 +237,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
   - id: season-summer
+    emoji: "☀️"
     udm: "гужем"
     ru: "лето"
     status: sourced
@@ -248,6 +261,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
   - id: season-autumn
+    emoji: "🍂"
     udm: "сӥзьыл"
     ru: "осень"
     status: sourced
@@ -281,6 +295,7 @@ items:
     status: sourced
     sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}, {"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
   - id: ask-birthday
+    emoji: "🎂"
     udm: "Ку тынад вордскем нуналыд?"
     ru: "Когда у тебя день рождения?"
     kind: "phrase"

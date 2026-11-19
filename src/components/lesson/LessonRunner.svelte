@@ -34,7 +34,7 @@
     type Outcome,
     type Run,
   } from '$lib/lesson';
-  import ProgressBar from './ProgressBar.svelte';
+  import LessonFrame from './LessonFrame.svelte';
   import FeedbackSheet from './FeedbackSheet.svelte';
   import LessonEnd from './LessonEnd.svelte';
   import ExitConfirm from './ExitConfirm.svelte';
@@ -379,110 +379,39 @@
     <button class="btn btn--ink" type="button" onclick={onexit}>Назад</button>
   </section>
 {:else}
-  <div class="runner" data-testid="lesson" data-mode={mode}>
-    <header class="top">
-      <div class="top-in">
-        <button class="x" type="button" aria-label="Выйти из урока" data-testid="exit" onclick={requestExit}>
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
-        </button>
-        <ProgressBar value={prog.done} max={prog.total} combo={run.streak} />
-      </div>
-    </header>
-
-    <section class="stage" bind:this={stageEl} aria-label="Задание">
-      {#key pos}
-        {#if entry}
-          {@const Comp = exerciseComponents[entry.ex.type]}
-          <div class="slide" in:slideIn out:slideOut data-type={entry.ex.type}>
-            {#if entry.attempt > 0}
-              <span class="chip retry"><span aria-hidden="true">↻</span> Работа над ошибкой</span>
-            {/if}
-            <!-- у карточки teach своя метка «Новое слово» — заголовок остаётся для диктора -->
-            <h1 class="task" class:visually-hidden={entry.ex.type === 'teach'} bind:this={headingEl} tabindex="-1">{heading}</h1>
-            <div class="ex">
-              <Comp ex={entry.ex} locked={phase === 'feedback'} {api} />
-            </div>
-          </div>
-        {/if}
-      {/key}
-    </section>
-
-    <footer class="foot">
-      {#if phase === 'feedback' && feedback}
-        <FeedbackSheet {...feedback} oncontinue={() => next()} />
-      {:else}
-        <div class="bar">
-          <div class="bar-in">
-            {#if teachNow}
-              <button class="btn btn--ink go" type="button" data-testid="continue" onclick={continueTeach}>Продолжить</button>
-            {:else}
-              <button class="btn btn--ink go" type="button" data-testid="check" disabled={!ready} onclick={check}>
-                Проверить
-              </button>
-            {/if}
+  <LessonFrame {mode} done={prog.done} total={prog.total} combo={run.streak}
+    onexit={requestExit} bind:stageEl fullFooter={phase === 'feedback'}>
+    {#key pos}
+      {#if entry}
+        {@const Comp = exerciseComponents[entry.ex.type]}
+        <div class="slide" in:slideIn out:slideOut data-type={entry.ex.type}>
+          {#if entry.attempt > 0}
+            <span class="chip retry"><span aria-hidden="true">↻</span> Работа над ошибкой</span>
+          {/if}
+          <!-- у карточки teach своя метка «Новое слово» — заголовок остаётся для диктора -->
+          <h1 class="task" class:visually-hidden={entry.ex.type === 'teach'} bind:this={headingEl} tabindex="-1">{heading}</h1>
+          <div class="ex">
+            <Comp ex={entry.ex} locked={phase === 'feedback'} {api} />
           </div>
         </div>
       {/if}
-    </footer>
-  </div>
+    {/key}
+
+    {#snippet footer()}
+      {#if phase === 'feedback' && feedback}
+        <FeedbackSheet {...feedback} oncontinue={() => next()} />
+      {:else if teachNow}
+        <button class="btn btn--ink go" type="button" data-testid="continue" onclick={continueTeach}>Продолжить</button>
+      {:else}
+        <button class="btn btn--ink go" type="button" data-testid="check" disabled={!ready} onclick={check}>Проверить</button>
+      {/if}
+    {/snippet}
+  </LessonFrame>
 
   <ExitConfirm open={confirmOpen} onstay={() => (confirmOpen = false)} onleave={() => ((confirmOpen = false), onexit())} />
 {/if}
 
 <style>
-  .runner {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-  }
-  .top {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    background: var(--bg);
-    padding: 16px var(--gutter) 8px;
-    padding-top: max(16px, env(safe-area-inset-top));
-  }
-  .top-in {
-    max-width: var(--page-max);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .x {
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    margin-left: -10px;
-    border: 0;
-    border-radius: 12px;
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .x:hover {
-    background: var(--surface-2);
-    color: var(--ink);
-  }
-  .x svg {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.6;
-    stroke-linecap: round;
-  }
-  .stage {
-    flex: 1;
-    display: grid;
-    width: 100%;
-    max-width: var(--page-max);
-    margin: 0 auto;
-    padding: 12px var(--gutter) 28px;
-    overflow-x: clip;
-  }
   .slide {
     grid-area: 1 / 1;
     min-width: 0;
@@ -506,31 +435,6 @@
   .ex {
     flex: 1;
     min-width: 0;
-  }
-  .foot {
-    position: sticky;
-    bottom: 0;
-    z-index: 5;
-  }
-  .bar {
-    background: var(--bg);
-    border-top: 2px solid var(--line);
-    padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
-  }
-  .bar-in {
-    max-width: var(--page-max);
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .go {
-    width: 100%;
-  }
-  @media (min-width: 640px) {
-    .go {
-      width: auto;
-      min-width: 200px;
-    }
   }
   .empty {
     text-align: center;

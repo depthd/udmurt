@@ -1,8 +1,11 @@
 <script lang="ts">
   import { findLesson, item } from '$lib/course';
   import { classLessonPath } from '$lib/classroom';
-  import { href } from '$lib/router.svelte';
+  import { href, router } from '$lib/router.svelte';
   import { seededShuffle } from '../exercises/types';
+
+  import LessonFrame from '../components/lesson/LessonFrame.svelte';
+  import PromptBubble from '../components/exercise/PromptBubble.svelte';
 
   const words = findLesson('u10-body')!.lesson.exercises.flatMap(ex =>
     ex.type === 'teach' ? [item(ex.item)] : []
@@ -22,35 +25,38 @@
   }
 </script>
 
-<section class="page review">
-  <h1>Части тела. Повторение</h1>
-  <p>Назовите слово по-удмуртски, затем откройте ответ.</p>
-  {#if word}
-    <article class="card prompt" aria-live="polite">
-      <p class="muted">Слово {position + 1} из {deck.length}</p>
-      <h2>{word.ru}</h2>
-      {#if revealed}<p class="answer" lang="udm">{word.udm}</p>{/if}
-      {#if revealed}
-        <button class="btn" onclick={next}>{position + 1 === deck.length ? 'Завершить повторение' : 'Следующее слово'}</button>
-      {:else}
-        <button class="btn" onclick={() => revealed = true}>Показать ответ</button>
-      {/if}
-    </article>
-  {:else}
-    <article class="card prompt" aria-live="polite">
-      <h2>Повторили все {deck.length} слов</h2>
-      <button class="btn btn--ghost" onclick={restart}>Повторить ещё раз</button>
-    </article>
-  {/if}
-  <nav aria-label="Продолжение занятия">
-    <a class="btn btn--ink" href={href(classLessonPath('u2-dates'))}>Перейти к числительным</a>
-    <a class="btn btn--flat" href={href('/lesson/u10-body')}>Урок «Части тела»</a>
-  </nav>
-</section>
+<LessonFrame mode="practice" done={position} total={deck.length}
+  exitLabel="Выйти из повторения" onexit={() => router.go('/practice')}>
+  <article aria-live="polite">
+    {#if word}
+      <p class="muted count">Слово {position + 1} из {deck.length}</p>
+      <h1>Назовите часть тела по-удмуртски</h1>
+      {#key position}
+        <PromptBubble big>{#if word.emoji}<span aria-hidden="true">{word.emoji} </span>{/if}{word.ru}</PromptBubble>
+      {/key}
+      {#if revealed}<p class="card answer udm" lang="udm">{word.udm}</p>{/if}
+    {:else}
+      <h1>Повторили все {deck.length} слов</h1>
+    {/if}
+    <nav aria-label="Продолжение занятия">
+      <a href={href(classLessonPath('u2-dates'))}>Перейти к числительным</a>
+      <a href={href('/lesson/u10-body')}>Урок «Части тела»</a>
+    </nav>
+  </article>
+  {#snippet footer()}
+    {#if !word}
+      <button class="btn btn--ink go" onclick={restart}>Повторить ещё раз</button>
+    {:else if revealed}
+      <button class="btn btn--ink go" onclick={next}>{position + 1 === deck.length ? 'Завершить повторение' : 'Следующее слово'}</button>
+    {:else}
+      <button class="btn btn--ink go" onclick={() => revealed = true}>Показать ответ</button>
+    {/if}
+  {/snippet}
+</LessonFrame>
 <style>
-  .review { max-width: 680px; }
-  .prompt { padding: 24px; margin: 20px 0; text-align: center; }
-  .prompt h2 { font-size: clamp(1.6rem, 5vw, 2.5rem); margin: 12px 0 20px; }
-  .answer { font: 650 1.65rem var(--font-head); margin: 12px 0 20px; }
-  nav { display: flex; flex-wrap: wrap; gap: 8px; }
+  h1 { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.6rem); margin: 0 0 16px; }
+  .count { margin: 0 0 6px; }
+  .answer { margin: 16px 0 0; text-align: center; font: 700 1.6rem var(--font-head); }
+  nav { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 24px; }
+  nav a { color: var(--muted); }
 </style>

@@ -65,7 +65,7 @@
 
   const r = $derived(router.current);
   // «5 букв» всегда идёт без шапки и навигации — переключаем режим сразу, а не после загрузки чанка (иначе сдвиг вёрстки)
-  const inLesson = $derived(r.name === 'lesson' || r.name === 'game' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
+  const inLesson = $derived(r.name === 'lesson' || r.name === 'body-review' || r.name === 'class-survey' || r.name === 'game' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
 
   // Заголовок вкладки для каждого раздела (WCAG 2.4.2). У урока — свой, в Lesson.svelte.
   const SITE = 'Удмурт кыл';

@@ -1,6 +1,7 @@
 id: u7-calendar
-title: "Месяцы и времена года"
-goal: "Назвать четыре сезона, двенадцать месяцев и дату"
+title: "Тол, тулыс, гужем, сӥзьыл"
+goal: "Времена года, месяцы и даты"
+icon: 🗓️
 exercises:
   - type: teach
     item: "season-winter"
@@ -16,6 +17,10 @@ exercises:
     item: "season-spring"
   - type: teach
     item: "month-mar"
+  - type: choice
+    dir: ru-udm
+    item: season-spring
+    distractors: [season-winter, month-mar]
   - type: teach
     item: "month-apr"
   - type: teach
@@ -36,6 +41,10 @@ exercises:
     item: "season-autumn"
   - type: teach
     item: "month-sep"
+  - type: choice
+    dir: ru-udm
+    item: season-autumn
+    distractors: [season-summer, season-spring]
   - type: teach
     item: "month-oct"
   - type: teach

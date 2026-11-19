@@ -1,13 +1,14 @@
 id: u11-survey
-title: "Два вопроса одногруппнику"
-goal: "Спросить о дате рождения и любимом сезоне и передать чужой ответ"
+title: "Ку тынад вордскем нуналыд?"
+goal: "Спросить о дне рождения и любимом времени года"
+icon: 💬
 exercises:
   - type: teach
     item: "ask-birthday"
   - type: teach
     item: "my-birthday"
   - type: dialogue
-    lines: [{"who": "Студент", "item": "ask-birthday"}, {"who": "Анна", "item": "my-birthday"}]
+    lines: [{"who": "{name}", "item": "ask-birthday"}, {"who": "Анна", "item": "my-birthday"}]
     question: "Какую дату записать?"
     options: ["3 декабря", "23 декабря", "3 ноября"]
     answer: "3 декабря"
@@ -19,7 +20,7 @@ exercises:
   - type: teach
     item: "my-season"
   - type: dialogue
-    lines: [{"who": "Студент", "item": "ask-season"}, {"who": "Анна", "item": "my-season"}]
+    lines: [{"who": "{name}", "item": "ask-season"}, {"who": "Анна", "item": "my-season"}]
     question: "Какое время года назвала Анна?"
     options: ["Лето", "Осень", "Зиму"]
     answer: "Лето"
@@ -47,7 +48,7 @@ exercises:
     answer: "яратэ"
     item: "other-season"
   - type: dialogue
-    lines: [{"who": "Преподаватель", "item": "ask-other-season"}, {"who": "Студент", "item": "other-season"}]
+    lines: [{"who": "Преподаватель", "item": "ask-other-season"}, {"who": "{name}", "item": "other-season"}]
     question: "О ком отвечает студент?"
     options: ["Об Анне", "О себе", "О преподавателе"]
     answer: "Об Анне"

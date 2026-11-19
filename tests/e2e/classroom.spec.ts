@@ -24,13 +24,31 @@ test('группа открывает повторение и проходит �
   }
   await expect(page.getByRole('heading', { name: 'Шпаргалка для опроса' })).toBeVisible();
   await expect(page.getByText('Мынам вордскем нуналы куинетӥ толсуре.', {exact: true})).toBeVisible();
-  await page.getByRole('combobox', { name: 'Число', exact: true }).selectOption('31');
-  await page.getByRole('combobox', { name: 'Месяц', exact: true }).selectOption('1');
-  await expect(page.getByRole('combobox', { name: 'Число', exact: true })).toHaveValue('29');
-  await page.getByRole('combobox', { name: 'Время года', exact: true }).selectOption('0');
-  await page.getByRole('button', {name: 'Рассказ об Анне'}).click();
-  await expect(page.getByText('Анналэн вордскем нуналыз кызь укмысэтӥ тулыспалэ.')).toBeVisible();
-  await expect(page.getByText('Анна тужгес но толэз яратэ.')).toBeVisible();
+  await expect(page.getByText('Анна тужгес но гужемез яратэ.')).toBeVisible();
+});
+
+test('шпаргалка показывает группе сразу все даты и сезоны', async ({ page }) => {
+  await page.goto('#/class/survey');
+  const days = page.locator('[data-day]');
+  const seasons = page.locator('[data-season]');
+  await expect(days).toHaveCount(31);
+  await expect(seasons).toHaveCount(4);
+  await expect(seasons.locator('.month')).toHaveCount(12);
+  await expect(page.locator('[data-day="1"]')).toContainText('нырысетӥ');
+  await expect(page.locator('[data-day="11"]')).toContainText('дас одӥгетӥ');
+  await expect(page.locator('[data-day="31"]')).toContainText('куамын одӥгетӥ');
+  await expect(page.getByRole('combobox')).toHaveCount(0);
+  await page.evaluate(() => document.fonts.ready);
+  for (const [width, height] of [[1280, 720], [1024, 768], [800, 600]]) {
+    await page.setViewportSize({ width, height });
+    const fits = await page.locator('[data-day], [data-season]').evaluateAll(nodes => nodes.every(node => {
+      const { left, top, right, bottom } = node.getBoundingClientRect();
+      return left >= 0 && right <= innerWidth && top >= 0 && bottom <= innerHeight;
+    }));
+    expect(fits).toBe(true);
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
 test('пройденный до обновления урок доступен после вставки нового', async ({ page }) => {

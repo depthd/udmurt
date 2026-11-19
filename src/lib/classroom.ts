@@ -12,6 +12,13 @@ const ordinals = ['', 'нырысетӥ', 'кыкетӥ', 'куинетӥ', 'н�
 const tens = ['', 'дас', 'кызь', 'куамын'];
 const roundOrdinals = ['', 'дасэтӥ', 'кызетӥ', 'куамынэтӥ'];
 
+const units = ['', 'одӥг', 'кык', 'куинь', 'ньыль', 'вить', 'куать', 'сизьым', 'тямыс', 'укмыс'];
+
+export function cardinalDay(day: number): string {
+  if (!Number.isInteger(day) || day < 1 || day > 31) return '';
+  return [tens[Math.floor(day / 10)], units[day % 10]].filter(Boolean).join(' ');
+}
+
 export function ordinalDay(day: number): string {
   if (!Number.isInteger(day) || day < 1 || day > 31) return '';
   if (day < 10) return ordinals[day];
