@@ -239,7 +239,7 @@
             <label>Как правильно <input class="udm" lang="udm" bind:value={fixText} /></label>
             <label>Комментарий (необязательно) <textarea rows="2" bind:value={comment} placeholder="Например: так говорят только на юге"></textarea></label>
             <div class="edit-acts">
-              <button class="btn btn--sm" onclick={() => saveFix(it)} data-testid="save-fix">Сохранить</button>
+              <button class="btn btn--sm btn--ink" onclick={() => saveFix(it)} data-testid="save-fix">Сохранить</button>
               <button class="btn btn--sm btn--ghost" onclick={() => (editing = null)}>Отмена</button>
             </div>
           </div>

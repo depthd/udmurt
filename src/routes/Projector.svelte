@@ -14,6 +14,7 @@
   import { seededShuffle } from '../exercises/types';
   import { exerciseRefs } from '$lib/content/refs';
   import type { LexItem } from '$lib/content/schema';
+  import Cast from '../components/Cast.svelte';
   import Mascot from '../components/Mascot.svelte';
 
   type Q = { item: LexItem; dir: 'udm-ru' | 'ru-udm'; options: LexItem[] };
@@ -129,7 +130,8 @@
 {#if phase === 'setup'}
   <section class="page setup">
     <header class="hero">
-      <Mascot mood="wave" size={90} />
+      <div class="projector-compact"><Mascot mood="wave" size={90} /></div>
+      <div class="projector-cast"><Cast kind="head" width={128} flush /></div>
       <div>
         <h1>Режим проектора</h1>
         <p class="muted">Откройте на ноутбуке или проекторе. На экране — вопрос и 4 варианта, команды отвечают вслух или карточками A–D, ведущий начисляет очки.</p>
@@ -237,6 +239,28 @@
     gap: 14px;
     align-items: center;
     margin-bottom: 16px;
+  }
+  .projector-cast {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 0 14px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--sky);
+    }
+    .projector-compact {
+      display: none;
+    }
+    .projector-cast {
+      display: grid;
+      align-self: end;
+      flex: none;
+    }
+    .projector-cast + div {
+      padding-block: 12px;
+    }
   }
   .hero p {
     margin: 0;

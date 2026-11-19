@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Cast from '../components/Cast.svelte';
   import Mascot, { type Mood } from '../components/Mascot.svelte';
   import { href, router } from '$lib/router.svelte';
 
@@ -23,8 +24,9 @@
   </section>
 {:else}
   <section class="page nf">
-    <Mascot mood="sad" size={150} />
+    <div class="bird"><Cast kind="bird" width={140} /></div>
     <h1>Такой страницы нет</h1>
+    <div class="thread-rule" aria-hidden="true"></div>
     <p class="muted">Возможно, ссылка устарела. Вернёмся к урокам?</p>
     <a class="btn" href={href('/')}>На главную</a>
   </section>
@@ -37,6 +39,17 @@
     text-align: center;
     gap: 8px;
     padding-top: 48px;
+  }
+  .bird {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 240px);
+    padding: 8px 0 0;
+    background: var(--sky);
+    border-radius: 60% 40% 55% 45%;
+  }
+  .nf h1 {
+    margin: 8px 0 0;
   }
   .grid {
     display: grid;

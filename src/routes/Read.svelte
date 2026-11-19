@@ -214,7 +214,7 @@
 
     <div class="tools">
       {#if anyAudio}
-        <button class="btn btn--sm" class:btn--red={playingLine >= 0} onclick={playAll} data-testid="play-all">
+        <button class="btn btn--sm {playingLine >= 0 ? 'btn--ink' : 'btn--sky'}" onclick={playAll} data-testid="play-all">
           {playingLine >= 0 ? '■ Стоп' : '▶ Слушать всё'}
         </button>
       {/if}

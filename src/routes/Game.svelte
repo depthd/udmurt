@@ -204,7 +204,7 @@
           <p class="big">{saved.won ? 'Ӟеч! Угадано!' : 'В этот раз не вышло'}</p>
           <p>Слово дня: <b lang="udm" class="udm">{answer[0]}</b> — {answer[1]}</p>
           <div class="acts">
-            <button class="btn btn--sm" onclick={share}>Поделиться</button>
+            <button class="btn btn--sm" class:btn--ghost={!saved.won} onclick={share}>Поделиться</button>
             <a class="btn btn--sm btn--ghost" href={href('/dict/' + encodeURIComponent(answer[0]))}>В словаре</a>
           </div>
           <p class="muted small">Сыграно {saved.stats.played} · угадано {saved.stats.won} · серия {saved.stats.streak} (лучшая {saved.stats.best})</p>
