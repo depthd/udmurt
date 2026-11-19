@@ -53,7 +53,7 @@
     <div class="hero sticker rise">
       <header class="hero-copy">
         <p class="bubble" aria-hidden="true"><span lang="udm" class="udm">Ӟечбуресь!</span></p>
-        <h1 id="welcome-title" class="poster-title brand" lang="udm">Удмурт<br />кыл</h1>
+        <h1 id="welcome-title" class="poster-title brand" lang="udm"><span>Удмурт</span> кыл</h1>
         <div class="thread-rule" aria-hidden="true"></div>
         <p class="lead">Учим удмуртский по 5 минут в день</p>
       </header>
@@ -234,7 +234,6 @@
   .hero {
     display: grid;
     grid-template-areas: "copy" "art" "cta";
-    text-align: center;
     gap: 12px;
   }
   .hero-copy {
@@ -255,7 +254,7 @@
     font-size: clamp(2.4rem, 1.4rem + 5vw, 4.6rem);
   }
   .hero .thread-rule {
-    margin: 13px auto 8px;
+    margin: 10px 0 8px;
   }
   .lead {
     margin: 0;
@@ -274,12 +273,12 @@
     content: '';
     position: absolute;
     z-index: -1;
-    inset: 12% 4% 0;
+    inset: 15% 12% 0;
     background: var(--sky);
     border-radius: 60% 40% 55% 45%;
   }
   .hero-art :global(.cast) {
-    max-height: clamp(185px, 67vw, 300px);
+    max-height: clamp(185px, 56vw, 280px);
     width: auto;
     object-fit: contain;
   }
@@ -287,6 +286,10 @@
     grid-area: cta;
     display: grid;
     gap: 4px;
+  }
+  .cta .btn--flat {
+    justify-content: start;
+    padding-inline: 0;
   }
   .big {
     justify-content: space-between;
@@ -335,9 +338,6 @@
     }
   }
   @media (max-width: 359px) {
-    .hero-art :global(.cast) {
-      max-height: 195px;
-    }
     .lead {
       font-size: 0.94rem;
     }
@@ -374,8 +374,8 @@
       align-self: end;
       padding-top: 28px;
     }
-    .hero .thread-rule {
-      margin-inline: 0;
+    .brand span {
+      display: block;
     }
     .hero-art {
       padding: 18px 20px 0 0;
@@ -390,10 +390,6 @@
       align-self: start;
       justify-self: start;
       padding-bottom: 28px;
-    }
-    .cta .btn--flat {
-      justify-content: start;
-      padding-inline: 0;
     }
     .perks {
       margin-top: 22px;
@@ -414,10 +410,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    overflow: hidden;
-    padding: 0 12px;
-    background: var(--sky);
-    border-radius: var(--radius);
+    min-height: 72px;
   }
   .greet-cast,
   .continue-cast {
@@ -425,9 +418,20 @@
   }
   @media (min-width: 360px) and (max-width: 479px) {
     .greet-cast {
+      position: relative;
+      isolation: isolate;
       display: grid;
       align-self: end;
       flex: 0 0 108px;
+      overflow: hidden;
+    }
+    .greet-cast::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 22% 0 -16%;
+      border-radius: 50%;
+      background: var(--sky);
     }
   }
   @media (min-width: 480px) {
@@ -440,7 +444,7 @@
   }
   .greet-text {
     min-width: 0;
-    padding-block: 16px;
+    padding-block: 8px;
   }
   .greet h1 {
     margin: 0 0 2px;
@@ -476,11 +480,11 @@
     flex: none;
     display: grid;
     place-items: center;
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: var(--red-soft);
-    font-size: 28px;
+    font-size: 22px;
   }
   .cont-text {
     min-width: 0;

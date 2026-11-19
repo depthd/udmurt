@@ -1,14 +1,14 @@
 <script lang="ts">
   /**
-   * Вопрос упражнения в «пузыре» рядом с маленьким маскотом-эмодзи (как реплика персонажа у Duolingo).
-   *   avatar — эмодзи персонажа: 🦢 Юсь (по умолчанию), 🥟 Пельнянь — для аудирования
+   * Вопрос упражнения в «пузыре» с озвучкой при наличии.
+   *   avatar — необязательный декоративный значок
    *   audio  — аудио вопроса: слева от текста появится кнопка-динамик (если аудио нет — не появится)
    */
   import type { Snippet } from 'svelte';
   import AudioButton from './AudioButton.svelte';
 
   let {
-    avatar = '🦢',
+    avatar,
     children,
     audio,
     synth = false,
@@ -25,8 +25,8 @@
   } = $props();
 </script>
 
-<div class="prompt">
-  <span class="avatar" aria-hidden="true">{avatar}</span>
+<div class="prompt" class:with-avatar={!!avatar}>
+  {#if avatar}<span class="avatar" aria-hidden="true">{avatar}</span>{/if}
   <div class="bubble" class:big>
     {#if audio}<span class="aside"><AudioButton {audio} {synth} size="sm" label={audioLabel} /></span>{/if}
     <div class="text">{@render children()}</div>
@@ -66,7 +66,7 @@
     transform-origin: 0 100%;
   }
   /* хвостик пузыря к маскоту */
-  .bubble::before {
+  .with-avatar .bubble::before {
     content: '';
     position: absolute;
     left: -9px;

@@ -85,6 +85,10 @@
     padding: 0;
     border-radius: 50%;
   }
+  .audio:not(.audio--lg) {
+    --edge: transparent;
+    border-color: transparent;
+  }
   .audio--sm {
     width: 44px;
     height: 44px;
@@ -94,7 +98,7 @@
     width: 64px;
     height: 64px;
   }
-  .slow {
+  .audio.slow {
     --face: var(--surface);
     --edge: var(--line);
     --fg: var(--blue);

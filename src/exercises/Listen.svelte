@@ -99,8 +99,8 @@
       {/if}
     </div>
   {:else}
-    <p class="noaudio" role="note"><span aria-hidden="true">🔇</span> Аудио к этому слову пока не записано — прочитайте и выберите перевод.</p>
-    <PromptBubble avatar="🥟" big>
+    <p class="noaudio" role="note">Аудио к этому слову пока не записано — прочитайте и выберите перевод.</p>
+    <PromptBubble big>
       <span class="udm" lang="udm">{udm}</span>
     </PromptBubble>
   {/if}
