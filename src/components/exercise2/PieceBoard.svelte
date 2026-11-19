@@ -170,7 +170,7 @@
 
   /* ─── плитка ─── */
   .piece {
-    --pc: var(--line);
+    --pc: var(--line-strong);
     --pbg: var(--surface);
     --pfg: var(--ink);
     position: relative;
@@ -178,12 +178,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 46px;
+    min-height: 56px;
     min-width: 44px;
     max-width: 100%;
     padding: 8px 14px;
     border: 2px solid var(--pc);
-    border-radius: 12px;
+    border-radius: 14px;
     background: var(--pbg);
     color: var(--pfg);
     box-shadow: 0 3px 0 var(--pc);
@@ -260,9 +260,9 @@
     --pfg: var(--amber);
   }
   .answer.is-wrong .piece {
-    --pc: var(--red);
-    --pbg: var(--red-soft);
-    --pfg: var(--red);
+    --pc: var(--amber);
+    --pbg: var(--amber-soft);
+    --pfg: var(--amber);
   }
 
   /* ─── банк ─── */
@@ -283,7 +283,7 @@
   /* ─── морфемы: кубики и лоток ─── */
   .board--morphs .piece {
     min-width: 54px;
-    min-height: 54px;
+    min-height: 56px;
     padding: 8px 14px;
     font-size: 1.3rem;
   }

@@ -414,9 +414,9 @@
         <div class="bar">
           <div class="bar-in">
             {#if teachNow}
-              <button class="btn btn--ink go" type="button" data-testid="continue" onclick={continueTeach}>Продолжить</button>
+              <button class="btn go" type="button" data-testid="continue" onclick={continueTeach}>Продолжить</button>
             {:else}
-              <button class="btn btn--ink go" type="button" data-testid="check" disabled={!ready} onclick={check}>
+              <button class="btn go" type="button" data-testid="check" disabled={!ready} onclick={check}>
                 Проверить
               </button>
             {/if}
@@ -495,8 +495,6 @@
     color: var(--amber);
     background: var(--amber-soft);
     font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
   }
   .task {
     font-size: clamp(1.3rem, 1.1rem + 1vw, 1.6rem);
@@ -513,7 +511,7 @@
     z-index: 5;
   }
   .bar {
-    background: var(--bg);
+    background: var(--surface);
     border-top: 2px solid var(--line);
     padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
   }

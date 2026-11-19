@@ -151,8 +151,8 @@
     --fbg: var(--amber-soft);
   }
   .bad {
-    --fc: var(--red);
-    --fbg: var(--red-soft);
+    --fc: var(--amber);
+    --fbg: var(--amber-soft);
   }
   .ok .field,
   .almost .field,

@@ -122,15 +122,11 @@
     border-top: 2px solid color-mix(in oklab, var(--tone) 35%, transparent);
     padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
   }
-  .is-almost {
+  .is-almost,
+  .is-wrong {
     --tone: var(--amber);
     --tone-edge: var(--amber-edge);
     --tone-soft: var(--amber-soft);
-  }
-  .is-wrong {
-    --tone: var(--red);
-    --tone-edge: var(--red-edge);
-    --tone-soft: var(--red-soft);
   }
   .inner {
     max-width: var(--page-max);
@@ -190,7 +186,12 @@
     font-size: 0.8rem;
     color: var(--muted);
   }
-  .report a {
+  .report a,
+  .linkish {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
     color: inherit;
   }
   .linkish {
@@ -225,6 +226,7 @@
     font-weight: 700;
   }
   .go {
+    border-color: var(--tone-edge);
     --face: var(--tone);
     --edge: var(--tone-edge);
     width: 100%;

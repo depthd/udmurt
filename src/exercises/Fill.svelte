@@ -192,9 +192,9 @@
     color: var(--green);
   }
   .bad .word {
-    --wc: var(--red);
-    --wbg: var(--red-soft);
-    color: var(--red);
+    --wc: var(--amber);
+    --wbg: var(--amber-soft);
+    color: var(--amber);
     text-decoration: line-through;
     text-decoration-thickness: 2px;
   }
@@ -248,9 +248,9 @@
     --ofg: var(--green);
   }
   .opt.is-wrong {
-    --oc: var(--red);
-    --obg: var(--red-soft);
-    --ofg: var(--red);
+    --oc: var(--amber);
+    --obg: var(--amber-soft);
+    --ofg: var(--amber);
   }
   .opt.is-dim {
     opacity: 0.5;

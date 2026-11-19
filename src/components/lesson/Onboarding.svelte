@@ -4,7 +4,7 @@
    * 1) «Как вас зовут?» — имя подставляется в фразы уроков ({name});
    * 2) «Обещание» — 7 / 14 / 30 дней подряд. Оба шага можно пропустить.
    */
-  import Mascot from '../Mascot.svelte';
+  import Cast from '../Cast.svelte';
   import { progress } from '$lib/progress.svelte';
   import { plural } from '$lib/lesson';
   import { sfx, haptic } from '$lib/sfx';
@@ -68,10 +68,14 @@
 <section class="ob" data-testid="onboarding">
   {#if step === 'name'}
     <form class="body" onsubmit={saveName}>
-      <Mascot mood="wave" size={112} />
-      {#if ask}<p class="udm ask" lang="udm">{ask.udm}</p>{/if}
-      <h1 id="ob-title">Как вас зовут?</h1>
-      <p class="muted lead">Имя появится в фразах уроков — будем знакомиться по-удмуртски.</p>
+      <header class="intro">
+        <div class="intro-cast"><Cast kind="wave" width={104} flush /></div>
+        <div class="intro-copy">
+          {#if ask}<p class="udm ask" lang="udm">{ask.udm}</p>{/if}
+          <h1 id="ob-title">Как вас зовут?</h1>
+          <p class="muted lead">Имя появится в фразах уроков — будем знакомиться по-удмуртски.</p>
+        </div>
+      </header>
 
       <label class="field">
         <span class="visually-hidden">Ваше имя</span>
@@ -95,18 +99,22 @@
       </div>
 
       <div class="actions">
-        <button class="btn btn--ink btn--block" type="submit" disabled={!clean} data-testid="onboarding-next">Дальше</button>
+        <button class="btn btn--block" type="submit" disabled={!clean} data-testid="onboarding-next">Дальше</button>
         <button class="btn btn--flat btn--block" type="button" onclick={finish} data-testid="onboarding-skip">Пропустить</button>
       </div>
     </form>
   {:else}
     <div class="body">
-      <Mascot mood="happy" size={112} />
-      <h1 bind:this={heading} tabindex="-1">Обещание</h1>
-      <p class="muted lead">
-        {#if hello}<span lang="udm" class="udm">{clean ? hello.udm.replace(/!$/, `, ${clean}!`) : hello.udm}</span>{/if} Сколько дней подряд вы будете заниматься? Хватит одного урока в
-        день.
-      </p>
+      <header class="intro">
+        <div class="intro-cast"><Cast kind="bird" width={96} flush /></div>
+        <div class="intro-copy">
+          <h1 bind:this={heading} tabindex="-1">Обещание</h1>
+          <p class="muted lead">
+            {#if hello}<span lang="udm" class="udm">{clean ? hello.udm.replace(/!$/, `, ${clean}!`) : hello.udm}</span>{/if} Сколько дней подряд вы будете заниматься? Хватит одного урока в
+            день.
+          </p>
+        </div>
+      </header>
 
       <div class="opts" role="radiogroup" aria-label="Сколько дней подряд">
         {#each options as o (o.d)}
@@ -148,13 +156,34 @@
     text-align: center;
     padding: 40px var(--gutter) calc(24px + env(safe-area-inset-bottom));
   }
+  .intro {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-left: 8px;
+    margin-bottom: 16px;
+    background: var(--sky);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-align: left;
+  }
+  .intro-cast {
+    display: grid;
+    align-self: end;
+  }
+  .intro-copy {
+    padding: 12px 10px 12px 0;
+  }
   h1 {
-    margin: 12px 0 6px;
+    margin: 0 0 6px;
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
     outline: none;
   }
   .lead {
-    margin: 0 0 20px;
-    max-width: 34ch;
+    margin: 0;
+    line-height: 1.35;
   }
   .field {
     width: 100%;
@@ -186,7 +215,7 @@
     margin: 0;
   }
   .ask {
-    margin: 12px 0 -6px;
+    margin: 0 0 4px;
     color: var(--red);
     font-size: 1.05rem;
   }

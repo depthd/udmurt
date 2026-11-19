@@ -386,8 +386,8 @@
     color: var(--green);
   }
   .opt.is-wrong .key {
-    border-color: var(--red);
-    color: var(--red);
+    border-color: var(--amber);
+    color: var(--amber);
   }
   .mark {
     display: grid;

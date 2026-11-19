@@ -11,6 +11,7 @@
   import { accepted, item, lexicon, personalize } from '$lib/course';
   import { checkAnswer } from '$lib/answer';
   import { prefs } from '$lib/prefs.svelte';
+  import Cast from '../components/Cast.svelte';
   import AudioButton from '../components/exercise/AudioButton.svelte';
   import OptionList from '../components/exercise/OptionList.svelte';
   import PromptBubble from '../components/exercise/PromptBubble.svelte';
@@ -80,16 +81,19 @@
 <div class="listen">
   {#if hasAudio}
     <div class="stage">
-      <div class="buttons">
-        <span data-testid="listen-play"
-          ><AudioButton audio={it.audio} size="lg" autoplay={prefs.value.sound} label="Прослушать ещё раз" /></span
-        >
-        <AudioButton audio={it.audio} size="md" rate={0.75} label="Прослушать медленно" />
+      <div class="cast-ear"><Cast kind="ear" width={112} flush /></div>
+      <div class="sound">
+        <div class="buttons">
+          <span data-testid="listen-play"
+            ><AudioButton audio={it.audio} size="lg" autoplay={prefs.value.sound} label="Прослушать ещё раз" /></span
+          >
+          <AudioButton audio={it.audio} size="md" rate={0.75} label="Прослушать медленно" />
+        </div>
+        <p class="hint">
+          {mode === 'type' ? 'Напишите, что услышали' : 'Что прозвучало?'}
+          {#if it.audio_synth}<span class="synth" title="Голос синтезирован, не записан носителем">· синтез речи</span>{/if}
+        </p>
       </div>
-      <p class="hint">
-        {mode === 'type' ? 'Напишите, что услышали' : 'Что прозвучало?'}
-        {#if it.audio_synth}<span class="synth" title="Голос синтезирован, не записан носителем">· синтез речи</span>{/if}
-      </p>
       {#if locked}
         <p class="reveal rise"><span class="udm" lang="udm">{udm}</span> — {ru}</p>
       {/if}
@@ -146,21 +150,29 @@
     width: 100%;
   }
   .stage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
-    gap: 10px;
-    padding: 24px 16px 18px;
-    border: 2px solid var(--line);
-    border-radius: var(--radius-l);
-    background: var(--surface);
+    gap: 8px 12px;
+    padding: 10px 10px 0;
+    border-radius: var(--radius);
+    background: var(--blue-soft);
+    overflow: hidden;
+  }
+  .cast-ear {
+    display: grid;
+    align-self: end;
+  }
+  .sound {
+    min-width: 0;
+    padding: 4px 0 10px;
+    text-align: center;
   }
   .buttons {
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding-left: 66px; /* визуально центрируем большую кнопку: справа от неё маленькая */
+    justify-content: center;
+    gap: 10px;
   }
   .hint {
     margin: 6px 0 0;
@@ -174,7 +186,9 @@
     letter-spacing: 0.02em;
   }
   .reveal {
+    grid-column: 1 / -1;
     margin: 0;
+    padding: 6px 10px 12px;
     font-size: 1.1rem;
     text-align: center;
   }
@@ -223,8 +237,8 @@
     background: var(--amber-soft);
   }
   .field.bad {
-    border-color: var(--red);
-    background: var(--red-soft);
+    border-color: var(--amber);
+    background: var(--amber-soft);
   }
 
   @media (prefers-reduced-motion: no-preference) {

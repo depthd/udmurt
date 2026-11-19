@@ -2,7 +2,7 @@
   /**
    * Варианты ответа для choice / listen: плитки со номером клавиши (1–9, 0) или карточки-картинки.
    * Выбор — синяя рамка и «тук»; после проверки (locked) правильный зеленеет с ✓,
-   * выбранный неверный краснеет с ✗ и трясётся, остальные притухают.
+   * выбранный неверный становится янтарным с ✗ и трясётся, остальные притухают.
    */
   import { sfx, haptic } from '$lib/sfx';
   import { E2E, isChoiceKey, keyIndex, keyLabel, type Option } from './options';
@@ -110,11 +110,11 @@
     color: var(--green);
   }
   .is-wrong .key {
-    border-color: var(--red);
-    color: var(--red);
+    border-color: var(--amber);
+    color: var(--amber);
   }
   .is-dim {
-    opacity: 0.55;
+    color: var(--muted);
   }
   .mark {
     flex: none;
@@ -130,13 +130,13 @@
     background: var(--green);
   }
   .mark--bad {
-    background: var(--red);
+    background: var(--amber);
   }
   .is-correct .txt {
     color: var(--green);
   }
   .is-wrong .txt {
-    color: var(--red);
+    color: var(--amber);
   }
 
   /* ── картинки: карточки в сетке ── */

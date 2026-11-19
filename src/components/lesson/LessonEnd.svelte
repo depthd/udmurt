@@ -6,7 +6,7 @@
    * Для повторения (mode='practice') Reward может не быть — тогда упрощённые итоги.
    */
   import { untrack } from 'svelte';
-  import Mascot from '../Mascot.svelte';
+  import Cast from '../Cast.svelte';
   import { ACHIEVEMENTS, type LessonResult, type Reward } from '$lib/progress.svelte';
   import { prefs } from '$lib/prefs.svelte';
   import { sfx, haptic } from '$lib/sfx';
@@ -102,35 +102,38 @@
 
 <section class="end" aria-labelledby="end-title" data-testid="lesson-end">
   <div class="body">
-    <div class="hero">
-      <Mascot mood="celebrate" size={136} label="Юсь радуется вместе с вами" />
-    </div>
-    <h1 id="end-title">{heading}</h1>
-    <p class="sub">
-      <span lang={hasUdmLetters(title) ? 'udm' : undefined} class:udm={hasUdmLetters(title)}>{title}</span>
-      <span aria-hidden="true">·</span>
-      {praise}
-    </p>
+    <header class="hero">
+      <div class="end-cast"><Cast kind="palm" width={120} flush /></div>
+      <div class="hero-copy">
+        <h1 id="end-title" class="poster-title">{heading}</h1>
+        <div class="thread-rule" aria-hidden="true"></div>
+        <p class="sub">
+          <span lang={hasUdmLetters(title) ? 'udm' : undefined} class:udm={hasUdmLetters(title)}>{title}</span>
+          <span aria-hidden="true">·</span>
+          {praise}
+        </p>
+      </div>
+    </header>
 
     <ul class="stats" aria-label="Итоги">
       {#if reward}
         <li class="stat stat--xp">
           <span class="lab">Опыт</span>
-          <span class="val"><span aria-hidden="true">⚡</span> +{xpShown}<span class="visually-hidden"> XP</span></span>
+          <span class="val">+{xpShown}<span class="visually-hidden"> XP</span></span>
         </li>
       {:else}
         <li class="stat stat--xp">
           <span class="lab">Слов</span>
-          <span class="val"><span aria-hidden="true">📚</span> {words}</span>
+          <span class="val">{words}</span>
         </li>
       {/if}
       <li class="stat stat--acc">
         <span class="lab">Точность</span>
-        <span class="val"><span aria-hidden="true">🎯</span> {accShown}%</span>
+        <span class="val">{accShown}%</span>
       </li>
       <li class="stat stat--time">
         <span class="lab">Время</span>
-        <span class="val"><span aria-hidden="true">⏱</span> {formatTime(result.ms)}</span>
+        <span class="val">{formatTime(result.ms)}</span>
       </li>
     </ul>
 
@@ -147,19 +150,18 @@
         {/if}
         {#if reward.usedFreeze > 0}
           <p class="freeze">
-            <span aria-hidden="true">❄️</span>
-            {reward.usedFreeze === 1
+              {reward.usedFreeze === 1
               ? 'Заморозка сохранила вашу серию за пропущенный день'
               : `Заморозки сохранили серию: пропущено ${reward.usedFreeze} ${plural(reward.usedFreeze, ['день', 'дня', 'дней'])}`}
           </p>
         {/if}
         {#if reward.repaired > 0}
-          <p class="freeze"><span aria-hidden="true">🧵</span> Серия восстановлена: вернули {reward.repaired} {plural(reward.repaired, ['день', 'дня', 'дней'])}!</p>
+          <p class="freeze">Серия восстановлена: вернули {reward.repaired} {plural(reward.repaired, ['день', 'дня', 'дней'])}!</p>
         {:else if progress.repair && progress.repair.left > 0}
-          <p class="freeze"><span aria-hidden="true">🧵</span> Ещё {progress.repair.left} {plural(progress.repair.left, ['урок', 'урока', 'уроков'])} — и прерванная серия ({progress.repair.value}) вернётся.</p>
+          <p class="freeze">Ещё {progress.repair.left} {plural(progress.repair.left, ['урок', 'урока', 'уроков'])} — и прерванная серия ({progress.repair.value}) вернётся.</p>
         {/if}
         {#if reward.goalReached}
-          <p class="goal"><span aria-hidden="true">✅</span> Дневная цель выполнена</p>
+          <p class="goal"><span aria-hidden="true">✓</span> Дневная цель выполнена</p>
         {/if}
       </div>
     {/if}
@@ -202,15 +204,37 @@
     padding: 32px var(--gutter) 24px;
   }
   .hero {
-    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    width: min(100%, 520px);
+    padding-left: 8px;
+    margin-bottom: 22px;
+    text-align: left;
+    background: var(--sky);
+    border-radius: var(--radius-l);
+    overflow: hidden;
+  }
+  .end-cast {
+    display: grid;
+    align-self: end;
+  }
+  .hero-copy {
+    padding: 16px 12px 16px 0;
+  }
+  .hero .thread-rule {
+    margin: 8px 0;
   }
   h1 {
-    margin: 0 0 4px;
+    margin: 0;
+    font-size: clamp(1.38rem, 4.5vw, 2.4rem);
+    overflow-wrap: anywhere;
     color: var(--ink);
   }
   .sub {
     color: var(--muted);
-    margin: 0 0 22px;
+    margin: 0;
     font-weight: 600;
   }
   .sub .udm {
@@ -229,25 +253,26 @@
   }
   .stat {
     --c: var(--amber);
-    border: 2px solid var(--c);
+    --c-soft: var(--amber-soft);
+    border: 2px solid var(--c-soft);
     border-radius: var(--radius);
-    background: var(--c);
+    background: var(--c-soft);
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
   .stat--acc {
     --c: var(--green);
+    --c-soft: var(--green-soft);
   }
   .stat--time {
     --c: var(--blue);
+    --c-soft: var(--blue-soft);
   }
   .lab {
     padding: 4px 6px 3px;
-    font: 800 0.7rem/1.3 var(--font-head);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--on-fill);
+    font: 800 0.75rem/1.3 var(--font-head);
+    color: var(--ink);
   }
   .val {
     display: flex;
@@ -301,8 +326,6 @@
   }
   .achs-title {
     font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 8px;
   }
@@ -339,7 +362,7 @@
     position: sticky;
     bottom: 0;
     padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom));
-    background: var(--bg);
+    background: var(--surface);
     border-top: 2px solid var(--line);
   }
   @media (min-width: 640px) {

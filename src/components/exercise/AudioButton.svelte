@@ -47,13 +47,13 @@
 
 {#if audio}
   <span class="wrap">
-    <button type="button" class="audio audio--{size}" class:slow class:playing onclick={play} aria-label={aria} title={aria}>
+    <button type="button" class="btn btn--sky audio audio--{size}" class:slow class:playing onclick={play} aria-label={aria} title={aria}>
       <span class="ring" aria-hidden="true"></span>
       {#if slow}
         <!-- черепаха -->
         <svg viewBox="0 0 32 32" aria-hidden="true" class="ico">
           <path d="M6 20c0-5.5 4.5-9 10-9s10 3.5 10 9H6Z" fill="currentColor" />
-          <path d="M11 14.5l3 3m4-4v4m4.5-2.5-3 3" stroke="var(--btn-face)" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M11 14.5l3 3m4-4v4m4.5-2.5-3 3" stroke="var(--face)" stroke-width="1.6" stroke-linecap="round" />
           <circle cx="27.5" cy="17" r="2.6" fill="currentColor" />
           <path d="M8.5 20.5v3M23 20.5v3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
         </svg>
@@ -79,49 +79,30 @@
     flex: none;
   }
   .audio {
-    --btn-face: var(--blue);
-    --btn-edge: color-mix(in srgb, var(--blue) 70%, #000);
     position: relative;
-    display: inline-grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 14px;
-    background: var(--btn-face);
-    color: var(--on-fill);
-    box-shadow: 0 4px 0 var(--btn-edge);
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .audio:active {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 var(--btn-edge);
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
   }
   .audio--sm {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
-    box-shadow: 0 3px 0 var(--btn-edge);
+    min-height: 44px;
   }
   .audio--lg {
-    width: 96px;
-    height: 96px;
-    border-radius: 28px;
-    box-shadow: 0 6px 0 var(--btn-edge);
-  }
-  .audio--lg:active {
-    transform: translateY(6px);
+    width: 64px;
+    height: 64px;
   }
   .slow {
-    --btn-face: var(--surface);
-    --btn-edge: var(--line);
-    color: var(--blue);
-    border: 2px solid var(--line);
+    --face: var(--surface);
+    --edge: var(--line);
+    --fg: var(--blue);
+    border-color: var(--field-border);
   }
   .ico {
-    width: 55%;
-    height: 55%;
+    width: 58%;
+    height: 58%;
   }
   .slow .ico {
     width: 72%;
@@ -134,22 +115,12 @@
     pointer-events: none;
   }
   .synth {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--muted);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    :global(html:not([data-motion='reduce'])) .audio {
-      transition:
-        transform 600ms var(--ease-release),
-        box-shadow 600ms var(--ease-release);
-    }
-    :global(html:not([data-motion='reduce'])) .audio:active {
-      transition-duration: 34ms;
-    }
     :global(html:not([data-motion='reduce'])) .playing .ring {
       animation: ring 1s var(--ease-standard) infinite;
     }

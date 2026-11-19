@@ -182,6 +182,11 @@
       >
         {#if k}<span class="key" aria-hidden="true">{k}</span>{/if}
         <span class="txt udm" lang="udm">{words.get(id)?.udm}</span>
+        {#if s === 'is-correct' || s === 'is-done'}
+          <span class="mark" aria-hidden="true">✓</span>
+        {:else if s === 'is-wrong'}
+          <span class="mark" aria-hidden="true">✗</span>
+        {/if}
       </button>
     {/each}
     {#each cols.right as id, i (id)}
@@ -202,6 +207,11 @@
       >
         {#if k}<span class="key" aria-hidden="true">{k}</span>{/if}
         <span class="txt">{words.get(id)?.ru}</span>
+        {#if s === 'is-correct' || s === 'is-done'}
+          <span class="mark" aria-hidden="true">✓</span>
+        {:else if s === 'is-wrong'}
+          <span class="mark" aria-hidden="true">✗</span>
+        {/if}
       </button>
     {/each}
   </div>
@@ -258,11 +268,16 @@
     border-color: var(--focus);
     color: var(--focus);
   }
+  .mark {
+    font-weight: 800;
+  }
+  .is-correct .mark,
   .is-correct .txt {
     color: var(--green);
   }
+  .is-wrong .mark,
   .is-wrong .txt {
-    color: var(--red);
+    color: var(--amber);
   }
   /* найденная пара «гаснет»: остаётся на месте (сетка не прыгает), но притухает */
   .tile.is-done {

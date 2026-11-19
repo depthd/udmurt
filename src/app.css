@@ -392,10 +392,11 @@ select {
   align-items: center;
   gap: 12px;
   width: 100%;
-  border: 2px solid var(--line);
-  border-radius: var(--radius);
+  min-height: 56px;
+  border: 2px solid var(--line-strong);
+  border-radius: 14px;
   background: var(--surface);
-  box-shadow: 0 4px 0 var(--line);
+  box-shadow: 0 2px 0 var(--line);
   padding: 14px 16px;
   text-align: left;
   cursor: pointer;
@@ -404,23 +405,23 @@ select {
 }
 .tile:active {
   transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--line);
+  box-shadow: 0 0 0 var(--line);
 }
 .tile[aria-pressed='true'],
 .tile.is-selected {
-  border-color: var(--focus);
+  border-color: var(--outline);
   background: var(--blue-soft);
-  box-shadow: 0 4px 0 var(--focus);
+  box-shadow: 0 2px 0 var(--outline);
 }
 .tile.is-correct {
   border-color: var(--green);
   background: var(--green-soft);
-  box-shadow: 0 4px 0 var(--green);
+  box-shadow: none;
 }
 .tile.is-wrong {
-  border-color: var(--red);
-  background: var(--red-soft);
-  box-shadow: 0 4px 0 var(--red);
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  box-shadow: none;
 }
 .tile:disabled {
   cursor: default;

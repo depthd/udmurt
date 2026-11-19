@@ -1,7 +1,7 @@
 <script lang="ts">
   /**
    * Прогресс-бар урока (отчёт 04 §3.4): пружинное заполнение, пробегающий блик при продвижении,
-   * «солнечный» градиент и бейдж «N подряд!» от трёх верных ответов подряд.
+   * янтарная заливка и бейдж «N подряд!» от трёх верных ответов подряд.
    */
   let { value, max, combo = 0 }: { value: number; max: number; combo?: number } = $props();
 
@@ -50,9 +50,10 @@
     min-width: 0;
   }
   .bar {
-    height: 16px;
+    height: 14px;
     border-radius: 999px;
-    background: var(--line);
+    background: var(--surface-2);
+    border: 2px solid var(--outline);
     overflow: hidden;
   }
   .fill {
@@ -60,30 +61,20 @@
     height: 100%;
     width: max(16px, calc(var(--p) * 100%));
     border-radius: inherit;
-    background: var(--green);
+    background: var(--red);
     overflow: hidden;
   }
   .fill.empty {
     width: 0;
   }
-  /* «глянцевая» полоска сверху */
-  .fill::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    top: 3px;
-    height: 4px;
-    border-radius: 999px;
-    background: rgb(255 255 255 / 0.32);
-  }
   .is-combo .fill {
-    background: linear-gradient(90deg, var(--amber), var(--flag-red));
+    background: var(--amber);
   }
   .shine {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 0.6) 50%, transparent 70%);
+    width: 100%;
+    background: color-mix(in srgb, var(--on-fill) 18%, transparent);
     transform: translateX(-100%);
     opacity: 0;
   }
@@ -93,11 +84,9 @@
     bottom: calc(100% + 4px);
     padding: 1px 8px;
     border-radius: 999px;
-    font: 800 0.72rem/1.5 var(--font-head);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font: 800 0.75rem/1.5 var(--font-head);
     color: var(--on-fill);
-    background: var(--flag-red);
+    background: var(--amber);
     white-space: nowrap;
     transform-origin: 100% 100%;
   }

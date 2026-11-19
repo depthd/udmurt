@@ -9,6 +9,7 @@
   import { item, personalize, sources } from '$lib/course';
   import { normalize } from '$lib/answer';
   import { prefs } from '$lib/prefs.svelte';
+  import Cast from '../components/Cast.svelte';
   import AudioButton from '../components/exercise/AudioButton.svelte';
   import MorphemeBreakdown from '../components/exercise/MorphemeBreakdown.svelte';
 
@@ -50,21 +51,20 @@
     <span class="kind">{kindLabel}</span>
   </div>
 
-  {#if it.emoji}
-    <div class="pic" aria-hidden="true"><span>{it.emoji}</span></div>
-  {/if}
-
-  <div class="word-row">
-    <AudioButton audio={it.audio} synth={it.audio_synth} autoplay={prefs.value.sound} label="Прослушать «{udm}»" />
-    <p class="word udm" lang="udm">{udm}</p>
+  <div class="teach-hero">
+    <div class="portrait"><Cast kind="palm" width={96} flush /></div>
+    <div class="translation">
+      <div class="word-row">
+        {#if it.emoji}<span class="pic" aria-hidden="true">{it.emoji}</span>{/if}
+        <p class="word udm" lang="udm">{udm}</p>
+      </div>
+      <p class="ru">{ru}</p>
+      {#if alts.length}<p class="alt">также: {alts.join(' · ')}</p>{/if}
+      <AudioButton audio={it.audio} synth={it.audio_synth} autoplay={prefs.value.sound} label="Прослушать «{udm}»" />
+    </div>
   </div>
-  <p class="ru">{ru}</p>
-  {#if alts.length}
-    <p class="alt">также: {alts.join(' · ')}</p>
-  {/if}
-
   {#if it.morphemes.length}
-    <svg class="stitch" aria-hidden="true" height="4" width="100%"><line x1="3" y1="2" x2="100%" y2="2" /></svg>
+    <div class="thread-rule stitch" aria-hidden="true"></div>
     {#if showMorph}
       <MorphemeBreakdown morphemes={it.morphemes} />
     {:else}
@@ -98,7 +98,6 @@
     border: 2px solid var(--line);
     border-radius: var(--radius-l);
     background: var(--surface);
-    box-shadow: var(--shadow);
     text-align: center;
   }
   .top {
@@ -119,7 +118,6 @@
     color: var(--red);
     font: 700 0.75rem/1 var(--font-head);
     letter-spacing: 0.06em;
-    text-transform: uppercase;
   }
   .badge svg {
     width: 12px;
@@ -130,34 +128,45 @@
     font-weight: 600;
     color: var(--muted);
   }
-  .pic {
+  .teach-hero {
+    align-self: stretch;
     display: grid;
-    place-items: center;
-    width: 88px;
-    height: 88px;
-    margin: 0 0 4px;
-    border-radius: 50%;
-    background: var(--surface-2);
-    font-size: 48px;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px;
+    align-items: center;
+    padding-left: 8px;
+    border-radius: var(--radius);
+    background: var(--blue-soft);
+    overflow: hidden;
+  }
+  .portrait {
+    display: grid;
+    align-self: end;
+  }
+  .translation {
+    padding: 10px 8px 10px 0;
+  }
+  .pic {
+    font-size: 24px;
     line-height: 1;
   }
   .word-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    max-width: 100%;
+    gap: 4px 8px;
   }
   .word {
     margin: 0;
-    font: 700 clamp(2rem, 1.6rem + 2vw, 2.6rem) / 1.15 var(--font-head);
+    font: 700 clamp(1.4rem, 5.5vw, 2.6rem) / 1.15 var(--font-head);
     letter-spacing: -0.01em;
     overflow-wrap: anywhere;
     color: var(--ink);
   }
   .ru {
-    margin: 2px 0 0;
-    font: 500 1.2rem/1.35 var(--font-text);
+    margin: 2px 0 8px;
+    font: 500 1.1rem/1.35 var(--font-text);
     color: var(--muted);
   }
   .alt {
@@ -165,21 +174,8 @@
     font-size: 0.85rem;
     color: var(--muted);
   }
-  /* «стежок» красной нитью */
   .stitch {
-    display: block;
-    align-self: stretch;
-    width: auto;
-    height: 4px;
-    margin: 10px 8px 8px;
-    overflow: visible;
-  }
-  .stitch line {
-    stroke: var(--red);
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-dasharray: 10 12;
-    opacity: 0.55;
+    margin: 8px 0 4px;
   }
   .note {
     display: flex;
@@ -213,25 +209,8 @@
     :global(html:not([data-motion='reduce'])) .teach {
       animation: rise var(--dur-slow) var(--ease-enter) both;
     }
-    :global(html:not([data-motion='reduce'])) .pic span {
-      display: inline-block;
-      animation: pic-pop var(--spring-pop-dur) var(--spring-pop) 120ms both;
-    }
-    :global(html:not([data-motion='reduce'])) .word-row,
-    :global(html:not([data-motion='reduce'])) .ru {
-      animation: rise var(--dur-slow) var(--ease-enter) 180ms both;
-    }
     :global(html:not([data-motion='reduce'])) .note {
       animation: rise var(--dur-slow) var(--ease-enter) 420ms both;
-    }
-  }
-  @keyframes pic-pop {
-    from {
-      opacity: 0;
-      transform: scale(0.4) rotate(-12deg);
-    }
-    30% {
-      opacity: 1;
     }
   }
 </style>
