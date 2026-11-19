@@ -155,7 +155,6 @@
     margin: 0 0 2px;
     font: 700 0.75rem/1.2 var(--font-head);
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     color: var(--red);
   }
   h2 {

@@ -91,11 +91,11 @@
   @media (max-width: 370px) {
     a {
       padding-inline: 0;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.065em;
     }
   }
   a.active {
-    background: #c8261c;
+    background: var(--red-solid);
     color: #fff;
   }
   a:not(.active):hover {

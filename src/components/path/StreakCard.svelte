@@ -188,7 +188,7 @@
     border: 2px solid var(--line);
   }
   .lbl {
-    font: 600 0.72rem/1 var(--font-head);
+    font: 600 0.75rem/1 var(--font-head);
     color: var(--muted);
   }
   .today .lbl {

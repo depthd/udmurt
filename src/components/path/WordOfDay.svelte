@@ -70,7 +70,6 @@
     margin: 0;
     font: 700 0.75rem/1.2 var(--font-head);
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     color: var(--red);
   }
   .ok {
@@ -135,7 +134,7 @@
     font: 600 1rem/1 var(--font-head);
   }
   .m small {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: var(--muted);
     line-height: 1.2;
   }

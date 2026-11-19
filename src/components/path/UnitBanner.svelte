@@ -180,6 +180,42 @@
   .banner--locked .bar {
     background: var(--line);
   }
+  @media (max-width: 479px) {
+    .banner {
+      grid-template-areas:
+        "eyebrow guide"
+        "title title"
+        "desc desc"
+        "bar bar";
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 8px 12px;
+      padding: 12px 16px 16px;
+    }
+    .text {
+      display: contents;
+    }
+    .eyebrow {
+      grid-area: eyebrow;
+      margin: 0;
+    }
+    .title {
+      grid-area: title;
+      margin: 0;
+    }
+    .desc {
+      grid-area: desc;
+    }
+    .guide-btn {
+      grid-area: guide;
+      flex-direction: row;
+      min-height: 44px;
+      padding: 6px 8px;
+    }
+    .bar {
+      grid-area: bar;
+    }
+  }
   @media (prefers-reduced-motion: no-preference) {
     :global(html:not([data-motion='reduce'])) .bar span {
       transition: width var(--dur-slow) var(--ease-enter);

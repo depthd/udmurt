@@ -65,9 +65,8 @@
   }
   .cap {
     margin-bottom: 10px;
-    font: 700 0.72rem/1 var(--font-head);
+    font: 700 0.75rem/1 var(--font-head);
     letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--muted);
     text-align: center;
   }

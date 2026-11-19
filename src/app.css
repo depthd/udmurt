@@ -29,7 +29,8 @@
   --line-strong: #c9bdad;
   /* Граница полей ввода и чипов: ≥3:1 к --surface/--bg/--surface-2 (WCAG 1.4.11). --line — только декор. */
   --field-border: #8a8076;
-  --red: #c8261c;
+  --red-solid: #c8261c;
+  --red: var(--red-solid);
   --red-edge: #8e1912;
   --red-soft: #fbe3df;
   --flag-red: #dd2211;

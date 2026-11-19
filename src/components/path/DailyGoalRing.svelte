@@ -76,7 +76,7 @@
   }
   .g {
     margin-top: 3px;
-    font: 600 0.72rem/1 var(--font-head);
+    font: 600 0.75rem/1 var(--font-head);
     color: var(--muted);
   }
   .check {

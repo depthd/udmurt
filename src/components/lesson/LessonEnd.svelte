@@ -376,6 +376,12 @@
     }
   }
   @media (max-width: 360px) {
+    .end-cast {
+      width: 98px;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
     .val {
       font-size: 1.05rem;
     }

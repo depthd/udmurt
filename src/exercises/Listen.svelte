@@ -146,7 +146,7 @@
   .listen {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
     width: 100%;
   }
   .stage {
@@ -177,6 +177,7 @@
   .hint {
     margin: 6px 0 0;
     font-weight: 600;
+    line-height: 1.35;
     color: var(--muted);
     text-align: center;
   }
@@ -239,6 +240,15 @@
   .field.bad {
     border-color: var(--amber);
     background: var(--amber-soft);
+  }
+
+  @media (max-width: 359px) {
+    .hint {
+      font-size: 0.9rem;
+    }
+    .synth {
+      display: block;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {

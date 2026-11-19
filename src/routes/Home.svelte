@@ -50,7 +50,7 @@
 
 {#if isNew}
   <section class="page welcome" aria-labelledby="welcome-title">
-    <div class="hero rise">
+    <div class="hero sticker rise">
       <header class="hero-copy">
         <p class="bubble" aria-hidden="true"><span lang="udm" class="udm">Ӟечбуресь!</span></p>
         <h1 id="welcome-title" class="poster-title brand" lang="udm">Удмурт<br />кыл</h1>
@@ -327,6 +327,21 @@
     position: absolute;
     inset: 14px 14px auto auto;
   }
+  @media (max-width: 899px) {
+    .hero {
+      border: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+  }
+  @media (max-width: 359px) {
+    .hero-art :global(.cast) {
+      max-height: 195px;
+    }
+    .lead {
+      font-size: 0.94rem;
+    }
+  }
   @media (min-width: 700px) {
     .welcome {
       max-width: 760px;
@@ -348,13 +363,10 @@
       padding-top: 28px;
     }
     .hero {
-      grid-template: "copy art" 1fr "cta art" 1fr / minmax(0, 1.1fr) minmax(0, 0.9fr);
+      grid-template: "copy art" 1.16fr "cta art" 0.84fr / minmax(0, 1.1fr) minmax(0, 0.9fr);
       column-gap: 0;
       padding-left: clamp(26px, 5vw, 68px);
-      border: 2.5px solid var(--outline);
       border-radius: var(--radius-l);
-      background: var(--surface);
-      box-shadow: 0 4px 0 var(--hard-shadow);
       overflow: hidden;
       text-align: left;
     }

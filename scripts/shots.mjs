@@ -87,22 +87,27 @@ export async function walk(browser, viewport, theme, capture, prepare = () => {}
   }
 }
 
-async function shots(stage) {
-  if (!['before', 'after'].includes(stage)) throw new Error('node scripts/shots.mjs <before|after>');
+export async function saveShot(page, stage, screen, width, theme) {
   const dir = 'docs/redesign/shots/' + stage;
   await mkdir(dir, { recursive: true });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const visible = [...document.querySelectorAll('img.cast')].filter((img) => img.getClientRects().length > 0);
+    await Promise.all(visible.map((img) => img.decode()));
+  });
+  const path = `${dir}/${screen}-${width}-${theme}.jpg`;
+  const buffer = await page.screenshot({ path, type: 'jpeg', quality: 70, animations: 'disabled' });
+  if (buffer.length > 1_000_000) throw new Error('Снимок тяжелее 1 МБ: ' + path);
+}
+
+async function shots(stage) {
+  if (!['before', 'after'].includes(stage)) throw new Error('node scripts/shots.mjs <before|after>');
   const browser = await launch();
   try {
     for (const viewport of sizes) {
-      await Promise.all(themes.map((theme) => walk(browser, viewport, theme, async (page, screen) => {
-        await page.evaluate(async () => {
-          await document.fonts.ready;
-          await Promise.all(Array.from(document.querySelectorAll('.cast'), (img) => img.decode()));
-        });
-        const path = `${dir}/${screen}-${viewport.width}-${theme}.jpg`;
-        const buffer = await page.screenshot({ path, type: 'jpeg', quality: 70, animations: 'disabled' });
-        if (buffer.length > 1_000_000) throw new Error('Снимок тяжелее 1 МБ: ' + path);
-      })));
+      await Promise.all(themes.map((theme) => walk(browser, viewport, theme, (page, screen) =>
+        saveShot(page, stage, screen, viewport.width, theme))));
       console.log('Снимки ' + viewport.width + ' px готовы');
     }
   } finally {
