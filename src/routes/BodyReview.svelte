@@ -26,7 +26,7 @@
 </script>
 
 <LessonFrame mode="practice" done={position} total={deck.length}
-  exitLabel="Выйти из повторения" onexit={() => router.go('/practice')}>
+  exitLabel="Выйти из повторения" onexit={() => router.go('/class', 'back')}>
   <article aria-live="polite">
     {#if word}
       <p class="muted count">Слово {position + 1} из {deck.length}</p>
@@ -40,7 +40,7 @@
     {/if}
     <nav aria-label="Продолжение занятия">
       <a href={href(classLessonPath('u2-dates'))}>Перейти к числительным</a>
-      <a href={href('/lesson/u10-body')}>Урок «Части тела»</a>
+      <a href={href(classLessonPath('u10-body'))}>Урок «Части тела»</a>
     </nav>
   </article>
   {#snippet footer()}

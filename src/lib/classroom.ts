@@ -1,10 +1,15 @@
 /** Уроки пары можно открыть по прямой ссылке на любом этапе личного курса. */
-export const classLessons = ['u2-dates', 'u7-calendar', 'u11-survey'];
+export const classLessons = [
+  { id: 'u2-dates', label: 'Числительные от 1 до 31', minutes: 6 },
+  { id: 'u7-calendar', label: 'Месяцы и времена года', minutes: 7 },
+  { id: 'u11-survey', label: 'Два вопроса одногруппнику', minutes: 6 },
+];
 export const classLessonPath = (id: string) => `/lesson/${id}?class=1`;
 
 export function nextClassPath(id: string): string {
-  const next = classLessons[classLessons.indexOf(id) + 1];
-  return next ? classLessonPath(next) : '/class/survey';
+  if (id === 'u10-body') return '/practice/body';
+  const next = classLessons[classLessons.findIndex(lesson => lesson.id === id) + 1];
+  return next ? classLessonPath(next.id) : '/class/survey';
 }
 
 // «Марым, лэся…», § 3.1.1–2. В составных числительных изменяется только последнее слово.

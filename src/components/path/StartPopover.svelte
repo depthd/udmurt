@@ -6,7 +6,7 @@
   import { onMount } from 'svelte';
   import { personalize, type LessonRef } from '$lib/course';
   import { progress } from '$lib/progress.svelte';
-  import { router, href } from '$lib/router.svelte';
+  import { router } from '$lib/router.svelte';
   import { sfx, haptic } from '$lib/sfx';
   import { prefs } from '$lib/prefs.svelte';
   import { plural, splitTitle } from './geometry';
@@ -100,9 +100,6 @@
     {#if title.prefix}<span class="prefix">{title.prefix}</span>{/if}<span lang="udm" class="udm">{title.udm}</span>
   </h3>
   <p class="goal">{personalize(ref.lesson.goal)}</p>
-  {#if ref.lesson.id === 'u10-body'}
-    <a class="btn btn--flat btn--sm" href={href('/practice/body')}>Сразу к повторению</a>
-  {/if}
 
   {#if locked}
     <p class="hint" role="status" data-testid="locked-hint">

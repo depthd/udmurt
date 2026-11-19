@@ -9,7 +9,7 @@
 </script>
 
 <article class="board">
-  <header><h1>Шпаргалка для опроса</h1><a href={href('/practice')}>К занятию</a></header>
+  <header><h1>Шпаргалка для опроса</h1><a href={href('/class')}>К занятию</a></header>
   <section aria-label="Разговор в паре" class="models">
     <div class="card">
       <h2 lang="udm">{item('ask-birthday').udm}</h2>

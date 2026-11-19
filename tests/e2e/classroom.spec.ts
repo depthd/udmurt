@@ -3,8 +3,8 @@ import { solveLesson } from './solve';
 
 test('группа открывает повторение и проходит три урока до шпаргалки', async ({ page }) => {
   test.setTimeout(150_000);
-  await page.goto('#/practice');
-  await page.getByRole('link', { name: 'Части тела — сразу к повторению' }).click();
+  await page.goto('#/class');
+  await page.getByRole('link', { name: /Повторение частей тела/ }).click();
   await expect(page).toHaveURL(/#\/practice\/body$/);
   await expect(page.getByText('Слово 1 из 28')).toBeVisible();
   await expect(page.locator('article [lang="udm"]')).toHaveCount(0);
@@ -25,6 +25,34 @@ test('группа открывает повторение и проходит �
   await expect(page.getByRole('heading', { name: 'Шпаргалка для опроса' })).toBeVisible();
   await expect(page.getByText('Мынам вордскем нуналы куинетӥ толсуре.', {exact: true})).toBeVisible();
   await expect(page.getByText('Анна тужгес но гужемез яратэ.')).toBeVisible();
+});
+
+test('материалы открываются по прямой ссылке, выход возвращает к плану', async ({ page, request }) => {
+  for (const route of ['#/', '#/learn', '#/practice']) {
+    await page.goto(route);
+    await expect(page.locator('main h1').first()).toBeVisible();
+    await expect(page.locator('a[href="#/class"], a[href="#/class/survey"], a[href*="?class=1"], a[href="#/practice/body"]')).toHaveCount(0);
+  }
+  await page.goto('#/class');
+  const plan = page.getByRole('heading', { name: 'Материалы к занятию' });
+  await expect(plan).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Этапы занятия' }).getByRole('link')).toHaveCount(4);
+  const sheet = await page.getByRole('link', { name: /Лист для опроса/ }).getAttribute('href');
+  const pdf = await request.get(sheet!);
+  expect(pdf.ok()).toBe(true);
+  expect((await pdf.body()).subarray(0, 5).toString()).toBe('%PDF-');
+  await page.getByRole('link', { name: /шпаргалку на проекторе/ }).click();
+  await page.getByRole('link', { name: 'К занятию' }).click();
+  await expect(plan).toBeVisible();
+  await page.getByRole('link', { name: /Повторение частей тела/ }).click();
+  await page.getByTestId('exit').click();
+  await expect(plan).toBeVisible();
+  for (const label of [/Числительные от 1 до 31/, /Полный урок/]) {
+    await page.getByRole('link', { name: label }).click();
+    await page.getByTestId('exit').click();
+    await page.getByTestId('exit-leave').click();
+    await expect(plan).toBeVisible();
+  }
 });
 
 test('шпаргалка показывает группе сразу все даты и сезоны', async ({ page }) => {

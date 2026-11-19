@@ -2,11 +2,10 @@
   import LessonRunner from '../components/lesson/LessonRunner.svelte';
   import Mascot from '../components/Mascot.svelte';
   import { progress } from '$lib/progress.svelte';
-  import { findLesson, lexicon, personalize } from '$lib/course';
+  import { lexicon, personalize } from '$lib/course';
   import { strength } from '$lib/srs';
   import { pickItems, buildPractice, type PracticeMode } from '$lib/practice';
   import { href, router } from '$lib/router.svelte';
-  import { classLessonPath, classLessons } from '$lib/classroom';
   import { dayKey } from '$lib/dates';
   import type { Exercise } from '$lib/content/schema';
   import { ui } from '$lib/ui.svelte';
@@ -77,30 +76,6 @@
       </div>
     </header>
 
-    <section class="class-section">
-      <h2 class="sub">На занятии</h2>
-      <div class="modes">
-        <a class="mode card" href={href('/practice/body')} aria-label="Части тела — сразу к повторению">
-          <span class="ic" aria-hidden="true">✋</span>
-          <span class="t">Части тела — сразу к повторению</span>
-          <span class="s">Вспомните слово и проверьте себя</span>
-        </a>
-        {#each classLessons as id}
-          {@const lesson = findLesson(id)!.lesson}
-          <a class="mode card" href={href(classLessonPath(id))}>
-            <span class="ic" aria-hidden="true">{lesson.icon}</span>
-            <span class="t" lang="udm">{lesson.title}</span>
-            <span class="s">{lesson.goal}</span>
-          </a>
-        {/each}
-        <a class="mode card" href={href('/class/survey')}>
-          <span class="ic" aria-hidden="true">📋</span>
-          <span class="t">Шпаргалка для работы в парах</span>
-          <span class="s">Даты, времена года и оба вопроса на общем экране</span>
-        </a>
-      </div>
-    </section>
-
     {#if known.length === 0}
       <div class="card empty">
         <p>Пройдите первый урок, чтобы появились слова для повторения.</p>
@@ -149,8 +124,6 @@
 {/if}
 
 <style>
-  .class-section { margin-bottom: 24px; }
-  a.mode { text-decoration: none; }
   .hero {
     display: flex;
     gap: 16px;

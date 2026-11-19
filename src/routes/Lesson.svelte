@@ -14,7 +14,7 @@
   import { classLessons, nextClassPath } from '$lib/classroom';
 
   let { id, classRequested = false }: { id: string; classRequested?: boolean } = $props();
-  const classroom = $derived(classRequested && classLessons.includes(id));
+  const classroom = $derived(classRequested && (id === 'u10-body' || classLessons.some(lesson => lesson.id === id)));
   let completed = false;
 
   const ref = $derived(findLesson(id));
@@ -45,7 +45,7 @@
 
   function exit() {
     if (classroom) {
-      router.go(completed ? nextClassPath(id) : '/practice', completed ? 'forward' : 'back');
+      router.go(completed ? nextClassPath(id) : '/class', completed ? 'forward' : 'back');
       return;
     }
     if (needOnboarding) {

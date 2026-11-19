@@ -14,6 +14,7 @@
   const lazy: Record<string, () => Promise<{ default: Component<any> }>> = {
     practice: () => import('./routes/Practice.svelte'),
     'body-review': () => import('./routes/BodyReview.svelte'),
+    'class-home': () => import('./routes/ClassHome.svelte'),
     'class-survey': () => import('./routes/Survey.svelte'),
     about: () => import('./routes/About.svelte'),
     dict: () => import('./routes/Dict.svelte'),
@@ -65,7 +66,7 @@
 
   const r = $derived(router.current);
   // «5 букв» всегда идёт без шапки и навигации — переключаем режим сразу, а не после загрузки чанка (иначе сдвиг вёрстки)
-  const inLesson = $derived(r.name === 'lesson' || r.name === 'body-review' || r.name === 'class-survey' || r.name === 'game' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
+  const inLesson = $derived(r.name === 'lesson' || r.name === 'body-review' || r.name === 'class-home' || r.name === 'class-survey' || r.name === 'game' || ((r.name === 'practice' || r.name === 'projector') && ui.immersive));
 
   // Заголовок вкладки для каждого раздела (WCAG 2.4.2). У урока — свой, в Lesson.svelte.
   const SITE = 'Удмурт кыл';
@@ -73,6 +74,7 @@
     learn: 'Уроки',
     practice: 'Повторение',
     'body-review': 'Части тела. Повторение',
+    'class-home': 'Материалы к занятию',
     'class-survey': 'Шпаргалка для опроса',
     about: 'О языке',
     dict: 'Словарь',
