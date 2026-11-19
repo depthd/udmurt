@@ -85,6 +85,8 @@
 
 <style>
   .streak {
+    border-color: transparent;
+    background: var(--amber-soft);
     padding: 16px 16px 14px;
   }
   .top {

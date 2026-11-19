@@ -55,6 +55,8 @@
 
 <style>
   .wod {
+    border-color: transparent;
+    background: var(--blue-soft);
     padding: 14px 16px 12px;
   }
   .head {
