@@ -6,7 +6,7 @@
 
   const due = $derived(progress.dueCards().length);
 
-  // short — подпись для узких экранов (≤400 px), чтобы не уменьшать шрифт ниже 11 px
+  // short — подпись для узких экранов (≤400 px), чтобы сохранять кегль 12 px
   const items: { name: string; path: string; label: string; short?: string; icon: string; match: string[] }[] = [
     { name: 'learn', path: '/learn', label: 'Учиться', icon: 'M4 19V8l8-5 8 5v11h-5v-6H9v6z', match: ['learn', 'home'] },
     { name: 'practice', path: '/practice', label: 'Повторять', short: 'Повтор', icon: 'M12 4a8 8 0 1 0 8 8h-2a6 6 0 1 1-1.76-4.24L14 10h6V4l-2.35 2.35A7.97 7.97 0 0 0 12 4z', match: ['practice'] },
@@ -43,16 +43,14 @@
     position: fixed;
     inset: auto 0 0 0;
     z-index: 30;
-    background: color-mix(in srgb, var(--surface) 92%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--line);
+    background: var(--surface);
+    border-top: 2px solid var(--outline);
     padding-bottom: env(safe-area-inset-bottom);
   }
   ul {
     list-style: none;
     margin: 0 auto;
-    padding: 0 4px;
+    padding: 4px;
     max-width: 720px;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -62,13 +60,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-    padding: 8px 2px 6px;
-    min-height: var(--nav-h);
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 1px;
+    min-height: calc(var(--nav-h) - 8px);
     color: var(--muted);
     text-decoration: none;
     font: 600 0.75rem/1.1 var(--font-head);
-    border-radius: 12px;
+    border-radius: var(--radius);
     -webkit-tap-highlight-color: transparent;
     min-width: 0;
   }
@@ -81,14 +80,6 @@
   .short {
     display: none;
   }
-  /* не меньше 11 px даже на 320 px */
-  @media (max-width: 430px) {
-    a {
-      font-size: 0.6875rem;
-      letter-spacing: -0.01em;
-    }
-  }
-  /* «Повторять» при 11 px — 58 px: не помещается в колонку уже ~380 px */
   @media (max-width: 400px) {
     .full {
       display: none;
@@ -100,18 +91,16 @@
   @media (max-width: 370px) {
     a {
       padding-inline: 0;
+      letter-spacing: -0.035em;
     }
   }
   a.active {
-    color: var(--red);
+    background: #c8261c;
+    color: #fff;
   }
-  a.active svg {
-    transform: translateY(-1px) scale(1.08);
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    :global(html:not([data-motion='reduce'])) svg {
-      transition: transform var(--dur-fast) var(--ease-overshoot);
-    }
+  a:not(.active):hover {
+    color: var(--ink);
+    background: var(--surface-2);
   }
   .badge {
     position: absolute;
@@ -123,19 +112,21 @@
     border-radius: 999px;
     background: var(--red);
     color: var(--on-fill);
-    font: 700 0.65rem/18px var(--font-head);
+    font: 700 0.75rem/18px var(--font-head);
+    box-shadow: 0 0 0 1px var(--surface);
   }
   @media (min-width: 900px) {
     .nav {
       inset: 64px auto 0 0;
       width: 96px;
       border-top: 0;
-      border-right: 1px solid var(--line);
+      border-right: 2px solid var(--outline);
       padding: 16px 0;
     }
     ul {
       grid-template-columns: 1fr;
       gap: 4px;
+      padding-inline: 8px;
     }
     :global(main:not(.lesson-mode)) {
       padding-left: 96px;
