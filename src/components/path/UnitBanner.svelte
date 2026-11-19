@@ -26,12 +26,11 @@
 <header class="banner" class:banner--locked={locked} aria-labelledby="unit-{unit.id}-title">
   <div class="text">
     <p class="eyebrow">
-      Юнит {index + 1}
-      <span class="dot" aria-hidden="true">·</span>
+      <span class="unit-number"><span class="visually-hidden">Юнит </span>{index + 1}</span>
       {#if complete}<Octagram size={13} color="currentColor" />{/if}
       <span class="count">{complete ? 'пройден' : `${done} из ${total}`}</span>
     </p>
-    <h2 id="unit-{unit.id}-title" class="title">
+    <h2 id="unit-{unit.id}-title" class="title poster-title">
       {unit.title}
       {#if unit.title_udm}
         <span class="udm-title udm" lang="udm">{unit.title_udm}</span>
@@ -68,25 +67,13 @@
     border-radius: var(--radius-l);
     background: var(--red);
     color: var(--on-fill);
-    box-shadow: 0 5px 0 var(--red-edge);
+    box-shadow: 0 4px 0 var(--red-edge);
     overflow: hidden;
   }
-  /* Тонкий «стежок» по краю — как кайма на холсте. */
-  .banner::before {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border-radius: calc(var(--radius-l) - 5px);
-    border: 1.5px dashed color-mix(in srgb, var(--on-fill) 32%, transparent);
-    pointer-events: none;
-  }
   .banner--locked {
-    background: var(--surface-2);
-    color: var(--ink);
-    box-shadow: 0 5px 0 var(--line);
-  }
-  .banner--locked::before {
-    border-color: var(--line-strong);
+    background: var(--red-soft);
+    color: var(--red);
+    box-shadow: none;
   }
   .text {
     min-width: 0;
@@ -97,20 +84,26 @@
     gap: 6px;
     margin: 0 0 6px;
     font: 700 0.78rem/1.2 var(--font-head);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.88;
   }
-  .dot {
-    margin: 0 -2px;
+  .unit-number {
+    display: inline-grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: var(--on-fill);
+    color: var(--red);
+    font-size: 0.9rem;
+  }
+  .banner--locked .unit-number {
+    background: var(--surface);
   }
   .count {
     letter-spacing: 0.04em;
   }
   .title {
     margin: 0 0 6px;
-    font-size: 1.45rem;
-    line-height: 1.15;
+    font-size: clamp(1.3rem, 1.1rem + 1.4vw, 2rem);
     overflow-wrap: anywhere;
   }
   .udm-title {
@@ -118,13 +111,13 @@
     margin-top: 2px;
     font-size: 1rem;
     font-weight: 500;
-    opacity: 0.9;
+    text-transform: none;
   }
   .desc {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.4;
-    opacity: 0.94;
+
   }
   .guide-btn {
     position: relative;
@@ -140,17 +133,15 @@
     padding: 8px 8px 6px;
     border-radius: var(--radius);
     border: 2px solid color-mix(in srgb, var(--on-fill) 45%, transparent);
-    background: color-mix(in srgb, var(--on-fill) 12%, transparent);
+    background: transparent;
     color: inherit;
-    font: 700 0.68rem/1 var(--font-head);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font: 700 0.75rem/1 var(--font-head);
     cursor: pointer;
     box-shadow: 0 3px 0 color-mix(in srgb, var(--red-edge) 80%, transparent);
     -webkit-tap-highlight-color: transparent;
   }
   .guide-btn:hover {
-    background: color-mix(in srgb, var(--on-fill) 20%, transparent);
+    background: color-mix(in srgb, var(--on-fill) 5%, transparent);
   }
   .guide-btn:active {
     transform: translateY(3px);
@@ -158,6 +149,9 @@
   }
   .guide-btn:focus-visible {
     outline-color: var(--on-fill);
+  }
+  .banner--locked .guide-btn:focus-visible {
+    outline-color: var(--focus);
   }
   .banner--locked .guide-btn {
     border-color: var(--line-strong);

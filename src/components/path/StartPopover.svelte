@@ -79,7 +79,7 @@
 <div
   bind:this={box}
   {id}
-  class="pop"
+  class="pop sticker"
   class:pop--locked={locked}
   style:top="{top}px"
   style:--ax="{x}px"
@@ -135,10 +135,6 @@
     margin: 0 auto;
     width: min(100%, 360px);
     padding: 16px 18px 18px;
-    background: var(--surface);
-    border: 2px solid var(--line);
-    border-radius: var(--radius-l);
-    box-shadow: 0 4px 0 var(--line), var(--shadow);
     text-align: left;
     outline: none;
     transform-origin: calc(50% + var(--ax)) -12px;
@@ -150,8 +146,8 @@
     width: 18px;
     height: 18px;
     background: var(--surface);
-    border-left: 2px solid var(--line);
-    border-top: 2px solid var(--line);
+    border-left: 2.5px solid var(--outline);
+    border-top: 2.5px solid var(--outline);
     border-radius: 4px 0 0 0;
     transform: translateX(-50%) rotate(45deg);
   }
@@ -165,8 +161,6 @@
   .eyebrow {
     margin: 0;
     font: 700 0.75rem/1.2 var(--font-head);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--red);
   }
   .anyway {

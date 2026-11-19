@@ -1,9 +1,10 @@
 <script lang="ts">
   /**
    * Узел пути: круглая «объёмная» кнопка 72px (рецепт кнопки — отчёт 04 §3.2, узла — §3.6).
-   * Состояния: done (красный, ✓), perfect (золотой, ✓), current (кольцо + «Начать»), locked (серый, замок).
+   * Состояния: done и perfect (зелёный, ✓), current (красный, восьмиконечная звезда), locked (серый, замок).
    */
   import type { LessonRef } from '$lib/course';
+  import Octagram from '../Octagram.svelte';
   import { lessonIcon, splitTitle } from './geometry';
 
   export type NodeState = 'done' | 'perfect' | 'current' | 'locked';
@@ -36,7 +37,7 @@
   );
 </script>
 
-<div class="slot" class:is-current={nodeState === 'current'}>
+<div class="slot">
   {#if nodeState === 'current'}
     <span class="start-tag" aria-hidden="true">Начать</span>
   {/if}
@@ -56,7 +57,11 @@
       <!-- у историй и повторений тип уже есть в названии («История: …») — не повторяем его -->
       {#if title.prefix}{title.prefix}{:else}{kindLabel}{ref.lesson.kind === 'lesson' ? ` ${ref.lessonIndex + 1}` : ''}: {/if}<span lang="udm">{title.udm}</span> — {stateLabel}
     </span>
-    <span class="icon" aria-hidden="true">{icon}</span>
+    {#if nodeState === 'current'}
+      <Octagram size={32} color="var(--on-fill)" />
+    {:else}
+      <span class="icon" aria-hidden="true">{icon}</span>
+    {/if}
     {#if nodeState === 'done' || nodeState === 'perfect'}
       <span class="badge badge--done" aria-hidden="true">
         <svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 8.5l3 3 6-7" /></svg>
@@ -80,11 +85,11 @@
   }
   .node {
     --face: var(--red);
-    --edge: var(--red-edge);
-    --depth: 6px;
+    --edge: var(--hard-shadow);
+    --depth: 4px;
     position: relative;
     appearance: none;
-    border: 0;
+    border: 2.5px solid var(--outline);
     padding: 0;
     width: 72px;
     height: 72px;
@@ -93,9 +98,7 @@
     place-items: center;
     cursor: pointer;
     background: var(--face);
-    box-shadow:
-      0 var(--depth) 0 var(--edge),
-      inset 0 -3px 0 color-mix(in srgb, var(--edge) 35%, transparent);
+    box-shadow: 0 var(--depth) 0 var(--edge);
     transform: translateY(0);
     -webkit-tap-highlight-color: transparent;
     user-select: none;
@@ -121,28 +124,19 @@
     /* Эмодзи без системной «подложки»: ровно по центру лица кнопки. */
     transform: translateY(-1px);
   }
+  .node--done,
   .node--perfect {
-    --face: var(--amber);
-    --edge: var(--amber-edge);
+    --face: var(--green);
   }
   .node--locked {
-    --face: var(--line);
-    --edge: var(--line-strong);
-    cursor: pointer;
+    --face: var(--surface-2);
+    --depth: 0px;
+    --edge: transparent;
+    border-color: var(--line-strong);
   }
   .node--locked .icon {
     filter: grayscale(1);
     opacity: 0.45;
-  }
-
-  /* Кольцо вокруг текущего узла видно всегда — это состояние, а не украшение. */
-  .node--current::before {
-    content: '';
-    position: absolute;
-    inset: -9px -9px calc(-9px - var(--depth));
-    border-radius: 999px;
-    border: 4px solid color-mix(in srgb, var(--red) 28%, transparent);
-    pointer-events: none;
   }
 
   .badge {
@@ -156,7 +150,7 @@
     place-items: center;
     background: var(--surface);
     border: 2.5px solid var(--face);
-    box-shadow: 0 2px 0 var(--edge);
+    box-shadow: none;
   }
   .badge svg {
     fill: none;
@@ -185,8 +179,6 @@
     border: 2px solid var(--line);
     color: var(--red);
     font: 700 0.78rem/1 var(--font-head);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     white-space: nowrap;
     box-shadow: 0 3px 0 var(--line);
     pointer-events: none;
@@ -211,11 +203,9 @@
         box-shadow 600ms var(--ease-release),
         filter 150ms;
     }
-    :global(html:not([data-motion='reduce'])) .node:hover {
+    :global(html:not([data-motion='reduce'])) .node:not(.node--locked):hover {
       transform: translateY(-2px);
-      box-shadow:
-        0 calc(var(--depth) + 2px) 0 var(--edge),
-        inset 0 -3px 0 color-mix(in srgb, var(--edge) 35%, transparent);
+      box-shadow: 0 calc(var(--depth) + 2px) 0 var(--edge);
       transition-duration: 250ms;
       transition-timing-function: var(--ease-overshoot);
     }
@@ -236,9 +226,6 @@
     :global(html:not([data-motion='reduce'])) .just-unlocked {
       animation: node-pop var(--spring-pop-dur) var(--spring-pop) 1150ms both;
     }
-    :global(html:not([data-motion='reduce'])) .is-current .start-tag {
-      animation: bob 2.4s ease-in-out infinite;
-    }
   }
   @keyframes ring {
     from {
@@ -256,15 +243,6 @@
     }
     100% {
       transform: scale(1);
-    }
-  }
-  @keyframes bob {
-    0%,
-    100% {
-      transform: translate(-50%, 0);
-    }
-    50% {
-      transform: translate(-50%, -5px);
     }
   }
 </style>
