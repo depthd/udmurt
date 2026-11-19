@@ -1,0 +1,76 @@
+id: u10-body
+title: "Части тела"
+goal: "Назвать части лица и тела по-удмуртски"
+exercises:
+  - type: teach
+    item: "yyr"
+  - type: teach
+    item: "body-hair"
+  - type: teach
+    item: "body-forehead"
+  - type: teach
+    item: "body-brow"
+  - type: teach
+    item: "body-eye"
+  - type: teach
+    item: "body-lash"
+  - type: match
+    items: ["yyr", "body-hair", "body-forehead", "body-brow", "body-eye", "body-lash"]
+  - type: teach
+    item: "body-ear"
+  - type: teach
+    item: "body-nose"
+  - type: teach
+    item: "body-cheek"
+  - type: teach
+    item: "body-chin"
+  - type: match
+    items: ["body-ear", "body-nose", "body-cheek", "body-chin"]
+  - type: teach
+    item: "body-mouth"
+  - type: teach
+    item: "body-lip"
+  - type: teach
+    item: "body-tooth"
+  - type: teach
+    item: "body-tongue"
+  - type: match
+    items: ["body-mouth", "body-lip", "body-tooth", "body-tongue"]
+  - type: teach
+    item: "body-neck"
+  - type: teach
+    item: "body-shoulder"
+  - type: teach
+    item: "body-armpit"
+  - type: teach
+    item: "body-hand"
+  - type: teach
+    item: "body-finger"
+  - type: match
+    items: ["body-neck", "body-shoulder", "body-armpit", "body-hand", "body-finger"]
+  - type: teach
+    item: "body-chest"
+  - type: teach
+    item: "body-heart"
+  - type: teach
+    item: "body-back"
+  - type: teach
+    item: "body-belly"
+  - type: teach
+    item: "body-bottom"
+  - type: match
+    items: ["body-chest", "body-heart", "body-back", "body-belly", "body-bottom"]
+  - type: teach
+    item: "body-leg"
+  - type: teach
+    item: "body-knee"
+  - type: teach
+    item: "body-sole"
+  - type: teach
+    item: "body-toe"
+  - type: match
+    items: ["body-leg", "body-knee", "body-sole", "body-toe"]
+  - type: choice
+    dir: "ru-udm"
+    item: "body-finger"
+    distractors: ["body-toe", "body-hand"]

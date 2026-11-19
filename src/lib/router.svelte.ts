@@ -12,6 +12,8 @@ const routes: Array<[RegExp, string, string[]]> = [
   [/^\/learn\/?$/, 'learn', []],
   [/^\/lesson\/([\w-]+)\/?$/, 'lesson', ['id']],
   [/^\/practice\/?$/, 'practice', []],
+  [/^\/practice\/body\/?$/, 'body-review', []],
+  [/^\/class\/survey\/?$/, 'class-survey', []],
   [/^\/about\/?$/, 'about', []],
   [/^\/about\/([\w-]+)\/?$/, 'about', ['section']],
   [/^\/dict\/?$/, 'dict', []],

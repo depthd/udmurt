@@ -1,0 +1,53 @@
+id: u11-survey
+title: "Два вопроса одногруппнику"
+goal: "Спросить о дате рождения и любимом сезоне и передать чужой ответ"
+exercises:
+  - type: teach
+    item: "ask-birthday"
+  - type: teach
+    item: "my-birthday"
+  - type: dialogue
+    lines: [{"who": "Студент", "item": "ask-birthday"}, {"who": "Анна", "item": "my-birthday"}]
+    question: "Какую дату записать?"
+    options: ["3 декабря", "23 декабря", "3 ноября"]
+    answer: "3 декабря"
+  - type: tiles
+    item: "ask-birthday"
+    extra: ["Анналэн"]
+  - type: teach
+    item: "ask-season"
+  - type: teach
+    item: "my-season"
+  - type: dialogue
+    lines: [{"who": "Студент", "item": "ask-season"}, {"who": "Анна", "item": "my-season"}]
+    question: "Какое время года назвала Анна?"
+    options: ["Лето", "Осень", "Зиму"]
+    answer: "Лето"
+  - type: tiles
+    item: "ask-season"
+    extra: ["яратэ"]
+  - type: teach
+    item: "ask-other-birthday"
+  - type: teach
+    item: "other-birthday"
+  - type: fill
+    text: "Анналэн вордскем ___ куинетӥ толсуре."
+    ru: "У Анны день рождения третьего декабря."
+    options: ["нуналыз", "нуналы", "нуналыд"]
+    answer: "нуналыз"
+    item: "other-birthday"
+  - type: teach
+    item: "ask-other-season"
+  - type: teach
+    item: "other-season"
+  - type: fill
+    text: "Анна тужгес но гужемез ___."
+    ru: "Анна больше всего любит лето."
+    options: ["яратэ", "яратӥсько", "яратӥськод"]
+    answer: "яратэ"
+    item: "other-season"
+  - type: dialogue
+    lines: [{"who": "Преподаватель", "item": "ask-other-season"}, {"who": "Студент", "item": "other-season"}]
+    question: "О ком отвечает студент?"
+    options: ["Об Анне", "О себе", "О преподавателе"]
+    answer: "Об Анне"

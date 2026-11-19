@@ -6,6 +6,7 @@
   import { strength } from '$lib/srs';
   import { pickItems, buildPractice, type PracticeMode } from '$lib/practice';
   import { href, router } from '$lib/router.svelte';
+  import { classLessonPath } from '$lib/classroom';
   import { dayKey } from '$lib/dates';
   import type { Exercise } from '$lib/content/schema';
   import { ui } from '$lib/ui.svelte';
@@ -76,6 +77,15 @@
       </div>
     </header>
 
+    <section class="card class-links">
+      <h2>На занятии</h2>
+      <a href={href('/practice/body')}>Части тела — сразу к повторению</a>
+      <a href={href(classLessonPath('u2-dates'))}>Числительные от 1 до 31</a>
+      <a href={href(classLessonPath('u7-calendar'))}>Месяцы и времена года</a>
+      <a href={href(classLessonPath('u11-survey'))}>Два вопроса одногруппнику</a>
+      <a href={href('/class/survey')}>Шпаргалка для работы в парах</a>
+    </section>
+
     {#if known.length === 0}
       <div class="card empty">
         <p>Пройдите первый урок, чтобы появились слова для повторения.</p>
@@ -124,6 +134,9 @@
 {/if}
 
 <style>
+  .class-links { display: grid; gap: 8px; padding: 18px; margin-bottom: 16px; }
+  .class-links h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .class-links a { color: var(--ink); width: fit-content; }
   .hero {
     display: flex;
     gap: 16px;

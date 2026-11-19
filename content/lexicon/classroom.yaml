@@ -1,0 +1,330 @@
+items:
+  - id: body-hair
+    udm: "йырси"
+    ru: "волосы"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "йырси"}]
+  - id: body-forehead
+    udm: "кымес"
+    ru: "лоб"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "кымес"}]
+  - id: body-brow
+    udm: "синкаш"
+    ru: "бровь"
+    ru_alt: ["брови"]
+    status: sourced
+    sources: [{"id": "marym", "ref": "Глава 4, словарь: синкаш"}]
+  - id: body-eye
+    udm: "син"
+    ru: "глаз"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "син"}]
+  - id: body-lash
+    udm: "синлыс"
+    ru: "ресница"
+    ru_alt: ["ресницы"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "синлыс"}]
+  - id: body-ear
+    udm: "пель"
+    ru: "ухо"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пель"}]
+  - id: body-nose
+    udm: "ныр"
+    ru: "нос"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "ныр"}]
+  - id: body-cheek
+    udm: "бам"
+    ru: "щека"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "бам"}]
+  - id: body-chin
+    udm: "ангес"
+    ru: "подбородок"
+    ru_alt: ["челюсть"]
+    status: sourced
+    sources: [{"id": "marym", "ref": "Глава 4, словарь: ангес"}]
+  - id: body-mouth
+    udm: "ым"
+    ru: "рот"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "ым"}]
+  - id: body-lip
+    udm: "ымдур"
+    ru: "губа"
+    ru_alt: ["губы"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "ымдур"}]
+  - id: body-tooth
+    udm: "пинь"
+    ru: "зуб"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пинь"}]
+  - id: body-tongue
+    udm: "кыл"
+    ru: "язык во рту"
+    ru_alt: ["язык"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "кыл"}]
+  - id: body-neck
+    udm: "чырты"
+    ru: "шея"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "чырты"}]
+  - id: body-shoulder
+    udm: "пельпум"
+    ru: "плечо"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пельпум"}]
+  - id: body-armpit
+    udm: "кунул"
+    ru: "подмышка"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "кунул"}]
+  - id: body-hand
+    udm: "ки"
+    ru: "рука"
+    ru_alt: ["кисть"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "ки"}]
+  - id: body-finger
+    udm: "чиньы"
+    ru: "палец руки"
+    ru_alt: ["палец"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "чиньы"}]
+  - id: body-chest
+    udm: "гадь"
+    ru: "грудь"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "гадь"}]
+  - id: body-heart
+    udm: "сюлэм"
+    ru: "сердце"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "сюлэм"}]
+  - id: body-back
+    udm: "тыбыр"
+    ru: "спина"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "тыбыр"}]
+  - id: body-belly
+    udm: "кӧт"
+    ru: "живот"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "кӧт"}]
+  - id: body-bottom
+    udm: "сӥтян"
+    ru: "зад"
+    ru_alt: ["ягодицы", "попа"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "сӥтян"}]
+  - id: body-leg
+    udm: "пыд"
+    ru: "нога"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пыд"}]
+  - id: body-knee
+    udm: "пыдес"
+    ru: "колено"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пыдес"}]
+  - id: body-sole
+    udm: "пыдпыдэс"
+    ru: "подошва стопы"
+    ru_alt: ["подошва", "ступня"]
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пыдпыдэс"}]
+  - id: body-toe
+    udm: "пыдчиньы"
+    ru: "палец ноги"
+    status: sourced
+    sources: [{"id": "uniparser", "ref": "пыдчиньы"}]
+  - id: num-23
+    udm: "кызь куинь"
+    ru: "двадцать три"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: num-31
+    udm: "куамын одӥг"
+    ru: "тридцать один"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: ord-first
+    udm: "нырысетӥ"
+    ru: "первый"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: ord-third
+    udm: "куинетӥ"
+    ru: "третий"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: ord-thirteenth
+    udm: "дас куинетӥ"
+    ru: "тринадцатый"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: ord-twentythird
+    udm: "кызь куинетӥ"
+    ru: "двадцать третий"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: ord-thirtyfirst
+    udm: "куамын одӥгетӥ"
+    ru: "тридцать первый"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}]
+  - id: season-winter
+    udm: "тол"
+    ru: "зима"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-dec
+    udm: "толсур"
+    ru: "декабрь"
+    note: "В ответе на вопрос «когда?» — толсуре."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-jan
+    udm: "толшор"
+    ru: "январь"
+    note: "В ответе на вопрос «когда?» — толшоре."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-feb
+    udm: "тулыспал"
+    ru: "февраль"
+    note: "В ответе на вопрос «когда?» — тулыспалэ."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: season-spring
+    udm: "тулыс"
+    ru: "весна"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-mar
+    udm: "южтолэзь"
+    ru: "март"
+    note: "В ответе на вопрос «когда?» — южтолэзе."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-apr
+    udm: "оштолэзь"
+    ru: "апрель"
+    note: "В ответе на вопрос «когда?» — оштолэзе."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-may
+    udm: "куартолэзь"
+    ru: "май"
+    note: "В ответе на вопрос «когда?» — куартолэзе."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: season-summer
+    udm: "гужем"
+    ru: "лето"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-jun
+    udm: "инвожо"
+    ru: "июнь"
+    note: "В ответе на вопрос «когда?» — инвожое."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-jul
+    udm: "пӧсьтолэзь"
+    ru: "июль"
+    note: "В ответе на вопрос «когда?» — пӧсьтолэзе."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-aug
+    udm: "гудырикошкон"
+    ru: "август"
+    note: "В ответе на вопрос «когда?» — гудырикошконэ."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: season-autumn
+    udm: "сӥзьыл"
+    ru: "осень"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-sep
+    udm: "куарусён"
+    ru: "сентябрь"
+    note: "В ответе на вопрос «когда?» — куарусёнэ."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-oct
+    udm: "коньывуон"
+    ru: "октябрь"
+    note: "В ответе на вопрос «когда?» — коньывуонэ."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: month-nov
+    udm: "шуркынмон"
+    ru: "ноябрь"
+    note: "В ответе на вопрос «когда?» — шуркынмонэ."
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: date-dec3
+    udm: "куинетӥ толсуре"
+    ru: "третьего декабря"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}, {"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: date-dec23
+    udm: "кызь куинетӥ толсуре"
+    ru: "двадцать третьего декабря"
+    status: sourced
+    sources: [{"id": "marym", "ref": "§ 3.1.1. Количественные и порядковые числительные"}, {"id": "marym", "ref": "§ 3.1.2. Месяцы и времена года"}]
+  - id: ask-birthday
+    udm: "Ку тынад вордскем нуналыд?"
+    ru: "Когда у тебя день рождения?"
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "13924174, 12275074 — модели форм нуналы и нуналыз"}, {"id": "marym", "ref": "§ 4.1.3 и словарь, нунал (-ы); 3.1.1–2 — дата"}]
+  - id: my-birthday
+    udm: "Мынам вордскем нуналы куинетӥ толсуре."
+    ru: "У меня день рождения третьего декабря."
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "13924174, 12275074 — модели форм нуналы и нуналыз"}, {"id": "marym", "ref": "§ 4.1.3 и словарь, нунал (-ы); 3.1.1–2 — дата"}]
+  - id: ask-season
+    udm: "Кыӵе вакытэз тон тужгес но яратӥськод?"
+    ru: "Какое время года ты любишь больше всего?"
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "11947337, kalmez — вопрос о любимом сезоне"}, {"id": "seasons-text", "ref": "Раздел «Арлэн дыръёсыз», формы гужемез, тулысэз, толэз, сӥзьылэз"}]
+  - id: my-season
+    udm: "Мон тужгес но гужемез яратӥсько."
+    ru: "Больше всего я люблю лето."
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "11947337, kalmez — вопрос о любимом сезоне"}, {"id": "seasons-text", "ref": "Раздел «Арлэн дыръёсыз», формы гужемез, тулысэз, толэз, сӥзьылэз"}]
+  - id: ask-other-birthday
+    udm: "Ку Анналэн вордскем нуналыз?"
+    ru: "Когда у Анны день рождения?"
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "13924174, 12275074 — модели форм нуналы и нуналыз"}, {"id": "marym", "ref": "§ 4.1.3 и словарь, нунал (-ы); 3.1.1–2 — дата"}]
+  - id: other-birthday
+    udm: "Анналэн вордскем нуналыз куинетӥ толсуре."
+    ru: "У Анны день рождения третьего декабря."
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "13924174, 12275074 — модели форм нуналы и нуналыз"}, {"id": "marym", "ref": "§ 4.1.3 и словарь, нунал (-ы); 3.1.1–2 — дата"}]
+  - id: ask-other-season
+    udm: "Кыӵе вакытэз Анна тужгес но яратэ?"
+    ru: "Какое время года Анна любит больше всего?"
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "11947337, kalmez — вопрос о любимом сезоне"}, {"id": "seasons-text", "ref": "Раздел «Арлэн дыръёсыз», формы гужемез, тулысэз, толэз, сӥзьылэз"}]
+  - id: other-season
+    udm: "Анна тужгес но гужемез яратэ."
+    ru: "Анна больше всего любит лето."
+    kind: "phrase"
+    status: sourced
+    sources: [{"id": "tatoeba", "ref": "11947337, kalmez — вопрос о любимом сезоне"}, {"id": "seasons-text", "ref": "Раздел «Арлэн дыръёсыз», формы гужемез, тулысэз, толэз, сӥзьылэз"}]

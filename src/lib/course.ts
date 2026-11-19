@@ -28,7 +28,7 @@ export function item(id: string): LexItem {
 
 /** Урок открыт, если пройден предыдущий (первый открыт всегда) или ученик открыл его сам — урок задали в группе. */
 export function isUnlocked(ref: LessonRef): boolean {
-  if (ref.flatIndex === 0 || progress.isOpened(ref.lesson.id)) return true;
+  if (ref.flatIndex === 0 || progress.isDone(ref.lesson.id) || progress.isOpened(ref.lesson.id)) return true;
   return progress.isDone(allLessons[ref.flatIndex - 1].lesson.id);
 }
 

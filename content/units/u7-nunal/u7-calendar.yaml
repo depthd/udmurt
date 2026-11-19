@@ -1,0 +1,55 @@
+id: u7-calendar
+title: "Месяцы и времена года"
+goal: "Назвать четыре сезона, двенадцать месяцев и дату"
+exercises:
+  - type: teach
+    item: "season-winter"
+  - type: teach
+    item: "month-dec"
+  - type: teach
+    item: "month-jan"
+  - type: teach
+    item: "month-feb"
+  - type: match
+    items: ["season-winter", "month-dec", "month-jan", "month-feb"]
+  - type: teach
+    item: "season-spring"
+  - type: teach
+    item: "month-mar"
+  - type: teach
+    item: "month-apr"
+  - type: teach
+    item: "month-may"
+  - type: match
+    items: ["season-spring", "month-mar", "month-apr", "month-may"]
+  - type: teach
+    item: "season-summer"
+  - type: teach
+    item: "month-jun"
+  - type: teach
+    item: "month-jul"
+  - type: teach
+    item: "month-aug"
+  - type: match
+    items: ["season-summer", "month-jun", "month-jul", "month-aug"]
+  - type: teach
+    item: "season-autumn"
+  - type: teach
+    item: "month-sep"
+  - type: teach
+    item: "month-oct"
+  - type: teach
+    item: "month-nov"
+  - type: match
+    items: ["season-autumn", "month-sep", "month-oct", "month-nov"]
+  - type: teach
+    item: "date-dec3"
+  - type: teach
+    item: "date-dec23"
+  - type: choice
+    dir: "ru-udm"
+    item: "date-dec3"
+    distractors: ["date-dec23", "ord-third"]
+  - type: tiles
+    item: "date-dec23"
+    extra: ["дас", "тол"]

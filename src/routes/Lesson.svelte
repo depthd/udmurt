@@ -11,13 +11,17 @@
   import { router, href } from '$lib/router.svelte';
   import { hasUdmLetters } from '$lib/lesson';
 
-  let { id }: { id: string } = $props();
+  import { classLessons, nextClassPath } from '$lib/classroom';
+
+  let { id, classRequested = false }: { id: string; classRequested?: boolean } = $props();
+  const classroom = $derived(classRequested && classLessons.includes(id));
+  let completed = false;
 
   const ref = $derived(findLesson(id));
   // Доступность фиксируем на входе: после прохождения урок не должен «закрыться» на экране итогов.
   const lookup = () => {
     const r = findLesson(id);
-    return r ? isUnlocked(r) : false;
+    return r ? classroom || isUnlocked(r) : false;
   };
   let unlocked = $state(lookup());
   // Урок задали в группе раньше, чем ученик дошёл до него по пути, — можно открыть сразу
@@ -34,11 +38,16 @@
   function finish(r: LessonResult): Reward {
     const reward = progress.completeLesson(r);
     const done = Object.values(progress.data.lessons).filter((l) => l.done > 0).length;
-    needOnboarding = reward.firstTime && done === 1 && !progress.data.name.trim() && !progress.data.onboarded;
+    completed = true;
+    needOnboarding = !classroom && reward.firstTime && done === 1 && !progress.data.name.trim() && !progress.data.onboarded;
     return reward;
   }
 
   function exit() {
+    if (classroom) {
+      router.go(completed ? nextClassPath(id) : '/practice', completed ? 'forward' : 'back');
+      return;
+    }
     if (needOnboarding) {
       needOnboarding = false;
       stage = 'onboarding';

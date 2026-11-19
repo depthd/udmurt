@@ -1,0 +1,40 @@
+id: u2-dates
+title: "Числительные от 1 до 31"
+goal: "Назвать число и употребить порядковую форму для даты"
+exercises:
+  - type: choice
+    dir: "ru-udm"
+    item: "kyz"
+    distractors: ["das", "kuamyn"]
+  - type: teach
+    item: "num-23"
+  - type: tiles
+    item: "num-23"
+    extra: ["дас"]
+  - type: teach
+    item: "num-31"
+  - type: tiles
+    item: "num-31"
+    extra: ["кызь"]
+  - type: teach
+    item: "ord-first"
+  - type: teach
+    item: "ord-third"
+  - type: choice
+    dir: "ru-udm"
+    item: "ord-third"
+    distractors: ["kuin", "ord-first"]
+  - type: teach
+    item: "ord-thirteenth"
+  - type: teach
+    item: "ord-twentythird"
+  - type: tiles
+    item: "ord-twentythird"
+    extra: ["дас", "куинь"]
+  - type: teach
+    item: "ord-thirtyfirst"
+  - type: match
+    items: ["ord-first", "ord-thirteenth", "ord-twentythird", "ord-thirtyfirst"]
+  - type: type
+    dir: "ru-udm"
+    item: "ord-twentythird"

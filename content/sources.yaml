@@ -47,3 +47,11 @@ sources:
     title: 'НКО «Куара»: видеокурс удмуртского языка, урок 1'
     url: https://udmkyl.ru/video-courses/1
     license: '© — модели «Мынам нимы Артём. Мон дышетӥсь. Мыным 28 арес. Ӟеч луэ!»'
+  - id: marym
+    title: 'Марым, лэся… A Course in Udmurt for Beginners'
+    url: https://copius.univie.ac.at/files/ml_2018.pdf
+    license: 'Учебник используется для сверки слов, парадигм и моделей.'
+  - id: seasons-text
+    title: 'Арлэн дыръёсыз — методический материал, с. 72–75'
+    url: https://mon.tatarstan.ru/file/pub/pub_4007393.pdf
+    license: 'Использованы формы названий сезонов.'

@@ -13,6 +13,8 @@
   // Редкие разделы грузятся отдельно, при первом открытии (первый экран — легче).
   const lazy: Record<string, () => Promise<{ default: Component<any> }>> = {
     practice: () => import('./routes/Practice.svelte'),
+    'body-review': () => import('./routes/BodyReview.svelte'),
+    'class-survey': () => import('./routes/Survey.svelte'),
     about: () => import('./routes/About.svelte'),
     dict: () => import('./routes/Dict.svelte'),
     library: () => import('./routes/Library.svelte'),
@@ -70,6 +72,8 @@
   const TITLES: Record<string, string> = {
     learn: 'Уроки',
     practice: 'Повторение',
+    'body-review': 'Части тела. Повторение',
+    'class-survey': 'Шпаргалка для опроса',
     about: 'О языке',
     dict: 'Словарь',
     library: 'Материалы',
@@ -153,8 +157,8 @@
     {:else if r.name === 'learn'}
       <Learn />
     {:else if r.name === 'lesson'}
-      {#key r.params.id}
-        <LessonPage id={r.params.id} />
+      {#key r.path}
+        <LessonPage id={r.params.id} classRequested={new URLSearchParams(r.path.split('?')[1]).get('class') === '1'} />
       {/key}
     {:else if lazy[r.name]}
       {@const Page = loaded[r.name]}
