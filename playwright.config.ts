@@ -27,7 +27,8 @@ export default defineConfig({
       timeout: 120_000,
     },
     {
-      command: 'npx vite build --outDir dist-prod && npx vite preview --outDir dist-prod --port 4174 --strictPort',
+      // Кэш навигации не должен зависеть от добавляемого Vite заголовка Vary: Origin.
+      command: `npx vite build --outDir dist-prod && node --input-type=module -e "import { preview } from 'vite'; await preview({ build: { outDir: 'dist-prod' }, preview: { port: 4174, strictPort: true, cors: false } });"`,
       url: 'http://localhost:4174/udmurt/',
       reuseExistingServer: !process.env.CI,
       timeout: 120_000,

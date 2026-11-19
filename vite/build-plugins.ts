@@ -117,7 +117,7 @@ export function serviceWorker(): Plugin {
       const file = path.join(outDir, 'sw.js');
       if (!fs.existsSync(file)) return;
       const files = Object.keys(bundle)
-        .filter((f) => /\.(js|css)$/.test(f))
+        .filter((f) => /\.(js|css|webp)$/.test(f))
         .sort();
       const version = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 10);
       const src = fs.readFileSync(file, 'utf8');
