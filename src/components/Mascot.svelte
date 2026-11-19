@@ -104,39 +104,29 @@
     opacity: 0.08;
   }
   .feather {
-    fill: #fffdf8;
-    stroke: #d9cfc2;
-    stroke-width: 2.2;
+    fill: var(--sticker);
+    stroke: var(--ink);
+    stroke-width: 2;
     stroke-linejoin: round;
-  }
-  :global(:root[data-theme='dark']) .feather {
-    fill: #f6f1e8;
-    stroke: #9b9187;
-  }
-  @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) .feather {
-      fill: #f6f1e8;
-      stroke: #9b9187;
-    }
   }
   .fluff {
     fill: none;
-    stroke: #e6ddd1;
+    stroke: color-mix(in srgb, var(--ink) 24%, var(--sticker));
     stroke-width: 2;
     stroke-linecap: round;
   }
   .collar-band {
-    fill: var(--flag-red, #dd2211);
+    fill: var(--flag-red);
   }
   .stitch path {
-    fill: #fffdf8;
+    fill: var(--sticker);
   }
   .cheek {
-    fill: #f6a9a0;
+    fill: color-mix(in srgb, var(--red) 48%, var(--sticker));
     opacity: 0.6;
   }
   .eye {
-    fill: #1f1a17;
+    fill: var(--mascot-eye, #17120f);
   }
   .glint {
     fill: #fff;
@@ -144,7 +134,7 @@
   .eye-closed,
   .brow {
     fill: none;
-    stroke: #1f1a17;
+    stroke: var(--mascot-eye, #17120f);
     stroke-width: 2.6;
     stroke-linecap: round;
   }
@@ -158,13 +148,13 @@
     fill: #c2410c;
   }
   .tear {
-    fill: #8ec1f0;
+    fill: var(--blue);
   }
   .dots circle {
-    fill: var(--line-strong, #cfc6ba);
+    fill: var(--line-strong);
   }
   .spark {
-    fill: var(--flag-red, #dd2211);
+    fill: var(--flag-red);
   }
 
   .wing,

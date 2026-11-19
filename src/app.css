@@ -20,18 +20,18 @@
 
 :root {
   color-scheme: light;
-  --bg: #fbf7f0;
-  --surface: #ffffff;
-  --surface-2: #f4eee5;
-  --ink: #1f1a17;
-  --muted: #5e5650;
-  --line: #e6ded3;
-  --line-strong: #cfc6ba;
+  --bg: #f8f2e8;
+  --surface: #fffdf8;
+  --surface-2: #efe6d8;
+  --ink: #17120f;
+  --muted: #5a5048;
+  --line: #e3d9ca;
+  --line-strong: #c9bdad;
   /* Граница полей ввода и чипов: ≥3:1 к --surface/--bg/--surface-2 (WCAG 1.4.11). --line — только декор. */
   --field-border: #8a8076;
-  --red: #b3261e;
-  --red-edge: #7f1a15;
-  --red-soft: #fbe5e1;
+  --red: #c8261c;
+  --red-edge: #8e1912;
+  --red-soft: #fbe3df;
   --flag-red: #dd2211;
   --green: #2a744a;
   --green-edge: #1c5233;
@@ -39,15 +39,19 @@
   --amber: #9a5b00;
   --amber-edge: #6b3f00;
   --amber-soft: #fcefd9;
-  --blue: #24609b;
-  --blue-soft: #e2edf8;
+  --blue: #1f5fa6;
+  --blue-soft: #dbe9f7;
+  --sky: #cfe2f4;
+  --outline: #17120f;
+  --hard-shadow: #17120f;
+  --sticker: #fffdf8;
   --focus: #24609b;
   --on-fill: #ffffff;
   --shadow: 0 1px 2px rgb(31 26 23 / 0.06), 0 8px 24px rgb(31 26 23 / 0.06);
 
-  --radius-s: 10px;
+  --radius-s: 12px;
   --radius: 16px;
-  --radius-l: 24px;
+  --radius-l: 28px;
 
   --font-head: 'Rubik', 'Nunito', 'PT Sans', system-ui, sans-serif;
   --font-text: 'Nunito', 'PT Sans', system-ui, sans-serif;
@@ -95,7 +99,7 @@
     --line: #3a332f;
     --line-strong: #524842;
     --field-border: #80756d;
-    --red: #ff7a6b;
+    --red: #ff6a5c;
     --red-edge: #b3261e;
     --red-soft: #3a1a17;
     --green: #6fd39a;
@@ -106,6 +110,12 @@
     --amber-soft: #352612;
     --blue: #8ec1f0;
     --blue-soft: #16273a;
+    --sky: #1d3a5c;
+    --outline: #5b504a;
+    --hard-shadow: #000;
+    --sticker: #f4efe7;
+    --cast-filter: drop-shadow(2px 0 0 var(--sticker)) drop-shadow(-2px 0 0 var(--sticker))
+      drop-shadow(0 2px 0 var(--sticker)) drop-shadow(0 -2px 0 var(--sticker));
     --focus: #8ec1f0;
     --on-fill: #141110;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
@@ -121,7 +131,7 @@
   --line: #3a332f;
   --line-strong: #524842;
   --field-border: #80756d;
-  --red: #ff7a6b;
+  --red: #ff6a5c;
   --red-edge: #b3261e;
   --red-soft: #3a1a17;
   --green: #6fd39a;
@@ -132,6 +142,12 @@
   --amber-soft: #352612;
   --blue: #8ec1f0;
   --blue-soft: #16273a;
+  --sky: #1d3a5c;
+  --outline: #5b504a;
+  --hard-shadow: #000;
+  --sticker: #f4efe7;
+  --cast-filter: drop-shadow(2px 0 0 var(--sticker)) drop-shadow(-2px 0 0 var(--sticker))
+    drop-shadow(0 2px 0 var(--sticker)) drop-shadow(0 -2px 0 var(--sticker));
   --focus: #8ec1f0;
   --on-fill: #141110;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
@@ -180,15 +196,15 @@ h4 {
 }
 h1 {
   font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.6rem);
-  font-weight: 700;
+  font-weight: 800;
 }
 h2 {
   font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.8rem);
-  font-weight: 700;
+  font-weight: 800;
 }
 h3 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 p {
   margin: 0 0 1em;
@@ -240,7 +256,8 @@ select {
 .muted {
   color: var(--muted);
 }
-.udm {
+.udm,
+[lang='udm'] {
   font-family: var(--font-head);
   font-weight: 500;
 }
@@ -252,24 +269,50 @@ select {
   padding: 16px 18px;
 }
 
+.poster-title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.sticker {
+  border: 2.5px solid var(--outline);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 4px 0 var(--hard-shadow);
+}
+
+.cast {
+  filter: var(--cast-filter, none);
+}
+
+.thread-rule {
+  display: block;
+  width: 96px;
+  height: 8px;
+  background: var(--red);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cpath d='M-12 6.5 0 1.5 12 6.5 24 1.5 36 6.5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") repeat-x;
+}
+
 /* ─── «Объёмные» кнопки ─── */
 .btn {
-  --face: var(--green);
-  --edge: var(--green-edge);
+  --face: var(--red);
+  --edge: var(--red-edge);
   --fg: var(--on-fill);
   appearance: none;
-  border: 0;
+  border: 2px solid var(--outline);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-height: 50px;
-  padding: 14px 24px;
+  min-width: 44px;
+  padding: 12px 22px;
   border-radius: var(--radius);
   font: 700 0.95rem/1 var(--font-head);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   text-decoration: none;
   color: var(--fg);
   background: var(--face);
@@ -291,6 +334,7 @@ select {
   --face: var(--line);
   --edge: var(--line-strong);
   --fg: var(--muted);
+  border-color: var(--line-strong);
   cursor: not-allowed;
   filter: none;
 }
@@ -310,6 +354,10 @@ select {
   --face: var(--red);
   --edge: var(--red-edge);
 }
+.btn--sky {
+  --face: var(--blue);
+  --edge: color-mix(in srgb, var(--blue) 72%, #000);
+}
 .btn--amber {
   --face: var(--amber);
   --edge: var(--amber-edge);
@@ -324,15 +372,16 @@ select {
   --face: transparent;
   --edge: transparent;
   --fg: var(--blue);
+  border-color: transparent;
   box-shadow: none;
   padding-inline: 12px;
 }
-.btn--flat:active {
+:root .btn--flat:is(:hover, :active) {
   transform: none;
+  box-shadow: none;
 }
 .btn--sm {
-  min-height: 40px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   font-size: 0.8rem;
 }
 
